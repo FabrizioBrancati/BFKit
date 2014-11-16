@@ -5,11 +5,12 @@ BFKit is a collection of useful classes to **develop Apps faster**.
 Installing and Usage
 ====================
 - Copy the **library** folder (**BFKit**) to the project
+- Add the **AudioToolbox** framework to the project
 - Import the file "**BFKit.h**"
 - Enjoy!
 
-Requirement
-===========
+Requirements
+============
 - iOS SDK **7.0** or later
 
 Language support
