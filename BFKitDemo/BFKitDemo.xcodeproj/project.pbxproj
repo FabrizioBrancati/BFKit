@@ -60,6 +60,7 @@
 		49C4537C19BE941600E5052C /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49C4537B19BE941600E5052C /* Logo@2x.png */; };
 		49C4538119BE947000E5052C /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C4537E19BE947000E5052C /* BFKit.strings */; };
 		49C4538319BE963800E5052C /* Logo2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49C4538219BE963800E5052C /* Logo2@2x.png */; };
+		49C7944C1A2A0C4F00295595 /* UIWindow+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7944B1A2A0C4F00295595 /* UIWindow+BFKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,8 @@
 		49C4537F19BE947000E5052C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BFKit.strings; sourceTree = "<group>"; };
 		49C4538019BE947000E5052C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/BFKit.strings; sourceTree = "<group>"; };
 		49C4538219BE963800E5052C /* Logo2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo2@2x.png"; sourceTree = "<group>"; };
+		49C7944A1A2A0C4F00295595 /* UIWindow+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+BFKit.h"; sourceTree = "<group>"; };
+		49C7944B1A2A0C4F00295595 /* UIWindow+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+BFKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +345,8 @@
 				4902774E19BDF424009B8BC1 /* UIView+BFKit.m */,
 				4902774F19BDF424009B8BC1 /* UIWebView+BFKit.h */,
 				4902775019BDF424009B8BC1 /* UIWebView+BFKit.m */,
+				49C7944A1A2A0C4F00295595 /* UIWindow+BFKit.h */,
+				49C7944B1A2A0C4F00295595 /* UIWindow+BFKit.m */,
 			);
 			path = "UIKit Additions";
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 				4902776119BDF424009B8BC1 /* NSString+BFKit.m in Sources */,
 				4902775F19BDF424009B8BC1 /* NSNumber+BFKit.m in Sources */,
 				4902776619BDF424009B8BC1 /* UIImage+BFKit.m in Sources */,
+				49C7944C1A2A0C4F00295595 /* UIWindow+BFKit.m in Sources */,
 				4902776E19BDF424009B8BC1 /* BFSystemSound.m in Sources */,
 				4902779619BE049B009B8BC1 /* DetailViewController.m in Sources */,
 				4902776819BDF424009B8BC1 /* UILabel+BFKit.m in Sources */,
