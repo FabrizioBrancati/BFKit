@@ -49,6 +49,7 @@ Adds some useful method to some classes.
 - UITextField
 - UIView
 - UIWebView
+- UIWindow
 
 ###BFKit:
 - BFPassword
