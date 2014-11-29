@@ -19,9 +19,12 @@
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     
     CGSize imageSize = CGSizeZero;
-    if (UIInterfaceOrientationIsPortrait(orientation) || ignoreOrientation) {
+    if (UIInterfaceOrientationIsPortrait(orientation) || ignoreOrientation)
+    {
         imageSize = [UIScreen mainScreen].bounds.size;
-    } else {
+    }
+    else
+    {
         imageSize = CGSizeMake([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width);
     }
     
@@ -32,23 +35,32 @@
     CGContextConcatCTM(context, self.transform);
     CGContextTranslateCTM(context, -self.bounds.size.width * self.layer.anchorPoint.x, -self.bounds.size.height * self.layer.anchorPoint.y);
     
-    // correct for the screen orientation
-    if (!ignoreOrientation) {
-        if (orientation == UIInterfaceOrientationLandscapeLeft) {
+    // Correct for the screen orientation
+    if(!ignoreOrientation)
+    {
+        if(orientation == UIInterfaceOrientationLandscapeLeft)
+        {
             CGContextRotateCTM(context, (CGFloat)M_PI_2);
             CGContextTranslateCTM(context, 0, -imageSize.width);
-        } else if (orientation == UIInterfaceOrientationLandscapeRight) {
+        }
+        else if(orientation == UIInterfaceOrientationLandscapeRight)
+        {
             CGContextRotateCTM(context, (CGFloat)-M_PI_2);
             CGContextTranslateCTM(context, -imageSize.height, 0);
-        } else if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+        }
+        else if(orientation == UIInterfaceOrientationPortraitUpsideDown)
+        {
             CGContextRotateCTM(context, (CGFloat)M_PI);
             CGContextTranslateCTM(context, -imageSize.width, -imageSize.height);
         }
     }
     
-    if([self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+    if([self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)])
+    {
         [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
-    } else {
+    }
+    else
+    {
         [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     }
     

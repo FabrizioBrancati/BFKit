@@ -155,7 +155,6 @@
 		49B2719719BFC9EC0079FA5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49C4537219BE4D3500E5052C /* UIScrollView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BFKit.h"; sourceTree = "<group>"; };
 		49C4537319BE4D3500E5052C /* UIScrollView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BFKit.m"; sourceTree = "<group>"; };
-		49C4537519BE504200E5052C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		49C4537B19BE941600E5052C /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@2x.png"; sourceTree = "<group>"; };
 		49C4537F19BE947000E5052C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BFKit.strings; sourceTree = "<group>"; };
 		49C4538019BE947000E5052C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/BFKit.strings; sourceTree = "<group>"; };
@@ -212,7 +211,6 @@
 		490276EE19BDF3F8009B8BC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				49C4537519BE504200E5052C /* Security.framework */,
 				4902772719BDF40B009B8BC1 /* AudioToolbox.framework */,
 				490276EF19BDF3F8009B8BC1 /* Foundation.framework */,
 				490276F119BDF3F8009B8BC1 /* CoreGraphics.framework */,
