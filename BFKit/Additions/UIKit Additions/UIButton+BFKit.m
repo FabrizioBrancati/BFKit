@@ -84,7 +84,12 @@
 
 + (id)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage
 {
-    return [UIButton initWithFrame:frame image:image highlightedImage:highlightedImage];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:frame];
+    [button setImage:image forState:UIControlStateNormal];
+    [button setImage:highlightedImage forState:UIControlStateHighlighted];
+    
+    return button;
 }
 
 - (void)setTitleFont:(FontName)fontName size:(CGFloat)size
