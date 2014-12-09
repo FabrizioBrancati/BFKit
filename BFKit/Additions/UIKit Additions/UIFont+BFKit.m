@@ -68,7 +68,7 @@
             fontNames = [UIFont fontNamesForFamilyName:@"Arial Hebrew"];
             break;
         case FamilyFontNameArialRoundedMTBold:
-            fontNames = [UIFont fontNamesForFamilyName:@""];
+            fontNames = [UIFont fontNamesForFamilyName:@"Arial Rounded MT Bold"];
             break;
         case FamilyFontNameAvenir:
             fontNames = [UIFont fontNamesForFamilyName:@"Avenir"];
