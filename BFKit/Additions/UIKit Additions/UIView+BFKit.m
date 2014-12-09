@@ -100,4 +100,51 @@
     [self.layer addAnimation:shake forKey:nil];
 }
 
+- (void)pulseViewWithTime:(CGFloat)seconds
+{
+    [UIView animateWithDuration:seconds/6 animations:^{
+        [self setTransform:CGAffineTransformMakeScale(1.1, 1.1)];
+    } completion:^(BOOL finished) {
+        if(finished)
+        {
+            [UIView animateWithDuration:seconds/6 animations:^{
+                [self setTransform:CGAffineTransformMakeScale(0.96, 0.96)];
+            } completion:^(BOOL finished) {
+                if(finished)
+                {
+                    [UIView animateWithDuration:seconds/6 animations:^{
+                        [self setTransform:CGAffineTransformMakeScale(1.03, 1.03)];
+                    } completion:^(BOOL finished) {
+                        if(finished)
+                        {
+                            [UIView animateWithDuration:seconds/6 animations:^{
+                                [self setTransform:CGAffineTransformMakeScale(0.985, 0.985)];
+                            } completion:^(BOOL finished) {
+                                if(finished)
+                                {
+                                    [UIView animateWithDuration:seconds/6 animations:^{
+                                        [self setTransform:CGAffineTransformMakeScale(1.007, 1.007)];
+                                    } completion:^(BOOL finished) {
+                                        if(finished)
+                                        {
+                                            [UIView animateWithDuration:seconds/6 animations:^{
+                                                [self setTransform:CGAffineTransformMakeScale(1, 1)];
+                                            } completion:^(BOOL finished) {
+                                                if(finished)
+                                                {
+                                                    
+                                                }
+                                            }];
+                                        }
+                                    }];
+                                }
+                            }];
+                        }
+                    }];
+                }
+            }];
+        }
+    }];
+}
+
 @end

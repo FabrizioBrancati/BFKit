@@ -86,4 +86,11 @@
  */
 - (void)shakeView;
 
+/**
+ *  Create a pulse effect on th UIView
+ *
+ *  @param seconds Seconds of animation
+ */
+- (void)pulseViewWithTime:(CGFloat)seconds;
+
 @end
