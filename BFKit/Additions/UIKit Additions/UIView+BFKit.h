@@ -36,7 +36,7 @@
  *  @param backgroundColor UIView's background color
  */
 + (UIView *)initWithFrame:(CGRect)frame
-      backgroundColor:(UIColor *)backgroundColor;
+          backgroundColor:(UIColor *)backgroundColor;
 
 /**
  *  Create a border around the UIView
