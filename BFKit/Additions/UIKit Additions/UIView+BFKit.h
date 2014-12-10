@@ -30,6 +30,15 @@
 @interface UIView (BFKit)
 
 /**
+ *  Create an UIView with the given frame and background color
+ *
+ *  @param frame           UIView's frame
+ *  @param backgroundColor UIView's background color
+ */
++ (UIView *)initWithFrame:(CGRect)frame
+      backgroundColor:(UIColor *)backgroundColor;
+
+/**
  *  Create a border around the UIView
  *
  *  @param color  Border's color

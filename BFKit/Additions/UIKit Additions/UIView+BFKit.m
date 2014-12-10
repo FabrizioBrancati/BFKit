@@ -29,6 +29,14 @@
 
 @implementation UIView (BFKit)
 
++ (UIView *)initWithFrame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor
+{
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    [view setBackgroundColor:backgroundColor];
+    
+    return view;
+}
+
 // Borders
 - (void)createBordersWithColor:(UIColor *)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width
 {
