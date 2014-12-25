@@ -169,7 +169,7 @@ typedef struct BFDateInformation BFDateInformation;
  *  Get the month as a localized string from the given month number
  *
  *  @param month The month to be converted in string
- *  [1 - Genuary]
+ *  [1 - January]
  *  [2 - February]
  *  [3 - March]
  *  [4 - April]

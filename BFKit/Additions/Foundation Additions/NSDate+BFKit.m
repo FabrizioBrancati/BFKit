@@ -169,7 +169,7 @@
     switch(month)
     {
         case 1:
-            return NSLocalizedStringFromTable(@"GENUARY", @"BFKit", @"");
+            return NSLocalizedStringFromTable(@"JANUARY", @"BFKit", @"");
             break;
         case 2:
             return NSLocalizedStringFromTable(@"FEBRUARY", @"BFKit", @"");
