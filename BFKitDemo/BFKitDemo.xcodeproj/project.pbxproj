@@ -74,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0741CCC51A506D3C0032EAAD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BFKit.strings; sourceTree = "<group>"; };
+		0741CCC61A506E7A0032EAAD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/BFKit.strings; sourceTree = "<group>"; };
 		490276EC19BDF3F8009B8BC1 /* BFKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		490276EF19BDF3F8009B8BC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		490276F119BDF3F8009B8BC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -446,6 +448,8 @@
 				en,
 				Base,
 				it,
+				ru,
+				uk,
 			);
 			mainGroup = 490276E319BDF3F8009B8BC1;
 			productRefGroup = 490276ED19BDF3F8009B8BC1 /* Products */;
@@ -569,6 +573,8 @@
 			children = (
 				49C4537F19BE947000E5052C /* en */,
 				49C4538019BE947000E5052C /* it */,
+				0741CCC51A506D3C0032EAAD /* ru */,
+				0741CCC61A506E7A0032EAAD /* uk */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";

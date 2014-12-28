@@ -26,41 +26,41 @@
 
 // Generals
 "OK" = "Ok";
-"CONTINUE" = "Continue";
-"CANCEL" = "Cancel";
-"DONE" = "Done";
-"CLOSE" = "Close";
-"OPEN" = "Open";
-"YES" = "Yes";
-"NO" = "No";
+"CONTINUE" = "Продолжить";
+"CANCEL" = "Отмена";
+"DONE" = "Готово";
+"CLOSE" = "Закрыть";
+"OPEN" = "Открыть";
+"YES" = "Да";
+"NO" = "Нет";
 
 // Days
-"TODAY" = "Today";
-"TOMORROW" = "Tomorrow";
-"SUNDAY" = "Sunday";
-"MONDAY"= "Monday";
-"TUERSDAY" = "Tuesday";
-"WEDNESDAY" = "Wednesday";
-"THURSDAY" = "Thursday";
-"FRIDAY" = "Friday";
-"SATURDAY" = "Saturday";
+"TODAY" = "Сегодня";
+"TOMORROW" = "Завтра";
+"SUNDAY" = "Воскресенье";
+"MONDAY"= "Понедельник";
+"TUERSDAY" = "Вторник";
+"WEDNESDAY" = "Среда";
+"THURSDAY" = "Четверг";
+"FRIDAY" = "Пятница";
+"SATURDAY" = "Суббота";
 
 // Months
-"JANUARY" = "January";
-"FEBRUARY" = "February";
-"MARCH" = "March";
-"APRIL" = "April";
-"MAY" = "May";
-"JUNE" = "June";
-"JULY" = "July";
-"AUGUST" = "August";
-"SEPTEMBER" = "September";
-"OCTOBER" = "October";
-"NOVEMBER" = "November";
-"DECEMBER" = "December";
+"JANUARY" = "Январь";
+"FEBRUARY" = "Февраль";
+"MARCH" = "Март";
+"APRIL" = "Апрель";
+"MAY" = "Май";
+"JUNE" = "Июнь";
+"JULY" = "Июль";
+"AUGUST" = "Август";
+"SEPTEMBER" = "Сентябрь";
+"OCTOBER" = "Октябрь";
+"NOVEMBER" = "Ноябрь";
+"DECEMBER" = "Декабрь";
 
 // Time zones
-"NIGHT" = "Night";
-"MORNING" = "Morning";
-"AFTERNOON" = "Afternoon";
-"EVENING" = "Evening";
+"NIGHT" = "Ночь";
+"MORNING" = "Утро";
+"AFTERNOON" = "День";
+"EVENING" = "Вечер";
