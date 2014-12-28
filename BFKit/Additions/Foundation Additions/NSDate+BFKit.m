@@ -68,7 +68,7 @@
             return NSLocalizedStringFromTable(@"MONDAY", @"BFKit", @"");
             break;
         case 3:
-            return NSLocalizedStringFromTable(@"TUERSDAY", @"BFKit", @"");
+            return NSLocalizedStringFromTable(@"TUESDAY", @"BFKit", @"");
             break;
         case 4:
             return NSLocalizedStringFromTable(@"WEDNESDAY", @"BFKit", @"");
