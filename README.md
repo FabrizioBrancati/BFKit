@@ -1,4 +1,4 @@
-![BFKit Banner](http://www.fabriziobrancati.com/banner.jpg)
+![BFKit Banner](http://github.fabriziobrancati.com/bfkit/resources/banner.jpg)
 
 BFKit is a collection of useful classes to **develop Apps faster**.
 
@@ -59,6 +59,17 @@ It makes possible to create User Interfaces and working with Foundation framewor
 It adds a class to check the strength of a password and a class to play system sounds with an enum.
 
 I'll add here a list of all available methods soon!
+
+Changelog
+=========
+
+###Version 1.1.0
+- Added UIWindow category
+- Added system macros
+- Added new iOS devices
+- Added pulse animation
+- Added Russian, Ukrainian, Indonesian and Chinese
+- Minor enhancements & bugfixes
 
 Author
 ======
