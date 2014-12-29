@@ -15,7 +15,7 @@ Requirements
 
 Language support
 ================
-```en, it, ru, uk```
+```en, it, ru, uk, id, zh```
 
 More soon!
 

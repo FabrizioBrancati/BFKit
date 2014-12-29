@@ -25,42 +25,42 @@
 //  SOFTWARE.
 
 // Generals
-"OK" = "Ok";
-"CONTINUE" = "Continue";
-"CANCEL" = "Cancel";
-"DONE" = "Done";
-"CLOSE" = "Close";
-"OPEN" = "Open";
-"YES" = "Yes";
-"NO" = "No";
+"OK" = "确定";
+"CONTINUE" = "继续";
+"CANCEL" = "取消";
+"DONE" = "完成";
+"CLOSE" = "关闭";
+"OPEN" = "打开";
+"YES" = "是";
+"NO" = "否";
 
 // Days
-"TODAY" = "Today";
-"TOMORROW" = "Tomorrow";
-"SUNDAY" = "Sunday";
-"MONDAY"= "Monday";
-"TUESDAY" = "Tuesday";
-"WEDNESDAY" = "Wednesday";
-"THURSDAY" = "Thursday";
-"FRIDAY" = "Friday";
-"SATURDAY" = "Saturday";
+"TODAY" = "今天";
+"TOMORROW" = "明天";
+"SUNDAY" = "星期日";
+"MONDAY"= "星期一";
+"TUESDAY" = "星期二";
+"WEDNESDAY" = "星期三";
+"THURSDAY" = "星期四";
+"FRIDAY" = "星期五";
+"SATURDAY" = "星期六";
 
 // Months
-"JANUARY" = "January";
-"FEBRUARY" = "February";
-"MARCH" = "March";
-"APRIL" = "April";
-"MAY" = "May";
-"JUNE" = "June";
-"JULY" = "July";
-"AUGUST" = "August";
-"SEPTEMBER" = "September";
-"OCTOBER" = "October";
-"NOVEMBER" = "November";
-"DECEMBER" = "December";
+"JANUARY" = "一月";
+"FEBRUARY" = "二月";
+"MARCH" = "三月";
+"APRIL" = "四月";
+"MAY" = "五月";
+"JUNE" = "六月";
+"JULY" = "七月";
+"AUGUST" = "八月";
+"SEPTEMBER" = "九月";
+"OCTOBER" = "十月";
+"NOVEMBER" = "十一月";
+"DECEMBER" = "十二月";
 
 // Time zones
-"NIGHT" = "Night";
-"MORNING" = "Morning";
-"AFTERNOON" = "Afternoon";
-"EVENING" = "Evening";
+"NIGHT" = "夜晚";
+"MORNING" = "早上";
+"AFTERNOON" = "中午";
+"EVENING" = "晚上";
