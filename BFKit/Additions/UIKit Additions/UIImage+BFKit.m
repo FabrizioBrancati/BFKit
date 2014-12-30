@@ -555,7 +555,10 @@ UIColor *colorForColorString(NSString *colorString)
     CIImage *result = [filter valueForKey:kCIOutputImageKey];
     CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
     
-    return [UIImage imageWithCGImage:cgImage];
+    UIImage *returnImage = [UIImage imageWithCGImage:cgImage];
+    CFRelease(cgImage);
+    
+    return returnImage;
 }
 
 - (UIImage *)bumpDistortion:(CIVector *)center radius:(float)radius scale:(float)scale
@@ -570,7 +573,10 @@ UIColor *colorForColorString(NSString *colorString)
     CIImage *result = [filter valueForKey:kCIOutputImageKey];
     CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
     
-    return [UIImage imageWithCGImage:cgImage];
+    UIImage *returnImage = [UIImage imageWithCGImage:cgImage];
+    CFRelease(cgImage);
+    
+    return returnImage;
 }
 
 - (UIImage *)bumpDistortionLinear:(CIVector *)center radius:(float)radius angle:(float)angle scale:(float)scale
@@ -586,7 +592,10 @@ UIColor *colorForColorString(NSString *colorString)
     CIImage *result = [filter valueForKey:kCIOutputImageKey];
     CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
     
-    return [UIImage imageWithCGImage:cgImage];
+    UIImage *returnImage = [UIImage imageWithCGImage:cgImage];
+    CFRelease(cgImage);
+    
+    return returnImage;
 }
 
 - (UIImage *)circleSplashDistortion:(CIVector *)center radius:(float)radius
@@ -600,7 +609,10 @@ UIColor *colorForColorString(NSString *colorString)
     CIImage *result = [filter valueForKey:kCIOutputImageKey];
     CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
     
-    return [UIImage imageWithCGImage:cgImage];
+    UIImage *returnImage = [UIImage imageWithCGImage:cgImage];
+    CFRelease(cgImage);
+    
+    return returnImage;
 }
 
 - (UIImage *)circularWrap:(CIVector *)center radius:(float)radius angle:(float)angle
@@ -615,7 +627,10 @@ UIColor *colorForColorString(NSString *colorString)
     CIImage *result = [filter valueForKey:kCIOutputImageKey];
     CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
     
-    return [UIImage imageWithCGImage:cgImage];
+    UIImage *returnImage = [UIImage imageWithCGImage:cgImage];
+    CFRelease(cgImage);
+    
+    return returnImage;
 }
 
 - (UIImage *)cmykHalftone:(CIVector *)center width:(float)width angle:(float)angle sharpness:(float)sharpness gcr:(float)gcr ucr:(float)ucr
@@ -633,7 +648,10 @@ UIColor *colorForColorString(NSString *colorString)
     CIImage *result = [filter valueForKey:kCIOutputImageKey];
     CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
     
-    return [UIImage imageWithCGImage:cgImage];
+    UIImage *returnImage = [UIImage imageWithCGImage:cgImage];
+    CFRelease(cgImage);
+    
+    return returnImage;
 }
 
 - (UIImage *)sepiaToneWithIntensity:(float)intensity
@@ -646,7 +664,10 @@ UIColor *colorForColorString(NSString *colorString)
     CIImage *result = [filter valueForKey:kCIOutputImageKey];
     CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
     
-    return [UIImage imageWithCGImage:cgImage];
+    UIImage *returnImage = [UIImage imageWithCGImage:cgImage];
+    CFRelease(cgImage);
+    
+    return returnImage;
 }
 
 + (UIImage *)imageWithColor:(UIColor *)color
