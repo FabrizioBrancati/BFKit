@@ -26,7 +26,7 @@ Installing and Usage
   pod 'BFKit'
 ```
 - Obviously **change "Project"**  with your **real project name**
-- Open Terminal e type:
+- Open **Terminal**, go to **project directory** and type:
 ```bash
   pod install
 ```
@@ -86,8 +86,7 @@ It adds a class to check the strength of a password and a class to play system s
 Documentation
 =============
 
-###CocoaDocs
-[Documentation](http://cocoadocs.org/docsets/BFKit)
+###[CocoaDocs](http://cocoadocs.org/docsets/BFKit)
 
 Changelog
 =========
