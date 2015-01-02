@@ -1,5 +1,10 @@
 ![BFKit Banner](http://github.fabriziobrancati.com/bfkit/resources/banner.jpg)
 
+![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)
+![License](https://img.shields.io/cocoapods/l/BFKit.svg?style=flat)
+![Platform](https://img.shields.io/cocoapods/p/BFKit.svg?style=flat)
+![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit.svg?style=flat)
+
 BFKit is a collection of useful classes to **develop Apps faster**.
 
 Installing and Usage
@@ -30,6 +35,7 @@ Installing and Usage
 Requirements
 ============
 - iOS SDK **7.0** or later
+- ARC
 
 Language support
 ================
@@ -88,6 +94,13 @@ Changelog
 - Added pulse animation
 - Added Russian, Ukrainian, Indonesian and Chinese
 - Minor enhancements & bugfixes
+
+Todo
+====
+- [ ] Create instance methods for UIKit categories
+- [ ] Create a category for every UIKit element
+- [ ] Add missing font (iOS 8)
+- [ ] Add missing system sound ids
 
 Author
 ======
