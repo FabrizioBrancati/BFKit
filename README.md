@@ -1,9 +1,10 @@
 ![BFKit Banner](http://github.fabriziobrancati.com/bfkit/resources/banner.jpg)
 
+[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
 ![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)
 ![License](https://img.shields.io/cocoapods/l/BFKit.svg?style=flat)
 ![Platform](https://img.shields.io/cocoapods/p/BFKit.svg?style=flat)
-![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit.svg?style=flat)
+[![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit/issues)
 
 BFKit is a collection of useful classes to **develop Apps faster**.
 
