@@ -46,7 +46,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "Fabrizio Brancati" => "fabrizio.brancati@gmail.com" }
-  s.social_media_url   = "http://linkedin.com/in/fabriziobrancati"
+  s.social_media_url   = "https://twitter.com/infinity4all"
 
   s.platform     = :ios, "7.0"
 
