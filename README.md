@@ -4,8 +4,26 @@ BFKit is a collection of useful classes to **develop Apps faster**.
 
 Installing and Usage
 ====================
+
+###Manual
 - Copy the **library** folder (**BFKit**) to the project
 - Add the **AudioToolbox** framework to the project
+- Import the file "**BFKit.h**"
+- Enjoy!
+
+###Pod
+- Create a Podfile in your project directory
+- Write: 
+```ruby
+  platform :ios, '7.0'
+  xcodeproj 'Project.xcodeproj'
+  pod 'BFKit'
+```
+- Obviously change "Project"  with your real project name
+- Open Terminal e type:
+```bash
+  pod install
+```
 - Import the file "**BFKit.h**"
 - Enjoy!
 
