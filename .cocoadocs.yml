@@ -1,0 +1,11 @@
+highlight-font: '"GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Helvetica Neue", "Arial" '
+body: '"Helvetica Neue", "Arial", san-serif'
+code: '"Monaco", "Menlo", "Consolas", "Courier New", monospace'
+
+highlight-color: "#4FB0C8"
+highlight-dark-color: "#3B8496"
+darker-color: "#C6B7B2"
+darker-dark-color: "#A8A8A8"
+background-color: "#F2F2F2"
+alt-link-color: "#7D0A0A"
+warning-color: "#FE4242"
