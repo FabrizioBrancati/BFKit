@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "UIFont+BFKit.h"
+#import "BFLog.h"
 
 @implementation UIFont (BFKit)
 
@@ -36,7 +37,7 @@
     {
         NSString *fontFamily = [fontFamilies objectAtIndex:i];
         NSArray *fontNames = [UIFont fontNamesForFamilyName:[fontFamilies objectAtIndex:i]];
-        NSLog(@"%@: %@", fontFamily, fontNames);
+        BFLog(@"%@: %@", fontFamily, fontNames);
     }
 }
 
@@ -263,7 +264,7 @@
             break;
     }
     
-    NSLog (@"%@", fontNames);
+    BFLog (@"%@", fontNames);
     
     return fontNames;
 }

@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,6 +27,7 @@
 #import "UIImage+BFKit.h"
 #import "NSNumber+BFKit.h"
 #import "UIColor+BFKit.h"
+#import "BFLog.h"
 #import <objc/runtime.h>
 
 CGSize sizeForSizeString(NSString *sizeString)
@@ -242,7 +243,7 @@ UIColor *colorForColorString(NSString *colorString)
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    if(newImage == nil) NSLog(@"Could not scale image");
+    if(newImage == nil) BFLog(@"Could not scale image");
     
     return newImage ;
 }
@@ -349,7 +350,7 @@ UIColor *colorForColorString(NSString *colorString)
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    if(newImage == nil) NSLog(@"Could not scale image");
+    if(newImage == nil) BFLog(@"Could not scale image");
     
     return newImage ;
 }
@@ -380,7 +381,7 @@ UIColor *colorForColorString(NSString *colorString)
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    if(newImage == nil) NSLog(@"Could not scale image");
+    if(newImage == nil) BFLog(@"Could not scale image");
     
     return newImage ;
 }
@@ -713,7 +714,7 @@ UIColor *colorForColorString(NSString *colorString)
     pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
     
     if(pixelBuffer == NULL)
-        NSLog(@"No pixelbuffer");
+        BFLog(@"No pixelbuffer");
     
     outBuffer.data = pixelBuffer;
     outBuffer.width = CGImageGetWidth(img);
@@ -723,7 +724,7 @@ UIColor *colorForColorString(NSString *colorString)
     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
     
     if(error)
-        NSLog(@"Error from convolution %ld", error);
+        BFLog(@"Error from convolution %ld", error);
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef ctx = CGBitmapContextCreate(outBuffer.data, outBuffer.width, outBuffer.height, 8, outBuffer.rowBytes, colorSpace, kCGImageAlphaNoneSkipLast);

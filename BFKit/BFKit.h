@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,25 +27,8 @@
 /**
  *  Here is some useful defined variables
  */
-#define BFKIT_VERSION @"1.0"
-
-/**
- *  Get the iOS version
- */
-#define IOS_VERSION [UIDevice currentDevice].systemVersion
-
-/**
- *  Get the screen width and height
- */
-#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
-#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
-
-/**
- *  Get some App info
- */
-#define APP_NAME [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
-#define APP_BUILD [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
-#define APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define BFKIT_VERSION @"1.2.0"
+#define BFKIT_AUTHOR @"Fabrizio Brancati"
 
 /**
  *  Foundation Additions
@@ -54,6 +37,7 @@
 #import "NSDate+BFKit.h"
 #import "NSFileManager+BFKit.h"
 #import "NSMutableArray+BFKit.h"
+#import "NSMutableDictionary+BFKit.h"
 #import "NSNumber+BFKit.h"
 #import "NSProcessInfo+BFKit.h"
 #import "NSString+BFKit.h"
@@ -78,5 +62,7 @@
 /**
  *  BFKit Classes
  */
+#import "BFApp.h"
+#import "BFLog.h"
 #import "BFPassword.h"
 #import "BFSystemSound.h"

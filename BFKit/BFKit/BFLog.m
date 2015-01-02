@@ -1,5 +1,5 @@
 //
-//  UIWindow+BFKit.h
+//  BFLog.m
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,16 +24,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to UIWindow
- */
-@interface UIWindow (BFKit)
+#import "BFLog.h"
 
-/**
- *  Take a screenshot of current window
- *
- *  @return Return the screenshot as an UIImage
- */
-- (UIImage *)takeScreenshot;
+@implementation BFLog
 
 @end

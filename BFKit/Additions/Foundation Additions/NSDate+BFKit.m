@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "NSDate+BFKit.h"
+#import "BFApp.h"
 
 @implementation NSDate (BFKit)
 
@@ -62,25 +63,25 @@
     switch([self weekday])
     {
         case 1:
-            return NSLocalizedStringFromTable(@"SUNDAY", @"BFKit", @"");
+            return BFLocalizedString(@"SUNDAY", @"");
             break;
         case 2:
-            return NSLocalizedStringFromTable(@"MONDAY", @"BFKit", @"");
+            return BFLocalizedString(@"MONDAY", @"");
             break;
         case 3:
-            return NSLocalizedStringFromTable(@"TUESDAY", @"BFKit", @"");
+            return BFLocalizedString(@"TUESDAY", @"");
             break;
         case 4:
-            return NSLocalizedStringFromTable(@"WEDNESDAY", @"BFKit", @"");
+            return BFLocalizedString(@"WEDNESDAY", @"");
             break;
         case 5:
-            return NSLocalizedStringFromTable(@"THURSDAY", @"BFKit", @"");
+            return BFLocalizedString(@"THURSDAY", @"");
             break;
         case 6:
-            return NSLocalizedStringFromTable(@"FRIDAY", @"BFKit", @"");
+            return BFLocalizedString(@"FRIDAY", @"");
             break;
         case 7:
-            return NSLocalizedStringFromTable(@"SATURDAY", @"BFKit", @"");
+            return BFLocalizedString(@"SATURDAY", @"");
             break;
         default:
             break;
@@ -169,40 +170,40 @@
     switch(month)
     {
         case 1:
-            return NSLocalizedStringFromTable(@"JANUARY", @"BFKit", @"");
+            return BFLocalizedString(@"JANUARY", @"");
             break;
         case 2:
-            return NSLocalizedStringFromTable(@"FEBRUARY", @"BFKit", @"");
+            return BFLocalizedString(@"FEBRUARY", @"");
             break;
         case 3:
-            return NSLocalizedStringFromTable(@"MARCH", @"BFKit", @"");
+            return BFLocalizedString(@"MARCH", @"");
             break;
         case 4:
-            return NSLocalizedStringFromTable(@"APRIL", @"BFKit", @"");
+            return BFLocalizedString(@"APRIL", @"");
             break;
         case 5:
-            return NSLocalizedStringFromTable(@"MAY", @"BFKit", @"");
+            return BFLocalizedString(@"MAY", @"");
             break;
         case 6:
-            return NSLocalizedStringFromTable(@"JUNE", @"BFKit", @"");
+            return BFLocalizedString(@"JUNE", @"");
             break;
         case 7:
-            return NSLocalizedStringFromTable(@"JULY", @"BFKit", @"");
+            return BFLocalizedString(@"JULY", @"");
             break;
         case 8:
-            return NSLocalizedStringFromTable(@"AUGUST", @"BFKit", @"");
+            return BFLocalizedString(@"AUGUST", @"");
             break;
         case 9:
-            return NSLocalizedStringFromTable(@"SEPTEMBER", @"BFKit", @"");
+            return BFLocalizedString(@"SEPTEMBER", @"");
             break;
         case 10:
-            return NSLocalizedStringFromTable(@"OCTOBER", @"BFKit", @"");
+            return BFLocalizedString(@"OCTOBER", @"");
             break;
         case 11:
-            return NSLocalizedStringFromTable(@"NOVEMBER", @"BFKit", @"");
+            return BFLocalizedString(@"NOVEMBER", @"");
             break;
         case 12:
-            return NSLocalizedStringFromTable(@"DECEMBER", @"BFKit", @"");
+            return BFLocalizedString(@"DECEMBER", @"");
             break;
         default:
             return nil;

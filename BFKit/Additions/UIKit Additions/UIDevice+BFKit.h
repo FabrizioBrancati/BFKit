@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,6 +28,17 @@
  *  This class add some useful methods to UIDevice
  */
 @interface UIDevice (BFKit)
+
+/**
+ *  Get the iOS version
+ */
+#define IOS_VERSION [UIDevice currentDevice].systemVersion
+
+/**
+ *  Get the screen width and height
+ */
+#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 
 /**
  *  Macros to compare system versions

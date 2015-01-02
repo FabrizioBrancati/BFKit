@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@
 
 - (id)safeObjectAtIndex:(NSUInteger)index
 {
-    if([self count] > 0)
+    if([self count] > 0 && [self count] > index)
         return [self objectAtIndex:index];
     else
         return nil;
@@ -52,12 +52,7 @@
 
 - (NSMutableArray *)reversedArray
 {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
-    NSEnumerator *enumerator = [self reverseObjectEnumerator];
-    
-    for(id element in enumerator) [array addObject:element];
-    
-    return array;
+    return (NSMutableArray *)[NSArray reversedArray:self];
 }
 
 + (NSMutableArray *)sortArrayByKey:(NSString *)key array:(NSMutableArray *)array ascending:(BOOL)ascending

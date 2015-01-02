@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BFKit"
-  s.version      = "1.1.0"
+  s.version      = "1.2.0"
   s.summary      = "BFKit is a collection of useful classes to develop Apps faster"
 
   s.description  = <<-DESC
@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
                    - NSDate
                    - NSFileManager
                    - NSMutableArray
+                   - NSMutableDictionary
                    - NSNumber
                    - NSProcessInfo
                    - NSString
@@ -33,11 +34,11 @@ Pod::Spec.new do |s|
                    - UIWindow
 
                    ###BFKit:
+                   - BFApp
+                   - BFLog
                    - BFPassword
                    - BFSystemSound
 
-                   It makes possible to create User Interfaces and working with Foundation framework faster.
-                   It adds a class to check the strength of a password and a class to play system sounds with an enum.
                    DESC
 
   s.homepage     = "https://github.com/FabrizioBrancati/BFKit"
@@ -50,7 +51,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/FabrizioBrancati/BFKit.git", :tag => "v1.1.0" }
+  s.source       = { :git => "https://github.com/FabrizioBrancati/BFKit.git", :tag => "v1.2.0" }
 
   s.prefix_header_contents = '#import <BFKit.h>'
   s.source_files  =  "BFKit/**/*.{h,m}"

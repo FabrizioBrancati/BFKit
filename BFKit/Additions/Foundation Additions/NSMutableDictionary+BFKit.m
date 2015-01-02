@@ -1,5 +1,5 @@
 //
-//  UIWindow+BFKit.h
+//  NSMutableDictionary+BFKit.m
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,16 +24,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to UIWindow
- */
-@interface UIWindow (BFKit)
+#import "NSMutableDictionary+BFKit.h"
 
-/**
- *  Take a screenshot of current window
- *
- *  @return Return the screenshot as an UIImage
- */
-- (UIImage *)takeScreenshot;
+@implementation NSMutableDictionary (BFKit)
+
+- (BOOL)safeSetObject:(id)anObject forKey:(id<NSCopying>)aKey
+{
+    if(nil == anObject)
+    {
+        return NO;
+    }
+    
+    [self setObject:anObject forKey:aKey];
+    return YES;
+}
 
 @end

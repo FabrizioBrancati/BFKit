@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "BFSystemSound.h"
+#import "BFLog.h"
 
 @implementation BFSystemSound
 
@@ -36,6 +37,30 @@
 + (void)playSystemSoundVibrate
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+}
+
++ (SystemSoundID)playCustomSound:(NSURL *)soundURL
+{
+    SystemSoundID soundID;
+
+    OSStatus err = AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(soundURL), &soundID);
+    if(err != kAudioServicesNoError)
+    {
+        BFLog(@"Could not load %@", soundURL);
+    }
+    return soundID;
+}
+
++ (BOOL)disposeSound:(SystemSoundID)soudID
+{
+    OSStatus err = AudioServicesDisposeSystemSoundID(soudID);
+    if(err != kAudioServicesNoError)
+    {
+        BFLog(@"Error while disposing sound %i", (unsigned int)soudID);
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end

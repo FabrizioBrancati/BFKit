@@ -1,5 +1,5 @@
 //
-//  UIWindow+BFKit.h
+//  BFLog.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -25,15 +25,14 @@
 //  SOFTWARE.
 
 /**
- *  This class add some useful methods to UIWindow
+ *  NSLog only if in DEBUG mode
  */
-@interface UIWindow (BFKit)
+#ifdef DEBUG
+#define BFLog(format, ...)  NSLog(format, ## __VA_ARGS__)
+#else
+#define BFLog(format, ...)
+#endif
 
-/**
- *  Take a screenshot of current window
- *
- *  @return Return the screenshot as an UIImage
- */
-- (UIImage *)takeScreenshot;
+@interface BFLog : NSObject
 
 @end

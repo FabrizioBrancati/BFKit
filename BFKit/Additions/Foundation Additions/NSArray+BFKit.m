@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -30,32 +30,40 @@
 
 - (id)safeObjectAtIndex:(NSUInteger)index
 {
-    if([self count] > 0) return [self objectAtIndex:index];
-    else return nil;
+    if([self count] > 0 && [self count] > index)
+        return [self objectAtIndex:index];
+    else
+        return nil;
 }
 
 - (NSArray *)reversedArray
 {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
-    NSEnumerator *enumerator = [self reverseObjectEnumerator];
-    
-    for(id element in enumerator) [array addObject:element];
-    
-    return array;
+    return [NSArray reversedArray:self];
 }
 
 - (NSString *)arrayToJson
 {
-    NSString *json = nil;
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:&error];
-    if(!error)
+    return [NSArray arrayToJson:self];
+}
+
+- (NSInteger)superCircle:(NSInteger)index maxSize:(NSInteger)maxSize
+{
+    if(index < 0)
     {
-        json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        return json;
+        index = index % maxSize;
+        index += maxSize;
     }
-    else
-        return nil;
+    if(index >= maxSize)
+    {
+        index = index % maxSize;
+    }
+    
+    return index;
+}
+
+- (id)objectAtCircleIndex:(NSInteger)index
+{
+    return [self objectAtIndex:[self superCircle:index maxSize:self.count]];
 }
 
 + (NSString *)arrayToJson:(NSArray*)array
@@ -69,7 +77,7 @@
         return json;
     }
     else
-        return nil;
+        return error.localizedDescription;
 }
 
 + (NSArray *)reversedArray:(NSArray*)array

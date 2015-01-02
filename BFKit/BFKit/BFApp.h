@@ -1,5 +1,5 @@
 //
-//  UIWindow+BFKit.h
+//  BFApp.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -25,15 +25,18 @@
 //  SOFTWARE.
 
 /**
- *  This class add some useful methods to UIWindow
+ *  Get some App info
  */
-@interface UIWindow (BFKit)
+#define APP_NAME [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+#define APP_BUILD [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+#define APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 /**
- *  Take a screenshot of current window
- *
- *  @return Return the screenshot as an UIImage
+ *  Use BFLocalizedString to use the string translated by BFKit
  */
-- (UIImage *)takeScreenshot;
+#define BFLocalizedString(key, comment) \
+        [[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"BFKit"]
+
+@interface BFApp : NSObject
 
 @end

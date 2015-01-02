@@ -44,10 +44,6 @@ Language support
 
 More soon!
 
-Notes
-=====
-Some things are not updated to iOS 8 (in example font enums), but it will be soon!
-
 What does it do?
 ================
 Adds some useful method to some classes.
@@ -57,6 +53,7 @@ Adds some useful method to some classes.
 - NSDate
 - NSFileManager
 - NSMutableArray
+- NSMutableDictionary
 - NSNumber
 - NSProcessInfo
 - NSString
@@ -77,11 +74,10 @@ Adds some useful method to some classes.
 - UIWindow
 
 ###BFKit:
+- BFApp
+- BFLog
 - BFPassword
 - BFSystemSound
-
-It makes possible to create User Interfaces and working with Foundation framework faster.
-It adds a class to check the strength of a password and a class to play system sounds with an enum.
 
 Documentation
 =============
@@ -90,6 +86,16 @@ Documentation
 
 Changelog
 =========
+
+###Version 1.2.0
+- Added NSMutableDictionary category
+- Added in NSArray the method ```objective-c objectAtCircleIndex:```
+- Added in BFSystemSound the ability to create and dispose custom sound
+- Added BFApp and BFLog classes
+- In NSArray the method ```objective-c arrayToJson:``` now returns the localized string error
+- NSArray & NSMutableArray enhancements
+
+Thanks to [@antwork](https://github.com/antwork) for this release
 
 ###Version 1.1.0
 - Added UIWindow category
@@ -105,6 +111,7 @@ Todo
 - [ ] Create a category for every UIKit element
 - [ ] Add missing font (iOS 8)
 - [ ] Add missing system sound ids
+- [ ] Add test class for Travis CI
 
 Author
 ======

@@ -74,7 +74,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-	return @"By Fabrizio Brancati";
+	return [NSString stringWithFormat:@"By %@", BFKIT_AUTHOR];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

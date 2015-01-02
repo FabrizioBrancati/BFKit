@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -30,11 +30,11 @@
 @interface NSArray (BFKit)
 
 /**
- *  Get the object at a given index in safe mode (nil if self is empty)
+ *  Get the object at a given index in safe mode (nil if self is empty or out of range)
  *
  *  @param index The index
  *
- *  @return Return the object at a given index in safe mode (nil if self is empty)
+ *  @return Return the object at a given index in safe mode (nil if self is empty or out of range)
  */
 - (id)safeObjectAtIndex:(NSUInteger)index;
 
@@ -51,6 +51,15 @@
  *  @return Return the JSON as NSString or nil if error while parsing
  */
 - (NSString *)arrayToJson;
+
+/**
+ *  Simulates the array as a circle. When it is out of range, begins again
+ *
+ *  @param index The index
+ *
+ *  @return Return the object at a given index
+ */
+- (id)objectAtCircleIndex:(NSInteger)index;
 
 /**
  *  Create a reversed array from the given array
