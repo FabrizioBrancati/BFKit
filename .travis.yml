@@ -1,0 +1,3 @@
+language: objective-c
+xcode_project: BFKitDemo/BFKitDemo.xcodeproj
+xcode_scheme: BFKitDemo
