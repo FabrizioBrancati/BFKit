@@ -89,10 +89,10 @@ Changelog
 
 ###Version 1.2.0
 - Added NSMutableDictionary category
-- Added in NSArray the method ```objective-c objectAtCircleIndex:```
+- Added in NSArray the method ```objectAtCircleIndex:```
 - Added in BFSystemSound the ability to create and dispose custom sound
 - Added BFApp and BFLog classes
-- In NSArray the method ```objective-c arrayToJson:``` now returns the localized string error
+- In NSArray the method ```arrayToJson:``` now returns the localized string error
 - NSArray & NSMutableArray enhancements
 
 Thanks to [@antwork](https://github.com/antwork) for this release
