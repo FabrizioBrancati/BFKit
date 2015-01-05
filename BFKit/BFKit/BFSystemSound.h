@@ -119,7 +119,7 @@ typedef NS_ENUM(NSInteger, AudioID)
     AudioIDHeadsetTransitionEnd = 1259,
     AudioIDVoicemail = 1300,
     AudioIDReceivedMessage = 1301,
-    AudioIDNewMail = 1302,
+    AudioIDNewMail2 = 1302,
     AudioIDMailSent2 = 1303,
     AudioIDAlarm2 = 1304,
     AudioIDLock2 = 1305,
