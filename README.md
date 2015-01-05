@@ -11,12 +11,6 @@ BFKit is a collection of useful classes to **develop Apps faster**.
 Installing and Usage
 ====================
 
-###Manual
-- Copy the **library** folder (**BFKit**) to the project
-- Add the **AudioToolbox** framework to the project
-- Import the file "**BFKit.h**"
-- Enjoy!
-
 ###Pod
 - Create a **Podfile** in your **project directory**
 - Write:
@@ -30,6 +24,12 @@ Installing and Usage
 ```bash
   pod install
 ```
+- Import the file "**BFKit.h**"
+- Enjoy!
+
+###Manual
+- Copy the **library** folder (**BFKit**) to the project
+- Add the **AudioToolbox** framework to the project
 - Import the file "**BFKit.h**"
 - Enjoy!
 
@@ -87,30 +87,14 @@ Documentation
 Changelog
 =========
 
-###Version 1.2.0
-- Added NSMutableDictionary category
-- Added in NSArray the method ```objectAtCircleIndex:```
-- Added in BFSystemSound the ability to create and dispose custom sound
-- Added BFApp and BFLog classes
-- In NSArray the method ```arrayToJson:``` now returns the localized string error
-- NSArray & NSMutableArray enhancements
-
-Thanks to [@antwork](https://github.com/antwork) for this release
-
-###Version 1.1.0
-- Added UIWindow category
-- Added system macros
-- Added new iOS devices
-- Added pulse animation
-- Added Russian, Ukrainian, Indonesian and Chinese
-- Minor enhancements & bugfixes
+To see what has changed in recent version of BFKit, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit/blob/master/CHANGELOG)**
 
 Todo
 ====
 - [ ] Create instance methods for UIKit categories
 - [ ] Create a category for every UIKit element
 - [ ] Add missing font (iOS 8)
-- [ ] Add missing system sound ids
+- [x] Add missing system sound ids
 - [ ] Add test class for Travis CI
 
 Author
@@ -122,4 +106,4 @@ Fabrizio Brancati
 
 License
 =======
-BFKit is available under the MIT license. See the LICENSE file for more info.
+BFKit is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)** file for more info.
