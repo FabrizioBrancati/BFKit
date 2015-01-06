@@ -118,6 +118,38 @@
 + (NSString *)convertToUTF8Entities:(NSString *)string;
 
 /**
+ *  Encode the given string to Base64
+ *
+ *  @param string String to encode
+ *
+ *  @return Return the converted string
+ */
++ (NSString *)encodeToBase64:(NSString *)string;
+
+/**
+ *  Encode the given string to Base64
+ *
+ *  @return Return the converted string
+ */
+- (NSString *)encodeToBase64;
+
+/**
+ *  Decode the given Base64 to string
+ *
+ *  @param string String to decode
+ *
+ *  @return Return the decoded string
+ */
++ (NSString *)decodeBase64:(NSString *)string;
+
+/**
+ *  Decode the given Base64 to string
+ *
+ *  @return Return the decoded string
+ */
+- (NSString *)decodeBase64;
+
+/**
  *  Conver self to a capitalized string.
  *  Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test"
  *

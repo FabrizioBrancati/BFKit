@@ -209,6 +209,30 @@
     return isoEncodedString;
 }
 
++ (NSString *)encodeToBase64:(NSString *)string
+{
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    return [data base64EncodedStringWithOptions:0];
+}
+
+- (NSString *)encodeToBase64
+{
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    return [data base64EncodedStringWithOptions:0];
+}
+
++ (NSString *)decodeBase64:(NSString *)string
+{
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:string options:0];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)decodeBase64
+{
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self options:0];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
 - (NSString *)sentenceCapitalizedString
 {
     if(![self length])
