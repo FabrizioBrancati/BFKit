@@ -25,10 +25,23 @@
 //  SOFTWARE.
 
 /**
- *  Get some App info
+ *  This class add some useful methods to retrive the App info
+ */
+@interface BFApp : NSObject
+
+/**
+ *  Get App name
  */
 #define APP_NAME [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+
+/**
+ *  Get App build
+ */
 #define APP_BUILD [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+
+/**
+ *  Get App version
+ */
 #define APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 /**
@@ -37,6 +50,9 @@
 #define BFLocalizedString(key, comment) \
         [[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"BFKit"]
 
-@interface BFApp : NSObject
+/**
+ *  Get AppDelegate
+ */
+#define APP_DELEGATE ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 @end
