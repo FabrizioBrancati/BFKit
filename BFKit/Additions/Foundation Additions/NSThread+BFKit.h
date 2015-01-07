@@ -1,5 +1,5 @@
 //
-//  BFKit.h
+//  NSThread+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -25,45 +25,15 @@
 //  SOFTWARE.
 
 /**
- *  Here is some useful defined variables
+ *  This class add some useful methods to NSThread
  */
-#define BFKIT_VERSION @"1.2.0"
-#define BFKIT_AUTHOR @"Fabrizio Brancati"
+@interface NSThread (BFKit)
 
-/**
- *  Foundation Additions
- */
-#import "NSArray+BFKit.h"
-#import "NSDate+BFKit.h"
-#import "NSFileManager+BFKit.h"
-#import "NSMutableArray+BFKit.h"
-#import "NSMutableDictionary+BFKit.h"
-#import "NSNumber+BFKit.h"
-#import "NSProcessInfo+BFKit.h"
-#import "NSString+BFKit.h"
-#import "NSThread+BFKit.h"
+NS_INLINE void runOnMainThread(void (^block)(void))
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        block();
+    });
+}
 
-/**
- *  UIKit Additions
- */
-#import "UIButton+BFKit.h"
-#import "UIColor+BFKit.h"
-#import "UIDevice+BFKit.h"
-#import "UIFont+BFKit.h"
-#import "UIImage+BFKit.h"
-#import "UIImageView+BFKit.h"
-#import "UILabel+BFKit.h"
-#import "UIScrollView+BFKit.h"
-#import "UITableView+BFKit.h"
-#import "UITextField+BFKit.h"
-#import "UIView+BFKit.h"
-#import "UIWebView+BFKit.h"
-#import "UIWindow+BFKit.h"
-
-/**
- *  BFKit Classes
- */
-#import "BFApp.h"
-#import "BFLog.h"
-#import "BFPassword.h"
-#import "BFSystemSound.h"
+@end
