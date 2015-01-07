@@ -24,15 +24,38 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...);
+
+/**
+ *  This class add some useful methods to NSLog
+ */
+@interface BFLog : NSObject
+
 /**
  *  NSLog only if in DEBUG mode
  */
 #ifdef DEBUG
-#define BFLog(format, ...)  NSLog(format, ## __VA_ARGS__)
+#define BFLog(args ...) ExtendNSLog(__FILE__, __LINE__, __PRETTY_FUNCTION__, args);
+#define BFLogString [BFLog logString]
+#define BFLogClear [BFLog clearLog]
 #else
-#define BFLog(format, ...)
+#define BFLog(args ...)
+#define BFLogString
+#define BFLogClear
 #endif
 
-@interface BFLog : NSObject
+/**
+ *  Clear the log string.
+ *  You can call it with the BFLogClear macro
+ */
++ (void)clearLog;
+
+/**
+ *  Get the log string.
+ *  You can call it with the BFLogString macro
+ *
+ *  @return Return the log string
+ */
++ (NSString *)logString;
 
 @end
