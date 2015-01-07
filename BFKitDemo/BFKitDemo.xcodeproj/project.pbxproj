@@ -45,6 +45,7 @@
 		4902779219BE0265009B8BC1 /* UserInterfaceKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4902779019BE0265009B8BC1 /* UserInterfaceKitViewController.xib */; };
 		4902779619BE049B009B8BC1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902779419BE049B009B8BC1 /* DetailViewController.m */; };
 		4902779719BE049B009B8BC1 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4902779519BE049B009B8BC1 /* DetailViewController.xib */; };
+		4934822C1A5DB2C8006D5380 /* NSThread+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4934822B1A5DB2C8006D5380 /* NSThread+BFKit.m */; };
 		49932B011A17AB890093B13C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49932AFF1A17AB890093B13C /* InfoViewController.m */; };
 		49932B021A17AB890093B13C /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49932B001A17AB890093B13C /* InfoViewController.xib */; };
 		49AF76641A56E508007B8F08 /* BFApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF76631A56E508007B8F08 /* BFApp.m */; };
@@ -137,6 +138,8 @@
 		4902779319BE049B009B8BC1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		4902779419BE049B009B8BC1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4902779519BE049B009B8BC1 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		4934822A1A5DB2C8006D5380 /* NSThread+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+BFKit.h"; sourceTree = "<group>"; };
+		4934822B1A5DB2C8006D5380 /* NSThread+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+BFKit.m"; sourceTree = "<group>"; };
 		49932AFE1A17AB890093B13C /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		49932AFF1A17AB890093B13C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		49932B001A17AB890093B13C /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 				4902773719BDF424009B8BC1 /* NSProcessInfo+BFKit.m */,
 				4902773819BDF424009B8BC1 /* NSString+BFKit.h */,
 				4902773919BDF424009B8BC1 /* NSString+BFKit.m */,
+				4934822A1A5DB2C8006D5380 /* NSThread+BFKit.h */,
+				4934822B1A5DB2C8006D5380 /* NSThread+BFKit.m */,
 			);
 			path = "Foundation Additions";
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4902776219BDF424009B8BC1 /* UIButton+BFKit.m in Sources */,
+				4934822C1A5DB2C8006D5380 /* NSThread+BFKit.m in Sources */,
 				4902770919BDF3F8009B8BC1 /* FoundationViewController.m in Sources */,
 				4902776C19BDF424009B8BC1 /* UIWebView+BFKit.m in Sources */,
 				49C4537419BE4D3500E5052C /* UIScrollView+BFKit.m in Sources */,

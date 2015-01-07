@@ -39,7 +39,8 @@
                                                                @"NSMutableDictionary",
                                                                @"NSNumber",
                                                                @"NSProcessInfo",
-                                                               @"NSString"]];
+                                                               @"NSString",
+                                                               @"NSThread"]];
     
     _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFApp",
                                                           @"BFLog",

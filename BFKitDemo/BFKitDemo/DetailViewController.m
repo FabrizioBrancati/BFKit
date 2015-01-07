@@ -433,6 +433,18 @@
             
             break;
         }
+        case DetailTypeNSThread:
+        {
+            self.title = @"NSThread";
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            
+            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
+            [_scrollView addSubview:normalLabel];
+            
+            [self performSelectorInBackground:@selector(threadMethod) withObject:nil];
+            
+            break;
+        }
         case DetailTypeBFApp:
         {
             self.title = @"BFApp";
@@ -485,6 +497,15 @@
 {
     UIButton *button = (UIButton *)sender;
     [button shakeView];
+}
+
+- (void)threadMethod
+{
+    NSLog(@"Background: %@", [NSThread currentThread]);
+    
+    runOnMainThread(^{
+        NSLog(@"Main: %@", [NSThread currentThread]);
+    });
 }
 
 @end

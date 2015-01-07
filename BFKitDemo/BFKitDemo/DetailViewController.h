@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, DetailType)
     DetailTypeNSNumber,
     DetailTypeNSProcessInfo,
     DetailTypeNSString,
+    DetailTypeNSThread,
     DetailTypeBFApp,
     DetailTypeBFLog,
     DetailTypeBFPassword,
