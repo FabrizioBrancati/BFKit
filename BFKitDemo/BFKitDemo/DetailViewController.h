@@ -26,9 +26,12 @@ typedef NS_ENUM(NSInteger, DetailType)
     DetailTypeNSDate,
     DetailTypeNSFileManager,
     DetailTypeNSMutableArray,
+    DetailTypeNSMutableDictionary,
     DetailTypeNSNumber,
     DetailTypeNSProcessInfo,
     DetailTypeNSString,
+    DetailTypeBFApp,
+    DetailTypeBFLog,
     DetailTypeBFPassword,
     DetailTypeBFSystemSound
 };

@@ -36,11 +36,14 @@
                                                                @"NSDate",
                                                                @"NSFileManager",
                                                                @"NSMutableArray",
+                                                               @"NSMutableDictionary",
                                                                @"NSNumber",
                                                                @"NSProcessInfo",
                                                                @"NSString"]];
     
-    _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFPassword",
+    _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFApp",
+                                                          @"BFLog",
+                                                          @"BFPassword",
                                                           @"BFSystemSound"]];
     
     _infoViewController = [[InfoViewController alloc] init];

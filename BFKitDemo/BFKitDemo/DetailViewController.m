@@ -374,6 +374,21 @@
             
             break;
         }
+        case DetailTypeNSMutableDictionary:
+        {
+            self.title = @"NSMutableDictionary";
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            
+            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
+            [_scrollView addSubview:normalLabel];
+            
+            NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+            
+            [dictionary safeSetObject:[UIImage new] forKey:@"Image"];
+            NSLog(@"Dictionary: %@", dictionary);
+            
+            break;
+        }
         case DetailTypeNSNumber:
         {
             self.title = @"NSNumber";
@@ -418,16 +433,31 @@
             
             break;
         }
-        case DetailTypeBFPassword:
+        case DetailTypeBFApp:
         {
-            self.title = @"BFPassword";
+            self.title = @"BFApp";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
             UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
             [_scrollView addSubview:normalLabel];
             
-            NSString *password = @"text0123.,-";
-            NSLog(@"Strength: %li", [BFPassword checkPasswordStrength:password]);
+            NSLog(@"App name: %@", APP_NAME);
+            NSLog(@"App build: %@", APP_BUILD);
+            NSLog(@"App version: %@", APP_VERSION);
+            NSLog(@"Localized string from BFKit: %@", BFLocalizedString(@"OPEN", @""));
+            
+            break;
+        }
+        case DetailTypeBFLog:
+        {
+            self.title = @"BFLog";
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            
+            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 150) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:10];
+            [_scrollView addSubview:normalLabel];
+            
+            BFLog(@"This will be shown only if in DEBUG mode");
+            [normalLabel setText:BFLogString];
             
             break;
         }

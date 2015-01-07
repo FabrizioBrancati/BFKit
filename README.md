@@ -95,7 +95,6 @@ Todo
 - [ ] Create a category for every UIKit element
 - [ ] Add missing font (iOS 8)
 - [x] Add missing system sound ids
-- [ ] Add test class for Travis CI
 
 Author
 ======
