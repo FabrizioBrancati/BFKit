@@ -37,8 +37,8 @@
 /**
  *  Get the screen width and height
  */
-#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
-#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_WIDTH ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_HEIGHT ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
 
 /**
  *  Macros to compare system versions

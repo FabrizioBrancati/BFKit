@@ -30,6 +30,29 @@
 @interface UIColor (BFKit)
 
 /**
+ *  Create an UIColor in format RGBA
+ *
+ *  @param r Red value
+ *  @param g Green value
+ *  @param b Blue value
+ *  @param a Alpha value
+ *
+ *  @return Return the created UIColor
+ */
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+/**
+ *  Create an UIColor in format RGB
+ *
+ *  @param r Red value
+ *  @param g Green value
+ *  @param b Blue value
+ *
+ *  @return Return the created UIColor
+ */
+#define RGB(r, g, b) RGBA(r, g, b, 1.0f)
+
+/**
  *  Create a color from a HEX string
  *
  *  @param hexString HEX string
