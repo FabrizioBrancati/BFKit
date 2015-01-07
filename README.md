@@ -57,6 +57,7 @@ Adds some useful method to some classes.
 - NSNumber
 - NSProcessInfo
 - NSString
+- NSThread
 
 ###UIKit:
 - UIButton
