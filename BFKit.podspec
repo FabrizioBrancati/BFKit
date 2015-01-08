@@ -2,61 +2,18 @@ Pod::Spec.new do |s|
   s.name         = "BFKit"
   s.version      = "1.2.0"
   s.summary      = "BFKit is a collection of useful classes to develop Apps faster"
-
-  s.description  = <<-DESC
-                   What does it do?
-                   ================
-                   BFKit adds some useful method to some classes.
-
-                   ###Foundation:
-                   - NSArray
-                   - NSDate
-                   - NSFileManager
-                   - NSMutableArray
-                   - NSMutableDictionary
-                   - NSNumber
-                   - NSProcessInfo
-                   - NSString
-
-                   ###UIKit:
-                   - UIButton
-                   - UIColor
-                   - UIDevice
-                   - UIFont
-                   - UIImage
-                   - UIImageView
-                   - UILabel
-                   - UIScrollView
-                   - UITableView
-                   - UITextField
-                   - UIView
-                   - UIWebView
-                   - UIWindow
-
-                   ###BFKit:
-                   - BFApp
-                   - BFLog
-                   - BFPassword
-                   - BFSystemSound
-
-                   DESC
-
   s.homepage     = "https://github.com/FabrizioBrancati/BFKit"
   s.screenshots  = "http://github.fabriziobrancati.com/bfkit/resources/screenshot.png"
-
   s.license      = { :type => "MIT", :file => "LICENSE" }
-
   s.author             = { "Fabrizio Brancati" => "fabrizio.brancati@gmail.com" }
   s.social_media_url   = "https://twitter.com/infinity4all"
-
   s.platform     = :ios, "7.0"
-
   s.source       = { :git => "https://github.com/FabrizioBrancati/BFKit.git", :tag => "v1.2.0" }
-
   s.prefix_header_contents = '#import <BFKit.h>'
   s.source_files  =  "BFKit/**/*.{h,m}"
   s.public_header_files = "BFKit.h"
   s.resources = "BFKit/Languages/**"
-  s.frameworks  = "AudioToolbox"
+  s.frameworks  = "Foundation", "UIKit", "CoreGraphics", "AudioToolbox"
+  s.weak_frameworks = 'LocalAuthentication'
   s.requires_arc = true
 end

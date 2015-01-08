@@ -29,6 +29,8 @@
 "CONTINUE" = "Continue";
 "CANCEL" = "Cancel";
 "DONE" = "Done";
+"ERROR" = "Error";
+"WARNING" = "Warning";
 "CLOSE" = "Close";
 "OPEN" = "Open";
 "YES" = "Yes";
@@ -64,3 +66,9 @@
 "MORNING" = "Morning";
 "AFTERNOON" = "Afternoon";
 "EVENING" = "Evening";
+
+// Authorization
+"AUTHENTICATION" = "Authenticaion";
+"AUTHORIZATION" = "Authorization";
+"AUTHORIZED" = "Authorized";
+"NOT_OWNER" = "Not owner";

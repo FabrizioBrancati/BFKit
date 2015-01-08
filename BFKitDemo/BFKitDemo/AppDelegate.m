@@ -15,7 +15,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.357 green:0.620 blue:0.746 alpha:1.000]}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:0.357 green:0.620 blue:0.746 alpha:1.000]}];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.357 green:0.620 blue:0.746 alpha:1.000]];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.357 green:0.620 blue:0.746 alpha:1.000]];
     [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:0.357 green:0.620 blue:0.746 alpha:1.000]];
     
@@ -45,7 +46,8 @@
     _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFApp",
                                                           @"BFLog",
                                                           @"BFPassword",
-                                                          @"BFSystemSound"]];
+                                                          @"BFSystemSound",
+                                                          @"BFTouchID"]];
     
     _infoViewController = [[InfoViewController alloc] init];
     _infoNavigationController = [[UINavigationController alloc] initWithRootViewController:_infoViewController];

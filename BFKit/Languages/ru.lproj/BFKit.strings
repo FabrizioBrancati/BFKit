@@ -29,6 +29,8 @@
 "CONTINUE" = "Продолжить";
 "CANCEL" = "Отмена";
 "DONE" = "Готово";
+"ERROR" = "Ошибка";
+"WARNING" = "Ошибка";
 "CLOSE" = "Закрыть";
 "OPEN" = "Открыть";
 "YES" = "Да";
@@ -64,3 +66,9 @@
 "MORNING" = "Утро";
 "AFTERNOON" = "День";
 "EVENING" = "Вечер";
+
+// Authorization
+"AUTHENTICATION" = "идентификация";
+"AUTHORIZATION" = "Авторизация";
+"AUTHORIZED" = "Уполномоченный";
+"NOT_OWNER" = "Не владелец";

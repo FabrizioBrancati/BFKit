@@ -34,7 +34,8 @@ typedef NS_ENUM(NSInteger, DetailType)
     DetailTypeBFApp,
     DetailTypeBFLog,
     DetailTypeBFPassword,
-    DetailTypeBFSystemSound
+    DetailTypeBFSystemSound,
+    DetailTypeBFTouchID
 };
 
 @interface DetailViewController : UIViewController

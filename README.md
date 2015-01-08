@@ -79,6 +79,7 @@ Adds some useful method to some classes.
 - BFLog
 - BFPassword
 - BFSystemSound
+- BFTouchID (Require iOS 8)
 
 Documentation
 =============

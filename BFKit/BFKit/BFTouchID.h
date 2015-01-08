@@ -1,10 +1,10 @@
 //
-//  BFKit.strings
+//  BFTouchID.m
 //  BFKit
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,51 +24,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-// Generals
-"OK" = "确定";
-"CONTINUE" = "继续";
-"CANCEL" = "取消";
-"DONE" = "完成";
-"ERROR" = "错误";
-"WARNING" = "警告";
-"CLOSE" = "关闭";
-"OPEN" = "打开";
-"YES" = "是";
-"NO" = "否";
+typedef NS_ENUM(NSInteger, TouchIDResult)
+{
+    TouchIDResultSuccess = 0,
+    TouchIDResultError,
+    TouchIDResultAuthenticationFailed,
+    TouchIDResultUserCancel,
+    TouchIDResultUserFallback,
+    TouchIDResultSystemCancel,
+    TouchIDResultPasscodeNotSet,
+    TouchIDResultNotAvailable,
+    TouchIDResultNotEnrolled
+} NS_ENUM_AVAILABLE_IOS(8_0);
 
-// Days
-"TODAY" = "今天";
-"TOMORROW" = "明天";
-"SUNDAY" = "星期日";
-"MONDAY"= "星期一";
-"TUESDAY" = "星期二";
-"WEDNESDAY" = "星期三";
-"THURSDAY" = "星期四";
-"FRIDAY" = "星期五";
-"SATURDAY" = "星期六";
+NS_CLASS_AVAILABLE_IOS(8_0) @interface BFTouchID : NSObject
 
-// Months
-"JANUARY" = "一月";
-"FEBRUARY" = "二月";
-"MARCH" = "三月";
-"APRIL" = "四月";
-"MAY" = "五月";
-"JUNE" = "六月";
-"JULY" = "七月";
-"AUGUST" = "八月";
-"SEPTEMBER" = "九月";
-"OCTOBER" = "十月";
-"NOVEMBER" = "十一月";
-"DECEMBER" = "十二月";
++ (void)showTouchIDAuthenticationWithReason:(NSString *)reason completion:(void (^)(TouchIDResult result))completion;
 
-// Time zones
-"NIGHT" = "夜晚";
-"MORNING" = "早上";
-"AFTERNOON" = "中午";
-"EVENING" = "晚上";
-
-// Authorization
-"AUTHENTICATION" = "认证";
-"AUTHORIZATION" = "授权";
-"AUTHORIZED" = "授权";
-"NOT_OWNER" = "不是所有者";
+@end

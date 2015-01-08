@@ -67,3 +67,4 @@
 #import "BFLog.h"
 #import "BFPassword.h"
 #import "BFSystemSound.h"
+#import "BFTouchID.h"

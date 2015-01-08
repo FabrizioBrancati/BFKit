@@ -29,6 +29,8 @@
 "CONTINUE" = "Continua";
 "CANCEL" = "Annulla";
 "DONE" = "Fine";
+"ERROR" = "Errore";
+"WARNING" = "Attenzione";
 "CLOSE" = "Chiudi";
 "OPEN" = "Apri";
 "YES" = "Si";
@@ -64,3 +66,9 @@
 "MORNING" = "Mattina";
 "AFTERNOON" = "Pomeriggio";
 "EVENING" = "Sera";
+
+// Authorization
+"AUTHENTICATION" = "Autenticazione";
+"AUTHORIZATION" = "Autorizzazione";
+"AUTHORIZED" = "Autorizzato";
+"NOT_OWNER" = "Non sei il proprietario";

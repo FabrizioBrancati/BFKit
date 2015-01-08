@@ -29,6 +29,8 @@
 "CONTINUE" = "Продовжити";
 "CANCEL" = "Відміна";
 "DONE" = "Готово";
+"ERROR" = "Помилка";
+"WARNING" = "Помилка";
 "CLOSE" = "Закрити";
 "OPEN" = "Відкрити";
 "YES" = "Так";
@@ -64,3 +66,9 @@
 "MORNING" = "Ранок";
 "AFTERNOON" = "Друга половина дня";
 "EVENING" = "Вечір";
+
+// Authorization
+"AUTHENTICATION" = "ідентифікація";
+"AUTHORIZATION" = "Авторизація";
+"AUTHORIZED" = "Уповноважений";
+"NOT_OWNER" = "Не власник";
