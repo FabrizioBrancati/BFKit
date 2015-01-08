@@ -29,7 +29,7 @@ Installing and Usage
 
 ###Manual
 - Copy the **library** folder (**BFKit**) to the project
-- Add the **AudioToolbox** framework to the project
+- Add the **AudioToolbox** and **LocalAuthentication** (if you want to use **BFTouchID** class) frameworks to the project
 - Import the file "**BFKit.h**"
 - Enjoy!
 
