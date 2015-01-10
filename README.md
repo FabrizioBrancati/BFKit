@@ -40,9 +40,7 @@ Requirements
 
 Language support
 ================
-```en, it, ru, uk, id, zh```
-
-More soon!
+```English (en), Italian (it), Russian (ru), Ukrainian (uk), Indonesian (id), Chinese Simplified (zh)```
 
 What does it do?
 ================
@@ -95,15 +93,15 @@ Todo
 ====
 - [ ] Create instance methods for UIKit categories
 - [ ] Create a category for every UIKit element
-- [ ] Add missing font (iOS 8)
+- [x] Add missing font (iOS 8)
 - [x] Add missing system sound ids
 
 Author
 ======
-Fabrizio Brancati
+**Fabrizio Brancati**
 
-- [Website](http://www.fabriziobrancati.com)
-- [Email](mailto:fabrizio.brancati@gmail.com)
+- **[Website](http://www.fabriziobrancati.com)**
+- **[Email](mailto:fabrizio.brancati@gmail.com)**
 
 License
 =======

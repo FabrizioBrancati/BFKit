@@ -31,7 +31,8 @@
 
 + (void)allFamilyAndFonts
 {
-    NSArray *fontFamilies = [UIFont familyNames];
+    NSMutableArray *fontFamilies = (NSMutableArray *)[UIFont familyNames];
+    fontFamilies = [NSMutableArray sortArrayByKey:@"" array:fontFamilies ascending:YES];
     
     for(int i = 0; i < [fontFamilies count]; i++)
     {
@@ -188,6 +189,15 @@
         case FamilyFontNameKannadaSangamMN:
             fontNames = [UIFont fontNamesForFamilyName:@"Kannada Sangam MN"];
             break;
+        case FamilyFontNameKhmerSangamMN:
+            fontNames = [UIFont fontNamesForFamilyName:@"Khmer Sangam MN"];
+            break;
+        case FamilyFontNameKohinoorDevanagari:
+            fontNames = [UIFont fontNamesForFamilyName:@"Kohinoor Devanagari"];
+            break;
+        case FamilyFontNameLaoSangamMN:
+            fontNames = [UIFont fontNamesForFamilyName:@"Lao Sangam MN"];
+            break;
         case FamilyFontNameMalayamSangamMN:
             fontNames = [UIFont fontNamesForFamilyName:@"Malayalam Sangam MN"];
             break;
@@ -264,7 +274,7 @@
             break;
     }
     
-    BFLog (@"%@", fontNames);
+    BFLog(@"%@", fontNames);
     
     return fontNames;
 }
@@ -779,6 +789,21 @@
             break;
         case FontNameKannadaSangamMNBold:
             return [UIFont fontWithName:@"KannadaSangamMN-Bold" size:fontSize];
+            break;
+        case FontNameKhmerSangamMN:
+            return [UIFont fontWithName:@"KhmerSangamMN" size:fontSize];
+            break;
+        case FontNameKohinoorDevanagariLight:
+            return [UIFont fontWithName:@"KohinoorDevanagari-Light" size:fontSize];
+            break;
+        case FontNameKohinoorDevanagariMedium:
+            return [UIFont fontWithName:@"KohinoorDevanagari-Medium" size:fontSize];
+            break;
+        case FontNameKohinoorDevanagariBook:
+            return [UIFont fontWithName:@"KohinoorDevanagari-Book" size:fontSize];
+            break;
+        case FontNameLaoSangamMN:
+            return [UIFont fontWithName:@"LaoSangamMN" size:fontSize];
             break;
         case FontNameMalayalamSangamMN:
             return [UIFont fontWithName:@"MalayalamSangamMN" size:fontSize];
