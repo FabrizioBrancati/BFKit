@@ -87,7 +87,7 @@
     
     for(id element in enumerator) [arrayTemp addObject:element];
     
-    return array;
+    return arrayTemp;
 }
 
 @end
