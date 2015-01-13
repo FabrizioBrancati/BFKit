@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, DetailType)
     DetailTypeUIWebView,
     DetailTypeNSArray,
     DetailTypeNSDate,
+    DetailTypeNSDictionary,
     DetailTypeNSFileManager,
     DetailTypeNSMutableArray,
     DetailTypeNSMutableDictionary,

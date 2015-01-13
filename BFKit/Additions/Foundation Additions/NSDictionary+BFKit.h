@@ -1,5 +1,5 @@
 //
-//  BFKit.h
+//  NSDictionary+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -25,47 +25,24 @@
 //  SOFTWARE.
 
 /**
- *  Here is some useful defined variables
+ *  This class add some useful methods to NSDictionary
  */
-#define BFKIT_VERSION @"1.2.0"
-#define BFKIT_AUTHOR @"Fabrizio Brancati"
+@interface NSDictionary (BFKit)
 
 /**
- *  Foundation Additions
+ *  Convert self to JSON as NSString
+ *
+ *  @return Return the JSON as NSString or nil if error while parsing
  */
-#import "NSArray+BFKit.h"
-#import "NSDate+BFKit.h"
-#import "NSDictionary+BFKit.h"
-#import "NSFileManager+BFKit.h"
-#import "NSMutableArray+BFKit.h"
-#import "NSMutableDictionary+BFKit.h"
-#import "NSNumber+BFKit.h"
-#import "NSProcessInfo+BFKit.h"
-#import "NSString+BFKit.h"
-#import "NSThread+BFKit.h"
+- (NSString *)dictionaryToJson;
 
 /**
- *  UIKit Additions
+ *  Convert the given dictionary to JSON as NSString
+ *
+ *  @param dictionary The dictionary to be converted
+ *
+ *  @return Return the JSON as NSString or nil if error while parsing
  */
-#import "UIButton+BFKit.h"
-#import "UIColor+BFKit.h"
-#import "UIDevice+BFKit.h"
-#import "UIFont+BFKit.h"
-#import "UIImage+BFKit.h"
-#import "UIImageView+BFKit.h"
-#import "UILabel+BFKit.h"
-#import "UIScrollView+BFKit.h"
-#import "UITableView+BFKit.h"
-#import "UITextField+BFKit.h"
-#import "UIView+BFKit.h"
-#import "UIWebView+BFKit.h"
-#import "UIWindow+BFKit.h"
++ (NSString *)dictionaryToJson:(NSDictionary *)dictionary;
 
-/**
- *  BFKit Classes
- */
-#import "BFApp.h"
-#import "BFLog.h"
-#import "BFPassword.h"
-#import "BFSystemSound.h"
-#import "BFTouchID.h"
+@end

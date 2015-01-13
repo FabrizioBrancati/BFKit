@@ -342,6 +342,22 @@
             
             break;
         }
+        case DetailTypeNSDictionary:
+        {
+        	self.title = @"NSDictionary";
+
+        	[_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+
+        	UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
+        	[_scrollView addSubview:normalLabel];
+
+        	NSDate *today = [NSDate date];
+
+        	NSDictionary *dic = @{@"Today": [today description], @"Description of today" :[NSDate dateInformationDescriptionWithInformation:[today dateInformation]], @"array": @[@1, @2, @3]};
+        	NSLog(@"Normal Dictionary: %@", dic);
+        	NSLog(@"Dictionary to JSON: %@", [dic dictionaryToJson]);
+        	break;
+    	}
         case DetailTypeNSFileManager:
         {
             self.title = @"NSFileManager";
