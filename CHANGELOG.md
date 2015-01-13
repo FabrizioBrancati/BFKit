@@ -1,6 +1,10 @@
 Changelog
 =========
 
+###Version 1.3.1
+- Added NSDictionary category with ```dictionaryToJson:``` methods (Thanks to [@simonlinj](https://github.com/simonlinj) for this category)
+- Fixed ```reversedArray:``` in NSArray category
+
 ###Version 1.3.0
 - Complete rewrite of BFLog class with more details in log and string of all logs
 - Added ```APP_DELEGATE``` macro to retrive AppDelegate
