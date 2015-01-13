@@ -57,6 +57,7 @@
 		49C4537419BE4D3500E5052C /* UIScrollView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C4537319BE4D3500E5052C /* UIScrollView+BFKit.m */; };
 		49C4538119BE947000E5052C /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C4537E19BE947000E5052C /* BFKit.strings */; };
 		49C7944C1A2A0C4F00295595 /* UIWindow+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7944B1A2A0C4F00295595 /* UIWindow+BFKit.m */; };
+		F450B72B1A64B59A00050945 /* NSDictionary+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F450B72A1A64B59A00050945 /* NSDictionary+BFKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,8 @@
 		49C7944A1A2A0C4F00295595 /* UIWindow+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+BFKit.h"; sourceTree = "<group>"; };
 		49C7944B1A2A0C4F00295595 /* UIWindow+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+BFKit.m"; sourceTree = "<group>"; };
 		49FDEA621A51CAFE00F9DC71 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
+		F450B7291A64B59A00050945 /* NSDictionary+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BFKit.h"; sourceTree = "<group>"; };
+		F450B72A1A64B59A00050945 /* NSDictionary+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BFKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +307,8 @@
 				4902772D19BDF424009B8BC1 /* NSArray+BFKit.m */,
 				4902772E19BDF424009B8BC1 /* NSDate+BFKit.h */,
 				4902772F19BDF424009B8BC1 /* NSDate+BFKit.m */,
+				F450B7291A64B59A00050945 /* NSDictionary+BFKit.h */,
+				F450B72A1A64B59A00050945 /* NSDictionary+BFKit.m */,
 				4902773019BDF424009B8BC1 /* NSFileManager+BFKit.h */,
 				4902773119BDF424009B8BC1 /* NSFileManager+BFKit.m */,
 				4902773219BDF424009B8BC1 /* NSMutableArray+BFKit.h */,
@@ -511,6 +516,7 @@
 				4902776119BDF424009B8BC1 /* NSString+BFKit.m in Sources */,
 				4902775F19BDF424009B8BC1 /* NSNumber+BFKit.m in Sources */,
 				4902776619BDF424009B8BC1 /* UIImage+BFKit.m in Sources */,
+				F450B72B1A64B59A00050945 /* NSDictionary+BFKit.m in Sources */,
 				49C7944C1A2A0C4F00295595 /* UIWindow+BFKit.m in Sources */,
 				4902776E19BDF424009B8BC1 /* BFSystemSound.m in Sources */,
 				4902779619BE049B009B8BC1 /* DetailViewController.m in Sources */,

@@ -35,6 +35,7 @@
     
     _foundationArray = [[NSMutableArray alloc] initWithArray:@[@"NSArray",
                                                                @"NSDate",
+                                                               @"NSDictionary",
                                                                @"NSFileManager",
                                                                @"NSMutableArray",
                                                                @"NSMutableDictionary",
