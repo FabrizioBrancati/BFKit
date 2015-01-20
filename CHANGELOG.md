@@ -2,8 +2,11 @@ Changelog
 =========
 
 ###Version 1.3.1
-- Added NSDictionary category with ```dictionaryToJson:``` methods (Thanks to [@simonlinj](https://github.com/simonlinj) for this category)
+- Added NSDictionary category with ```dictionaryToJson:``` methods
 - Fixed ```reversedArray:``` in NSArray category
+
+Thanks to [@simonlinj](https://github.com/simonlinj) for this release
+
 
 ###Version 1.3.0
 - Complete rewrite of BFLog class with more details in log and string of all logs
@@ -15,6 +18,7 @@ Changelog
 - Added missing Audio IDs
 - Added some localized strings
 
+
 ###Version 1.2.0
 - Added NSMutableDictionary category
 - Added in NSArray the method ```objectAtCircleIndex:```
@@ -25,6 +29,7 @@ Changelog
 
 Thanks to [@antwork](https://github.com/antwork) for this release
 
+
 ###Version 1.1.0
 - Added UIWindow category
 - Added system macros
@@ -32,3 +37,5 @@ Thanks to [@antwork](https://github.com/antwork) for this release
 - Added pulse animation
 - Added Russian, Ukrainian, Indonesian and Chinese
 - Minor enhancements & bugfixes
+
+Thanks to [@hiralin](https://github.com/hiralin) & [@bontangster](https://github.com/bontangster) for this release
