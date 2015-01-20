@@ -39,6 +39,12 @@ typedef NS_ENUM(NSInteger, TouchIDResult)
 
 NS_CLASS_AVAILABLE_IOS(8_0) @interface BFTouchID : NSObject
 
+/**
+ *  Shows the TouchID alert
+ *
+ *  @param reason     Text to show in the alert
+ *  @param completion Completion handler. It returns the TouchID result, from the TouchIDResult enum
+ */
 + (void)showTouchIDAuthenticationWithReason:(NSString *)reason completion:(void (^)(TouchIDResult result))completion;
 
 @end
