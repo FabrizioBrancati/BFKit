@@ -1,6 +1,10 @@
 Changelog
 =========
 
+###Version 1.3.2
+- Added in every class or category ```@import``` to import the needed frameworks
+
+
 ###Version 1.3.1
 - Added NSDictionary category with ```dictionaryToJson:``` methods
 - Fixed ```reversedArray:``` in NSArray category

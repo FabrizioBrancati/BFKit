@@ -24,6 +24,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+@import Foundation;
+@import UIKit;
+
 /**
  *  Remove the commment to this line if you want to use an UILabel to show the progress of an operation in AFNetworking
  */

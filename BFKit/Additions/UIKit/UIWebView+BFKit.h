@@ -1,5 +1,5 @@
 //
-//  NSMutableDictionary+BFKit.h
+//  UIWebView+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,17 +24,24 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@interface NSMutableDictionary (BFKit)
+@import Foundation;
+@import UIKit;
 
 /**
-*  Set the object for a given key in safe mode (if not nil)
-*
-*  @param anObject The object
-*  @param aKey     The key
-*
-*  @return Return YES if has been setted, otherwise NO
-*/
-- (BOOL)safeSetObject:(id)anObject
-               forKey:(id<NSCopying>)aKey;
+ *  This class add some useful methods to UIWebView
+ */
+@interface UIWebView (BFKit)
+
+/**
+ *  Remove the background shadow of the UIWebView
+ */
+- (void)removeBackgroundShadow;
+
+/**
+ *  Load the requested website
+ *
+ *  @param website Website to load
+ */
+- (void)loadWebsite:(NSString *)website;
 
 @end

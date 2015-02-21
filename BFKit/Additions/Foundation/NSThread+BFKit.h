@@ -1,5 +1,5 @@
 //
-//  UIWindow+BFKit.h
+//  NSThread+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,16 +24,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to UIWindow
- */
-@interface UIWindow (BFKit)
+@import Foundation;
 
 /**
- *  Take a screenshot of current window
- *
- *  @return Return the screenshot as an UIImage
+ *  This class add some useful methods to NSThread
  */
-- (UIImage *)takeScreenshot;
+@interface NSThread (BFKit)
+
+NS_INLINE void runOnMainThread(void (^block)(void))
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        block();
+    });
+}
 
 @end

@@ -1,5 +1,5 @@
 //
-//  NSDictionary+BFKit.h
+//  NSMutableArray+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,25 +24,49 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to NSDictionary
- */
-@interface NSDictionary (BFKit)
+@import Foundation;
 
 /**
- *  Convert self to JSON as NSString
- *
- *  @return Return the JSON as NSString or nil if error while parsing
+ *  This class add some useful methods to NSMutableArray
  */
-- (NSString *)dictionaryToJson;
+@interface NSMutableArray (BFKit)
 
 /**
- *  Convert the given dictionary to JSON as NSString
+ *  Get the object at a given index in safe mode (nil if self is empty)
  *
- *  @param dictionary The dictionary to be converted
+ *  @param index The index
  *
- *  @return Return the JSON as NSString or nil if error while parsing
+ *  @return Return the object at a given index in safe mode (nil if self is empty)
  */
-+ (NSString *)dictionaryToJson:(NSDictionary *)dictionary;
+- (id)safeObjectAtIndex:(NSUInteger)index;
+
+/**
+ *  Move an object from an index to another
+ *
+ *  @param from The index to move from
+ *  @param to   The index to move to
+ */
+- (void)moveObjectFromIndex:(NSUInteger)from
+                    toIndex:(NSUInteger)to;
+
+/**
+ *  Create a reversed array from self
+ *
+ *  @return Return the reversed array
+ */
+- (NSMutableArray *)reversedArray;
+
+/**
+ *  Sort an array by a given key with option for ascending or descending
+ *
+ *  @param key       The key to order the array
+ *  @param array     The array to be ordered
+ *  @param ascending A BOOL to choose if ascending or descending
+ *
+ *  @return Return the given array ordered by the given key ascending or descending
+ */
++ (NSMutableArray *)sortArrayByKey:(NSString *)key
+                             array:(NSMutableArray *)array
+                         ascending:(BOOL)ascending;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  UIImageView+BFKit.h
+//  UIWindow+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,33 +24,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to UIImageView
- */
-@interface UIImageView (BFKit)
+@import Foundation;
+@import UIKit;
 
 /**
- *  Create an UIImageView with the given image and frame
- *
- *  @param image UIImageView image
- *  @param rect  UIImageView frame
- *
- *  @return Return the created UIImageView
+ *  This class add some useful methods to UIWindow
  */
-+ (id)initWithImage:(UIImage *)image
-              frame:(CGRect)rect;
+@interface UIWindow (BFKit)
 
 /**
- *  Create an UIImageView with the given image, size and center
+ *  Take a screenshot of current window
  *
- *  @param image  UIImageView image
- *  @param size   UIImageView size
- *  @param center UIImageView center
- *
- *  @return Return the created UIImageView
+ *  @return Return the screenshot as an UIImage
  */
-+ (id)initWithImage:(UIImage *)image
-               size:(CGSize)size
-             center:(CGPoint)center;
+- (UIImage *)takeScreenshot;
 
 @end

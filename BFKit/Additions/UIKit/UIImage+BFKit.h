@@ -24,8 +24,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <CoreImage/CoreImage.h>
-#import <Accelerate/Accelerate.h>
+@import Foundation;
+@import UIKit;
+@import Accelerate;
+@import CoreImage;
 
 /**
  *  This class add some useful methods to UIImage

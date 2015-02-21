@@ -1,5 +1,5 @@
 //
-//  NSArray+BFKit.h
+//  NSDictionary+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,59 +24,27 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to NSArray
- */
-@interface NSArray (BFKit)
+@import Foundation;
 
 /**
- *  Get the object at a given index in safe mode (nil if self is empty or out of range)
- *
- *  @param index The index
- *
- *  @return Return the object at a given index in safe mode (nil if self is empty or out of range)
+ *  This class add some useful methods to NSDictionary
  */
-- (id)safeObjectAtIndex:(NSUInteger)index;
-
-/**
- *  Create a reversed array from self
- *
- *  @return Return the reversed array
- */
-- (NSArray *)reversedArray;
+@interface NSDictionary (BFKit)
 
 /**
  *  Convert self to JSON as NSString
  *
  *  @return Return the JSON as NSString or nil if error while parsing
  */
-- (NSString *)arrayToJson;
+- (NSString *)dictionaryToJson;
 
 /**
- *  Simulates the array as a circle. When it is out of range, begins again
+ *  Convert the given dictionary to JSON as NSString
  *
- *  @param index The index
- *
- *  @return Return the object at a given index
- */
-- (id)objectAtCircleIndex:(NSInteger)index;
-
-/**
- *  Create a reversed array from the given array
- *
- *  @param array The array to be converted
- *
- *  @return Return the reversed array
- */
-+ (NSString *)arrayToJson:(NSArray *)array;
-
-/**
- *  Convert the given array to JSON as NSString
- *
- *  @param array The array to be reversed
+ *  @param dictionary The dictionary to be converted
  *
  *  @return Return the JSON as NSString or nil if error while parsing
  */
-+ (NSArray *)reversedArray:(NSArray *)array;
++ (NSString *)dictionaryToJson:(NSDictionary *)dictionary;
 
 @end

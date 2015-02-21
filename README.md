@@ -29,7 +29,15 @@ Installing and Usage
 
 ###Manual
 - Copy the **library** folder (**BFKit**) to the project
-- Add the **AudioToolbox** and **LocalAuthentication** (if you want to use **BFTouchID** class) frameworks to the project
+- Add the following frameworks to the project:
+  - **UIKit**
+  - **Foundation**
+  - **CoreImage**
+  - **CoreGraphics**
+  - **QuartzCore**
+  - **Accelerate**
+  - **AudioToolbox**
+  - **LocalAuthentication** (if you want to use **BFTouchID** class, and set it as weak if your App runs on iOS 7 or older)
 - Import the file "**BFKit.h**"
 - Enjoy!
 

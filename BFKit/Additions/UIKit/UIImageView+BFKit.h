@@ -1,5 +1,5 @@
 //
-//  UIWebView+BFKit.h
+//  UIImageView+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,21 +24,36 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to UIWebView
- */
-@interface UIWebView (BFKit)
+@import Foundation;
+@import UIKit;
 
 /**
- *  Remove the background shadow of the UIWebView
+ *  This class add some useful methods to UIImageView
  */
-- (void)removeBackgroundShadow;
+@interface UIImageView (BFKit)
 
 /**
- *  Load the requested website
+ *  Create an UIImageView with the given image and frame
  *
- *  @param website Website to load
+ *  @param image UIImageView image
+ *  @param rect  UIImageView frame
+ *
+ *  @return Return the created UIImageView
  */
-- (void)loadWebsite:(NSString *)website;
++ (id)initWithImage:(UIImage *)image
+              frame:(CGRect)rect;
+
+/**
+ *  Create an UIImageView with the given image, size and center
+ *
+ *  @param image  UIImageView image
+ *  @param size   UIImageView size
+ *  @param center UIImageView center
+ *
+ *  @return Return the created UIImageView
+ */
++ (id)initWithImage:(UIImage *)image
+               size:(CGSize)size
+             center:(CGPoint)center;
 
 @end

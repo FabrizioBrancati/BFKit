@@ -25,7 +25,6 @@
 //  SOFTWARE.
 
 #import "BFTouchID.h"
-#import <LocalAuthentication/LocalAuthentication.h>
 
 @implementation BFTouchID
 

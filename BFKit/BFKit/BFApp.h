@@ -24,6 +24,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+@import Foundation;
+
 /**
  *  This class add some useful methods to retrive the App info
  */

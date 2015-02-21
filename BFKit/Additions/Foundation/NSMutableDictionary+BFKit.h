@@ -1,5 +1,5 @@
 //
-//  UIScrollView+BFKit.h
+//  NSMutableDictionary+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,28 +24,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to UIScrollView
- */
-@interface UIScrollView (BFKit)
+@import Foundation;
+
+@interface NSMutableDictionary (BFKit)
 
 /**
- *  Create an UIScrollView and set some parameters
- *
- *  @param frame                ScrollView's frame
- *  @param contentSize          ScrollView's content size
- *  @param clipsToBounds        Set if ScrollView has to clips to bounds
- *  @param pagingEnabled        Set if ScrollView has paging enabled
- *  @param showScrollIndicators Set if ScrollView has to show the scroll indicators, vertical and horizontal
- *  @param delegate             ScrollView's delegate
- *
- *  @return Return the created UIScrollView
- */
-+ (UIScrollView *)initWithFrame:(CGRect)frame
-                    contentSize:(CGSize)contentSize
-                  clipsToBounds:(BOOL)clipsToBounds
-                  pagingEnabled:(BOOL)pagingEnabled
-           showScrollIndicators:(BOOL)showScrollIndicators
-                       delegate:(id<UIScrollViewDelegate>)delegate;
+*  Set the object for a given key in safe mode (if not nil)
+*
+*  @param anObject The object
+*  @param aKey     The key
+*
+*  @return Return YES if has been setted, otherwise NO
+*/
+- (BOOL)safeSetObject:(id)anObject
+               forKey:(id<NSCopying>)aKey;
 
 @end

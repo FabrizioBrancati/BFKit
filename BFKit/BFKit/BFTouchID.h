@@ -24,6 +24,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+@import Foundation;
+@import LocalAuthentication;
+
 typedef NS_ENUM(NSInteger, TouchIDResult)
 {
     TouchIDResultSuccess = 0,

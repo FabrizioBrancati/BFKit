@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "NSFileManager+BFKit.h"
+#import "BFApp.h"
 
 @implementation NSFileManager (BFKit)
 

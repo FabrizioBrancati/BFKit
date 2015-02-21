@@ -27,6 +27,7 @@
 #import "UIImage+BFKit.h"
 #import "NSNumber+BFKit.h"
 #import "UIColor+BFKit.h"
+#import "UIDevice+BFKit.h"
 #import "BFLog.h"
 #import <objc/runtime.h>
 

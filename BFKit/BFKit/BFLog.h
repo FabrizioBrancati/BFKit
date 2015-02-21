@@ -24,6 +24,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+@import Foundation;
+
 void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...);
 
 /**

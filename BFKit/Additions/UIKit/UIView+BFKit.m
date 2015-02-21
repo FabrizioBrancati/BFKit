@@ -25,7 +25,6 @@
 //  SOFTWARE.
 
 #import "UIView+BFKit.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation UIView (BFKit)
 

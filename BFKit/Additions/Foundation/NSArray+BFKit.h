@@ -1,5 +1,5 @@
 //
-//  NSMutableArray+BFKit.h
+//  NSArray+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,47 +24,61 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/**
- *  This class add some useful methods to NSMutableArray
- */
-@interface NSMutableArray (BFKit)
+@import Foundation;
 
 /**
- *  Get the object at a given index in safe mode (nil if self is empty)
+ *  This class add some useful methods to NSArray
+ */
+@interface NSArray (BFKit)
+
+/**
+ *  Get the object at a given index in safe mode (nil if self is empty or out of range)
  *
  *  @param index The index
  *
- *  @return Return the object at a given index in safe mode (nil if self is empty)
+ *  @return Return the object at a given index in safe mode (nil if self is empty or out of range)
  */
 - (id)safeObjectAtIndex:(NSUInteger)index;
-
-/**
- *  Move an object from an index to another
- *
- *  @param from The index to move from
- *  @param to   The index to move to
- */
-- (void)moveObjectFromIndex:(NSUInteger)from
-                    toIndex:(NSUInteger)to;
 
 /**
  *  Create a reversed array from self
  *
  *  @return Return the reversed array
  */
-- (NSMutableArray *)reversedArray;
+- (NSArray *)reversedArray;
 
 /**
- *  Sort an array by a given key with option for ascending or descending
+ *  Convert self to JSON as NSString
  *
- *  @param key       The key to order the array
- *  @param array     The array to be ordered
- *  @param ascending A BOOL to choose if ascending or descending
- *
- *  @return Return the given array ordered by the given key ascending or descending
+ *  @return Return the JSON as NSString or nil if error while parsing
  */
-+ (NSMutableArray *)sortArrayByKey:(NSString *)key
-                             array:(NSMutableArray *)array
-                         ascending:(BOOL)ascending;
+- (NSString *)arrayToJson;
+
+/**
+ *  Simulates the array as a circle. When it is out of range, begins again
+ *
+ *  @param index The index
+ *
+ *  @return Return the object at a given index
+ */
+- (id)objectAtCircleIndex:(NSInteger)index;
+
+/**
+ *  Create a reversed array from the given array
+ *
+ *  @param array The array to be converted
+ *
+ *  @return Return the reversed array
+ */
++ (NSString *)arrayToJson:(NSArray *)array;
+
+/**
+ *  Convert the given array to JSON as NSString
+ *
+ *  @param array The array to be reversed
+ *
+ *  @return Return the JSON as NSString or nil if error while parsing
+ */
++ (NSArray *)reversedArray:(NSArray *)array;
 
 @end
