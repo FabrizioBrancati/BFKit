@@ -293,7 +293,15 @@
 
 + (NSString *)dateInformationDescriptionWithInformation:(BFDateInformation)info
 {
-	return [NSString stringWithFormat:@"%02li/%02li/%04li %02li:%02li:%02li", (long)info.month, (long)info.day, (long)info.year, (long)info.hour, (long)info.minute, (long)info.second];
+    return [NSDate dateInformationDescriptionWithInformation:info dateSeparator:@"/" usFormat:NO];
+}
+
++ (NSString *)dateInformationDescriptionWithInformation:(BFDateInformation)info dateSeparator:(NSString *)dateSeparator usFormat:(BOOL)usFormat
+{
+    if(usFormat)
+        return [NSString stringWithFormat:@"%04li%@%02li%@%02li %02li:%02li:%02li", (long)info.year, dateSeparator, (long)info.month, dateSeparator, (long)info.day, (long)info.hour, (long)info.minute, (long)info.second];
+    else
+        return [NSString stringWithFormat:@"%02li%@%02li%@%04li %02li:%02li:%02li", (long)info.month, dateSeparator, (long)info.day, dateSeparator, (long)info.year, (long)info.hour, (long)info.minute, (long)info.second];
 }
 
 @end

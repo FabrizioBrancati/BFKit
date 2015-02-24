@@ -223,6 +223,7 @@ typedef struct BFDateInformation BFDateInformation;
 
 /**
  *  Get the given BFDateInformation structure as a formatted string
+ *  Default dateSeparator = "/" and usFormat to NO
  *
  *  @param info The BFDateInformation to be formatted
  *
@@ -231,5 +232,18 @@ typedef struct BFDateInformation BFDateInformation;
  *  Example: 15/10/2013 10:38:43
  */
 + (NSString *)dateInformationDescriptionWithInformation:(BFDateInformation)info;
+
+/**
+ *  Get the given BFDateInformation structure as a formatted string
+ *
+ *  @param info          The BFDateInformation to be formatted
+ *  @param dateSeparator The string to be used as date separator
+ *  @param usFormat       Set if the timestamp is in US format or not
+ *
+ *  @return Return a NSString in the following format (dateSeparator = "/" and usFormat to NO):
+ *  D/M/Y H:M:S
+ *  Example: 15/10/2013 10:38:43
+ */
++ (NSString *)dateInformationDescriptionWithInformation:(BFDateInformation)info dateSeparator:(NSString *)dateSeparator usFormat:(BOOL)usFormat;
 
 @end
