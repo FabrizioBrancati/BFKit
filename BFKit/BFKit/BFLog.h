@@ -39,10 +39,12 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
 #ifdef DEBUG
 #define BFLog(args ...) ExtendNSLog(__FILE__, __LINE__, __PRETTY_FUNCTION__, args);
 #define BFLogString [BFLog logString]
+#define BFLogDetailedString [BFLog logDetailedString]
 #define BFLogClear [BFLog clearLog]
 #else
 #define BFLog(args ...)
 #define BFLogString
+#define BFLogDetailedString
 #define BFLogClear
 #endif
 
@@ -59,5 +61,13 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
  *  @return Return the log string
  */
 + (NSString *)logString;
+
+/**
+ *  Get the detailed log string.
+ *  You can call it with the BFLogDetailedString macro
+ *
+ *  @return Return the detailed log string
+ */
++ (NSString *)logDetailedString;
 
 @end

@@ -25,8 +25,10 @@
 //  SOFTWARE.
 
 #import "BFLog.h"
+#import "NSDate+BFKit.h"
 
 static NSString *logString = @"";
+static NSString *logDetailedString = @"";
 
 @implementation BFLog
 
@@ -36,7 +38,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
     
     va_start (ap, format);
     
-    if (![format hasSuffix: @"\n"])
+    if(![format hasSuffix: @"\n"])
     {
         format = [format stringByAppendingString: @"\n"];
     }
@@ -46,17 +48,28 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
     va_end (ap);
     
     NSString *fileName = [[NSString stringWithUTF8String:file] lastPathComponent];
-    fprintf(stderr, "(%s) (%s:%d) %s", functionName, [fileName UTF8String], lineNumber, [body UTF8String]);
+    NSString *log = [NSString stringWithFormat:@"(%s) (%s:%d) %s", functionName, [fileName UTF8String], lineNumber, [body UTF8String]];
+    fprintf(stderr, "%s (%s) (%s:%d) %s", [[NSDate dateInformationDescriptionWithInformation:[[NSDate date] dateInformation] dateSeparator:@"-" usFormat:YES] UTF8String], functionName, [fileName UTF8String], lineNumber, [body UTF8String]);
     
     if([logString isEqualToString:@""])
         logString = body;
     else
         logString = [NSString stringWithFormat:@"%@%@", logString, body];
+    
+    if([logDetailedString isEqualToString:@""])
+        logDetailedString = log;
+    else
+        logDetailedString = [NSString stringWithFormat:@"%@%@", logDetailedString, log];
 }
 
 + (NSString *)logString
 {
     return logString;
+}
+
++ (NSString *)logDetailedString
+{
+    return logDetailedString;
 }
 
 + (void)clearLog
