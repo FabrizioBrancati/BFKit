@@ -271,6 +271,16 @@
             
             break;
         }
+        case DetailTypeUITextView:
+        {
+            self.title = @"UITextView";
+            [_scrollView removeFromSuperview];
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:@"This is a text view\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia blandit eros, sit amet aliquet tellus sollicitudin et. Nullam a ipsum nec libero hendrerit aliquet. Pellentesque faucibus pretium odio, sit amet accumsan arcu malesuada ut. Cras rhoncus volutpat nisl consequat eleifend. Donec tincidunt consectetur justo, molestie hendrerit justo dictum vel. Vestibulum nec commodo arcu. Donec sodales, augue vel fermentum ultrices, nunc augue vulputate tortor, sit amet eleifend nisl sapien eget magna. Donec aliquet mattis mi vel fermentum. Donec elementum pellentesque libero, in aliquam mauris luctus vel. In et vulputate nibh, id tristique ipsum. Donec fermentum ante et augue cursus aliquam. Vivamus nisi justo, pulvinar porta dolor id, tristique pretium augue. Nulla blandit felis felis, ut rutrum eros rutrum eu. Morbi mauris dolor, feugiat non placerat non, ultrices nec eros. Sed at eleifend felis. Mauris blandit feugiat nulla eget tempor. Nunc semper suscipit magna et semper. Suspendisse a arcu vitae diam scelerisque vestibulum ut eu dolor. Suspendisse accumsan venenatis leo, id maximus turpis. Pellentesque ac nunc augue. Etiam pharetra velit quis metus ornare vehicula. Cras eleifend sapien vitae est ultrices, a ullamcorper nibh scelerisque. Pellentesque tempor tortor dignissim, cursus tortor ac, sagittis felis. Praesent ultrices scelerisque odio, in fringilla sem tincidunt quis. Aenean sem augue, mattis luctus magna vel, accumsan volutpat felis. Nam blandit venenatis tincidunt. Pellentesque sodales lectus at orci tempus, vel pharetra massa vestibulum. Integer scelerisque ex aliquet quam molestie, a laoreet augue mattis. Etiam ut ex nisi. Mauris mollis tincidunt hendrerit. Nunc mi lectus, viverra ut nunc et, sagittis maximus augue. Pellentesque ullamcorper condimentum enim, vitae tempus risus. Maecenas facilisis lectus eget sem luctus porta. Etiam ut nunc non diam facilisis volutpat. Phasellus a augue feugiat, iaculis metus sit amet, pharetra lacus. Nulla facilisi. Maecenas sollicitudin justo ac auctor feugiat. Nunc ac dui sem. Aliquam fringilla porttitor massa, quis mattis nisl sodales a. Pellentesque iaculis non nisi aliquam malesuada. Aliquam erat volutpat. Donec arcu dui, rutrum ut tortor id, hendrerit aliquam ligula." color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
+            
+            break;
+        }
         case DetailTypeUIView:
         {
             self.title = @"UIView";
@@ -302,7 +312,7 @@
             self.title = @"UIWebView";
             [_scrollView removeFromSuperview];
             
-            UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
             [webView loadWebsite:@"http://www.google.com"];
             [webView removeShadow];
             [self.view addSubview:webView];
@@ -312,150 +322,166 @@
         case DetailTypeNSArray:
         {
             self.title = @"NSArray";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             NSArray *array = @[@"1", @"2", @"3", @"4", @"5"];
             
-            NSLog(@"Normal Array: %@", array);
-            NSLog(@"Reversed Array: %@", [array reversedArray]);
-            NSLog(@"Array to JSON: %@", [array arrayToJson]);
+            BFLog(@"Normal Array: %@", array);
+            BFLog(@"Reversed Array: %@", [array reversedArray]);
+            BFLog(@"Array to JSON: %@", [array arrayToJson]);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeNSDate:
         {
             self.title = @"NSDate";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             NSDate *today = [NSDate date];
             
-            NSLog(@"Today: %@", today);
-            NSLog(@"Yesterday: %@", [NSDate yesterday]);
-            NSLog(@"Today is: %@", [today dayFromWeekday]);
-            NSLog(@"Description of today: %@", [NSDate dateInformationDescriptionWithInformation:[today dateInformation]]);
+            BFLog(@"Today: %@", today);
+            BFLog(@"Yesterday: %@", [NSDate yesterday]);
+            BFLog(@"Today is: %@", [today dayFromWeekday]);
+            BFLog(@"Description of today: %@", [NSDate dateInformationDescriptionWithInformation:[today dateInformation]]);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeNSDictionary:
         {
         	self.title = @"NSDictionary";
-
-        	[_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
-
-        	UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-        	[_scrollView addSubview:normalLabel];
+            [_scrollView removeFromSuperview];
+            
+            BFLogClear;
 
         	NSDate *today = [NSDate date];
 
         	NSDictionary *dic = @{@"Today": [today description], @"Description of today" :[NSDate dateInformationDescriptionWithInformation:[today dateInformation]], @"array": @[@1, @2, @3]};
-        	NSLog(@"Normal Dictionary: %@", dic);
-        	NSLog(@"Dictionary to JSON: %@", [dic dictionaryToJson]);
+        	BFLog(@"Normal Dictionary: %@", dic);
+        	BFLog(@"Dictionary to JSON: %@", [dic dictionaryToJson]);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
         	break;
     	}
         case DetailTypeNSFileManager:
         {
             self.title = @"NSFileManager";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             NSArray *array = @[@"1", @"2", @"3", @"4", @"5"];
             
-            NSLog([NSFileManager saveArrayToPath:DirectoryTypeDocuments withFilename:@"temp" array:array] ? @"Save array: Yes" : @"Save array: No");
-            NSLog(@"Directory: %@", [NSFileManager getDocumentsDirectoryForFile:@"temp.plist"]);
-            NSLog([NSFileManager deleteFile:@"temp.plist" fromDirectory:DirectoryTypeDocuments] ? @"Delete file: Yes" : @"Delete file: No");
+            BFLog([NSFileManager saveArrayToPath:DirectoryTypeDocuments withFilename:@"temp" array:array] ? @"Save array: Yes" : @"Save array: No");
+            BFLog(@"Directory: %@", [NSFileManager getDocumentsDirectoryForFile:@"temp.plist"]);
+            BFLog([NSFileManager deleteFile:@"temp.plist" fromDirectory:DirectoryTypeDocuments] ? @"Delete file: Yes" : @"Delete file: No");
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeNSMutableArray:
         {
             self.title = @"NSMutableArray";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             NSMutableArray *array = [[NSMutableArray alloc] initWithArray:@[@"1", @"2", @"3", @"4", @"5"]];
             
             [array moveObjectFromIndex:0 toIndex:2];
-            NSLog(@"Move objects: %@", array);
-            NSLog(@"Reversed Array: %@", [array reversedArray]);
+            BFLog(@"Move objects: %@", array);
+            BFLog(@"Reversed Array: %@", [array reversedArray]);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeNSMutableDictionary:
         {
             self.title = @"NSMutableDictionary";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
             
             [dictionary safeSetObject:[UIImage new] forKey:@"Image"];
-            NSLog(@"Dictionary: %@", dictionary);
+            BFLog(@"Dictionary: %@", dictionary);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeNSNumber:
         {
             self.title = @"NSNumber";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
-            NSLog(@"Radians to degrees: %f", RadiansToDegrees(M_PI));
-            NSLog(@"Random int: %li", (long)[NSNumber randomIntBetweenMin:10 andMax:50]);
-            NSLog(@"Random float: %f", [NSNumber randomFloatBetweenMin:0.1 andMax:0.9]);
+            BFLog(@"Radians to degrees: %f", RadiansToDegrees(M_PI));
+            BFLog(@"Random int: %li", (long)[NSNumber randomIntBetweenMin:10 andMax:50]);
+            BFLog(@"Random float: %f", [NSNumber randomFloatBetweenMin:0.1 andMax:0.9]);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeNSProcessInfo:
         {
             self.title = @"NSProcessInfo";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
-            NSLog(@"CPU usage: %f", [NSProcessInfo cpuUsage]);
+            BFLog(@"CPU usage: %f", [NSProcessInfo cpuUsage]);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeNSString:
         {
             self.title = @"NSString";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             NSString *search = @"Search in this string!";
-            NSLog(@"Search: %@", [search searchCharStart:'a' charEnd:'s']);
-            NSLog(@"MD5: %@", [search MD5]);
-            NSLog(@"SHA1: %@", [search SHA1]);
-            NSLog(@"SHA256: %@", [search SHA256]);
-            NSLog(@"SHA512: %@", [search SHA512]);
-            NSLog([search isEmail] ? @"Is email: Yes" : @"Is email: No");
+            BFLog(@"Search: %@", [search searchCharStart:'a' charEnd:'s']);
+            BFLog(@"MD5: %@", [search MD5]);
+            BFLog(@"SHA1: %@", [search SHA1]);
+            BFLog(@"SHA256: %@", [search SHA256]);
+            BFLog(@"SHA512: %@", [search SHA512]);
+            BFLog([search isEmail] ? @"Is email: Yes" : @"Is email: No");
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeNSThread:
         {
             self.title = @"NSThread";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             [self performSelectorInBackground:@selector(threadMethod) withObject:nil];
             
@@ -464,43 +490,48 @@
         case DetailTypeBFApp:
         {
             self.title = @"BFApp";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
-            NSLog(@"App name: %@", APP_NAME);
-            NSLog(@"App build: %@", APP_BUILD);
-            NSLog(@"App version: %@", APP_VERSION);
-            NSLog(@"Localized string from BFKit: %@", BFLocalizedString(@"OPEN", @""));
+            BFLog(@"App name: %@", APP_NAME);
+            BFLog(@"App build: %@", APP_BUILD);
+            BFLog(@"App version: %@", APP_VERSION);
+            BFLog(@"Localized string from BFKit: %@", BFLocalizedString(@"OPEN", @""));
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeBFLog:
         {
             self.title = @"BFLog";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 150) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:10];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             BFLog(@"This will be shown only if in DEBUG mode");
-            [normalLabel setText:BFLogString];
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
         case DetailTypeBFSystemSound:
         {
             self.title = @"BFSystemSound";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView removeFromSuperview];
             
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"View console on Xcode to see the effect of this class" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
+            BFLogClear;
             
             [BFSystemSound playSystemSoundVibrate];
-            NSLog(@"Vibrate");
+            BFLog(@"Vibrate");
             [BFSystemSound playSystemSound:AudioIDRecivedMessage];
-            NSLog(@"Play sound");
+            BFLog(@"Play sound");
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
@@ -554,10 +585,13 @@
 
 - (void)threadMethod
 {
-    NSLog(@"Background: %@", [NSThread currentThread]);
+    BFLog(@"Background: %@", [NSThread currentThread]);
     
     runOnMainThread(^{
-        NSLog(@"Main: %@", [NSThread currentThread]);
+        BFLog(@"Main: %@", [NSThread currentThread]);
+        
+        UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+        [self.view addSubview:textView];
     });
 }
 

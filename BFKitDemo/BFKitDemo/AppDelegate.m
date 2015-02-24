@@ -30,6 +30,7 @@
                                                           @"UIScrollView",
                                                           @"UITableView",
                                                           @"UITextField",
+                                                          @"UITextView",
                                                           @"UIView",
                                                           @"UIWebView"]];
     

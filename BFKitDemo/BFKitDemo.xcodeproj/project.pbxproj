@@ -54,6 +54,7 @@
 		494AAF991A9A21C3001E58F5 /* UserInterfaceKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494AAF981A9A21C3001E58F5 /* UserInterfaceKitViewController.xib */; };
 		494AAF9B1A9C92A0001E58F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */; };
 		494AAF9D1A9C92AD001E58F5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */; };
+		498E988A1A9CCAAA00667B57 /* UITextView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 498E98891A9CCAAA00667B57 /* UITextView+BFKit.m */; };
 		49932B011A17AB890093B13C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49932AFF1A17AB890093B13C /* InfoViewController.m */; };
 		49932B021A17AB890093B13C /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49932B001A17AB890093B13C /* InfoViewController.xib */; };
 		49AF76641A56E508007B8F08 /* BFApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF76631A56E508007B8F08 /* BFApp.m */; };
@@ -158,6 +159,8 @@
 		494AAF981A9A21C3001E58F5 /* UserInterfaceKitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInterfaceKitViewController.xib; sourceTree = "<group>"; };
 		494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		498E98881A9CCAAA00667B57 /* UITextView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+BFKit.h"; sourceTree = "<group>"; };
+		498E98891A9CCAAA00667B57 /* UITextView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+BFKit.m"; sourceTree = "<group>"; };
 		49932AFE1A17AB890093B13C /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		49932AFF1A17AB890093B13C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		49932B001A17AB890093B13C /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -375,6 +378,8 @@
 				494AAF761A98A93C001E58F5 /* UITableView+BFKit.m */,
 				494AAF771A98A93C001E58F5 /* UITextField+BFKit.h */,
 				494AAF781A98A93C001E58F5 /* UITextField+BFKit.m */,
+				498E98881A9CCAAA00667B57 /* UITextView+BFKit.h */,
+				498E98891A9CCAAA00667B57 /* UITextView+BFKit.m */,
 				494AAF791A98A93C001E58F5 /* UIView+BFKit.h */,
 				494AAF7A1A98A93C001E58F5 /* UIView+BFKit.m */,
 				494AAF7B1A98A93C001E58F5 /* UIWebView+BFKit.h */,
@@ -540,6 +545,7 @@
 				494AAF941A98A93C001E58F5 /* UIWebView+BFKit.m in Sources */,
 				4902778219BE0064009B8BC1 /* BFKitViewController.m in Sources */,
 				494AAF801A98A93C001E58F5 /* NSDate+BFKit.m in Sources */,
+				498E988A1A9CCAAA00667B57 /* UITextView+BFKit.m in Sources */,
 				49AF76641A56E508007B8F08 /* BFApp.m in Sources */,
 				494AAF861A98A93C001E58F5 /* NSProcessInfo+BFKit.m in Sources */,
 				494AAF841A98A93C001E58F5 /* NSMutableDictionary+BFKit.m in Sources */,
