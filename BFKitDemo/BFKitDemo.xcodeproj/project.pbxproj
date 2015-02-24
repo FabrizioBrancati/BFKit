@@ -24,7 +24,6 @@
 		4902778219BE0064009B8BC1 /* BFKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902778019BE0064009B8BC1 /* BFKitViewController.m */; };
 		4902778319BE0064009B8BC1 /* BFKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4902778119BE0064009B8BC1 /* BFKitViewController.xib */; };
 		4902779119BE0265009B8BC1 /* UserInterfaceKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902778F19BE0265009B8BC1 /* UserInterfaceKitViewController.m */; };
-		4902779219BE0265009B8BC1 /* UserInterfaceKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4902779019BE0265009B8BC1 /* UserInterfaceKitViewController.xib */; };
 		4902779619BE049B009B8BC1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902779419BE049B009B8BC1 /* DetailViewController.m */; };
 		4902779719BE049B009B8BC1 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4902779519BE049B009B8BC1 /* DetailViewController.xib */; };
 		4934822F1A5DBB9A006D5380 /* BFTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 4934822E1A5DBB9A006D5380 /* BFTouchID.m */; };
@@ -52,6 +51,9 @@
 		494AAF931A98A93C001E58F5 /* UIView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 494AAF7A1A98A93C001E58F5 /* UIView+BFKit.m */; };
 		494AAF941A98A93C001E58F5 /* UIWebView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 494AAF7C1A98A93C001E58F5 /* UIWebView+BFKit.m */; };
 		494AAF951A98A93C001E58F5 /* UIWindow+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 494AAF7E1A98A93C001E58F5 /* UIWindow+BFKit.m */; };
+		494AAF991A9A21C3001E58F5 /* UserInterfaceKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494AAF981A9A21C3001E58F5 /* UserInterfaceKitViewController.xib */; };
+		494AAF9B1A9C92A0001E58F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */; };
+		494AAF9D1A9C92AD001E58F5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */; };
 		49932B011A17AB890093B13C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49932AFF1A17AB890093B13C /* InfoViewController.m */; };
 		49932B021A17AB890093B13C /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49932B001A17AB890093B13C /* InfoViewController.xib */; };
 		49AF76641A56E508007B8F08 /* BFApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF76631A56E508007B8F08 /* BFApp.m */; };
@@ -101,7 +103,6 @@
 		4902778119BE0064009B8BC1 /* BFKitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFKitViewController.xib; sourceTree = "<group>"; };
 		4902778E19BE0265009B8BC1 /* UserInterfaceKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInterfaceKitViewController.h; sourceTree = "<group>"; };
 		4902778F19BE0265009B8BC1 /* UserInterfaceKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInterfaceKitViewController.m; sourceTree = "<group>"; };
-		4902779019BE0265009B8BC1 /* UserInterfaceKitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInterfaceKitViewController.xib; sourceTree = "<group>"; };
 		4902779319BE049B009B8BC1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		4902779419BE049B009B8BC1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4902779519BE049B009B8BC1 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -154,6 +155,9 @@
 		494AAF7C1A98A93C001E58F5 /* UIWebView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+BFKit.m"; sourceTree = "<group>"; };
 		494AAF7D1A98A93C001E58F5 /* UIWindow+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+BFKit.h"; sourceTree = "<group>"; };
 		494AAF7E1A98A93C001E58F5 /* UIWindow+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+BFKit.m"; sourceTree = "<group>"; };
+		494AAF981A9A21C3001E58F5 /* UserInterfaceKitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInterfaceKitViewController.xib; sourceTree = "<group>"; };
+		494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		49932AFE1A17AB890093B13C /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		49932AFF1A17AB890093B13C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		49932B001A17AB890093B13C /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494AAF9D1A9C92AD001E58F5 /* CoreImage.framework in Frameworks */,
+				494AAF9B1A9C92A0001E58F5 /* QuartzCore.framework in Frameworks */,
 				493482311A5DBE3F006D5380 /* LocalAuthentication.framework in Frameworks */,
 				4902772819BDF40B009B8BC1 /* AudioToolbox.framework in Frameworks */,
 				490276F219BDF3F8009B8BC1 /* CoreGraphics.framework in Frameworks */,
@@ -216,6 +222,8 @@
 		490276EE19BDF3F8009B8BC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */,
+				494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */,
 				493482301A5DBE3F006D5380 /* LocalAuthentication.framework */,
 				4902772719BDF40B009B8BC1 /* AudioToolbox.framework */,
 				490276EF19BDF3F8009B8BC1 /* Foundation.framework */,
@@ -233,7 +241,7 @@
 				490276FF19BDF3F8009B8BC1 /* AppDelegate.m */,
 				4902778E19BE0265009B8BC1 /* UserInterfaceKitViewController.h */,
 				4902778F19BE0265009B8BC1 /* UserInterfaceKitViewController.m */,
-				4902779019BE0265009B8BC1 /* UserInterfaceKitViewController.xib */,
+				494AAF981A9A21C3001E58F5 /* UserInterfaceKitViewController.xib */,
 				4902770719BDF3F8009B8BC1 /* FoundationViewController.h */,
 				4902770819BDF3F8009B8BC1 /* FoundationViewController.m */,
 				4902777519BDF658009B8BC1 /* FoundationViewController.xib */,
@@ -468,9 +476,9 @@
 			files = (
 				4902777619BDF658009B8BC1 /* FoundationViewController.xib in Resources */,
 				49B2719819BFC9EC0079FA5A /* Images.xcassets in Resources */,
+				494AAF991A9A21C3001E58F5 /* UserInterfaceKitViewController.xib in Resources */,
 				4902779719BE049B009B8BC1 /* DetailViewController.xib in Resources */,
 				4902778319BE0064009B8BC1 /* BFKitViewController.xib in Resources */,
-				4902779219BE0265009B8BC1 /* UserInterfaceKitViewController.xib in Resources */,
 				49932B021A17AB890093B13C /* InfoViewController.xib in Resources */,
 				49C4538119BE947000E5052C /* BFKit.strings in Resources */,
 			);

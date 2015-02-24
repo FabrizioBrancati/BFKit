@@ -26,6 +26,7 @@
 
 #import "UIButton+BFKit.h"
 #import "UIImage+BFKit.h"
+#import "UIColor+BFKit.h"
 
 @implementation UIButton (BFKit)
 

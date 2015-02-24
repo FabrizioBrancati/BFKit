@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "UIFont+BFKit.h"
+#import "NSMutableArray+BFKit.h"
 #import "BFLog.h"
 
 @implementation UIFont (BFKit)

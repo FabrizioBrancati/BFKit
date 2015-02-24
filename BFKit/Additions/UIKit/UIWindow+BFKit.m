@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "UIWindow+BFKit.h"
+#import "UIDevice+BFKit.h"
 
 @implementation UIWindow (BFKit)
 

@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "NSMutableArray+BFKit.h"
+#import "NSArray+BFKit.h"
 
 @implementation NSMutableArray (BFKit)
 
