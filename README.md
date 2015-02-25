@@ -61,6 +61,7 @@ Adds some useful method to some classes.
 - NSMutableArray
 - NSMutableDictionary
 - NSNumber
+- NSObject
 - NSProcessInfo
 - NSString
 - NSThread
@@ -76,6 +77,7 @@ Adds some useful method to some classes.
 - UIScrollView
 - UITableView
 - UITextField
+- UITextView
 - UIView
 - UIWebView
 - UIWindow
