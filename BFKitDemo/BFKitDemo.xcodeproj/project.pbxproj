@@ -55,6 +55,7 @@
 		494AAF9B1A9C92A0001E58F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */; };
 		494AAF9D1A9C92AD001E58F5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */; };
 		498E988A1A9CCAAA00667B57 /* UITextView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 498E98891A9CCAAA00667B57 /* UITextView+BFKit.m */; };
+		498E98901A9D36DD00667B57 /* NSObject+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 498E988F1A9D36DD00667B57 /* NSObject+BFKit.m */; };
 		49932B011A17AB890093B13C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49932AFF1A17AB890093B13C /* InfoViewController.m */; };
 		49932B021A17AB890093B13C /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49932B001A17AB890093B13C /* InfoViewController.xib */; };
 		49AF76641A56E508007B8F08 /* BFApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF76631A56E508007B8F08 /* BFApp.m */; };
@@ -161,6 +162,8 @@
 		494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		498E98881A9CCAAA00667B57 /* UITextView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+BFKit.h"; sourceTree = "<group>"; };
 		498E98891A9CCAAA00667B57 /* UITextView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+BFKit.m"; sourceTree = "<group>"; };
+		498E988E1A9D36DD00667B57 /* NSObject+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BFKit.h"; sourceTree = "<group>"; };
+		498E988F1A9D36DD00667B57 /* NSObject+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BFKit.m"; sourceTree = "<group>"; };
 		49932AFE1A17AB890093B13C /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		49932AFF1A17AB890093B13C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		49932B001A17AB890093B13C /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 				494AAF5B1A98A93C001E58F5 /* NSMutableDictionary+BFKit.m */,
 				494AAF5C1A98A93C001E58F5 /* NSNumber+BFKit.h */,
 				494AAF5D1A98A93C001E58F5 /* NSNumber+BFKit.m */,
+				498E988E1A9D36DD00667B57 /* NSObject+BFKit.h */,
+				498E988F1A9D36DD00667B57 /* NSObject+BFKit.m */,
 				494AAF5E1A98A93C001E58F5 /* NSProcessInfo+BFKit.h */,
 				494AAF5F1A98A93C001E58F5 /* NSProcessInfo+BFKit.m */,
 				494AAF601A98A93C001E58F5 /* NSString+BFKit.h */,
@@ -532,6 +537,7 @@
 				494AAF871A98A93C001E58F5 /* NSString+BFKit.m in Sources */,
 				494AAF891A98A93C001E58F5 /* UIButton+BFKit.m in Sources */,
 				494AAF831A98A93C001E58F5 /* NSMutableArray+BFKit.m in Sources */,
+				498E98901A9D36DD00667B57 /* NSObject+BFKit.m in Sources */,
 				494AAF811A98A93C001E58F5 /* NSDictionary+BFKit.m in Sources */,
 				49AF766A1A56E822007B8F08 /* BFLog.m in Sources */,
 				494AAF8D1A98A93C001E58F5 /* UIImage+BFKit.m in Sources */,

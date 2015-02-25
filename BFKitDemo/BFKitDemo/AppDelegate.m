@@ -41,6 +41,7 @@
                                                                @"NSMutableArray",
                                                                @"NSMutableDictionary",
                                                                @"NSNumber",
+                                                               @"NSObject",
                                                                @"NSProcessInfo",
                                                                @"NSString",
                                                                @"NSThread"]];

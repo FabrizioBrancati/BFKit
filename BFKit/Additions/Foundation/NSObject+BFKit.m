@@ -27,9 +27,11 @@
         va_list args;
         va_start(args, object);
         
+        [invocation setArgument:&object atIndex:2];
+        
         id arg = nil;
-        int index = 2;
-        while((arg = va_arg(args,id)))
+        int index = 3;
+        while((arg = va_arg(args, id)))
         {
             [invocation setArgument:&arg atIndex:index];
             index++;

@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, DetailType)
     DetailTypeNSMutableArray,
     DetailTypeNSMutableDictionary,
     DetailTypeNSNumber,
+    DetailTypeNSObject,
     DetailTypeNSProcessInfo,
     DetailTypeNSString,
     DetailTypeNSThread,

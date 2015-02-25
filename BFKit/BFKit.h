@@ -40,6 +40,7 @@
 #import "NSMutableArray+BFKit.h"
 #import "NSMutableDictionary+BFKit.h"
 #import "NSNumber+BFKit.h"
+#import "NSObject+BFKit.h"
 #import "NSProcessInfo+BFKit.h"
 #import "NSString+BFKit.h"
 #import "NSThread+BFKit.h"

@@ -442,6 +442,26 @@
             
             break;
         }
+        case DetailTypeNSObject:
+        {
+            self.title = @"NSObject";
+            [_scrollView removeFromSuperview];
+            
+            BFLogClear;
+            
+            NSObject *nilObject = nil;
+            NSObject *object = @"Object";
+            
+            BFLog([nilObject isValid] ? @"Object is valid" : @"Object is not valid");
+            BFLog([object isValid] ? @"Object is valid" : @"Object is not valid");
+            
+            [self performSelector:@selector(multiArgumentsSelectorWithString:string:string:string:) withObjects:@"String 1", @"String 2", @"String 3", @"String 4", nil];
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
+            
+            break;
+        }
         case DetailTypeNSProcessInfo:
         {
             self.title = @"NSProcessInfo";
@@ -593,6 +613,11 @@
         UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
         [self.view addSubview:textView];
     });
+}
+
+- (void)multiArgumentsSelectorWithString:(NSString *)string1 string:(NSString *)string2 string:(NSString *)string3 string:(NSString *)string4
+{
+    BFLog(@"\nString 1: %@\nString 2: %@\nString 3: %@\nString 4: %@", string1, string2, string3, string4);
 }
 
 @end
