@@ -112,6 +112,49 @@
     return [cacheDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/", fileName]];
 }
 
++ (NSNumber *)fileSize:(NSString *)fileName fromDirectory:(DirectoryType)directory
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if(fileName.length > 0)
+    {
+        NSString *path;
+        
+        switch(directory)
+        {
+            case DirectoryTypeMainBundle:
+                path = [self getBundlePathForFile:fileName];
+                break;
+            case DirectoryTypeLibrary:
+                path = [self getLibraryDirectoryForFile:fileName];
+                break;
+            case DirectoryTypeDocuments:
+                path = [self getDocumentsDirectoryForFile:fileName];
+                break;
+            case DirectoryTypeCache:
+                path = [self getCacheDirectoryForFile:fileName];
+                break;
+            default:
+                break;
+        }
+        
+        if([fileManager fileExistsAtPath:fileName])
+        {
+            NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:fileName error:nil];
+            if(fileAttributes)
+            {
+                return [fileAttributes objectForKey:NSFileSize];
+            }
+            else
+            {
+                return nil;
+            }
+        }
+    }
+    
+    return nil;
+}
+
 + (BOOL)deleteFile:(NSString *)fileName fromDirectory:(DirectoryType)directory
 {
     if(fileName.length > 0)

@@ -113,6 +113,8 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  */
 + (NSString *)getCacheDirectoryForFile:(NSString *)fileName;
 
++ (NSNumber *)fileSize:(NSString *)fileName fromDirectory:(DirectoryType)directory;
+
 /**
  *  Delete a file with the given filename.
  *
@@ -121,7 +123,8 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *
  *  @return Return YES if the operation was successful, otherwise NO
  */
-+ (BOOL)deleteFile:(NSString *)fileName fromDirectory:(DirectoryType)directory;
++ (BOOL)deleteFile:(NSString *)fileName
+     fromDirectory:(DirectoryType)directory;
 
 /**
  *  Move a file from a directory to another
