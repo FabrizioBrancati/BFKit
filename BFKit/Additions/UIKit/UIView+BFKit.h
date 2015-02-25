@@ -29,6 +29,17 @@
 @import QuartzCore;
 
 /**
+ *  Direction of flip animation
+ */
+typedef NS_ENUM(NSInteger, UIViewAnimationFlipDirection)
+{
+    UIViewAnimationFlipDirectionFromTop,
+    UIViewAnimationFlipDirectionFromLeft,
+    UIViewAnimationFlipDirectionFromRight,
+    UIViewAnimationFlipDirectionFromBottom
+};
+
+/**
  *  This class add some useful methods to UIView
  */
 @interface UIView (BFKit)
@@ -102,8 +113,50 @@
 /**
  *  Create a pulse effect on th UIView
  *
+ *  @param duration Seconds of animation
+ */
+- (void)pulseViewWithDuration:(CGFloat)duration;
+
+/**
+ *  Create a pulse effect on the UIView
+ *
  *  @param seconds Seconds of animation
  */
-- (void)pulseViewWithTime:(CGFloat)seconds;
+- (void)pulseViewWithTime:(CGFloat)seconds DEPRECATED_MSG_ATTRIBUTE("Use -pulseViewWithDuration:");
+
+/**
+ *  Create a heartbeat effect on the UIView
+ *
+ *  @param duration Seconds of animation
+ */
+- (void)heartbeatViewWithDuration:(CGFloat)duration;
+
+/**
+ *  Flip the view
+ *
+ *  @param duration  Seconds of animation
+ *  @param direction Direction of the flip animation
+ */
+- (void)flipWithDuration:(NSTimeInterval)duration
+               direction:(UIViewAnimationFlipDirection)direction;
+
+/**
+ *  Adds a motion effect to the view
+ */
+- (void)applyMotionEffects;
+
+/**
+ *  Take a screenshot of the current view
+ *
+ *  @return Return screenshot as UIImage
+ */
+- (UIImage *)screenshot;
+
+/**
+ *  Take a screenshot of the current view an saving to the saved photos album
+ *
+ *  @return Return screenshot as UIImage
+ */
+- (UIImage *)saveScreenshot;
 
 @end

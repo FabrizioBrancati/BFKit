@@ -36,7 +36,6 @@
     return view;
 }
 
-// Borders
 - (void)createBordersWithColor:(UIColor *)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width
 {
     self.layer.borderWidth = width;
@@ -73,7 +72,6 @@
     [self.layer setMasksToBounds:YES];
 }
 
-// Shadows
 - (void)createRectShadowWithOffset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius
 {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -95,7 +93,6 @@
     self.layer.masksToBounds = NO;
 }
 
-// Animations
 - (void)shakeView
 {
     CAKeyframeAnimation *shake = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
@@ -105,6 +102,11 @@
     shake.duration = 0.07f;
     
     [self.layer addAnimation:shake forKey:nil];
+}
+
+- (void)pulseViewWithDuration:(CGFloat)duration
+{
+    [self pulseViewWithDuration:duration];
 }
 
 - (void)pulseViewWithTime:(CGFloat)seconds
@@ -152,6 +154,102 @@
             }];
         }
     }];
+}
+
+- (void)heartbeatViewWithDuration:(CGFloat)duration
+{
+    float maxSize = 1.4f, durationPerBeat = 0.5f;
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+    
+    CATransform3D scale1 = CATransform3DMakeScale(0.8, 0.8, 1);
+    CATransform3D scale2 = CATransform3DMakeScale(maxSize, maxSize, 1);
+    CATransform3D scale3 = CATransform3DMakeScale(maxSize - 0.3f, maxSize - 0.3f, 1);
+    CATransform3D scale4 = CATransform3DMakeScale(1.0, 1.0, 1);
+    
+    NSArray *frameValues = [NSArray arrayWithObjects:[NSValue valueWithCATransform3D:scale1], [NSValue valueWithCATransform3D:scale2], [NSValue valueWithCATransform3D:scale3], [NSValue valueWithCATransform3D:scale4], nil];
+    
+    [animation setValues:frameValues];
+    
+    NSArray *frameTimes = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.05], [NSNumber numberWithFloat:0.2], [NSNumber numberWithFloat:0.6], [NSNumber numberWithFloat:1.0], nil];
+    [animation setKeyTimes:frameTimes];
+    
+    animation.fillMode = kCAFillModeForwards;
+    animation.duration = durationPerBeat;
+    animation.repeatCount = duration / durationPerBeat;
+    
+    [self.layer addAnimation:animation forKey:@"heartbeatView"];
+}
+
+- (void)applyMotionEffects
+{
+    UIInterpolatingMotionEffect *horizontalEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    horizontalEffect.minimumRelativeValue = @(-10.0f);
+    horizontalEffect.maximumRelativeValue = @(10.0f);
+    UIInterpolatingMotionEffect *verticalEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    verticalEffect.minimumRelativeValue = @(-10.0f);
+    verticalEffect.maximumRelativeValue = @(10.0f);
+    UIMotionEffectGroup *motionEffectGroup = [[UIMotionEffectGroup alloc] init];
+    motionEffectGroup.motionEffects = @[horizontalEffect, verticalEffect];
+    
+    [self addMotionEffect:motionEffectGroup];
+}
+
+- (void)flipWithDuration:(NSTimeInterval)duration direction:(UIViewAnimationFlipDirection)direction
+{
+    NSString *subtype = nil;
+    
+    switch(direction)
+    {
+        case UIViewAnimationFlipDirectionFromTop:
+            subtype = @"fromTop";
+            break;
+        case UIViewAnimationFlipDirectionFromLeft:
+            subtype = @"fromLeft";
+            break;
+        case UIViewAnimationFlipDirectionFromBottom:
+            subtype = @"fromBottom";
+            break;
+        case UIViewAnimationFlipDirectionFromRight:
+        default:
+            subtype = @"fromRight";
+            break;
+    }
+    
+    CATransition *transition = [CATransition animation];
+    
+    transition.startProgress = 0;
+    transition.endProgress = 1.0;
+    transition.type = @"flip";
+    transition.subtype = subtype;
+    transition.duration = duration;
+    transition.repeatCount = 1;
+    transition.autoreverses = 1;
+    
+    [self.layer addAnimation:transition forKey:@"spin"];
+}
+
+- (UIImage *)screenshot
+{
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
+    
+    [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    image = [UIImage imageWithData:imageData];
+    
+    return image;
+}
+
+- (UIImage *)saveScreenshot
+{
+    UIImage *image = [self screenshot];
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    
+    return image;
 }
 
 @end
