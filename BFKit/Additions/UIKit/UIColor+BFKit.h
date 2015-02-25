@@ -56,6 +56,19 @@
 #define RGB(r, g, b) RGBA(r, g, b, 1.0f)
 
 /**
+ *  RGB properties
+ */
+@property (nonatomic, readonly) CGFloat red;
+@property (nonatomic, readonly) CGFloat green;
+@property (nonatomic, readonly) CGFloat blue;
+@property (nonatomic, readonly) CGFloat white;
+@property (nonatomic, readonly) CGFloat hue;
+@property (nonatomic, readonly) CGFloat saturation;
+@property (nonatomic, readonly) CGFloat brightness;
+@property (nonatomic, readonly) CGFloat alpha;
+@property (nonatomic, readonly) CGFloat luminance;
+
+/**
  *  Create a color from a HEX string
  *
  *  @param hexString HEX string
@@ -101,5 +114,26 @@
  */
 + (UIColor *)colorWithColor:(UIColor *)color
                       alpha:(float)alpha;
+
+/**
+ *  Check if the color is in RGB format
+ *
+ *  @return Return if the color is in RGB format
+ */
+- (BOOL)canProvideRGBComponents;
+
+/**
+ *  A good contrasting color, it will be either black or white
+ *
+ *  @return Return the color
+ */
+- (UIColor *)contrastingColor;
+
+/**
+ *  A complementary color that should look good
+ *
+ *  @return Return the color
+ */
+- (UIColor *)complementaryColor;
 
 @end

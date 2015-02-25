@@ -105,4 +105,229 @@
     return [UIColor colorWithRed:components[0] green:components[1] blue:components[2] alpha:alpha];
 }
 
+- (BOOL)canProvideRGBComponents
+{
+    switch(CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)))
+    {
+        case kCGColorSpaceModelRGB:
+        case kCGColorSpaceModelMonochrome:
+            return YES;
+        default:
+            return NO;
+    }
+}
+
+- (CGFloat)red
+{
+    if(self.canProvideRGBComponents)
+    {
+        const CGFloat *c = CGColorGetComponents(self.CGColor);
+        return c[0];
+    }
+    
+    return 0.0;
+}
+
+- (CGFloat)green
+{
+    if(self.canProvideRGBComponents)
+    {
+        const CGFloat *c = CGColorGetComponents(self.CGColor);
+        if(CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == kCGColorSpaceModelMonochrome)
+            return c[0];
+        return c[1];
+    }
+    
+    return 0.0;
+}
+
+- (CGFloat)blue
+{
+    if(self.canProvideRGBComponents)
+    {
+        const CGFloat *c = CGColorGetComponents(self.CGColor);
+        if(CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == kCGColorSpaceModelMonochrome)
+            return c[0];
+        return c[2];
+    }
+    
+    return 0.0;
+}
+
+- (CGFloat)white
+{
+    if(CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == kCGColorSpaceModelMonochrome)
+    {
+        const CGFloat *c = CGColorGetComponents(self.CGColor);
+        return c[0];
+    }
+    
+    return 0.0;
+}
+
+- (CGFloat)hue
+{
+    if(self.canProvideRGBComponents)
+    {
+        CGFloat h = 0.0f;
+        [self hue:&h saturation:nil brightness:nil alpha:nil];
+        return h;
+    }
+    
+    return 0.0;
+}
+
+- (CGFloat)saturation
+{
+    if(self.canProvideRGBComponents)
+    {
+        CGFloat s = 0.0f;
+        [self hue:nil saturation:&s brightness:nil alpha:nil];
+        return s;
+    }
+    
+    return 0.0;
+}
+
+- (CGFloat)brightness
+{
+    if(self.canProvideRGBComponents)
+    {
+        CGFloat v = 0.0f;
+        [self hue:nil saturation:nil brightness:&v alpha:nil];
+        return v;
+    }
+    
+    return 0.0;
+}
+
+- (CGFloat)alpha
+{
+    return CGColorGetAlpha(self.CGColor);
+}
+
+- (CGFloat)luminance
+{
+    if(self.canProvideRGBComponents)
+    {
+        CGFloat r, g, b;
+        if(![self red:&r green:&g blue:&b alpha:nil])
+            return 0.0f;
+        
+        return r*0.2126f + g*0.7152f + b*0.0722f;
+    }
+    
+    return 0.0;
+}
+
+- (UIColor *)contrastingColor
+{
+    return (self.luminance > 0.5f) ? [UIColor blackColor] : [UIColor whiteColor];
+}
+
+- (UIColor *)complementaryColor
+{
+    CGFloat h, s, v, a;
+    if(![self hue:&h saturation:&s brightness:&v alpha:&a])
+        return nil;
+
+    h += 180.0f;
+    if(h > 360.f)
+        h -= 360.0f;
+    
+    return [UIColor colorWithHue:h saturation:s brightness:v alpha:a];
+}
+
+- (BOOL)hue:(CGFloat *)hue saturation:(CGFloat *)saturation brightness:(CGFloat *)brightness alpha:(CGFloat *)alpha
+{
+    CGFloat r, g, b, a;
+    if(![self red:&r green:&g blue:&b alpha:&a])
+        return NO;
+    
+    [UIColor red:r green:g blue:b toHue:hue saturation:saturation brightness:brightness];
+    
+    if(alpha)
+        *alpha = a;
+    
+    return YES;
+}
+
+- (BOOL)red:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha
+{
+    const CGFloat *components = CGColorGetComponents(self.CGColor);
+    
+    CGFloat r, g, b, a;
+    
+    switch(CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)))
+    {
+        case kCGColorSpaceModelMonochrome:
+            r = g = b = components[0];
+            a = components[1];
+            break;
+        case kCGColorSpaceModelRGB:
+            r = components[0];
+            g = components[1];
+            b = components[2];
+            a = components[3];
+            break;
+        default:
+            return NO;
+    }
+    
+    if(red)
+        *red = r;
+    
+    if(green)
+        *green = g;
+    
+    if(blue)
+        *blue = b;
+    
+    if(alpha)
+        *alpha = a;
+    
+    return YES;
+}
+
++ (void)red:(CGFloat)r green:(CGFloat)g blue:(CGFloat)b toHue:(CGFloat *)pH saturation:(CGFloat *)pS brightness:(CGFloat *)pV
+{
+    CGFloat h,s,v;
+    
+    CGFloat max = MAX(r, MAX(g, b));
+    CGFloat min = MIN(r, MIN(g, b));
+    
+    v = max;
+    
+    s = (max != 0.0f) ? ((max - min) / max) : 0.0f;
+    
+    if (s == 0.0f)
+    {
+        h = 0.0f;
+    }
+    else
+    {
+        CGFloat rc = (max - r) / (max - min);
+        CGFloat gc = (max - g) / (max - min);
+        CGFloat bc = (max - b) / (max - min);
+        
+        if(r == max)
+            h = bc - gc;
+        else if(g == max)
+            h = 2 + rc - bc;
+        else
+            h = 4 + gc - rc;
+        
+        h *= 60.0f;
+        if(h < 0.0f)
+            h += 360.0f;
+    }
+    
+    if(pH)
+        *pH = h;
+    if(pS)
+        *pS = s;
+    if(pV)
+        *pV = v;
+}
+
 @end
