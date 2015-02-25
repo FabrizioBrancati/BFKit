@@ -288,8 +288,23 @@
  *
  *  @param color Color value
  *
- *  @return Return an UIImage instance
+ *  @return Return the created UIImage
  */
 + (UIImage *)imageWithColor:(UIColor *)color;
+
+/**
+ *  Create an image from a given text
+ *
+ *  @param text      Text
+ *  @param fontName  Text's font name
+ *  @param fontSize  Text's font size
+ *  @param imageSize Image's size
+ *
+ *  @return Return the created UIImage
+ */
++ (UIImage *)imageFromText:(NSString *)text
+                      font:(FontName)fontName
+                  fontSize:(CGFloat)fontSize
+                 imageSize:(CGSize)imageSize;
 
 @end

@@ -34,7 +34,8 @@
 CGSize sizeForSizeString(NSString *sizeString)
 {
     NSArray *array = [sizeString componentsSeparatedByString:@"x"];
-    if(array.count != 2) return CGSizeZero;
+    if(array.count != 2)
+        return CGSizeZero;
     
     return CGSizeMake([array[0] floatValue], [array[1] floatValue]);
 }
@@ -63,13 +64,14 @@ UIColor *colorForColorString(NSString *colorString)
 {
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        [self exchangeClassMethod:@selector(imageNamed:) withMethod:@selector(dummy_imageNamed:)];
+        [self exchangeClassMethod:@selector(imageNamed:) withMethod:@selector(dummyImageNamed:)];
     });
 }
 
-+ (UIImage *)dummy_imageNamed:(NSString *)name
++ (UIImage *)dummyImageNamed:(NSString *)name
 {
-    if(!name) return nil;
+    if(!name)
+        return nil;
     
     UIImage *result;
     
@@ -77,19 +79,18 @@ UIColor *colorForColorString(NSString *colorString)
     if([[array[0] lowercaseString] isEqualToString:@"dummy"])
     {
         NSString *sizeString = array[1];
-        if(!sizeString) return nil;
+        if(!sizeString)
+            return nil;
         
         NSString *colorString = nil;
         if(array.count >= 3)
-        {
             colorString = array[2];
-        }
         
         return [self dummyImageWithSize:sizeForSizeString(sizeString) color:colorForColorString(colorString)];
     }
     else
     {
-        result = [self dummy_imageNamed:name];
+        result = [self dummyImageNamed:name];
     }
     
     return result;
@@ -107,17 +108,11 @@ UIColor *colorForColorString(NSString *colorString)
     
     [[UIColor blackColor] setFill];
     NSString *sizeString = [NSString stringWithFormat:@"%d x %d", (int)size.width, (int)size.height];
-    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
-    {
-        NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-        style.alignment = NSTextAlignmentCenter;
-        NSDictionary *attributes = @{NSParagraphStyleAttributeName : style};
-        [sizeString drawInRect:rect withAttributes:attributes];
-    }
-    else
-    {
-        [sizeString drawInRect:rect withFont:[UIFont systemFontOfSize:12] lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
-    }
+
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    style.alignment = NSTextAlignmentCenter;
+    NSDictionary *attributes = @{NSParagraphStyleAttributeName : style};
+    [sizeString drawInRect:rect withAttributes:attributes];
     
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -148,7 +143,7 @@ UIColor *colorForColorString(NSString *colorString)
 	CGContextRef mainViewContentContext;
 	CGColorSpaceRef colorSpace;
 	colorSpace = CGColorSpaceCreateDeviceRGB();
-	mainViewContentContext = CGBitmapContextCreate(NULL, size.width, size.height, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
+	mainViewContentContext = CGBitmapContextCreate(NULL, size.width, size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
 	CGColorSpaceRelease(colorSpace);
 	
 	if(mainViewContentContext == NULL) return NULL;
@@ -168,7 +163,7 @@ UIColor *colorForColorString(NSString *colorString)
 	CGContextRef mainViewContentContext;
 	CGColorSpaceRef colorSpace;
 	colorSpace = CGColorSpaceCreateDeviceRGB();
-	mainViewContentContext = CGBitmapContextCreate(NULL, self.size.width, self.size.height, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
+	mainViewContentContext = CGBitmapContextCreate(NULL, self.size.width, self.size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
 	CGColorSpaceRelease(colorSpace);
 	
 	if(mainViewContentContext == NULL) return NULL;
@@ -201,9 +196,14 @@ UIColor *colorForColorString(NSString *colorString)
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
     
-    if([UIDevice isRetina])
+    if([UIDevice isRetinaHD])
     {
-        CGSize retinaTargetSize = CGSizeMake(targetSize.width*2, targetSize.height*2);
+        CGSize retinaTargetSize = CGSizeMake(targetSize.width * 3, targetSize.height * 3);
+        if(!CGSizeEqualToSize(imageSize, retinaTargetSize)) targetSize = retinaTargetSize;
+    }
+    else if([UIDevice isRetina])
+    {
+        CGSize retinaTargetSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2);
         if(!CGSizeEqualToSize(imageSize, retinaTargetSize)) targetSize = retinaTargetSize;
     }
     
@@ -251,9 +251,14 @@ UIColor *colorForColorString(NSString *colorString)
 
 - (UIImage *)imageByScalingProportionallyToMaximumSize:(CGSize)targetSize
 {
-    if([UIDevice isRetina])
+    if([UIDevice isRetinaHD])
     {
-        CGSize retinaMaxtSize = CGSizeMake(targetSize.width*2, targetSize.height*2);
+        CGSize retinaMaxtSize = CGSizeMake(targetSize.width * 3, targetSize.height * 3);
+        if(!CGSizeEqualToSize(targetSize, retinaMaxtSize)) targetSize = retinaMaxtSize;
+    }
+    else if([UIDevice isRetina])
+    {
+        CGSize retinaMaxtSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2);
         if(!CGSizeEqualToSize(targetSize, retinaMaxtSize)) targetSize = retinaMaxtSize;
     }
     
@@ -309,10 +314,17 @@ UIColor *colorForColorString(NSString *colorString)
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
     
-    if([UIDevice isRetina])
+    if([UIDevice isRetinaHD])
     {
-        CGSize retinaTargetSize = CGSizeMake(targetSize.width*2, targetSize.height*2);
-        if(!CGSizeEqualToSize(imageSize, retinaTargetSize)) targetSize = retinaTargetSize;
+        CGSize retinaTargetSize = CGSizeMake(targetSize.width * 3, targetSize.height * 2);
+        if(!CGSizeEqualToSize(imageSize, retinaTargetSize))
+            targetSize = retinaTargetSize;
+    }
+    else if([UIDevice isRetina])
+    {
+        CGSize retinaTargetSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2);
+        if(!CGSizeEqualToSize(imageSize, retinaTargetSize))
+            targetSize = retinaTargetSize;
     }
     
     CGFloat targetWidth = targetSize.width;
@@ -335,8 +347,10 @@ UIColor *colorForColorString(NSString *colorString)
         scaledWidth  = width * scaleFactor;
         scaledHeight = height * scaleFactor;
         
-        if(widthFactor < heightFactor) thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5; 
-        else if(widthFactor > heightFactor) thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+        if(widthFactor < heightFactor)
+            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+        else if(widthFactor > heightFactor)
+            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
     }
     
     UIGraphicsBeginImageContext(targetSize);
@@ -396,7 +410,7 @@ UIColor *colorForColorString(NSString *colorString)
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees 
 {   
     // calculate the size of the rotated view's containing box for our drawing space
-    UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.size.width, self.size.height)];
+    UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.size.width, self.size.height)];
     CGAffineTransform t = CGAffineTransformMakeRotation(DegreesToRadians(degrees));
     rotatedViewBox.transform = t;
     CGSize rotatedSize = rotatedViewBox.frame.size;
@@ -432,7 +446,7 @@ UIColor *colorForColorString(NSString *colorString)
     if(![self hasAlpha]) return self;
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef mainViewContentContext = CGBitmapContextCreate(NULL, self.size.width, self.size.height, 8, 0, colorSpace, kCGImageAlphaNoneSkipLast);
+    CGContextRef mainViewContentContext = CGBitmapContextCreate(NULL, self.size.width, self.size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaNoneSkipLast);
 	CGColorSpaceRelease(colorSpace);
     
     CGContextDrawImage(mainViewContentContext, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
@@ -502,7 +516,7 @@ UIColor *colorForColorString(NSString *colorString)
     CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray(); 
-    CGContextRef context = CGBitmapContextCreate(nil, size.width, size.height, 8, 0, colorSpace, kCGImageAlphaNone); 
+    CGContextRef context = CGBitmapContextCreate(nil, size.width, size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaNone);
     CGColorSpaceRelease(colorSpace); 
     CGContextDrawImage(context, rect, [self CGImage]);
     CGImageRef grayscale = CGBitmapContextCreateImage(context);
@@ -516,7 +530,7 @@ UIColor *colorForColorString(NSString *colorString)
 - (UIImage *)imageToBlackAndWhite
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
-    CGContextRef context = CGBitmapContextCreate(nil, self.size.width, self.size.height, 8, self.size.width, colorSpace, kCGImageAlphaNone);
+    CGContextRef context = CGBitmapContextCreate(nil, self.size.width, self.size.height, 8, self.size.width, colorSpace, (CGBitmapInfo)kCGImageAlphaNone);
     CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
     CGContextSetShouldAntialias(context, NO);
     CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), [self CGImage]);
@@ -728,7 +742,7 @@ UIColor *colorForColorString(NSString *colorString)
         BFLog(@"Error from convolution %ld", error);
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef ctx = CGBitmapContextCreate(outBuffer.data, outBuffer.width, outBuffer.height, 8, outBuffer.rowBytes, colorSpace, kCGImageAlphaNoneSkipLast);
+    CGContextRef ctx = CGBitmapContextCreate(outBuffer.data, outBuffer.width, outBuffer.height, 8, outBuffer.rowBytes, colorSpace, (CGBitmapInfo)kCGImageAlphaNoneSkipLast);
     CGImageRef imageRef = CGBitmapContextCreateImage (ctx);
     UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
     
@@ -741,6 +755,24 @@ UIColor *colorForColorString(NSString *colorString)
     CGImageRelease(imageRef);
     
     return returnImage;
+}
+
++ (UIImage *)imageFromText:(NSString *)text font:(FontName)fontName fontSize:(CGFloat)fontSize imageSize:(CGSize)imageSize
+{
+    if(UIGraphicsBeginImageContextWithOptions != NULL)
+    {
+        UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
+    }
+    else
+    {
+        UIGraphicsBeginImageContext(imageSize);
+    }
+    
+    [text drawAtPoint:CGPointMake(0.0, 0.0) withAttributes:@{NSFontAttributeName:[UIFont fontForFontName:fontName size:fontSize]}];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 @end
