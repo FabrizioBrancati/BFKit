@@ -113,6 +113,14 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  */
 + (NSString *)getCacheDirectoryForFile:(NSString *)fileName;
 
+/**
+ *  Return the size of the file
+ *
+ *  @param fileName  Filename
+ *  @param directory Directory of the file
+ *
+ *  @return Return the file size
+ */
 + (NSNumber *)fileSize:(NSString *)fileName fromDirectory:(DirectoryType)directory;
 
 /**

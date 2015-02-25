@@ -1,6 +1,18 @@
 Changelog
 =========
 
+###Version 1.4.0
+- Added UITextView category
+- Added NSObject category
+- Added ```BFLogDetailedString``` to get more detailed log string in BFLog class
+- Added ```dateInformationDescriptionWithInformation:dateSeparator:usFormat``` method, to get timestamp in NSDate category
+- Added ```fileSize:fromDirectory:``` method, to get size of a file in NSFileManager category
+- Added some ```@property``` method, to get the RGB single component in UIColor category
+- Added ```canProvideRGBComponents, contrastingColor & complementaryColor``` methods in UIColor category
+- Added ```imageFromText:font:fontSize:imageSize:``` method, to create an UIImage from a given text in UIImage category
+- Fixed UIImage category to support al types of display (Retina & Retina HD)
+- Fixed UIImage category to remove all warnings
+
 ###Version 1.3.2
 - Added in every class or category ```@import``` to import the needed frameworks
 
