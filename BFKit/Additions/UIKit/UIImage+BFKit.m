@@ -759,14 +759,7 @@ UIColor *colorForColorString(NSString *colorString)
 
 + (UIImage *)imageFromText:(NSString *)text font:(FontName)fontName fontSize:(CGFloat)fontSize imageSize:(CGSize)imageSize
 {
-    if(UIGraphicsBeginImageContextWithOptions != NULL)
-    {
-        UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
-    }
-    else
-    {
-        UIGraphicsBeginImageContext(imageSize);
-    }
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
     
     [text drawAtPoint:CGPointMake(0.0, 0.0) withAttributes:@{NSFontAttributeName:[UIFont fontForFontName:fontName size:fontSize]}];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

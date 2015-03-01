@@ -29,6 +29,8 @@
 @import Accelerate;
 @import CoreImage;
 
+#import "UIFont+BFKit.h"
+
 /**
  *  This class add some useful methods to UIImage
  */
