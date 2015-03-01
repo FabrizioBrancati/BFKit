@@ -37,7 +37,7 @@ Installing and Usage
   - **QuartzCore**
   - **Accelerate**
   - **AudioToolbox**
-  - **LocalAuthentication** (if you want to use **BFTouchID** class, and set it as weak if your App runs on iOS 7 or older)
+  - **LocalAuthentication** (if you want to use **BFTouchID** class, and set it as weak if your App runs on iOS 7)
 - Import the file "**BFKit.h**"
 - Enjoy!
 
@@ -87,7 +87,7 @@ Adds some useful method to some classes.
 - BFLog
 - BFPassword
 - BFSystemSound
-- BFTouchID (Require iOS 8)
+- BFTouchID (iOS 8)
 
 Documentation
 =============
