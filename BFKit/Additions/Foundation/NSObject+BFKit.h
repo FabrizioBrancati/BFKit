@@ -8,6 +8,9 @@
 
 @import Foundation;
 
+/**
+ *  This class add some useful methods to NSObject
+ */
 @interface NSObject (BFKit)
 
 /**
