@@ -1,4 +1,4 @@
-![BFKit Banner](http://github.fabriziobrancati.com/bfkit/resources/banner.png)
+<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/icon.png" alt="BFKit Icon"></p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
 [![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)](http://cocoadocs.org/docsets/BFKit)
