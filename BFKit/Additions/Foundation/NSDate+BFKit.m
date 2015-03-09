@@ -126,10 +126,27 @@
     return abs((int)months);
 }
 
-- (NSInteger)daysBetweenDate:(NSDate *)toDate
-{	
-	NSTimeInterval time = [self timeIntervalSinceDate:toDate];
-	return abs(time / 60 / 60 / 24);
+- (NSInteger)daysBetweenDate:(NSDate *)anotherDate
+{
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay
+                startDate:&fromDate
+                 interval:NULL
+                  forDate:self];
+    [calendar rangeOfUnit:NSCalendarUnitDay
+                startDate:&toDate
+                 interval:NULL
+                  forDate:anotherDate];
+    
+    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
+                                               fromDate:fromDate
+                                                 toDate:toDate
+                                                options:0];
+    return ABS([difference day]);
 }
 
 - (BOOL)isToday
