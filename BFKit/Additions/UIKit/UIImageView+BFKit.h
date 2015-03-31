@@ -67,4 +67,14 @@
 + (id)initWithImage:(UIImage *)image
              center:(CGPoint)center;
 
+/**
+ *  Create a drop shadow effect
+ *
+ *  @param color   Shadow's color
+ *  @param radius  Shadow's radius
+ *  @param offset  Shadow's offset
+ *  @param opacity Shadow's opacity
+ */
+- (void)setImageShadowColor:(UIColor *)color radius:(CGFloat)radius offset:(CGSize)offset opacity:(CGFloat)opacity;
+
 @end
