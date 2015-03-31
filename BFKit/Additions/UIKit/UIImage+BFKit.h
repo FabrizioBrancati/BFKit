@@ -309,4 +309,21 @@
                   fontSize:(CGFloat)fontSize
                  imageSize:(CGSize)imageSize;
 
+/**
+ *  Create an image with a background color and with a text with a mask
+ *
+ *  @param imageSize       Image's size
+ *  @param backgroundColor Image's background color
+ *  @param string          Text to mask
+ *  @param fontName        Text's font name
+ *  @param fontSize        Text's font size
+ *
+ *  @return Return the created UIImage
+ */
++ (UIImage *)imageWithSize:(CGSize)imageSize
+           backgroundColor:(UIColor *)backgroundColor
+                maskedText:(NSString *)string
+                      font:(FontName)fontName
+                  fontSize:(CGFloat)fontSize;
+
 @end

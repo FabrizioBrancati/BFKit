@@ -768,5 +768,32 @@ UIColor *colorForColorString(NSString *colorString)
     return image;
 }
 
++ (UIImage *)imageWithSize:(CGSize)imageSize backgroundColor:(UIColor *)backgroundColor maskedText:(NSString *)string font:(FontName)fontName fontSize:(CGFloat)fontSize
+{
+    UIFont *font = [UIFont fontForFontName:fontName size:fontSize];
+    NSDictionary *textAttributes = @{NSFontAttributeName:font};
+    
+    CGSize textSize = [string sizeWithAttributes:textAttributes];
+    
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, [[UIScreen mainScreen] scale]);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(ctx, backgroundColor.CGColor);
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
+    CGContextAddPath(ctx, path.CGPath);
+    CGContextFillPath(ctx);
+    
+    CGContextSetBlendMode(ctx, kCGBlendModeDestinationOut);
+    CGPoint center = CGPointMake(imageSize.width / 2 - textSize.width / 2, imageSize.height / 2 - textSize.height / 2);
+    [string drawAtPoint:center withAttributes:textAttributes];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 @end
 
