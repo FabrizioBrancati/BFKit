@@ -56,4 +56,15 @@
                size:(CGSize)size
              center:(CGPoint)center;
 
+/**
+ *  Create an UIImageView with the given image and center
+ *
+ *  @param image  UIImageView image
+ *  @param center UIImageView center
+ *
+ *  @return Return the created UIImageView
+ */
++ (id)initWithImage:(UIImage *)image
+             center:(CGPoint)center;
+
 @end

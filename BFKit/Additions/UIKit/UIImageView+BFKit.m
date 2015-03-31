@@ -45,4 +45,13 @@
     return _image;
 }
 
++ (id)initWithImage:(UIImage *)image center:(CGPoint)center
+{
+    UIImageView *_image = [[UIImageView alloc] init];
+    [_image setFrame:CGRectMake(0, 0, _image.frame.size.width, _image.frame.size.height)];
+    [_image setImage:image];
+    [_image setCenter:center];
+    return _image;
+}
+
 @end
