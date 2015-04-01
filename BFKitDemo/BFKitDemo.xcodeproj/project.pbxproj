@@ -28,6 +28,7 @@
 		4902779719BE049B009B8BC1 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4902779519BE049B009B8BC1 /* DetailViewController.xib */; };
 		4934822F1A5DBB9A006D5380 /* BFTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 4934822E1A5DBB9A006D5380 /* BFTouchID.m */; };
 		493482311A5DBE3F006D5380 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493482301A5DBE3F006D5380 /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		494331831ACC4900006AB3AB /* BFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 494331821ACC4900006AB3AB /* BFButton.m */; };
 		494AAF7F1A98A93C001E58F5 /* NSArray+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 494AAF511A98A93C001E58F5 /* NSArray+BFKit.m */; };
 		494AAF801A98A93C001E58F5 /* NSDate+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 494AAF531A98A93C001E58F5 /* NSDate+BFKit.m */; };
 		494AAF811A98A93C001E58F5 /* NSDictionary+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 494AAF551A98A93C001E58F5 /* NSDictionary+BFKit.m */; };
@@ -111,6 +112,8 @@
 		4934822D1A5DBB9A006D5380 /* BFTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTouchID.h; sourceTree = "<group>"; };
 		4934822E1A5DBB9A006D5380 /* BFTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTouchID.m; sourceTree = "<group>"; };
 		493482301A5DBE3F006D5380 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		494331811ACC4900006AB3AB /* BFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFButton.h; sourceTree = "<group>"; };
+		494331821ACC4900006AB3AB /* BFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFButton.m; sourceTree = "<group>"; };
 		494AAF501A98A93C001E58F5 /* NSArray+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BFKit.h"; sourceTree = "<group>"; };
 		494AAF511A98A93C001E58F5 /* NSArray+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BFKit.m"; sourceTree = "<group>"; };
 		494AAF521A98A93C001E58F5 /* NSDate+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BFKit.h"; sourceTree = "<group>"; };
@@ -310,6 +313,8 @@
 			children = (
 				49AF76621A56E508007B8F08 /* BFApp.h */,
 				49AF76631A56E508007B8F08 /* BFApp.m */,
+				494331811ACC4900006AB3AB /* BFButton.h */,
+				494331821ACC4900006AB3AB /* BFButton.m */,
 				49AF76681A56E822007B8F08 /* BFLog.h */,
 				49AF76691A56E822007B8F08 /* BFLog.m */,
 				4902775219BDF424009B8BC1 /* BFPassword.h */,
@@ -559,6 +564,7 @@
 				4902779119BE0265009B8BC1 /* UserInterfaceKitViewController.m in Sources */,
 				494AAF911A98A93C001E58F5 /* UITableView+BFKit.m in Sources */,
 				490276FC19BDF3F8009B8BC1 /* main.m in Sources */,
+				494331831ACC4900006AB3AB /* BFButton.m in Sources */,
 				494AAF8F1A98A93C001E58F5 /* UILabel+BFKit.m in Sources */,
 				49932B011A17AB890093B13C /* InfoViewController.m in Sources */,
 			);
