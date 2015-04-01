@@ -67,6 +67,7 @@
  *  BFKit Classes
  */
 #import "BFApp.h"
+#import "BFButton.h"
 #import "BFLog.h"
 #import "BFPassword.h"
 #import "BFSystemSound.h"
