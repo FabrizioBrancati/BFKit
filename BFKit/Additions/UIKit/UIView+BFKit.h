@@ -39,6 +39,12 @@ typedef NS_ENUM(NSInteger, UIViewAnimationFlipDirection)
     UIViewAnimationFlipDirectionFromBottom
 };
 
+typedef NS_ENUM(NSInteger, UIViewAnimationTranslationDirection)
+{
+    UIViewAnimationTranslationDirectionFromLeftToRight,
+    UIViewAnimationTranslationDirectionFromRightToLeft
+};
+
 /**
  *  This class add some useful methods to UIView
  */
@@ -144,6 +150,8 @@ typedef NS_ENUM(NSInteger, UIViewAnimationFlipDirection)
  *  Adds a motion effect to the view
  */
 - (void)applyMotionEffects;
+
+- (void)translateAroundTheView:(UIView *)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge;
 
 /**
  *  Take a screenshot of the current view

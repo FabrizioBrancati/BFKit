@@ -101,42 +101,37 @@
     shake.repeatCount = 2.0f;
     shake.duration = 0.07f;
     
-    [self.layer addAnimation:shake forKey:nil];
+    [self.layer addAnimation:shake forKey:@"shake"];
 }
 
 - (void)pulseViewWithDuration:(CGFloat)duration
 {
-    [self pulseViewWithDuration:duration];
-}
-
-- (void)pulseViewWithTime:(CGFloat)seconds
-{
-    [UIView animateWithDuration:seconds/6 animations:^{
+    [UIView animateWithDuration:duration/6 animations:^{
         [self setTransform:CGAffineTransformMakeScale(1.1, 1.1)];
     } completion:^(BOOL finished) {
         if(finished)
         {
-            [UIView animateWithDuration:seconds/6 animations:^{
+            [UIView animateWithDuration:duration/6 animations:^{
                 [self setTransform:CGAffineTransformMakeScale(0.96, 0.96)];
             } completion:^(BOOL finished) {
                 if(finished)
                 {
-                    [UIView animateWithDuration:seconds/6 animations:^{
+                    [UIView animateWithDuration:duration/6 animations:^{
                         [self setTransform:CGAffineTransformMakeScale(1.03, 1.03)];
                     } completion:^(BOOL finished) {
                         if(finished)
                         {
-                            [UIView animateWithDuration:seconds/6 animations:^{
+                            [UIView animateWithDuration:duration/6 animations:^{
                                 [self setTransform:CGAffineTransformMakeScale(0.985, 0.985)];
                             } completion:^(BOOL finished) {
                                 if(finished)
                                 {
-                                    [UIView animateWithDuration:seconds/6 animations:^{
+                                    [UIView animateWithDuration:duration/6 animations:^{
                                         [self setTransform:CGAffineTransformMakeScale(1.007, 1.007)];
                                     } completion:^(BOOL finished) {
                                         if(finished)
                                         {
-                                            [UIView animateWithDuration:seconds/6 animations:^{
+                                            [UIView animateWithDuration:duration/6 animations:^{
                                                 [self setTransform:CGAffineTransformMakeScale(1, 1)];
                                             } completion:^(BOOL finished) {
                                                 if(finished)
@@ -154,6 +149,11 @@
             }];
         }
     }];
+}
+
+- (void)pulseViewWithTime:(CGFloat)seconds
+{
+    [self pulseViewWithDuration:seconds];
 }
 
 - (void)heartbeatViewWithDuration:(CGFloat)duration
@@ -178,7 +178,7 @@
     animation.duration = durationPerBeat;
     animation.repeatCount = duration / durationPerBeat;
     
-    [self.layer addAnimation:animation forKey:@"heartbeatView"];
+    [self.layer addAnimation:animation forKey:@"heartbeat"];
 }
 
 - (void)applyMotionEffects
@@ -226,7 +226,52 @@
     transition.repeatCount = 1;
     transition.autoreverses = 1;
     
-    [self.layer addAnimation:transition forKey:@"spin"];
+    [self.layer addAnimation:transition forKey:@"flip"];
+}
+
+- (void)translateAroundTheView:(UIView *)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge
+{
+    int startPosition = self.center.x, endPosition;
+    switch(direction)
+    {
+        case UIViewAnimationTranslationDirectionFromLeftToRight:
+        {
+            startPosition = self.frame.size.width / 2;
+            endPosition = -(self.frame.size.width / 2) + topView.frame.size.width;
+            break;
+        }
+        case UIViewAnimationTranslationDirectionFromRightToLeft:
+        default:
+        {
+            startPosition = -(self.frame.size.width / 2) + topView.frame.size.width;
+            endPosition = self.frame.size.width / 2;
+            break;
+        }
+    }
+    
+    if(startFromEdge)
+    {
+        [self setCenter:CGPointMake(startPosition, self.center.y)];
+    }
+    
+    [UIView animateWithDuration:duration / 2 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self setCenter:CGPointMake(endPosition, self.center.y)];
+    } completion:^(BOOL finished) {
+        if(finished)
+        {
+            [UIView animateWithDuration:duration / 2 animations:^{
+                [self setCenter:CGPointMake(startPosition, self.center.y)];
+            } completion:^(BOOL finished) {
+                if(finished)
+                {
+                    if(repeat)
+                    {
+                        [self translateAroundTheView:topView duration:duration direction:direction repeat:repeat startFromEdge:startFromEdge];
+                    }
+                }
+            }];
+        }
+    }];
 }
 
 - (UIImage *)screenshot
