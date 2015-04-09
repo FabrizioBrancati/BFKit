@@ -61,7 +61,7 @@
                      lines:(NSInteger)lines;
 
 /**
- *  Create an UILabel with the given parameters, with clearColor for the shadow
+ *  Create an UILabel with the given parameters
  *
  *  @param frame       Label's frame
  *  @param text        Label's text

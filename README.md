@@ -84,6 +84,7 @@ Adds some useful method to some classes.
 
 ###BFKit:
 - BFApp
+- BFButton
 - BFLog
 - BFPassword
 - BFSystemSound
