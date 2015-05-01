@@ -48,7 +48,7 @@ Requirements
 
 Language support
 ================
-```English(en), Italian(it), Russian(ru), Ukrainian(uk), Indonesian(id), Chinese Simplified(zh)```
+```English(en), Italian(it), Russian(ru), Ukrainian(uk), Indonesian(id), Chinese Simplified(zh), Vietnamese(vi)```
 
 What does it do?
 ================
