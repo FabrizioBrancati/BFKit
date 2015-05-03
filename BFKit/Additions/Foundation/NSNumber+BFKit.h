@@ -84,4 +84,22 @@ CGFloat RadiansToDegrees(CGFloat radians);
 + (CGFloat)randomFloatBetweenMin:(CGFloat)minValue
                            andMax:(CGFloat)maxValue;
 
+/**
+ *  Get the next power of two
+ *
+ *  @param number Number to be powered
+ *
+ *  @return Return the number powered
+ */
++ (NSInteger)nextPowerOfTwo:(NSInteger)number;
+
+/**
+ *  Return if the number is a power of two
+ *
+ *  @param number Number to check
+ *
+ *  @return Return if the number is a power of two
+ */
++ (BOOL)isPowerOfTwo:(NSInteger)number;
+
 @end

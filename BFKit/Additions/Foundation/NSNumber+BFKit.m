@@ -52,4 +52,16 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180 / M_PI;};
     return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * (maxValue - minValue)) + minValue;
 }
 
++ (NSInteger)nextPowerOfTwo:(NSInteger)number
+{
+    int result = 1;
+    while (result < number) result *= 2;
+    return result;
+}
+
++ (BOOL)isPowerOfTwo:(NSInteger)number
+{
+    return ((number != 0) && !(number & (number - 1)));
+}
+
 @end
