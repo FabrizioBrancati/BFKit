@@ -1,5 +1,8 @@
 Changelog
 =========
+###Version 1.5.1
+- Fixed a problem with Pod
+
 ###Version 1.5.0
 - Enhancements in NSDate category
 - Added BFButton class
