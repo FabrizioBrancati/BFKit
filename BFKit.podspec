@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BFKit"
-  s.version      = "1.4.0"
+  s.version      = "1.5.0"
   s.summary      = "BFKit is a collection of useful classes to develop Apps faster"
   s.homepage     = "https://github.com/FabrizioBrancati/BFKit"
   s.screenshots  = "http://github.fabriziobrancati.com/bfkit/resources/screenshot.png"
