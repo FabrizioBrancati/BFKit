@@ -1,4 +1,4 @@
-<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/icon.png" alt="BFKit Icon"></p>
+<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner.png" alt="BFKit Icon"></p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
 [![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)](http://cocoadocs.org/docsets/BFKit)
@@ -10,7 +10,6 @@ BFKit is a collection of useful classes to **develop Apps faster**.
 
 Installing and Usage
 ====================
-
 ###Pod
 - Create a **Podfile** in your **project directory**
 - Write:
@@ -36,7 +35,7 @@ Installing and Usage
   - **CoreGraphics**
   - **QuartzCore**
   - **Accelerate**
-  - **AudioToolbox**
+  - **AudioToolbox** (if you want to use **BFSystemSound** class)
   - **LocalAuthentication** (if you want to use **BFTouchID** class, and set it as weak if your App runs on iOS 7)
 - Import the file "**BFKit.h**"
 - Enjoy!
@@ -48,7 +47,13 @@ Requirements
 
 Language support
 ================
-```English(en), Italian(it), Russian(ru), Ukrainian(uk), Indonesian(id), Chinese Simplified(zh), Vietnamese(vi)```
+- Chinese Simplified(zh)
+- English(en)
+- Indonesian(id)
+- Italian(it)
+- Russian(ru)
+- Ukrainian(uk)
+- Vietnamese(vi)
 
 What does it do?
 ================
@@ -92,12 +97,10 @@ Adds some useful method to some classes.
 
 Documentation
 =============
-
 ###[CocoaDocs](http://cocoadocs.org/docsets/BFKit)
 
 Changelog
 =========
-
 To see what has changed in recent version of BFKit, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit/blob/master/CHANGELOG.md)**
 
 Todo

@@ -1,5 +1,17 @@
 Changelog
 =========
+###Version 1.5.0
+- Enhancements in NSDate category
+- Added BFButton class
+- Added in UIImageView category the method ```initWithImage:center:```
+- Added in UIImage category the method ```imageWithSize:backgroundColor:maskedText:font:```
+- Added in UIView category the method ```translateAroundTheView:duration:direction:repeat:startFromEdge:```
+- Added in NSNumber category the methods ```nextPowerOfTwo``` and ```isPowerOfTwo```
+- Added Vietnamese
+- Minor enhancements & bugfixes
+
+Thanks to [@simonlinj](https://github.com/simonlinj) & [@masd-duc](https://github.com/masd-duc) for this release
+
 
 ###Version 1.4.0
 - Added UITextView category

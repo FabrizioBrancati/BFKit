@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = {
                       :git => "https://github.com/FabrizioBrancati/BFKit.git",
-                      :tag => "v1.4.0"
+                      :tag => "v1.5.0"
                    }
   s.prefix_header_contents = '#import <BFKit.h>'
   s.source_files  =  "BFKit/**/*.{h,m}"
