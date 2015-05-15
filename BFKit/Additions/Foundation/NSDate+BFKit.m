@@ -46,16 +46,16 @@
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	NSDateComponents *comp = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:self];
 	[comp setDay:1];
-	NSDate *date = [gregorian dateFromComponents:comp];
-    return date;
+    
+    return [gregorian dateFromComponents:comp];
 }
 
 - (NSInteger)weekday
 {
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	NSDateComponents *comps = [gregorian components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitWeekday) fromDate:self];
-	NSInteger weekday = [comps weekday];
-	return weekday;
+    
+	return [comps weekday];
 }
 
 - (NSString *)dayFromWeekday
@@ -84,26 +84,25 @@
             return BFLocalizedString(@"SATURDAY", @"");
             break;
         default:
+            return @"";
             break;
     }
-    
-    return @"";
 }
 
 - (NSDate *)timelessDate 
 {
-	NSDate *day = self;
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-	NSDateComponents *comp = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:day];
+	NSDateComponents *comp = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
+    
 	return [gregorian dateFromComponents:comp];
 }
 
 - (NSDate *)monthlessDate 
 {
-	NSDate *day = self;
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-	NSDateComponents *comp = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:day];
-	return [gregorian dateFromComponents:comp];
+	NSDateComponents *comp = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:self];
+	
+    return [gregorian dateFromComponents:comp];
 }
 
 - (BOOL)isSameDay:(NSDate *)anotherDate
@@ -111,19 +110,17 @@
 	NSCalendar* calendar = [NSCalendar currentCalendar];
 	NSDateComponents* components1 = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
 	NSDateComponents* components2 = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:anotherDate];
+    
 	return ([components1 year] == [components2 year] && [components1 month] == [components2 month] && [components1 day] == [components2 day]);
-} 
+}
 
 - (NSInteger)monthsBetweenDate:(NSDate *)toDate
 {
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    NSDateComponents *components = [gregorian components:NSCalendarUnitMonth
-                                                fromDate:[self monthlessDate]
-                                                  toDate:[toDate monthlessDate]
-                                                 options:0];
-    NSInteger months = [components month];
-    return abs((int)months);
+    NSDateComponents *components = [gregorian components:NSCalendarUnitMonth fromDate:[self monthlessDate] toDate:[toDate monthlessDate] options:0];
+    
+    return abs((int)[components month]);
 }
 
 - (NSInteger)daysBetweenDate:(NSDate *)anotherDate
@@ -146,6 +143,7 @@
                                                fromDate:fromDate
                                                  toDate:toDate
                                                 options:0];
+    
     return ABS([difference day]);
 }
 
@@ -158,6 +156,7 @@
 {
 	NSDateComponents *c = [[NSDateComponents alloc] init];
 	c.day = days;
+    
 	return [[NSCalendar currentCalendar] dateByAddingComponents:c toDate:self options:0];
 }
 
@@ -172,6 +171,7 @@
 	
 	[dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
 	NSString *dateTime = [NSString stringWithFormat:@"%@ %@",datePortion,timePortion];
+    
 	return [dateFormatter dateFromString:dateTime];
 }
 
@@ -179,6 +179,7 @@
 {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];	
 	[dateFormatter setDateFormat:@"MMMM"];
+    
 	return [dateFormatter stringFromDate:self];
 }
 
@@ -223,7 +224,7 @@
             return BFLocalizedString(@"DECEMBER", @"");
             break;
         default:
-            return nil;
+            return @"";
             break;
     }
 }
@@ -232,6 +233,7 @@
 {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];	
 	[dateFormatter setDateFormat:@"yyyy"];
+    
 	return [dateFormatter stringFromDate:self];
 }
 

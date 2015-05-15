@@ -563,33 +563,35 @@
             UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"Waiting for Touch ID..." font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
             [_scrollView addSubview:normalLabel];
             
-            [BFTouchID showTouchIDAuthenticationWithReason:BFLocalizedString(@"AUTHENTICATION", @"") completion:^(TouchIDResult result) {
-                switch(result)
-                {
-                    case TouchIDResultSuccess:
+            if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+            {
+                [BFTouchID showTouchIDAuthenticationWithReason:BFLocalizedString(@"AUTHENTICATION", @"") completion:^(TouchIDResult result) {
+                    switch(result)
                     {
-                        runOnMainThread(^{
-                            [normalLabel setText:BFLocalizedString(@"AUTHORIZED", @"")];
-                        });
-                        break;
+                        case TouchIDResultSuccess:
+                        {
+                            runOnMainThread(^{
+                                [normalLabel setText:BFLocalizedString(@"AUTHORIZED", @"")];
+                            });
+                            break;
+                        }
+                        case TouchIDResultAuthenticationFailed:
+                        {
+                            runOnMainThread(^{
+                                [normalLabel setText:BFLocalizedString(@"NOT_OWNER", @"")];
+                            });
+                            break;
+                        }
+                        default:
+                        {
+                            runOnMainThread(^{
+                                [normalLabel setText:[NSString stringWithFormat:@"%@: %li", BFLocalizedString(@"ERROR", @""), (long)result]];
+                            });
+                            break;
+                        }
                     }
-                    case TouchIDResultAuthenticationFailed:
-                    {
-                        runOnMainThread(^{
-                            [normalLabel setText:BFLocalizedString(@"NOT_OWNER", @"")];
-                        });
-                        break;
-                    }
-                    default:
-                    {
-                        runOnMainThread(^{
-                            [normalLabel setText:BFLocalizedString(@"ERROR", @"")];
-                        });
-                        break;
-                    }
-                }
-            }];
-            
+                }];
+            }
             break;
         }
         default:
