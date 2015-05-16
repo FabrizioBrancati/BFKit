@@ -27,15 +27,20 @@
 @import Foundation;
 
 /**
- *  This class add some useful methods to NSThread
+ *  Runs a block in the main thread
+ *
+ *  @param ^block Block to be executed
  */
-@interface NSThread (BFKit)
-
 NS_INLINE void runOnMainThread(void (^block)(void))
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         block();
     });
 }
+
+/**
+ *  This category add some useful methods to NSThread
+ */
+@interface NSThread (BFKit)
 
 @end
