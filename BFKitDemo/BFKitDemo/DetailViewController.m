@@ -284,7 +284,7 @@
         case DetailTypeUIView:
         {
             self.title = @"UIView";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, 240 + SCREEN_WIDTH)];
             
             UIView *borderedView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 44)];
             [borderedView setBackgroundColor:[UIColor colorWithRed:0.729 green:0.306 blue:0.122 alpha:1.000]];
@@ -304,6 +304,12 @@
             [coloredButton setTitleColor:[UIColor whiteColor] highlightedColor:[UIColor whiteColor]];
             [coloredButton addTarget:self action:@selector(shakeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
             [_scrollView addSubview:coloredButton];
+            
+            UIView *gradientView = [[UIView alloc] initWithFrame:CGRectMake(20, 260, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            [gradientView createGradientWithColors:[NSArray arrayWithObjects:(id)[[UIColor redColor] CGColor], (id)[[UIColor blueColor] CGColor], nil] direction:UIViewLinearGradientDirectionDiagonalFromRightToLeftAndTopToDown];
+            UILabel *gradientLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Gradient View" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
+            [gradientView addSubview:gradientLabel];
+            [_scrollView addSubview:gradientView];
             
             break;
         }

@@ -1,5 +1,10 @@
 Changelog
 =========
+###Version 1.5.2
+- Added in UIView category the method ```createGradientWithColors:direction:```
+- Added a comment on every enum, method or variable
+- Fixed a warning on ```runOnMainThread``` method in NSThread category
+
 ###Version 1.5.1
 - Fixed a problem with Pod
 

@@ -57,7 +57,7 @@
     [siteButton addTarget:self action:@selector(openWebsite:) forControlEvents:UIControlEventTouchDown];
     [scrollView addSubview:siteButton];
     
-    [scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, profileImage.frame.origin.y + profileImage.frame.size.height + 50 + nameLabel.frame.size.height + 40 + workLabel.frame.size.height + 35 + siteButton.frame.size.height)];
+    [scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, profileImage.frame.origin.y + profileImage.frame.size.height + 50 + nameLabel.frame.size.height + 40 + workLabel.frame.size.height + 35 + siteButton.frame.size.height + 20)];
 }
 
 - (void)didReceiveMemoryWarning
