@@ -1,5 +1,5 @@
 //
-//  UILabel+BFKit.h
+//  UILabel+BFKit.m
 //  BFKit
 //
 //  The MIT License (MIT)

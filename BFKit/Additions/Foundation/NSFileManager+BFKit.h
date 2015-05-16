@@ -31,14 +31,26 @@
  */
 typedef NS_ENUM(NSInteger, DirectoryType)
 {
+    /**
+     *  Main bundle directory
+     */
     DirectoryTypeMainBundle = 0,
+    /**
+     *  Library directory
+     */
     DirectoryTypeLibrary,
+    /**
+     *  Documents directory
+     */
     DirectoryTypeDocuments,
+    /**
+     *  Cache directory
+     */
     DirectoryTypeCache
 };
 
 /**
- *  This class add some useful methods to NSFileManager
+ *  This category add some useful methods to NSFileManager
  */
 @interface NSFileManager (BFKit)
 

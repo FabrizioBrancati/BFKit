@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This class add some useful methods to UIImageView
+ *  This category add some useful methods to UIImageView
  */
 @interface UIImageView (BFKit)
 
@@ -75,6 +75,9 @@
  *  @param offset  Shadow's offset
  *  @param opacity Shadow's opacity
  */
-- (void)setImageShadowColor:(UIColor *)color radius:(CGFloat)radius offset:(CGSize)offset opacity:(CGFloat)opacity;
+- (void)setImageShadowColor:(UIColor *)color
+                     radius:(CGFloat)radius
+                     offset:(CGSize)offset
+                    opacity:(CGFloat)opacity;
 
 @end

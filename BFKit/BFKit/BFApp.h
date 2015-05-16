@@ -27,11 +27,6 @@
 @import Foundation;
 
 /**
- *  This class add some useful methods to retrive the App info
- */
-@interface BFApp : NSObject
-
-/**
  *  Get App name
  */
 #define APP_NAME [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
@@ -56,5 +51,10 @@
  *  Get AppDelegate
  */
 #define APP_DELEGATE ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+/**
+ *  This class add some useful methods to retrive the App info
+ */
+@interface BFApp : NSObject
 
 @end

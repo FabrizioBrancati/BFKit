@@ -1,5 +1,5 @@
 //
-//  NSDate+BFKit.h
+//  NSDate+BFKit.m
 //  BFKit
 //
 //  The MIT License (MIT)

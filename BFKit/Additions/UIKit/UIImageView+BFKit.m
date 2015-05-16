@@ -1,5 +1,5 @@
 //
-//  UIImageView+BFKit.h
+//  UIImageView+BFKit.m
 //  BFKit
 //
 //  The MIT License (MIT)

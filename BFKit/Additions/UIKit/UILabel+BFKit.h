@@ -35,7 +35,7 @@
 #import "UIFont+BFKit.h"
 
 /**
- *  This class add some useful methods to UILabel
+ *  This category add some useful methods to UILabel
  */
 @interface UILabel (BFKit)
 

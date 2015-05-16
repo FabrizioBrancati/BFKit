@@ -28,7 +28,7 @@
 @import CoreGraphics;
 
 /**
- *  This class add some useful methods to NSNumber
+ *  This category add some useful methods to NSNumber
  */
 @interface NSNumber (BFKit)
 
@@ -82,7 +82,7 @@ CGFloat RadiansToDegrees(CGFloat radians);
  *  @return Return the created random float
  */
 + (CGFloat)randomFloatBetweenMin:(CGFloat)minValue
-                           andMax:(CGFloat)maxValue;
+                          andMax:(CGFloat)maxValue;
 
 /**
  *  Get the next power of two

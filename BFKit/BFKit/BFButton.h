@@ -27,8 +27,24 @@
 @import Foundation;
 @import UIKit;
 
+/**
+ *  This class add some useful methods to UIButton that cannot be in a category
+ */
 @interface BFButton : UIButton
 
-- (id)initWithFrame:(CGRect)frame image:(UIImage*)image highlightedImage:(UIImage*)highlightedImage fadeDuration:(CGFloat)fadeDuration;
+/**
+ *  Create an UIButton with a fade animation from image to highlightedImage on touch
+ *
+ *  @param frame            Button's frame
+ *  @param image            Button's image
+ *  @param highlightedImage Button's highlighted image
+ *  @param fadeDuration     Fade duration
+ *
+ *  @return Return the created BFButton, subclass of UIButton
+ */
+- (id)initWithFrame:(CGRect)frame
+              image:(UIImage*)image
+   highlightedImage:(UIImage*)highlightedImage
+       fadeDuration:(CGFloat)fadeDuration;
 
 @end

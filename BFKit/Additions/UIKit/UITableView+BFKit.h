@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This class add some useful methods to UITableView
+ *  This category add some useful methods to UITableView
  */
 @interface UITableView (BFKit)
 
@@ -44,7 +44,12 @@
  *
  *  @return Return the created UITableView
  */
-+ (UITableView *)initWithFrame:(CGRect)frame style:(UITableViewStyle)style cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle separatorInset:(UIEdgeInsets)separatorInset dataSource:(id <UITableViewDataSource>)dataSource delegate:(id <UITableViewDelegate>)delegate;
++ (UITableView *)initWithFrame:(CGRect)frame
+                         style:(UITableViewStyle)style
+            cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle
+                separatorInset:(UIEdgeInsets)separatorInset
+                    dataSource:(id <UITableViewDataSource>)dataSource
+                      delegate:(id <UITableViewDelegate>)delegate;
 
 /**
  *  Retrive the next index path for the given row at section

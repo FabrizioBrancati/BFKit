@@ -27,12 +27,9 @@
 @import Foundation;
 
 /**
- *  This class add some useful methods to NSProcessInfo
+ *  This category add some useful methods to NSProcessInfo
  */
 @interface NSProcessInfo (BFKit)
-{
-    
-}
 
 /**
  *  Return the CPU usage

@@ -30,21 +30,42 @@
  *  The simplified date structure
  */
 struct BFDateInformation {
+    /**
+     *  Day of the year
+     */
     NSInteger day;
+    /**
+     *  Month of the year
+     */
 	NSInteger month;
+    /**
+     *  Year
+     */
 	NSInteger year;
 	
+    /**
+     *  Day of the week
+     */
 	NSInteger weekday;
 	
+    /**
+     *  Minute of the day
+     */
 	NSInteger minute;
+    /**
+     *  Hour of the day
+     */
 	NSInteger hour;
+    /**
+     *  Second of the day
+     */
 	NSInteger second;
 	
 };
 typedef struct BFDateInformation BFDateInformation;
 
 /**
- *  This class add some useful methods to NSDate
+ *  This category add some useful methods to NSDate
  */
 @interface NSDate (BFKit)
 

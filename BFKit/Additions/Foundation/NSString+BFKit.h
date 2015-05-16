@@ -27,7 +27,7 @@
 @import Foundation;
 
 /**
- *  This class add some useful methods to NSString
+ *  This category add some useful methods to NSString
  */
 @interface NSString (BFKit)
 

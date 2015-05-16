@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This class add some useful methods to UIColor
+ *  This category add some useful methods to UIColor
  */
 @interface UIColor (BFKit)
 
@@ -56,16 +56,40 @@
 #define RGB(r, g, b) RGBA(r, g, b, 1.0f)
 
 /**
- *  RGB properties
+ *  RGB properties: red
  */
 @property (nonatomic, readonly) CGFloat red;
+/**
+ *  RGB properties: green
+ */
 @property (nonatomic, readonly) CGFloat green;
+/**
+ *  RGB properties: blue
+ */
 @property (nonatomic, readonly) CGFloat blue;
+/**
+ *  RGB properties: white
+ */
 @property (nonatomic, readonly) CGFloat white;
+/**
+ *  RGB properties: hue
+ */
 @property (nonatomic, readonly) CGFloat hue;
+/**
+ *  RGB properties: saturation
+ */
 @property (nonatomic, readonly) CGFloat saturation;
+/**
+ *  RGB properties: brightness
+ */
 @property (nonatomic, readonly) CGFloat brightness;
+/**
+ *  RGB properties: alpha
+ */
 @property (nonatomic, readonly) CGFloat alpha;
+/**
+ *  RGB properties: luminance
+ */
 @property (nonatomic, readonly) CGFloat luminance;
 
 /**

@@ -30,7 +30,7 @@
 #import "UIFont+BFKit.h"
 
 /**
- *  This class add some useful methods to UITextField
+ *  This category add some useful methods to UITextField
  */
 @interface UITextField (BFKit)
 

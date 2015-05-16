@@ -27,7 +27,7 @@
 @import Foundation;
 
 /**
- *  This class add some useful methods to NSArray
+ *  This category add some useful methods to NSArray
  */
 @interface NSArray (BFKit)
 

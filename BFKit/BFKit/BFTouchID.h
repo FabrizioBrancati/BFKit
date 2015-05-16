@@ -1,5 +1,5 @@
 //
-//  BFTouchID.m
+//  BFTouchID.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -27,19 +27,52 @@
 @import Foundation;
 @import LocalAuthentication;
 
+/**
+ *  Touch result enum
+ */
 typedef NS_ENUM(NSInteger, TouchIDResult)
 {
+    /**
+     *  Success
+     */
     TouchIDResultSuccess = 0,
+    /**
+     *  Generic error
+     */
     TouchIDResultError,
+    /**
+     *  Authentication failed
+     */
     TouchIDResultAuthenticationFailed,
+    /**
+     *  User cancel
+     */
     TouchIDResultUserCancel,
+    /**
+     *  User fallback
+     */
     TouchIDResultUserFallback,
+    /**
+     *  System cancel
+     */
     TouchIDResultSystemCancel,
+    /**
+     *  Passcode not set
+     */
     TouchIDResultPasscodeNotSet,
+    /**
+     *  Not available
+     */
     TouchIDResultNotAvailable,
+    /**
+     *  Not enrolled
+     */
     TouchIDResultNotEnrolled
 } NS_ENUM_AVAILABLE_IOS(8_0);
 
+/**
+ *  This class add some useful methods to use TouchID
+ */
 NS_CLASS_AVAILABLE_IOS(8_0) @interface BFTouchID : NSObject
 
 /**
@@ -48,6 +81,7 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface BFTouchID : NSObject
  *  @param reason     Text to show in the alert
  *  @param completion Completion handler. It returns the TouchID result, from the TouchIDResult enum
  */
-+ (void)showTouchIDAuthenticationWithReason:(NSString *)reason completion:(void (^)(TouchIDResult result))completion;
++ (void)showTouchIDAuthenticationWithReason:(NSString *)reason
+                                 completion:(void (^)(TouchIDResult result))completion;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  UIColor+BFKit.h
+//  UIColor+BFKit.m
 //  BFKit
 //
 //  The MIT License (MIT)

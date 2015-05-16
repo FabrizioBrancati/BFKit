@@ -27,7 +27,7 @@
 @import Foundation;
 
 /**
- *  This class add some useful methods to NSMutableArray
+ *  This category add some useful methods to NSMutableArray
  */
 @interface NSMutableArray (BFKit)
 

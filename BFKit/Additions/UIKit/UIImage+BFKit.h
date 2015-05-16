@@ -32,7 +32,7 @@
 #import "UIFont+BFKit.h"
 
 /**
- *  This class add some useful methods to UIImage
+ *  This category add some useful methods to UIImage
  */
 @interface UIImage (BFKit)
 

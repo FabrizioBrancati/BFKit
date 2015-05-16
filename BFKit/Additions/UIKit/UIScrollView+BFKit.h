@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This class add some useful methods to UIScrollView
+ *  This category add some useful methods to UIScrollView
  */
 @interface UIScrollView (BFKit)
 

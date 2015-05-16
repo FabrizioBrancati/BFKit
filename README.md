@@ -47,17 +47,17 @@ Requirements
 
 Language support
 ================
-- Chinese Simplified(zh)
-- English(en)
-- Indonesian(id)
-- Italian(it)
-- Russian(ru)
-- Ukrainian(uk)
-- Vietnamese(vi)
+- Chinese Simplified (zh)
+- English (en)
+- Indonesian (id)
+- Italian (it)
+- Russian (ru)
+- Ukrainian (uk)
+- Vietnamese (vi)
 
 What does it do?
 ================
-Adds some useful method to some classes.
+Adds some useful method to some classes like:
 
 ###Foundation:
 - NSArray

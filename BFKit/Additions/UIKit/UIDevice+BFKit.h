@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This class add some useful methods to UIDevice
+ *  This category add some useful methods to UIDevice
  */
 @interface UIDevice (BFKit)
 

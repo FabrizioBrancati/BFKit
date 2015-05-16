@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This class add some useful methods to UIWindow
+ *  This category add some useful methods to UIWindow
  */
 @interface UIWindow (BFKit)
 

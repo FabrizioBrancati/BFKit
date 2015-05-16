@@ -26,6 +26,14 @@
 
 @import Foundation;
 
+/**
+ *  Exented NSLog
+ *
+ *  @param file         File
+ *  @param lineNumber   Line number
+ *  @param functionName Function name
+ *  @param format       Format
+ */
 void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...);
 
 /**
@@ -34,18 +42,34 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
 @interface BFLog : NSObject
 
 /**
- *  NSLog only if in DEBUG mode
+ *  BFLog only if in DEBUG mode
  */
 #ifdef DEBUG
+
+/**
+ *  Exented NSLog
+ */
 #define BFLog(args ...) ExtendNSLog(__FILE__, __LINE__, __PRETTY_FUNCTION__, args);
+/**
+ *  Log string
+ */
 #define BFLogString [BFLog logString]
+/**
+ *  Detailed log string
+ */
 #define BFLogDetailedString [BFLog logDetailedString]
+/**
+ *  Clear the log string
+ */
 #define BFLogClear [BFLog clearLog]
+
 #else
+
 #define BFLog(args ...)
 #define BFLogString
 #define BFLogDetailedString
 #define BFLogClear
+
 #endif
 
 /**

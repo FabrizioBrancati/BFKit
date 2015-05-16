@@ -27,7 +27,7 @@
 @import Foundation;
 
 /**
- *  This class add some useful methods to NSDictionary
+ *  This category add some useful methods to NSDictionary
  */
 @interface NSDictionary (BFKit)
 
