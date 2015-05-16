@@ -93,6 +93,57 @@
     self.layer.masksToBounds = NO;
 }
 
+- (void)createGradientWithColors:(NSArray *)colors direction:(UIViewLinearGradientDirection)direction
+{
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.bounds;
+    gradient.colors = colors;//[NSArray arrayWithObjects:(id)[[UIColor redColor] CGColor], (id)[[UIColor whiteColor] CGColor], nil];
+    switch (direction)
+    {
+        case UIViewLinearGradientDirectionVertical:
+        {
+            gradient.startPoint = CGPointMake(0.5f, 0.0f);
+            gradient.endPoint = CGPointMake(0.5f, 1.0f);
+            break;
+        }
+        case UIViewLinearGradientDirectionHorizontal:
+        {
+            gradient.startPoint = CGPointMake(0.0f, 0.5f);
+            gradient.endPoint = CGPointMake(1.0f, 0.5f);
+            break;
+        }
+        case UIViewLinearGradientDirectionDiagonalFromLeftToRightAndTopToDown:
+        {
+            gradient.startPoint = CGPointMake(0.0f, 0.0f);
+            gradient.endPoint = CGPointMake(1.0f, 1.0f);
+            break;
+        }
+        case UIViewLinearGradientDirectionDiagonalFromLeftToRightAndDownToTop:
+        {
+            gradient.startPoint = CGPointMake(0.0f, 1.0f);
+            gradient.endPoint = CGPointMake(1.0f, 0.0f);
+            break;
+        }
+        case UIViewLinearGradientDirectionDiagonalFromRightToLeftAndTopToDown:
+        {
+            gradient.startPoint = CGPointMake(1.0f, 0.0f);
+            gradient.endPoint = CGPointMake(0.0f, 1.0f);
+            break;
+        }
+        case UIViewLinearGradientDirectionDiagonalFromRightToLeftAndDownToTop:
+        {
+            gradient.startPoint = CGPointMake(1.0f, 1.0f);
+            gradient.endPoint = CGPointMake(0.0f, 0.0f);
+            break;
+        }
+        default:
+        {
+            break;
+        }
+    }
+    [self.layer insertSublayer:gradient atIndex:0];
+}
+
 - (void)shakeView
 {
     CAKeyframeAnimation *shake = [CAKeyframeAnimation animationWithKeyPath:@"transform"];

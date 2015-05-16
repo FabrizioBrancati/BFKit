@@ -33,20 +33,72 @@
  */
 typedef NS_ENUM(NSInteger, UIViewAnimationFlipDirection)
 {
+    /**
+     *  Flip animation from top
+     */
     UIViewAnimationFlipDirectionFromTop,
+    /**
+     *  Flip animation from left
+     */
     UIViewAnimationFlipDirectionFromLeft,
+    /**
+     *  Flip animation from right
+     */
     UIViewAnimationFlipDirectionFromRight,
+    /**
+     *  Flip animation from bottom
+     */
     UIViewAnimationFlipDirectionFromBottom
 };
 
+/**
+ *  Direction of the translation
+ */
 typedef NS_ENUM(NSInteger, UIViewAnimationTranslationDirection)
 {
+    /**
+     *  Translation from left to right
+     */
     UIViewAnimationTranslationDirectionFromLeftToRight,
+    /**
+     *  Translation from right to left
+     */
     UIViewAnimationTranslationDirectionFromRightToLeft
 };
 
 /**
- *  This class add some useful methods to UIView
+ *  Direction of the linear gradient
+ */
+typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection)
+{
+    /**
+     *  Linear gradient vertical
+     */
+    UIViewLinearGradientDirectionVertical = 0,
+    /**
+     *  Linear gradient horizontal
+     */
+    UIViewLinearGradientDirectionHorizontal,
+    /**
+     *  Linear gradient from left to right and top to down
+     */
+    UIViewLinearGradientDirectionDiagonalFromLeftToRightAndTopToDown,
+    /**
+     *  Linear gradient from left to right and down to top
+     */
+    UIViewLinearGradientDirectionDiagonalFromLeftToRightAndDownToTop,
+    /**
+     *  Linear gradient from right to left and top to down
+     */
+    UIViewLinearGradientDirectionDiagonalFromRightToLeftAndTopToDown,
+    /**
+     *  Linear gradient from right to left and down to top
+     */
+    UIViewLinearGradientDirectionDiagonalFromRightToLeftAndDownToTop
+};
+
+/**
+ *  This category add some useful methods to UIView
  */
 @interface UIView (BFKit)
 
@@ -112,6 +164,15 @@ typedef NS_ENUM(NSInteger, UIViewAnimationTranslationDirection)
 - (void)setCornerRadius:(CGFloat)radius;
 
 /**
+ *  Create a linear gradient
+ *
+ *  @param colors    NSArray of colors. Every color must be a CGColor casted to id. Example: (id)[[UIColor redColor] CGColor]
+ *  @param direction Direction of the gradient
+ */
+- (void)createGradientWithColors:(NSArray *)colors
+                       direction:(UIViewLinearGradientDirection)direction;
+
+/**
  *  Create a shake effect on the UIView
  */
 - (void)shakeView;
@@ -151,7 +212,20 @@ typedef NS_ENUM(NSInteger, UIViewAnimationTranslationDirection)
  */
 - (void)applyMotionEffects;
 
-- (void)translateAroundTheView:(UIView *)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge;
+/**
+ *  Translate the UIView around the topView
+ *
+ *  @param topView       Top to translate to
+ *  @param duration      Duration of the translation
+ *  @param direction     Direction of the translation
+ *  @param repeat        If the animation must be repeat or no
+ *  @param startFromEdge If the animation must start from the edge
+ */
+- (void)translateAroundTheView:(UIView *)topView
+                      duration:(CGFloat)duration
+                     direction:(UIViewAnimationTranslationDirection)direction
+                        repeat:(BOOL)repeat
+                 startFromEdge:(BOOL)startFromEdge;
 
 /**
  *  Take a screenshot of the current view
