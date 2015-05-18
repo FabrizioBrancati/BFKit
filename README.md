@@ -8,6 +8,8 @@
 
 BFKit is a collection of useful classes to **develop Apps faster**.
 
+For example you can use every iOS font with just an enum!
+
 Installing and Usage
 ====================
 ###Pod
@@ -47,11 +49,12 @@ Requirements
 
 Language support
 ================
-- Chinese Simplified (zh)
 - English (en)
 - Indonesian (id)
 - Italian (it)
 - Russian (ru)
+- Simplified Chinese (zh-Hans)
+- Traditional Chinese (zh-Hant)
 - Ukrainian (uk)
 - Vietnamese (vi)
 
@@ -97,7 +100,7 @@ Adds some useful method to some classes like:
 
 Documentation
 =============
-###[CocoaDocs](http://cocoadocs.org/docsets/BFKit)
+###[CocoaDocs](http://cocoadocs.org/docsets/BFKit) - 100% Documented
 
 Changelog
 =========
