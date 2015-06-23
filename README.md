@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
 
 ###Swift  <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="20" width="20">
-If you are looking for Swift version check it out here: [BFKit-Swift](https://github.com/FabrizioBrancati/BFKit-Swift)
+If you are looking for Swift version check it out here: **[BFKit-Swift](https://github.com/FabrizioBrancati/BFKit-Swift)**
 
 What does it do :question:
 ===========================
