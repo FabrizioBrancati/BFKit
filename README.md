@@ -69,7 +69,7 @@ Language support :it:
 Requirements :iphone:
 =====================
 - iOS SDK **7.0** or later
-- ARC
+- **ARC**
 
 Communication :speaker:
 =======================
