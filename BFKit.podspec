@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BFKit"
-  s.version      = "1.6.1"
+  s.version      = "1.6.2"
   s.summary      = "BFKit is a collection of useful classes to develop Apps faster"
   s.homepage     = "https://github.com/FabrizioBrancati/BFKit"
   s.screenshots  = "http://github.fabriziobrancati.com/bfkit/resources/screenshot.png"
@@ -13,13 +13,11 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = {
                       :git => "https://github.com/FabrizioBrancati/BFKit.git",
-                      :tag => "v1.6.1"
+                      :tag => "v1.6.2"
                    }
-  s.prefix_header_contents = '#import <BFKit.h>'
-  s.source_files  =  "BFKit/**/*.{h,m}"
-  s.public_header_files = "BFKit/BFKit.h"
+  s.source_files  =  "BFKit/BFKit.h"
   s.resources = "BFKit/Languages/**"
-  s.frameworks  = "Foundation", "UIKit", "CoreGraphics", "AudioToolbox", "CoreImage", "Accelerate", "QuartzCore"
+  s.frameworks = "Foundation", "UIKit", "CoreGraphics", "AudioToolbox", "CoreImage", "Accelerate", "QuartzCore"
   s.weak_frameworks = 'LocalAuthentication'
   s.requires_arc = true
 end

@@ -1,5 +1,8 @@
 Changelog
 =========
+###Version 1.6.2
+- Fixed a problem with CocoaPods & CocoaDocs
+
 ###Version 1.6.1
 - In NSString category the method ```allFamilyAndFonts``` now return an NSDictionary with all the family font names
 

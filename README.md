@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
 [![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit/issues)
 [![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)](http://cocoadocs.org/docsets/BFKit)
-[![Platform](https://img.shields.io/badge/platform-iOS-orange.svg)](http://cocoadocs.org/docsets/BFKit)
+[![Platform](https://img.shields.io/badge/platform-iOS-000000.svg)](http://cocoadocs.org/docsets/BFKit)
 [![Language](https://img.shields.io/badge/language-Objective--C-blue.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
 
@@ -92,6 +92,7 @@ Please make sure to follow my general coding style for new features!
 Installing and Usage :computer:
 ===============================
 ###Pod
+####Newbie version
 - Create a **Podfile** in your **project directory**
 - Write:
 ```ruby
@@ -104,6 +105,12 @@ Installing and Usage :computer:
 ```bash
   pod install
 ```
+- Import the file "**BFKit.h**"
+- Enjoy!
+
+####Pro version
+- ```pod 'BFKit'```
+- Import the file "**BFKit.h**"
 - Enjoy!
 
 ###Manual
