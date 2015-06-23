@@ -193,6 +193,9 @@
         case FamilyFontNameKhmerSangamMN:
             fontNames = [UIFont fontNamesForFamilyName:@"Khmer Sangam MN"];
             break;
+        case FamilyFontNameKohinoorBangla:
+            fontNames = [UIFont fontNamesForFamilyName:@"Kohinoor Bangla"];
+            break;
         case FamilyFontNameKohinoorDevanagari:
             fontNames = [UIFont fontNamesForFamilyName:@"Kohinoor Devanagari"];
             break;
@@ -314,22 +317,22 @@
         case FontNameAppleColorEmoji:
             return [UIFont fontWithName:@"AppleColorEmoji" size:fontSize];
             break;
-        case FontNameAppleSDGohticNeoBold:
+        case FontNameAppleSDGothicNeoBold:
             return [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:fontSize];
             break;
-        case FontNameAppleSDGohticNeoLight:
+        case FontNameAppleSDGothicNeoLight:
             return [UIFont fontWithName:@"AppleSDGothicNeo-Light" size:fontSize];
             break;
-        case FontNameAppleSDGohticNeoMedium:
+        case FontNameAppleSDGothicNeoMedium:
             return [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:fontSize];
             break;
-        case FontNameAppleSDGohticNeoRegular:
+        case FontNameAppleSDGothicNeoRegular:
             return [UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:fontSize];
             break;
-        case FontNameAppleSDGohticNeoSemiBold:
+        case FontNameAppleSDGothicNeoSemiBold:
             return [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:fontSize];
             break;
-        case FontNameAppleSDGohticNeoThin:
+        case FontNameAppleSDGothicNeoThin:
             return [UIFont fontWithName:@"AppleSDGothicNeo-Thin" size:fontSize];
             break;
         case FontNameArialBoldItalicMT:
@@ -374,7 +377,7 @@
         case FontNameAvenirBookOblique:
             return [UIFont fontWithName:@"Avenir-BookOblique" size:fontSize];
             break;
-        case FontNameAvenirHeavtOblique:
+        case FontNameAvenirHeavyOblique:
             return [UIFont fontWithName:@"Avenir-HeavyOblique" size:fontSize];
             break;
         case FontNameAvenirHeavy:
@@ -793,6 +796,15 @@
             break;
         case FontNameKhmerSangamMN:
             return [UIFont fontWithName:@"KhmerSangamMN" size:fontSize];
+            break;
+        case FontNameKohinoorBanglaLight:
+            return [UIFont fontWithName:@"KohinoorDevanagari-Light" size:fontSize];
+            break;
+        case FontNameKohinoorBanglaMedium:
+            return [UIFont fontWithName:@"KohinoorDevanagari-Medium" size:fontSize];
+            break;
+        case FontNameKohinoorBanglaRegular:
+            return [UIFont fontWithName:@"KohinoorDevanagari-Regular" size:fontSize];
             break;
         case FontNameKohinoorDevanagariLight:
             return [UIFont fontWithName:@"KohinoorDevanagari-Light" size:fontSize];

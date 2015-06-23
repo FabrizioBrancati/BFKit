@@ -1,17 +1,96 @@
-<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner.png" alt="BFKit Banner"></p>
+<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-new.png" alt="BFKit Banner"></p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
-[![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)](http://cocoadocs.org/docsets/BFKit)
-[![License](https://img.shields.io/cocoapods/l/BFKit.svg?style=flat)](http://cocoadocs.org/docsets/BFKit)
-[![Platform](https://img.shields.io/cocoapods/p/BFKit.svg?style=flat)](http://cocoadocs.org/docsets/BFKit)
 [![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit/issues)
+[![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)](http://cocoadocs.org/docsets/BFKit)
+[![Platform](https://img.shields.io/badge/platform-iOS-orange.svg)](http://cocoadocs.org/docsets/BFKit)
+[![Language](https://img.shields.io/badge/language-Objective--C-blue.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
+[![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
 
+###Swift  <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="20" width="20">
+If you are looking for Swift version check it out here: [BFKit-Swift](https://github.com/FabrizioBrancati/BFKit-Swift)
+
+What does it do :question:
+===========================
 BFKit is a collection of useful classes to **develop Apps faster**.
 
 For example you can use every iOS font with just an enum!
 
-Installing and Usage
-====================
+It also adds some useful method to some classes like:
+
+###BFKit:
+- [BFApp](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFApp.html)
+- [BFButton](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFButton.html)
+- [BFLog](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFLog.html)
+- [BFPassword](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFPassword.html)
+- [BFSystemSound](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFSystemSound.html)
+- [BFTouchID](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFTouchID.html) (iOS 8 or later)
+
+###Foundation:
+- [NSArray](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSArray+BFKit.html)
+- [NSDate](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSDate+BFKit.html)
+- [NSDictionary](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSDictionary+BFKit.html)
+- [NSFileManager](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSFileManager+BFKit.html)
+- [NSMutableArray](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSMutableArray+BFKit.html)
+- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSMutableDictionary+BFKit.html)
+- [NSNumber](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSNumber+BFKit.html)
+- [NSObject](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSObject+BFKit.html)
+- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSProcessInfo+BFKit.html)
+- [NSString](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSString+BFKit.html)
+- [NSThread](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSThread+BFKit.html)
+
+###UIKit:
+- [UIButton](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/NSArray+BFKit.html)
+- [UIColor](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIColor+BFKit.html)
+- [UIDevice](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIDevice+BFKit.html)
+- [UIFont](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIFont+BFKit.html)
+- [UIImage](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIImage+BFKit.html)
+- [UIImageView](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIImageView+BFKit.html)
+- [UILabel](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UILabel+BFKit.html)
+- [UIScrollView](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIScrollView+BFKit.html)
+- [UITableView](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UITableView+BFKit.html)
+- [UITextField](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UITextField+BFKit.html)
+- [UITextView](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UITextView+BFKit.html)
+- [UIView](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIView+BFKit.html)
+- [UIWebView](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIWebView+BFKit.html)
+- [UIWindow](http://cocoadocs.org/docsets/BFKit/1.5.3/Categories/UIWindow+BFKit.html)
+
+Language support :it:
+=====================
+- English (en)
+- Indonesian (id)
+- Italian (it)
+- Russian (ru)
+- Simplified Chinese (zh-Hans)
+- Traditional Chinese (zh-Hant)
+- Ukrainian (uk)
+- Vietnamese (vi)
+
+Requirements :iphone:
+=====================
+- iOS SDK **7.0** or later
+- ARC
+
+Communication :speaker:
+=======================
+- If you need help, use Stack Overflow.
+- If you found a bug, open an issue.
+- If you have a feature request, open an issue.
+- If you want to contribute, see [Contributing](https://github.com/FabrizioBrancati/BFKit#contributing-octocat) section.
+
+Contributing :octocat:
+======================
+I'd love to see your ideas for improving this library.
+
+The best way to contribute is by submitting a pull request.
+I'll do my best to respond to you as soon as possible.
+
+You can also submit a new Github issue if you find bugs or have questions.
+
+Please make sure to follow my general coding style for new features!
+
+Installing and Usage :computer:
+===============================
 ###Pod
 - Create a **Podfile** in your **project directory**
 - Write:
@@ -25,7 +104,6 @@ Installing and Usage
 ```bash
   pod install
 ```
-- Import the file "**BFKit.h**"
 - Enjoy!
 
 ###Manual
@@ -42,95 +120,33 @@ Installing and Usage
 - Import the file "**BFKit.h**"
 - Enjoy!
 
-Requirements
-============
-- iOS SDK **7.0** or later
-- ARC
-
-Language support
-================
-- English (en)
-- Indonesian (id)
-- Italian (it)
-- Russian (ru)
-- Simplified Chinese (zh-Hans)
-- Traditional Chinese (zh-Hant)
-- Ukrainian (uk)
-- Vietnamese (vi)
-
-What does it do?
-================
-Adds some useful method to some classes like:
-
-###Foundation:
-- NSArray
-- NSDate
-- NSFileManager
-- NSMutableArray
-- NSMutableDictionary
-- NSNumber
-- NSObject
-- NSProcessInfo
-- NSString
-- NSThread
-
-###UIKit:
-- UIButton
-- UIColor
-- UIDevice
-- UIFont
-- UIImage
-- UIImageView
-- UILabel
-- UIScrollView
-- UITableView
-- UITextField
-- UITextView
-- UIView
-- UIWebView
-- UIWindow
-
-###BFKit:
-- BFApp
-- BFButton
-- BFLog
-- BFPassword
-- BFSystemSound
-- BFTouchID (iOS 8)
-
-Documentation
-=============
+Documentation :100:
+===================
 ###[CocoaDocs](http://cocoadocs.org/docsets/BFKit) - 100% Documented
 
-Changelog
-=========
+Changelog :bookmark_tabs:
+=========================
 To see what has changed in recent version of BFKit, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit/blob/master/CHANGELOG.md)**
 
-Todo
-====
-- [ ] Create instance methods for UIKit categories
-- [ ] Create a category for every UIKit element
-- [x] Add missing font (iOS 8)
-- [x] Add missing system sound ids
+Demo :wrench:
+=============
+Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
-Author
-======
+Todo :ballot_box_with_check:
+============================
+- :heavy_minus_sign: Create instance methods for UIKit categories
+- :heavy_minus_sign: Create a category for every UIKit element
+- :heavy_minus_sign: Create tests
+- :heavy_check_mark: Add missing font for iOS 9
+- :heavy_check_mark: Add missing system sound ids
+
+Author :neckbeard:
+==================
 **Fabrizio Brancati**
 
 - **[Website](http://www.fabriziobrancati.com)**
 - **[Email](mailto:fabrizio.brancati@gmail.com)**
 
-License
-=======
+License :scroll:
+================
 BFKit is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)** file for more info.
-
-Contributing :octocat:
-======================
-I'd love to see your ideas for improving this library.
-
-The best way to contribute is by submitting a pull request.
-I'll do my best to respond to you as soon as possible.
-
-You can also submit a new Github issue if you find bugs or have questions.
-
-Please make sure to follow my general coding style for new features!

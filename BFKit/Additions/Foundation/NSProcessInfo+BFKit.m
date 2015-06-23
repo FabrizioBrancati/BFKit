@@ -72,8 +72,7 @@
     for(j = 0; j < thread_count; j++)
     {
         thread_info_count = THREAD_INFO_MAX;
-        kr = thread_info(thread_list[j], THREAD_BASIC_INFO,
-                         (thread_info_t)thinfo, &thread_info_count);
+        kr = thread_info(thread_list[j], THREAD_BASIC_INFO, (thread_info_t)thinfo, &thread_info_count);
         if(kr != KERN_SUCCESS)
         {
             return -1;
@@ -86,7 +85,6 @@
             tot_usec = tot_usec + basic_info_th->system_time.microseconds + basic_info_th->system_time.microseconds;
             tot_cpu = tot_cpu + basic_info_th->cpu_usage / (float)TH_USAGE_SCALE;
         }
-        
     }
     
     return tot_cpu;

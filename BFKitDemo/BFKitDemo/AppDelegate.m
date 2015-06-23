@@ -47,6 +47,7 @@
                                                                @"NSThread"]];
     
     _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFApp",
+                                                          @"BFButton",
                                                           @"BFLog",
                                                           @"BFPassword",
                                                           @"BFSystemSound",

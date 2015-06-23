@@ -43,20 +43,20 @@
 {
     SystemSoundID soundID;
 
-    OSStatus err = AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(soundURL), &soundID);
-    if(err != kAudioServicesNoError)
+    OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(soundURL), &soundID);
+    if(error != kAudioServicesNoError)
     {
         BFLog(@"Could not load %@", soundURL);
     }
     return soundID;
 }
 
-+ (BOOL)disposeSound:(SystemSoundID)soudID
++ (BOOL)disposeSound:(SystemSoundID)soundID
 {
-    OSStatus err = AudioServicesDisposeSystemSoundID(soudID);
-    if(err != kAudioServicesNoError)
+    OSStatus error = AudioServicesDisposeSystemSoundID(soundID);
+    if(error != kAudioServicesNoError)
     {
-        BFLog(@"Error while disposing sound %i", (unsigned int)soudID);
+        BFLog(@"Error while disposing sound %i", (unsigned int)soundID);
         return NO;
     }
     

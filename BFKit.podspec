@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BFKit"
-  s.version      = "1.5.3"
+  s.version      = "1.6.0"
   s.summary      = "BFKit is a collection of useful classes to develop Apps faster"
   s.homepage     = "https://github.com/FabrizioBrancati/BFKit"
   s.screenshots  = "http://github.fabriziobrancati.com/bfkit/resources/screenshot.png"
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = {
                       :git => "https://github.com/FabrizioBrancati/BFKit.git",
-                      :tag => "v1.5.3"
+                      :tag => "v1.6.0"
                    }
   s.prefix_header_contents = '#import <BFKit.h>'
   s.source_files  =  "BFKit/**/*.{h,m}"

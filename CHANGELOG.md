@@ -1,5 +1,12 @@
 Changelog
 =========
+###Version 1.6.0
+- Added in NSString category the method ```hasString:caseSensitive:```
+- Added system macros in UIDevice category
+- Added iOS 9 fonts and marked as deprecated that is not available on iOS 9
+
+- Performance improved
+
 ###Version 1.5.3
 - Added Traditional Chinese (zh-Hant)
 

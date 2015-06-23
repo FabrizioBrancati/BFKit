@@ -28,7 +28,20 @@
 @import UIKit;
 
 /**
- *  All font family names available from iOS 7.0 to iOS 8.0
+ *  Static light font to use in App
+ */
+static UIFont *lightFont;
+/**
+ *  Static regular font to use in App
+ */
+static UIFont *regularFont;
+/**
+ *  Static bold font to use in App
+ */
+static UIFont *boldFont;
+
+/**
+ *  All font family names available from iOS 7.0 to iOS 9.0
  */
 typedef NS_ENUM(NSInteger, FamilyFontName)
 {
@@ -79,7 +92,7 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
     /**
      *  Bangla Sangam MN
      */
-    FamilyFontNameBanglaSangamMN,
+    FamilyFontNameBanglaSangamMN NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Baskerville
      */
@@ -143,11 +156,11 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
     /**
      *  DIN Alternate
      */
-    FamilyFontNameDINAlternate,
+    FamilyFontNameDINAlternate NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  DIN Condensed
      */
-    FamilyFontNameDINCondensed,
+    FamilyFontNameDINCondensed NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Euphemia UCAS
      */
@@ -211,7 +224,7 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
     /**
      *  Iowan OldStyle
      */
-    FamilyFontNameIowanOldStyle,
+    FamilyFontNameIowanOldStyle NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Kailasa
      */
@@ -224,6 +237,10 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
      *  Khmer Sangam MN
      */
     FamilyFontNameKhmerSangamMN NS_ENUM_AVAILABLE_IOS(8_0),
+    /**
+     *  Kohinoor Bangla
+     */
+    FamilyFontNameKohinoorBangla NS_ENUM_AVAILABLE_IOS(9_0),
     /**
      *  Kohinoor Devanagari
      */
@@ -239,7 +256,7 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
     /**
      *  Marion
      */
-    FamilyFontNameMarion,
+    FamilyFontNameMarion NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Marker Felt
      */
@@ -291,7 +308,7 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
     /**
      *  Superclarendon
      */
-    FamilyFontNameSuperclarendon,
+    FamilyFontNameSuperclarendon NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Symbol
      */
@@ -375,29 +392,33 @@ typedef NS_ENUM(NSInteger, FontName){
      */
     FontNameAppleColorEmoji,
     /**
-     *  Apple SD Gohtic Neo Bold
+     *  Apple SD Gothic Neo Bold
      */
-    FontNameAppleSDGohticNeoBold,
+    FontNameAppleSDGothicNeoBold,
     /**
-     *  Apple SD Gohtic Neo Light
+     *  Apple SD Gothic Neo Light
      */
-    FontNameAppleSDGohticNeoLight,
+    FontNameAppleSDGothicNeoLight,
     /**
-     *  Apple SD Gohtic Neo Medium
+     *  Apple SD Gothic Neo Medium
      */
-    FontNameAppleSDGohticNeoMedium,
+    FontNameAppleSDGothicNeoMedium,
     /**
-     *  Apple SD Gohtic Neo Regular
+     *  Apple SD Gothic Neo Regular
      */
-    FontNameAppleSDGohticNeoRegular,
+    FontNameAppleSDGothicNeoRegular,
     /**
-     *  Apple SD Gohtic Neo Semi Bold
+     *  Apple SD Gothic Neo Semi Bold
      */
-    FontNameAppleSDGohticNeoSemiBold,
+    FontNameAppleSDGothicNeoSemiBold,
     /**
-     *  Apple SD Gohtic Neo Thin
+     *  Apple SD Gothic Neo Thin
      */
-    FontNameAppleSDGohticNeoThin,
+    FontNameAppleSDGothicNeoThin,
+    /* 
+     *  Apple SD Gothic Neo Ultra Light
+     */
+    FontNameAppleSDGothicNeoUltraLight NS_ENUM_AVAILABLE_IOS(9_0),
     /**
      *  Arial Bold Italic MT
      */
@@ -455,9 +476,9 @@ typedef NS_ENUM(NSInteger, FontName){
      */
     FontNameAvenirBookOblique,
     /**
-     *  Avenir Heavt Oblique
+     *  Avenir Heavy Oblique
      */
-    FontNameAvenirHeavtOblique,
+    FontNameAvenirHeavyOblique,
     /**
      *  Avenir Heavy
      */
@@ -479,7 +500,7 @@ typedef NS_ENUM(NSInteger, FontName){
      */
     FontNameAvenirMediumOblique,
     /**
-     *  Avenir Next Bold
+     *  Avenir Oblique
      */
     FontNameAvenirNextBold,
     /**
@@ -581,11 +602,11 @@ typedef NS_ENUM(NSInteger, FontName){
     /**
      *  Bangla Sangam MN
      */
-    FontNameBanglaSangamMN,
+    FontNameBanglaSangamMN NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Bangla Sangam MN Bold
      */
-    FontNameBanglaSangamMNBold,
+    FontNameBanglaSangamMNBold NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Baskerville
      */
@@ -761,11 +782,11 @@ typedef NS_ENUM(NSInteger, FontName){
     /**
      *  DIN Alternate Bold
      */
-    FontNameDINAlternateBold,
+    FontNameDINAlternateBold NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  DIN Condensed Bold
      */
-    FontNameDINCondensedBold,
+    FontNameDINCondensedBold NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Diwan Mishafi
      */
@@ -981,19 +1002,19 @@ typedef NS_ENUM(NSInteger, FontName){
     /**
      *  Iowan Old Style Bold
      */
-    FontNameIowanOldStyleBold,
+    FontNameIowanOldStyleBold NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Iowan Old Style Bold Italic
      */
-    FontNameIowanOldStyleBoldItalic,
+    FontNameIowanOldStyleBoldItalic NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Iowan Old Style Italic
      */
-    FontNameIowanOldStyleItalic,
+    FontNameIowanOldStyleItalic NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Iowan Old Style Roman
      */
-    FontNameIowanOldStyleRoman,
+    FontNameIowanOldStyleRoman NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Kailasa
      */
@@ -1014,6 +1035,18 @@ typedef NS_ENUM(NSInteger, FontName){
      *  Khmer Sangam MN
      */
     FontNameKhmerSangamMN NS_ENUM_AVAILABLE_IOS(8_0),
+    /**
+     *  Kohinoor Bangla Light
+     */
+    FontNameKohinoorBanglaLight NS_ENUM_AVAILABLE_IOS(9_0),
+    /**
+     *  Kohinoor Bangla Medium
+     */
+    FontNameKohinoorBanglaMedium NS_ENUM_AVAILABLE_IOS(9_0),
+    /**
+     *  Kohinoor Bangla Regular
+     */
+    FontNameKohinoorBanglaRegular NS_ENUM_AVAILABLE_IOS(9_0),
     /**
      *  Kohinoor Devanagari Light
      */
@@ -1041,15 +1074,15 @@ typedef NS_ENUM(NSInteger, FontName){
     /**
      *  Marion Bold
      */
-    FontNameMarionBold,
+    FontNameMarionBold NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Marion Italic
      */
-    FontNameMarionItalic,
+    FontNameMarionItalic NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Marion Regular
      */
-    FontNameMarionRegular,
+    FontNameMarionRegular NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Marker Felt Thin
      */
@@ -1181,35 +1214,35 @@ typedef NS_ENUM(NSInteger, FontName){
     /**
      *  Superclarendon Black
      */
-    FontNameSuperclarendonBlack,
+    FontNameSuperclarendonBlack NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Superclarendon Black Italic
      */
-    FontNameSuperclarendonBlackItalic,
+    FontNameSuperclarendonBlackItalic NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Superclarendon Bold
      */
-    FontNameSuperclarendonBold,
+    FontNameSuperclarendonBold NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Superclarendon Bold Italic
      */
-    FontNameSuperclarendonBoldItalic,
+    FontNameSuperclarendonBoldItalic NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Superclarendon Italic
      */
-    FontNameSuperclarendonItalic,
+    FontNameSuperclarendonItalic NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Superclarendon Light
      */
-    FontNameSuperclarendonLight,
+    FontNameSuperclarendonLight NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Superclarendon Light Italic
      */
-    FontNameSuperclarendonLightItalic,
+    FontNameSuperclarendonLightItalic NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Superclarendon Regular
      */
-    FontNameSuperclarendonRegular,
+    FontNameSuperclarendonRegular NS_ENUM_DEPRECATED_IOS(7_0, 8_0, "This font is not available after iOS 8"),
     /**
      *  Symbol
      */

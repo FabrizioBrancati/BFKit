@@ -30,12 +30,13 @@
 
 - (BOOL)safeSetObject:(id)anObject forKey:(id<NSCopying>)aKey
 {
-    if(nil == anObject)
+    if(anObject == nil)
     {
         return NO;
     }
     
     [self setObject:anObject forKey:aKey];
+    
     return YES;
 }
 

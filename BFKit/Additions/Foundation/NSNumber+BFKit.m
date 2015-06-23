@@ -55,7 +55,10 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180 / M_PI;};
 + (NSInteger)nextPowerOfTwo:(NSInteger)number
 {
     int result = 1;
-    while (result < number) result *= 2;
+    while(result < number)
+    {
+        result *= 2;
+    }
     return result;
 }
 

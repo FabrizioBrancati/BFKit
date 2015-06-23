@@ -100,7 +100,7 @@
 
 - (void)setTitleColor:(UIColor *)color
 {
-    [self setTitleColor:color highlightedColor:[UIColor colorWithColor:color alpha:0.4]];
+    [self setTitleColor:color highlightedColor:[color colorWithAlphaComponent:0.4]];
 }
 
 - (void)setTitleColor:(UIColor *)color highlightedColor:(UIColor *)highlightedColor

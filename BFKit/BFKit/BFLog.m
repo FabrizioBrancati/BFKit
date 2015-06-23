@@ -36,7 +36,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
 {
     va_list ap;
     
-    va_start (ap, format);
+    va_start(ap, format);
     
     if(![format hasSuffix: @"\n"])
     {
@@ -45,9 +45,9 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
     
     NSString *body = [[NSString alloc] initWithFormat:format arguments:ap];
     
-    va_end (ap);
+    va_end(ap);
     
-    NSString *fileName = [[NSString stringWithUTF8String:file] lastPathComponent];
+    NSString *fileName = [[NSString stringWithUTF8String:file] lastPathComponent].stringByDeletingPathExtension;
     NSString *log = [NSString stringWithFormat:@"(%s) (%s:%d) %s", functionName, [fileName UTF8String], lineNumber, [body UTF8String]];
     fprintf(stderr, "%s (%s) (%s:%d) %s", [[NSDate dateInformationDescriptionWithInformation:[[NSDate date] dateInformation] dateSeparator:@"-" usFormat:YES] UTF8String], functionName, [fileName UTF8String], lineNumber, [body UTF8String]);
     
@@ -67,6 +67,11 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
     return logString;
 }
 
++ (NSString *)detailedLogString
+{
+    return logDetailedString;
+}
+
 + (NSString *)logDetailedString
 {
     return logDetailedString;
@@ -75,6 +80,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
 + (void)clearLog
 {
     logString = @"";
+    logDetailedString = @"";
 }
 
 @end

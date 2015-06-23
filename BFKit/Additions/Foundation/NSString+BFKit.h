@@ -86,13 +86,23 @@
 - (NSString *)SHA512;
 
 /**
- *  Check if self has the given substring
+ *  Check if self has the given substring in case-sensitive
  *
  *  @param substring The substring to be searched
  *
  *  @return Return YES if founded, NO if not
  */
 - (BOOL)hasString:(NSString *)substring;
+
+/**
+ *  Check if self has the given substring specifying if is case-sensitive or not
+ *
+ *  @param substring     The substring to be searched
+ *  @param caseSensitive If the search has to be case-sensitive or not
+ *
+ *  @return Return YES if founded, NO if not
+ */
+- (BOOL)hasString:(NSString *)substring caseSensitive:(BOOL)caseSensitive;
 
 /**
  *  Check if self is an email
@@ -171,6 +181,13 @@
  *
  *  @return Return the encoded NSString
  */
-- (NSString *)urlEncode;
+- (NSString *)urlEncode DEPRECATED_MSG_ATTRIBUTE("Use -URLEncode");
+
+/**
+ *  Encode self to an encoded url string
+ *
+ *  @return Return the encoded NSString
+ */
+- (NSString *)URLEncode;
 
 @end

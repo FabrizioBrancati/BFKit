@@ -33,20 +33,20 @@
 @interface UIDevice (BFKit)
 
 /**
- *  Get the iOS version
- */
-#define IOS_VERSION [UIDevice currentDevice].systemVersion
-
-/**
  *  Get the screen width and height
  */
 #define SCREEN_WIDTH ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height)
 #define SCREEN_HEIGHT ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
 
 /**
+ *  Get the iOS version
+ */
+#define IOS_VERSION [UIDevice currentDevice].systemVersion
+
+/**
  *  Macros to compare system versions
  *
- *  @param v Version, like @"8.0"
+ *  @param v Version, like @"9.0"
  *
  *  @return Return a BOOL
  */
@@ -57,8 +57,19 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 /**
+ *  Macros that returns if the iOS version is greater or equal to choosed one
+ *
+ *  @return Return a BOOL
+ */
+#define IS_IOS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
+#define IS_IOS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+#define IS_IOS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define IS_IOS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define IS_IOS_9_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
+
+/**
  *  Return the device platform string
- *  Example: "iPhone3,2"
+ *  Example: "iPhone7,2"
  *
  *  @return Return the device platform string
  */

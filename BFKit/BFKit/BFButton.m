@@ -35,7 +35,7 @@
 
 @implementation BFButton
 
-- (id)initWithFrame:(CGRect)frame image:(UIImage*)image highlightedImage:(UIImage*)highlightedImage fadeDuration:(CGFloat)fadeDuration
+- (id)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage fadeDuration:(CGFloat)fadeDuration
 {
     if((self = [BFButton buttonWithType:UIButtonTypeCustom]))
     {
@@ -57,7 +57,6 @@
 
 - (void)setHighlighted:(BOOL)highlighted
 {
-    // Check if button is going from not highlighted to highlighted
     if(![self isHighlighted] && highlighted)
     {
         [self addSubview:self.overlayImgView];
@@ -66,12 +65,13 @@
             self.overlayImgView.alpha = 1;
         } completion:NULL];
     }
-    // Check if button is going from highlighted to not highlighted
     else if([self isHighlighted] && !highlighted)
     {
         [UIView animateWithDuration:self.fadeDuration animations:^{
             self.overlayImgView.alpha = 0;
-        } completion:NULL];
+        } completion:^(BOOL finished) {
+            [self.overlayImgView removeFromSuperview];
+        }];
     }
     
     [super setHighlighted:highlighted];

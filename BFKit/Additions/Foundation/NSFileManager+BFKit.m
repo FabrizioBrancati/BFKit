@@ -31,9 +31,7 @@
 
 + (NSString *)readTextFile:(NSString *)file ofType:(NSString *)type
 {
-    NSString *temp = [[NSBundle mainBundle] pathForResource:file ofType:type];
-    file = [NSString stringWithContentsOfFile:temp encoding:NSStringEncodingConversionAllowLossy error:nil];
-    return file;
+    return [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:file ofType:type] encoding:NSUTF8StringEncoding error:nil];
 }
 
 + (BOOL)saveArrayToPath:(DirectoryType)path withFilename:(NSString *)fileName array:(NSArray *)array
@@ -58,7 +56,6 @@
             break;
     }
     
-    //BFLog(@"savedArrayToFile : %@",path);
     return [NSKeyedArchiver archiveRootObject:array toFile:_path];
 }
 
@@ -84,7 +81,6 @@
             break;
     }
     
-    //BFLog(@"loadedArrayFromFile : %@",_path);
     return [NSKeyedUnarchiver unarchiveObjectWithFile:_path];
 }
 
@@ -114,8 +110,6 @@
 
 + (NSNumber *)fileSize:(NSString *)fileName fromDirectory:(DirectoryType)directory
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
     if(fileName.length > 0)
     {
         NSString *path;
@@ -138,16 +132,12 @@
                 break;
         }
         
-        if([fileManager fileExistsAtPath:fileName])
+        if([[NSFileManager defaultManager] fileExistsAtPath:fileName])
         {
-            NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:fileName error:nil];
+            NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:fileName error:nil];
             if(fileAttributes)
             {
                 return [fileAttributes objectForKey:NSFileSize];
-            }
-            else
-            {
-                return nil;
             }
         }
     }
@@ -183,10 +173,6 @@
         {
             return [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
         }
-        else
-        {
-            return NO;
-        }
     }
     
     return NO;
@@ -204,7 +190,7 @@
     switch(origin)
     {
         case DirectoryTypeMainBundle:
-            originPath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+            originPath = [self getBundlePathForFile:fileName];
             break;
         case DirectoryTypeLibrary:
             originPath = [self getDocumentsDirectoryForFile:fileName];
@@ -220,38 +206,29 @@
     }
     
     NSString *destinationPath;
+    if(folderName)
+        destinationPath = [NSString stringWithFormat:@"%@/%@", folderName, fileName];
+    else
+        destinationPath = fileName;
     
     switch(destination)
     {
         case DirectoryTypeMainBundle:
-            if(folderName)
-                destinationPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@/%@", folderName, fileName] ofType:nil];
-            else
-                destinationPath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+            destinationPath = [self getBundlePathForFile:destinationPath];
             break;
         case DirectoryTypeLibrary:
-            if(folderName)
-                destinationPath = [self getLibraryDirectoryForFile:[NSString stringWithFormat:@"%@/%@", folderName, fileName]];
-            else
-                destinationPath = [self getLibraryDirectoryForFile:fileName];
+            destinationPath = [self getLibraryDirectoryForFile:destinationPath];
             break;
         case DirectoryTypeDocuments:
-            if(folderName)
-                destinationPath = [self getDocumentsDirectoryForFile:[NSString stringWithFormat:@"%@/%@", folderName, fileName]];
-            else
-                destinationPath = [self getDocumentsDirectoryForFile:fileName];
+            destinationPath = [self getDocumentsDirectoryForFile:destinationPath];
             break;
         case DirectoryTypeCache:
-            if(folderName)
-                destinationPath = [self getCacheDirectoryForFile:[NSString stringWithFormat:@"%@/%@", folderName, fileName]];
-            else
-                destinationPath = [self getCacheDirectoryForFile:fileName];
+            destinationPath = [self getCacheDirectoryForFile:destinationPath];
             break;
         default:
             break;
     }
     
-    // Check if folder exist, if not, create automatically
     if(folderName)
     {
         NSString *folderPath = [NSString stringWithFormat:@"%@/%@", destinationPath, folderName];
@@ -278,16 +255,14 @@
     
     if(copied && deleted)
         return YES;
-    else
-        return NO;
+    return NO;
 }
 
 + (BOOL)duplicateFileAtPath:(NSString *)origin toNewPath:(NSString *)destination
 {
     if([[NSFileManager defaultManager] fileExistsAtPath:origin])
         return [[NSFileManager defaultManager] copyItemAtPath:origin toPath:destination error:nil];
-    else
-        return NO;
+    return NO;
 }
 
 + (BOOL)renameFileFromDirectory:(DirectoryType)origin atPath:(NSString *)path withOldName:(NSString *)oldName andNewName:(NSString *)newName
@@ -297,7 +272,7 @@
     switch(origin)
     {
         case DirectoryTypeMainBundle:
-            originPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
+            originPath = [self getBundlePathForFile:path];
             break;
         case DirectoryTypeLibrary:
             originPath = [self getDocumentsDirectoryForFile:path];
@@ -316,33 +291,17 @@
     {
         NSString *newNamePath = [originPath stringByReplacingOccurrencesOfString:oldName withString:newName];
         if([[NSFileManager defaultManager] copyItemAtPath:originPath toPath:newNamePath error:nil])
-        {
             if([[NSFileManager defaultManager] removeItemAtPath:originPath error:nil])
                 return YES;
-            else
-                return NO;
-        }
-        else
-            return NO;
     }
-    else
-        return NO;
-}
-
-+ (id)getAppSettingsForObjectWithKey:(NSString *)objKey
-{
-    return [self getSettings:APP_NAME objectForKey:objKey];
-}
-
-+ (BOOL)setAppSettingsForObject:(id)value forKey:(NSString *)objKey
-{
-    return [self setSettings:APP_NAME object:value forKey:objKey];
+    return NO;
 }
 
 + (id)getSettings:(NSString *)settings objectForKey:(NSString *)objKey
 {
     NSString *path = [self getLibraryDirectoryForFile:[NSString stringWithFormat:@"%@-Settings.plist", settings]];
     NSDictionary *loadedPlist = [NSDictionary dictionaryWithContentsOfFile:path];
+    
     if(![[NSFileManager defaultManager] fileExistsAtPath:path])
     {
         path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@-Settings", settings] ofType:@"plist"];
@@ -366,7 +325,18 @@
     }
     
     [loadedPlist setObject:value forKey:objKey];
+    
     return [loadedPlist writeToFile:path atomically:YES];
+}
+
++ (id)getAppSettingsForObjectWithKey:(NSString *)objKey
+{
+    return [self getSettings:APP_NAME objectForKey:objKey];
+}
+
++ (BOOL)setAppSettingsForObject:(id)value forKey:(NSString *)objKey
+{
+    return [self setSettings:APP_NAME object:value forKey:objKey];
 }
 
 @end

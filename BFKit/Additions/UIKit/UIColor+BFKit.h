@@ -129,7 +129,7 @@
 + (UIColor *)randomColor;
 
 /**
- *  Create a color from a given color with alpha
+ *  Creates and returns a color object that has the same color space and component values as the given color, but has the specified alpha component
  *
  *  @param color UIColor value
  *  @param alpha Alpha value

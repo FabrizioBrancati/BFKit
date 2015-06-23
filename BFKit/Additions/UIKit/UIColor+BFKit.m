@@ -59,7 +59,7 @@
             blue = [self colorComponentFrom:colorString start:6 length:2];
             break;
         default:
-            [NSException raise:@"Invalid color value" format:@"Color value %@ is invalid.  It should be a hex value of the form #RBG, #ARGB, #RRGGBB, or #AARRGGBB", hexString];
+            [NSException raise:@"Invalid color value" format:@"Color value %@ is invalid. It should be a hex value of the form #RBG, #ARGB, #RRGGBB, or #AARRGGBB", hexString];
             break;
     }
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
@@ -96,13 +96,7 @@
 
 + (UIColor *)colorWithColor:(UIColor *)color alpha:(float)alpha
 {
-    if([color isEqual:[UIColor whiteColor]])
-        return [UIColor colorWithWhite:1.000 alpha:alpha];
-    if([color isEqual:[UIColor blackColor]])
-        return [UIColor colorWithWhite:0.000 alpha:alpha];
-        
-    const CGFloat *components = CGColorGetComponents(color.CGColor);
-    return [UIColor colorWithRed:components[0] green:components[1] blue:components[2] alpha:alpha];
+    return [color colorWithAlphaComponent:alpha];
 }
 
 - (BOOL)canProvideRGBComponents
@@ -214,7 +208,7 @@
         if(![self red:&r green:&g blue:&b alpha:nil])
             return 0.0f;
         
-        return r*0.2126f + g*0.7152f + b*0.0722f;
+        return r * 0.2126f + g * 0.7152f + b * 0.0722f;
     }
     
     return 0.0;

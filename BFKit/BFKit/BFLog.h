@@ -45,36 +45,32 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
  *  BFLog only if in DEBUG mode
  */
 #ifdef DEBUG
-
-/**
- *  Exented NSLog
- */
-#define BFLog(args ...) ExtendNSLog(__FILE__, __LINE__, __PRETTY_FUNCTION__, args);
-/**
- *  Log string
- */
-#define BFLogString [BFLog logString]
-/**
- *  Detailed log string
- */
-#define BFLogDetailedString [BFLog logDetailedString]
-/**
- *  Clear the log string
- */
-#define BFLogClear [BFLog clearLog]
-
+    /**
+     *  Exented NSLog
+     */
+    #define BFLog(args ...) ExtendNSLog(__FILE__, __LINE__, __PRETTY_FUNCTION__, args);
+    /**
+     *  Log string
+     */
+    #define BFLogString [BFLog logString]
+    /**
+     *  Detailed log string
+     */
+    #define BFLogDetailedString [BFLog logDetailedString]
+    /**
+     *  Clear the log string
+     */
+    #define BFLogClear [BFLog clearLog]
 #else
-
-#define BFLog(args ...)
-#define BFLogString
-#define BFLogDetailedString
-#define BFLogClear
-
+    #define BFLog(args ...)
+    #define BFLogString
+    #define BFLogDetailedString
+    #define BFLogClear
 #endif
 
 /**
  *  Clear the log string.
- *  You can call it with the BFLogClear macro
+ *  You can call it with the BFLogClear macro   
  */
 + (void)clearLog;
 
@@ -92,6 +88,14 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
  *
  *  @return Return the detailed log string
  */
-+ (NSString *)logDetailedString;
++ (NSString *)detailedLogString;
+
+/**
+ *  Get the detailed log string.
+ *  You can call it with the BFLogDetailedString macro
+ *
+ *  @return Return the detailed log string
+ */
++ (NSString *)logDetailedString DEPRECATED_MSG_ATTRIBUTE("Use -detailedLogString");
 
 @end

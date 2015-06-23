@@ -32,15 +32,6 @@
 @interface NSMutableArray (BFKit)
 
 /**
- *  Get the object at a given index in safe mode (nil if self is empty)
- *
- *  @param index The index
- *
- *  @return Return the object at a given index in safe mode (nil if self is empty)
- */
-- (id)safeObjectAtIndex:(NSUInteger)index;
-
-/**
  *  Move an object from an index to another
  *
  *  @param from The index to move from

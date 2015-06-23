@@ -29,14 +29,6 @@
 
 @implementation NSMutableArray (BFKit)
 
-- (id)safeObjectAtIndex:(NSUInteger)index
-{
-    if([self count] > 0 && [self count] > index)
-        return [self objectAtIndex:index];
-    else
-        return nil;
-}
-
 - (void)moveObjectFromIndex:(NSUInteger)from toIndex:(NSUInteger)to
 {
     if(to != from)
@@ -62,11 +54,12 @@
     [tempArray removeAllObjects];
     [tempArray addObjectsFromArray:array];
     
-    NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:brandDescriptor, nil];
-    NSArray *sortedArray = [tempArray sortedArrayUsingDescriptors:sortDescriptors];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
+    NSArray *sortedArray = [tempArray sortedArrayUsingDescriptors:@[descriptor]];
+    
     [tempArray removeAllObjects];
     tempArray = (NSMutableArray *)sortedArray;
+    
     [array removeAllObjects];
     [array addObjectsFromArray:tempArray];
     
