@@ -1,5 +1,8 @@
 Changelog
 =========
+###Version 1.6.3
+- Fixed a problem with CocoaPods & CocoaDocs (again)
+
 ###Version 1.6.2
 - Fixed a problem with CocoaPods & CocoaDocs
 

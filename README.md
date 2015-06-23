@@ -109,7 +109,9 @@ Installing and Usage :computer:
 - Enjoy!
 
 ####Pro version
-- ```pod 'BFKit'```
+- ```ruby
+    pod 'BFKit'
+  ```
 - Import the file "**BFKit.h**"
 - Enjoy!
 
