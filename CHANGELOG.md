@@ -1,5 +1,8 @@
 Changelog
 =========
+###Version 1.6.1
+- In NSString category the method ```allFamilyAndFonts``` now return an NSArray with all the family font names
+
 ###Version 1.6.0
 - Added in NSString category the method ```hasString:caseSensitive:```
 - Added system macros in UIDevice category
@@ -31,7 +34,6 @@ Thanks to [@simonlinj](https://github.com/simonlinj) for this release
 
 Thanks to [@simonlinj](https://github.com/simonlinj) & [@masd-duc](https://github.com/masd-duc) for this release
 
-
 ###Version 1.4.0
 - Added UITextView category
 - Added NSObject category
@@ -47,13 +49,11 @@ Thanks to [@simonlinj](https://github.com/simonlinj) & [@masd-duc](https://githu
 ###Version 1.3.2
 - Added in every class or category ```@import``` to import the needed frameworks
 
-
 ###Version 1.3.1
 - Added NSDictionary category with ```dictionaryToJson:``` methods
 - Fixed ```reversedArray:``` in NSArray category
 
 Thanks to [@simonlinj](https://github.com/simonlinj) for this release
-
 
 ###Version 1.3.0
 - Complete rewrite of BFLog class with more details in log and string of all logs
@@ -65,7 +65,6 @@ Thanks to [@simonlinj](https://github.com/simonlinj) for this release
 - Added missing Audio IDs
 - Added some localized strings
 
-
 ###Version 1.2.0
 - Added NSMutableDictionary category
 - Added in NSArray the method ```objectAtCircleIndex:```
@@ -75,7 +74,6 @@ Thanks to [@simonlinj](https://github.com/simonlinj) for this release
 - NSArray & NSMutableArray enhancements
 
 Thanks to [@antwork](https://github.com/antwork) for this release
-
 
 ###Version 1.1.0
 - Added UIWindow category

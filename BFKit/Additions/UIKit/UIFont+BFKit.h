@@ -1339,9 +1339,11 @@ typedef NS_ENUM(NSInteger, FontName){
 @interface UIFont (BFKit)
 
 /**
- *  Print in console all family and font names
- */
-+ (void)allFamilyAndFonts;
+*  Print in console all family and font names
+*
+*  @return Return all the font family names
+*/
++ (NSArray *)allFamilyAndFonts;
 
 
 /**
