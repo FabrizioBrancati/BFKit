@@ -1,7 +1,7 @@
 Changelog
 =========
 ###Version 1.6.1
-- In NSString category the method ```allFamilyAndFonts``` now return an NSArray with all the family font names
+- In NSString category the method ```allFamilyAndFonts``` now return an NSDictionary with all the family font names
 
 ###Version 1.6.0
 - Added in NSString category the method ```hasString:caseSensitive:```

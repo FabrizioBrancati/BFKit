@@ -1343,7 +1343,7 @@ typedef NS_ENUM(NSInteger, FontName){
 *
 *  @return Return all the font family names
 */
-+ (NSArray *)allFamilyAndFonts;
++ (NSDictionary *)allFamilyAndFonts;
 
 
 /**

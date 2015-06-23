@@ -30,19 +30,22 @@
 
 @implementation UIFont (BFKit)
 
-+ (NSArray *)allFamilyAndFonts
++ (NSDictionary *)allFamilyAndFonts
 {
     NSMutableArray *fontFamilies = (NSMutableArray *)[UIFont familyNames];
     fontFamilies = [NSMutableArray sortArrayByKey:@"" array:fontFamilies ascending:YES];
+    
+    NSMutableDictionary *fontFamilyDic = [[NSMutableDictionary alloc] init];
     
     for(int i = 0; i < [fontFamilies count]; i++)
     {
         NSString *fontFamily = [fontFamilies objectAtIndex:i];
         NSArray *fontNames = [UIFont fontNamesForFamilyName:[fontFamilies objectAtIndex:i]];
-        BFLog(@"%@: %@", fontFamily, fontNames);
+        [fontFamilyDic setObject:fontNames forKey:fontFamily];
     }
     
-    return fontFamilies;
+    BFLog(@"%@", fontFamilyDic);
+    return fontFamilyDic;
 }
 
 + (NSArray *)fontsNameForFamilyName:(FamilyFontName)familyFontName
