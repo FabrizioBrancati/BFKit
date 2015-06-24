@@ -93,13 +93,41 @@
 @property (nonatomic, readonly) CGFloat luminance;
 
 /**
+ *  Create a color from a HEX string.
+ *  It supports the following type:
+ *  - #RGB
+ *  - #ARGB
+ *  - #RRGGBB
+ *  - #AARRGGBB
+ *
+ *  @param hexString HEX string
+ *
+ *  @return Return the UIColor instance
+ */
++ (UIColor *)hex:(NSString *)hexString;
+
+/**
+ *  Create a color from a HEX string.
+ *  It supports the following type:
+ *  - #RGB
+ *  - #ARGB
+ *  - #RRGGBB
+ *  - #AARRGGBB
+ *
+ *  @param hexString HEX string
+ *
+ *  @return Return the UIColor instance
+ */
++ (UIColor *)hexString:(NSString *)hexString;
+
+/**
  *  Create a color from a HEX string
  *
  *  @param hexString HEX string
  *
  *  @return Return the UIColor instance
  */
-+ (UIColor *)colorWithHexString:(NSString *)hexString;
++ (UIColor *)colorWithHexString:(NSString *)hexString DEPRECATED_MSG_ATTRIBUTE("Use +hex");
 
 /**
  *  Create a color from HEX

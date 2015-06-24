@@ -28,7 +28,7 @@
 
 @implementation UIColor (BFKit)
 
-+ (UIColor *)colorWithHexString:(NSString *)hexString
++ (UIColor *)hex:(NSString *)hexString
 {
     NSString *colorString = [[hexString stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
     CGFloat alpha, red, blue, green;
@@ -59,10 +59,20 @@
             blue = [self colorComponentFrom:colorString start:6 length:2];
             break;
         default:
-            [NSException raise:@"Invalid color value" format:@"Color value %@ is invalid. It should be a hex value of the form #RBG, #ARGB, #RRGGBB, or #AARRGGBB", hexString];
+            return nil;
             break;
     }
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
++ (UIColor *)hexString:(NSString *)hexString
+{
+    return [UIColor hex:hexString];
+}
+
++ (UIColor *)colorWithHexString:(NSString *)hexString
+{
+    return [UIColor hex:hexString];
 }
 
 + (CGFloat)colorComponentFrom:(NSString *)string start:(NSUInteger)start length:(NSUInteger)length
