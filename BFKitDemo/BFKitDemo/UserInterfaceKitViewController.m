@@ -19,6 +19,8 @@
 }
 @end
 
+static NSString *CellIdentifier = @"UIKitCell";
+
 @implementation UserInterfaceKitViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +41,8 @@
     // Do any additional setup after loading the view from its nib.
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [_uikitTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
     [infoButton addTarget:self action:@selector(showInfo:) forControlEvents:UIControlEventTouchUpInside];
@@ -84,13 +88,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"UIKitCell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if(cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
     
     [[cell textLabel] setText:[appDelegate.uikitArray objectAtIndex:indexPath.row]];
 	
