@@ -207,7 +207,7 @@
  *
  *  @return Return the current device MAC address
  */
-+ (NSString *)macAddress;
++ (NSString *)macAddress DEPRECATED_MSG_ATTRIBUTE("In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00");
 
 /**
  *  Generate an unique identifier and store it into standardUserDefaults

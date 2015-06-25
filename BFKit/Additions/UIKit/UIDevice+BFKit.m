@@ -76,9 +76,6 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     if ([platform isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
     if ([platform isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
     if ([platform isEqualToString:@"iPad2,4"])      return @"iPad 2 (32nm)";
-    if ([platform isEqualToString:@"iPad2,5"])      return @"iPad mini (WiFi)";
-    if ([platform isEqualToString:@"iPad2,6"])      return @"iPad mini (GSM)";
-    if ([platform isEqualToString:@"iPad2,7"])      return @"iPad mini (CDMA)";
     if ([platform isEqualToString:@"iPad3,1"])      return @"iPad 3 (WiFi)";
     if ([platform isEqualToString:@"iPad3,2"])      return @"iPad 3 (CDMA)";
     if ([platform isEqualToString:@"iPad3,3"])      return @"iPad 3 (GSM)";
@@ -91,6 +88,9 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     if ([platform isEqualToString:@"iPad5,3"])      return @"iPad Air 2 (WiFi)";
     if ([platform isEqualToString:@"iPad5,4"])      return @"iPad Air 2 (Cellular)";
     // iPad mini
+    if ([platform isEqualToString:@"iPad2,5"])      return @"iPad mini (WiFi)";
+    if ([platform isEqualToString:@"iPad2,6"])      return @"iPad mini (GSM)";
+    if ([platform isEqualToString:@"iPad2,7"])      return @"iPad mini (CDMA)";
     if ([platform isEqualToString:@"iPad4,4"])      return @"iPad mini 2 (WiFi)";
     if ([platform isEqualToString:@"iPad4,5"])      return @"iPad mini 2 (Cellular)";
     if ([platform isEqualToString:@"iPad4,6"])      return @"iPad mini 2 (China)";
@@ -195,7 +195,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
 
 + (NSUInteger)busFrequency
 {
-    return [self getSysInfo:HW_BUS_FREQ];
+    return [self getSysInfo:HW_TB_FREQ];t
 }
 
 + (NSUInteger)ramSize
@@ -220,19 +220,20 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
 
 + (NSNumber *)totalDiskSpace
 {
-    NSDictionary *fattributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
-    return [fattributes objectForKey:NSFileSystemSize];
+    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
+    return [attributes objectForKey:NSFileSystemSize];
 }
 
 + (NSNumber *)freeDiskSpace
 {
-    NSDictionary *fattributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
-    return [fattributes objectForKey:NSFileSystemFreeSize];
+    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
+    return [attributes objectForKey:NSFileSystemFreeSize];
 }
 
 + (NSString *)macAddress
 {
-    int                 mib[6];
+    // In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00
+    /*int                 mib[6];
     size_t              len;
     char                *buf;
     unsigned char       *ptr;
@@ -274,11 +275,10 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     ptr = (unsigned char *)LLADDR(sdl);
     NSString *outstring = [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
                            *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
-    // NSString *outstring = [NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X",
-    //                       *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
     free(buf);
     
-    return outstring;
+    return outstring;*/
+    return @"02:00:00:00:00:00";
 }
 
 + (NSString *)uniqueIdentifier
