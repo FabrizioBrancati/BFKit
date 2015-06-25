@@ -39,7 +39,7 @@
 #define SCREEN_HEIGHT ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
 
 /**
- *  Get the iOS version
+ *  Get the iOS version string
  */
 #define IOS_VERSION [UIDevice currentDevice].systemVersion
 
@@ -74,7 +74,6 @@
  *  @return Return the device platform string
  */
 + (NSString *)devicePlatform;
-
 /**
  *  Return the user-friendly device platform string
  *  Example: "iPad Air (Cellular)"
@@ -103,6 +102,20 @@
  *  @return Return YES if it's an iPod, NO if not
  */
 + (BOOL)isiPod;
+
+/**
+ *  Check if the current device is an Apple TV
+ *
+ *  @return Return YES if it's an Apple TV, NO if not
+ */
++ (BOOL)isAppleTV;
+
+/**
+ *  Check if the current device is an Apple Watch
+ *
+ *  @return Return YES if it's an Apple Watch, NO if not
+ */
++ (BOOL)isAppleWatch;
 
 /**
  *  Check if the current device is the simulator

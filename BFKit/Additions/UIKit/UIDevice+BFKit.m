@@ -97,6 +97,13 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     if ([platform isEqualToString:@"iPad4,7"])      return @"iPad mini 3 (WiFi)";
     if ([platform isEqualToString:@"iPad4,8"])      return @"iPad mini 3 (Cellular)";
     if ([platform isEqualToString:@"iPad4,9"])      return @"iPad mini 3 (China)";
+    // Apple TV
+    if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
+    if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3G";
+    if ([platform isEqualToString:@"AppleTV3,2"])   return @"Apple TV 3G";
+    // Apple Watch
+    if ([platform isEqualToString:@"Watch1,1"])     return @"Apple Watch 38mm";
+    if ([platform isEqualToString:@"Watch1,2"])     return @"Apple Watch 42mm";
     // Simulator
     if ([platform isEqualToString:@"i386"])         return @"Simulator";
     if ([platform isEqualToString:@"x86_64"])       return @"Simulator";
@@ -122,6 +129,22 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
 + (BOOL)isiPod
 {
     if([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPod"])
+        return YES;
+    else
+        return NO;
+}
+
++ (BOOL)isAppleTV
+{
+    if([[[self devicePlatform] substringToIndex:7] isEqualToString:@"AppleTV"])
+        return YES;
+    else
+        return NO;
+}
+
++ (BOOL)isAppleWatch
+{
+    if([[[self devicePlatform] substringToIndex:5] isEqualToString:@"Watch"])
         return YES;
     else
         return NO;
