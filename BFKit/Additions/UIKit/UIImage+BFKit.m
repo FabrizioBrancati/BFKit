@@ -54,7 +54,7 @@ UIColor *colorForColorString(NSString *colorString)
     }
     else
     {
-        return [UIColor colorWithHexString:colorString];
+        return [UIColor hex:colorString];
     }
 }
 

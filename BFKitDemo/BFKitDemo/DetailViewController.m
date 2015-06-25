@@ -80,7 +80,7 @@
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
             UIView *hexStringColor = [[UIView alloc] initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 44)];
-            [hexStringColor setBackgroundColor:[UIColor colorWithHexString:@"#36a9e0"]];
+            [hexStringColor setBackgroundColor:[UIColor hex:@"#36a9e0"]];
             UILabel *hexStringColorLabel = [UILabel initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 40, 44) text:@"HEX String Color" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [hexStringColor addSubview:hexStringColorLabel];
             [_scrollView addSubview:hexStringColor];
