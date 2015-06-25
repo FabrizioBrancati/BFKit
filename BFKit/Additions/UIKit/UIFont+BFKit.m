@@ -40,11 +40,12 @@
     for(int i = 0; i < [fontFamilies count]; i++)
     {
         NSString *fontFamily = [fontFamilies objectAtIndex:i];
-        NSArray *fontNames = [UIFont fontNamesForFamilyName:[fontFamilies objectAtIndex:i]];
+        NSArray *fontNames = [UIFont fontNamesForFamilyName:fontFamily];
         [fontFamilyDic setObject:fontNames forKey:fontFamily];
     }
     
     BFLog(@"%@", fontFamilyDic);
+    
     return fontFamilyDic;
 }
 

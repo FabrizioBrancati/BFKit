@@ -350,7 +350,8 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
 /**
  *  All font names for all family available from iOS 7.0 to iOS 8.0
  */
-typedef NS_ENUM(NSInteger, FontName){
+typedef NS_ENUM(NSInteger, FontName)
+{
     /**
      *  Academy Engraved Let Plain
      */
