@@ -195,7 +195,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
 
 + (NSUInteger)busFrequency
 {
-    return [self getSysInfo:HW_TB_FREQ];t
+    return [self getSysInfo:HW_TB_FREQ];
 }
 
 + (NSUInteger)ramSize
