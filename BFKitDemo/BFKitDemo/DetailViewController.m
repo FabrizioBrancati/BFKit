@@ -154,7 +154,7 @@
         case DetailTypeUIImage:
         {
             self.title = @"UIImage";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 10) + (20 * 11))];
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 11) + (20 * 12))];
             
             UIImage *blendOverlayImage = [[UIImage imageNamed:@"Logo"] blendOverlay];
             UIImageView *blendOverlayImageView = [UIImageView initWithImage:blendOverlayImage frame:CGRectMake(20, 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
@@ -215,6 +215,12 @@
             UILabel *colorLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Color Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [colorImageView addSubview:colorLabel];
             [_scrollView addSubview:colorImageView];
+            
+            UIImage *dummyImage = [UIImage imageNamed:@"dummy.200x200.#5B9EBE"];
+            UIImageView *dummyImageView = [UIImageView initWithImage:dummyImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20 + colorImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UILabel *dummyLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Dummy Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
+            [dummyImageView addSubview:dummyLabel];
+            [_scrollView addSubview:dummyImageView];
             
             break;
         }

@@ -28,6 +28,7 @@
 @import UIKit;
 @import Accelerate;
 @import CoreImage;
+@import QuartzCore;
 
 #import "UIFont+BFKit.h"
 
@@ -35,6 +36,24 @@
  *  This category add some useful methods to UIImage
  */
 @interface UIImage (BFKit)
+
+/**
+ *  Create a dummy image
+ *
+ *  @param name To use it, name parameter must contain: "dummy.100x100" or "dummy.100x100.#FFFFFF" if you want to define a color
+ *
+ *  @return Return the created dummy image
+ */
++ (UIImage *)dummyImageNamed:(NSString *)name;
+
+/**
+ *  Apple the given Blend Mode
+ *
+ *  @param blendMode The choosed Blend Mode
+ *
+ *  @return Return the image
+ */
+- (UIImage *)blendMode:(CGBlendMode)blendMode;
 
 /**
  *  Apply the Blend Mode Overlay

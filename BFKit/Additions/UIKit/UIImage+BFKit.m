@@ -98,7 +98,7 @@ UIColor *colorForColorString(NSString *colorString)
 
 + (UIImage *)dummyImageWithSize:(CGSize)size color:(UIColor *)color
 {
-    UIGraphicsBeginImageContext(size);
+    UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScreen mainScreen] scale]);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGRect rect = CGRectMake(0.0, 0.0, size.width, size.height);
@@ -106,11 +106,10 @@ UIColor *colorForColorString(NSString *colorString)
     [color setFill];
     CGContextFillRect(context, rect);
     
-    [[UIColor blackColor] setFill];
     NSString *sizeString = [NSString stringWithFormat:@"%d x %d", (int)size.width, (int)size.height];
-
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     style.alignment = NSTextAlignmentCenter;
+    style.minimumLineHeight = size.height / 2;
     NSDictionary *attributes = @{NSParagraphStyleAttributeName : style};
     [sizeString drawInRect:rect withAttributes:attributes];
     
@@ -128,14 +127,19 @@ UIColor *colorForColorString(NSString *colorString)
     method_exchangeImplementations(fromMethod, toMethod);
 }
 
-- (UIImage *)blendOverlay
+- (UIImage *)blendMode:(CGBlendMode)blendMode
 {
-    UIGraphicsBeginImageContext(CGSizeMake(self.size.width, self.size.height));
-    [self drawInRect:CGRectMake(0.0, 0.0, self.size.width, self.size.height) blendMode:kCGBlendModeOverlay alpha:1];
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.size.width, self.size.height), NO, [[UIScreen mainScreen] scale]);
+    [self drawInRect:CGRectMake(0.0, 0.0, self.size.width, self.size.height) blendMode:blendMode alpha:1];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return image;
+}
+
+- (UIImage *)blendOverlay
+{
+    return [self blendMode:kCGBlendModeOverlay];
 }
 
 - (UIImage *)maskWithImage:(UIImage *)image andSize:(CGSize)size
@@ -160,22 +164,22 @@ UIColor *colorForColorString(NSString *colorString)
 
 - (UIImage *)maskWithImage:(UIImage *)image
 {
-	CGContextRef mainViewContentContext;
-	CGColorSpaceRef colorSpace;
-	colorSpace = CGColorSpaceCreateDeviceRGB();
-	mainViewContentContext = CGBitmapContextCreate(NULL, self.size.width, self.size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
-	CGColorSpaceRelease(colorSpace);
-	
-	if(mainViewContentContext == NULL) return NULL;
-	
-	CGContextClipToMask(mainViewContentContext, CGRectMake(0, 0, self.size.width, self.size.height), image.CGImage);
-	CGContextDrawImage(mainViewContentContext, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
-	CGImageRef mainViewContentBitmapContext = CGBitmapContextCreateImage(mainViewContentContext);
-	CGContextRelease(mainViewContentContext);
-	UIImage *returnImage = [UIImage imageWithCGImage:mainViewContentBitmapContext];
-	CGImageRelease(mainViewContentBitmapContext);
+    CGContextRef context;
+    CGColorSpaceRef colorSpace;
+    colorSpace = CGColorSpaceCreateDeviceRGB();
+    context = CGBitmapContextCreate(NULL, self.size.width, self.size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    CGColorSpaceRelease(colorSpace);
     
-	return returnImage;
+    if(context == NULL) return NULL;
+    
+    CGContextClipToMask(context, CGRectMake(0, 0, self.size.width, self.size.height), image.CGImage);
+    CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
+    CGImageRef bitmapContext = CGBitmapContextCreateImage(context);
+    CGContextRelease(context);
+    UIImage *returnImage = [UIImage imageWithCGImage:bitmapContext];
+    CGImageRelease(bitmapContext);
+    
+    return returnImage;
 }
 
 - (UIImage *)imageAtRect:(CGRect)rect
@@ -233,7 +237,7 @@ UIColor *colorForColorString(NSString *colorString)
         else if(widthFactor < heightFactor) thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
     }
     
-    UIGraphicsBeginImageContext(targetSize);
+    UIGraphicsBeginImageContextWithOptions(targetSize, NO, [[UIScreen mainScreen] scale]);
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
     thumbnailRect.size.width  = scaledWidth;
@@ -269,7 +273,7 @@ UIColor *colorForColorString(NSString *colorString)
         float newHeight = (self.size.height*factor)/100;
         
         CGSize newSize = CGSizeMake(newWidth, newHeight);
-        UIGraphicsBeginImageContext(newSize);
+        UIGraphicsBeginImageContextWithOptions(newSize, NO, [[UIScreen mainScreen] scale]);
         [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     }
     else if((self.size.height > targetSize.height || targetSize.width == targetSize.height) && self.size.width < self.size.height)
@@ -279,7 +283,7 @@ UIColor *colorForColorString(NSString *colorString)
         float newHeight = (self.size.height*factor)/100;
         
         CGSize newSize = CGSizeMake(newWidth, newHeight);
-        UIGraphicsBeginImageContext(newSize);
+        UIGraphicsBeginImageContextWithOptions(newSize, NO, [[UIScreen mainScreen] scale]);
         [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     }
     else if((self.size.height > targetSize.height || self.size.width > targetSize.width ) && self.size.width == self.size.height)
@@ -288,13 +292,13 @@ UIColor *colorForColorString(NSString *colorString)
         float newDimension = (self.size.height*factor)/100;
         
         CGSize newSize = CGSizeMake(newDimension, newDimension);
-        UIGraphicsBeginImageContext(newSize);
+        UIGraphicsBeginImageContextWithOptions(newSize, NO, [[UIScreen mainScreen] scale]);
         [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     }
     else
     {
         CGSize newSize = CGSizeMake(self.size.width, self.size.height);
-        UIGraphicsBeginImageContext(newSize);
+        UIGraphicsBeginImageContextWithOptions(newSize, NO, [[UIScreen mainScreen] scale]);
         [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     }
     
@@ -353,7 +357,7 @@ UIColor *colorForColorString(NSString *colorString)
             thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
     }
     
-    UIGraphicsBeginImageContext(targetSize);
+    UIGraphicsBeginImageContextWithOptions(targetSize, NO, [[UIScreen mainScreen] scale]);
     
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
@@ -384,7 +388,7 @@ UIColor *colorForColorString(NSString *colorString)
     
     CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
     
-    UIGraphicsBeginImageContext(targetSize);
+    UIGraphicsBeginImageContextWithOptions(targetSize, NO, [[UIScreen mainScreen] scale]);
     
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
@@ -414,7 +418,7 @@ UIColor *colorForColorString(NSString *colorString)
     rotatedViewBox.transform = t;
     CGSize rotatedSize = rotatedViewBox.frame.size;
     
-    UIGraphicsBeginImageContext(rotatedSize);
+    UIGraphicsBeginImageContextWithOptions(rotatedSize, NO, [[UIScreen mainScreen] scale]);
     CGContextRef bitmap = UIGraphicsGetCurrentContext();
     
     CGContextTranslateCTM(bitmap, rotatedSize.width/2, rotatedSize.height/2);
@@ -459,7 +463,7 @@ UIColor *colorForColorString(NSString *colorString)
 	im_r.origin = CGPointZero;
 	im_r.size = self.size;
     
-	UIGraphicsBeginImageContext(self.size);
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
     CGContextFillRect(context,im_r);
@@ -479,7 +483,7 @@ UIColor *colorForColorString(NSString *colorString)
     
     CGColorRef cgColor = [color CGColor];
     
-	UIGraphicsBeginImageContext(self.size);
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextSetFillColorWithColor(context, cgColor);
     CGContextFillRect(context,im_r);
@@ -542,7 +546,7 @@ UIColor *colorForColorString(NSString *colorString)
 
 - (UIImage *)invertColors
 {
-    UIGraphicsBeginImageContext(self.size);
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
     CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeCopy);
     [self drawInRect:CGRectMake(0, 0, self.size.width, self.size.height)];
     CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeDifference);
@@ -684,7 +688,7 @@ UIColor *colorForColorString(NSString *colorString)
 + (UIImage *)imageWithColor:(UIColor *)color
 {
     CGRect rect = CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, [[UIScreen mainScreen] scale]);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
     
