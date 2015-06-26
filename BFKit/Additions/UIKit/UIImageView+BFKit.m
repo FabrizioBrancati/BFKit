@@ -63,4 +63,13 @@
     self.clipsToBounds = NO;
 }
 
+- (void)setMaskImage:(UIImage *)image
+{
+    CALayer *mask = [CALayer layer];
+    mask.contents = (id)[image CGImage];
+    mask.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    self.layer.mask = mask;
+    self.layer.masksToBounds = YES;
+}
+
 @end

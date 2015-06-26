@@ -154,7 +154,7 @@
         case DetailTypeUIImage:
         {
             self.title = @"UIImage";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 11) + (20 * 12))];
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 10) + (20 * 11))];
             
             UIImage *blendOverlayImage = [[UIImage imageNamed:@"Logo"] blendOverlay];
             UIImageView *blendOverlayImageView = [UIImageView initWithImage:blendOverlayImage frame:CGRectMake(20, 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
@@ -162,62 +162,56 @@
             [blendOverlayImageView addSubview:blendOverlayLabel];
             [_scrollView addSubview:blendOverlayImageView];
             
-            UIImage *maskedImage = [[UIImage imageNamed:@"Logo"] maskWithImage:[UIImage imageNamed:@"Logo2"]];
-            UIImageView *maskedImageView = [UIImageView initWithImage:maskedImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
-            UILabel *maskedImageLabel = [UILabel initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH - 40, 25) text:@"Masked Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
-            [maskedImageView addSubview:maskedImageLabel];
-            [_scrollView addSubview:maskedImageView];
-            
             UIImage *imageAtRectImage = [[UIImage imageNamed:@"Logo"] imageAtRect:CGRectMake(0, 0, 250, 250)];
-            UIImageView *imageAtRectImageView = [UIImageView initWithImage:imageAtRectImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *imageAtRectImageView = [UIImageView initWithImage:imageAtRectImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *imageAtRectLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Image At Rect" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [imageAtRectImageView addSubview:imageAtRectLabel];
             [_scrollView addSubview:imageAtRectImageView];
             
             UIImage *rotatedImage = [[UIImage imageNamed:@"Logo"] imageRotatedByDegrees:90];
-            UIImageView *rotatedImageView = [UIImageView initWithImage:rotatedImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *rotatedImageView = [UIImageView initWithImage:rotatedImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *rotatedLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Rotated Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [rotatedImageView addSubview:rotatedLabel];
             [_scrollView addSubview:rotatedImageView];
             
             UIImage *filledImage = [[UIImage imageNamed:@"Logo2"] fillAlphaWithColor:[UIColor colorWithRed:0.212 green:0.663 blue:0.878 alpha:1.000]];
-            UIImageView *filledImageView = [UIImageView initWithImage:filledImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *filledImageView = [UIImageView initWithImage:filledImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *filledLabel = [UILabel initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH - 40, 25) text:@"Filled Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [filledImageView addSubview:filledLabel];
             [_scrollView addSubview:filledImageView];
             
             UIImage *invertedImage = [[UIImage imageNamed:@"Logo"] invertColors];
-            UIImageView *invertedImageView = [UIImageView initWithImage:invertedImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *invertedImageView = [UIImageView initWithImage:invertedImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20  + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *invertedLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Inverted Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [invertedImageView addSubview:invertedLabel];
             [_scrollView addSubview:invertedImageView];
             
             UIImage *blurredImage = [[UIImage imageNamed:@"Logo"] boxBlurImageWithBlur:20];
-            UIImageView *blurredImageView = [UIImageView initWithImage:blurredImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *blurredImageView = [UIImageView initWithImage:blurredImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *blurredLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Blurred Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [blurredImageView addSubview:blurredLabel];
             [_scrollView addSubview:blurredImageView];
             
             UIImage *bumpedImage = [[UIImage imageNamed:@"Logo"] bumpDistortionLinear:[CIVector vectorWithX:SCREEN_WIDTH - 40 Y:SCREEN_WIDTH - 40] radius:100 angle:M_PI scale:2];
-            UIImageView *bumpedImageView = [UIImageView initWithImage:bumpedImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *bumpedImageView = [UIImageView initWithImage:bumpedImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *bumpedLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Bump Distortion Linear Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [bumpedImageView addSubview:bumpedLabel];
             [_scrollView addSubview:bumpedImageView];
             
             UIImage *sepiaImage = [[UIImage imageNamed:@"Logo"] sepiaToneWithIntensity:1];
-            UIImageView *sepiaImageView = [UIImageView initWithImage:sepiaImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *sepiaImageView = [UIImageView initWithImage:sepiaImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *sepiaLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Sepia Tone Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [sepiaImageView addSubview:sepiaLabel];
             [_scrollView addSubview:sepiaImageView];
             
             UIImage *colorImage = [UIImage imageWithColor:[UIColor colorWithRed:0.357 green:0.620 blue:0.746 alpha:1.000]];
-            UIImageView *colorImageView = [UIImageView initWithImage:colorImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *colorImageView = [UIImageView initWithImage:colorImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *colorLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Color Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [colorImageView addSubview:colorLabel];
             [_scrollView addSubview:colorImageView];
             
             UIImage *dummyImage = [UIImage imageNamed:@"dummy.200x200.#5B9EBE"];
-            UIImageView *dummyImageView = [UIImageView initWithImage:dummyImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + maskedImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20 + colorImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            UIImageView *dummyImageView = [UIImageView initWithImage:dummyImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20 + colorImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *dummyLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Dummy Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [dummyImageView addSubview:dummyLabel];
             [_scrollView addSubview:dummyImageView];
@@ -227,10 +221,16 @@
         case DetailTypeUIImageView:
         {
             self.title = @"UIImageView";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 2) + (20 * 3))];
             
             UIImageView *imageView = [UIImageView initWithImage:[UIImage imageNamed:@"Logo"] frame:CGRectMake(20, 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             [_scrollView addSubview:imageView];
+            
+            UIImageView *maskedImageView = [UIImageView initWithImage:[UIImage imageNamed:@"Logo"] frame:CGRectMake(20, 20 + imageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
+            [maskedImageView setMaskImage:[UIImage imageNamed:@"Logo2"]];
+            UILabel *maskedImageLabel = [UILabel initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH - 40, 25) text:@"Masked Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
+            [maskedImageView addSubview:maskedImageLabel];
+            [_scrollView addSubview:maskedImageView];
             
             break;
         }

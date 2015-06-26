@@ -26,6 +26,7 @@
 
 @import Foundation;
 @import UIKit;
+@import QuartzCore;
 
 /**
  *  This category add some useful methods to UIImageView
@@ -79,5 +80,12 @@
                      radius:(CGFloat)radius
                      offset:(CGSize)offset
                     opacity:(CGFloat)opacity;
+
+/**
+ *  Mask the current UIImageView with an UIImage
+ *
+ *  @param image The mask UIImage
+ */
+- (void)setMaskImage:(UIImage *)image;
 
 @end

@@ -28,7 +28,6 @@
 @import UIKit;
 @import Accelerate;
 @import CoreImage;
-@import QuartzCore;
 
 #import "UIFont+BFKit.h"
 
@@ -71,7 +70,7 @@
  *  @return Return the masked image
  */
 - (UIImage *)maskWithImage:(UIImage *)image
-                   andSize:(CGSize)size;
+                   andSize:(CGSize)size DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage UIImageView instance method");
 
 /**
  *  Mask self with another image
@@ -80,7 +79,7 @@
  *
  *  @return Return the masked image
  */
-- (UIImage *)maskWithImage:(UIImage *)image;
+- (UIImage *)maskWithImage:(UIImage *)image DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage UIImageView instance method");
 
 /**
  *  Create an image from a given rect of self
