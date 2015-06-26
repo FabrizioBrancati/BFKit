@@ -3,7 +3,7 @@ Changelog
 ###Version 1.6.4
 - Added ```hex``` and ```hexString``` in UIColor category to easily create HEX colors from strings
 - Added dummy images and any blend mode in UIImage category
-- Added ```maskWithImage``` method in UIImageView category and deprecated the oldest ones in UIImage category
+- Added ```setMaskImage``` method in UIImageView category and deprecated the oldest ones in UIImage category
 - ```macAddress``` method in UIDevice category is now deprecated (from iOS 7 you cannot request for mac address)
 - Fixed quality loss on most UIImage category manipulation methods
 - Minor enhancements
