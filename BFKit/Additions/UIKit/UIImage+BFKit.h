@@ -39,7 +39,7 @@
 /**
  *  Create a dummy image
  *
- *  @param name To use it, name parameter must contain: "dummy.100x100" or "dummy.100x100.#FFFFFF" if you want to define a color
+ *  @param name To use it, name parameter must contain: "dummy.100x100" and "dummy.100x100.#FFFFFF" or "dummy.100x100.blue" (if it's a color defined in UIColor class) if you want to define a color
  *
  *  @return Return the created dummy image
  */

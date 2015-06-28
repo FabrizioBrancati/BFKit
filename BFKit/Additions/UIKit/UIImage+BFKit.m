@@ -64,7 +64,9 @@ UIColor *colorForColorString(NSString *colorString)
 {
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        [self exchangeClassMethod:@selector(imageNamed:) withMethod:@selector(dummyImageNamed:)];
+        Method fromMethod = class_getClassMethod(self, @selector(imageNamed:));
+        Method toMethod = class_getClassMethod(self, @selector(dummyImageNamed:));
+        method_exchangeImplementations(fromMethod, toMethod);
     });
 }
 
@@ -118,13 +120,6 @@ UIColor *colorForColorString(NSString *colorString)
     UIGraphicsEndImageContext();
     
     return result;
-}
-
-+ (void)exchangeClassMethod:(SEL)selector1 withMethod:(SEL)selector2
-{
-    Method fromMethod = class_getClassMethod(self, selector1);
-    Method toMethod = class_getClassMethod(self, selector2);
-    method_exchangeImplementations(fromMethod, toMethod);
 }
 
 - (UIImage *)blendMode:(CGBlendMode)blendMode
@@ -230,7 +225,7 @@ UIColor *colorForColorString(NSString *colorString)
         else
             scaleFactor = heightFactor;
         
-        scaledWidth  = width * scaleFactor;
+        scaledWidth = width * scaleFactor;
         scaledHeight = height * scaleFactor;
         
         if(widthFactor > heightFactor) thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5; 
@@ -250,7 +245,7 @@ UIColor *colorForColorString(NSString *colorString)
     
     if(newImage == nil) BFLog(@"Could not scale image");
     
-    return newImage ;
+    return newImage;
 }
 
 - (UIImage *)imageByScalingProportionallyToMaximumSize:(CGSize)targetSize
@@ -459,20 +454,7 @@ UIColor *colorForColorString(NSString *colorString)
 
 - (UIImage *)fillAlpha
 {
-    CGRect im_r;
-	im_r.origin = CGPointZero;
-	im_r.size = self.size;
-    
-    UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
-	CGContextRef context = UIGraphicsGetCurrentContext();
-	CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextFillRect(context,im_r);
-    [self drawInRect:im_r];
-    
-	UIImage *returnImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-    
-	return returnImage;
+    return [self fillAlphaWithColor:[UIColor whiteColor]];
 }
 
 - (UIImage *)fillAlphaWithColor:(UIColor *)color
