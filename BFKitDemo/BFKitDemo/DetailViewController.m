@@ -186,7 +186,7 @@
             [invertedImageView addSubview:invertedLabel];
             [_scrollView addSubview:invertedImageView];
             
-            UIImage *blurredImage = [[UIImage imageNamed:@"Logo"] boxBlurImageWithBlur:20];
+            UIImage *blurredImage = [[UIImage imageNamed:@"Logo"] boxBlurImageWithBlur:1];
             UIImageView *blurredImageView = [UIImageView initWithImage:blurredImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *blurredLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Blurred Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [blurredImageView addSubview:blurredLabel];
@@ -312,7 +312,7 @@
             [_scrollView addSubview:coloredButton];
             
             UIView *gradientView = [[UIView alloc] initWithFrame:CGRectMake(20, 260, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
-            [gradientView createGradientWithColors:[NSArray arrayWithObjects:(id)[[UIColor redColor] CGColor], (id)[[UIColor blueColor] CGColor], nil] direction:UIViewLinearGradientDirectionDiagonalFromRightToLeftAndTopToDown];
+            [gradientView createGradientWithColors:[NSArray arrayWithObjects:[UIColor redColor], [UIColor blueColor], nil] direction:UIViewLinearGradientDirectionDiagonalFromRightToLeftAndTopToDown];
             UILabel *gradientLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Gradient View" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [gradientView addSubview:gradientLabel];
             [_scrollView addSubview:gradientView];

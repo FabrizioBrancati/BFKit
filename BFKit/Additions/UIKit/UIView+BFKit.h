@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, UIViewAnimationFlipDirection)
     /**
      *  Flip animation from top
      */
-    UIViewAnimationFlipDirectionFromTop,
+    UIViewAnimationFlipDirectionFromTop = 0,
     /**
      *  Flip animation from left
      */
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger, UIViewAnimationTranslationDirection)
     /**
      *  Translation from left to right
      */
-    UIViewAnimationTranslationDirectionFromLeftToRight,
+    UIViewAnimationTranslationDirectionFromLeftToRight = 0,
     /**
      *  Translation from right to left
      */
@@ -166,7 +166,7 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection)
 /**
  *  Create a linear gradient
  *
- *  @param colors    NSArray of colors. Every color must be a CGColor casted to id. Example: (id)[[UIColor redColor] CGColor]
+ *  @param colors    NSArray of UIColor instances
  *  @param direction Direction of the gradient
  */
 - (void)createGradientWithColors:(NSArray *)colors
@@ -199,6 +199,11 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection)
 - (void)heartbeatViewWithDuration:(CGFloat)duration;
 
 /**
+ *  Adds a motion effect to the view
+ */
+- (void)applyMotionEffects;
+
+/**
  *  Flip the view
  *
  *  @param duration  Seconds of animation
@@ -206,11 +211,6 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection)
  */
 - (void)flipWithDuration:(NSTimeInterval)duration
                direction:(UIViewAnimationFlipDirection)direction;
-
-/**
- *  Adds a motion effect to the view
- */
-- (void)applyMotionEffects;
 
 /**
  *  Translate the UIView around the topView

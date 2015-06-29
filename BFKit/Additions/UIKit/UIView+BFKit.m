@@ -97,7 +97,15 @@
 {
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
-    gradient.colors = colors;//[NSArray arrayWithObjects:(id)[[UIColor redColor] CGColor], (id)[[UIColor whiteColor] CGColor], nil];
+    
+    NSMutableArray *mutableColors = colors.mutableCopy;
+    for(int i = 0; i < colors.count; i++)
+    {
+        UIColor *currentColor = colors[i];
+        [mutableColors replaceObjectAtIndex:i withObject:(id)currentColor.CGColor];
+    }
+    gradient.colors = mutableColors;
+    
     switch (direction)
     {
         case UIViewLinearGradientDirectionVertical:
@@ -157,39 +165,34 @@
 
 - (void)pulseViewWithDuration:(CGFloat)duration
 {
-    [UIView animateWithDuration:duration/6 animations:^{
+    [UIView animateWithDuration:duration / 6 animations:^{
         [self setTransform:CGAffineTransformMakeScale(1.1, 1.1)];
     } completion:^(BOOL finished) {
         if(finished)
         {
-            [UIView animateWithDuration:duration/6 animations:^{
+            [UIView animateWithDuration:duration / 6 animations:^{
                 [self setTransform:CGAffineTransformMakeScale(0.96, 0.96)];
             } completion:^(BOOL finished) {
                 if(finished)
                 {
-                    [UIView animateWithDuration:duration/6 animations:^{
+                    [UIView animateWithDuration:duration / 6 animations:^{
                         [self setTransform:CGAffineTransformMakeScale(1.03, 1.03)];
                     } completion:^(BOOL finished) {
                         if(finished)
                         {
-                            [UIView animateWithDuration:duration/6 animations:^{
+                            [UIView animateWithDuration:duration / 6 animations:^{
                                 [self setTransform:CGAffineTransformMakeScale(0.985, 0.985)];
                             } completion:^(BOOL finished) {
                                 if(finished)
                                 {
-                                    [UIView animateWithDuration:duration/6 animations:^{
+                                    [UIView animateWithDuration:duration / 6 animations:^{
                                         [self setTransform:CGAffineTransformMakeScale(1.007, 1.007)];
                                     } completion:^(BOOL finished) {
                                         if(finished)
                                         {
-                                            [UIView animateWithDuration:duration/6 animations:^{
+                                            [UIView animateWithDuration:duration / 6 animations:^{
                                                 [self setTransform:CGAffineTransformMakeScale(1, 1)];
-                                            } completion:^(BOOL finished) {
-                                                if(finished)
-                                                {
-                                                    
-                                                }
-                                            }];
+                                            } completion:nil];
                                         }
                                     }];
                                 }
@@ -282,7 +285,7 @@
 
 - (void)translateAroundTheView:(UIView *)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge
 {
-    int startPosition = self.center.x, endPosition;
+    CGFloat startPosition = self.center.x, endPosition;
     switch(direction)
     {
         case UIViewAnimationTranslationDirectionFromLeftToRight:
@@ -310,7 +313,7 @@
     } completion:^(BOOL finished) {
         if(finished)
         {
-            [UIView animateWithDuration:duration / 2 animations:^{
+            [UIView animateWithDuration:duration / 2 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 [self setCenter:CGPointMake(startPosition, self.center.y)];
             } completion:^(BOOL finished) {
                 if(finished)
