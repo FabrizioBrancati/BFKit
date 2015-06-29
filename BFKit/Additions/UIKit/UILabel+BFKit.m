@@ -26,16 +26,6 @@
 
 #import "UILabel+BFKit.h"
 
-/**
- *  Remove the commment to this lines if you want to use an UILabel to show the progress of an operation in AFNetworking
- */
-/*
-@interface AFURLConnectionOperation (_UIProgressView)
-@property (readwrite, nonatomic, copy) void (^uploadProgress)(NSUInteger bytes, NSInteger totalBytes, NSInteger totalBytesExpected);
-@property (readwrite, nonatomic, assign, setter = af_setUploadProgressAnimated:) BOOL af_uploadProgressAnimated;
-@end
-*/
-
 @implementation UILabel (BFKit)
 
 + (UILabel *)initWithFrame:(CGRect)frame text:(NSString *)text font:(FontName)fontName size:(CGFloat)size color:(UIColor *)color alignment:(NSTextAlignment)alignment lines:(NSInteger)lines
@@ -56,30 +46,5 @@
     
     return label;
 }
-
-/**
- *  Remove the commment to this lines if you want to use an UILabel to show the progress of an operation in AFNetworking
- */
-/*
-- (void)setProgressWithUploadProgressOfOperation:(AFURLConnectionOperation *)operation
-{
-    __weak __typeof(self)weakSelf = self;
-    void (^original)(NSUInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) = [operation.uploadProgress copy];
-    [operation setUploadProgressBlock:^(NSUInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
-        if(original)
-        {
-            original(bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if(totalBytesExpectedToWrite > 0)
-            {
-                __strong __typeof(weakSelf)strongSelf = weakSelf;
-                [strongSelf setText:[NSString stringWithFormat:@"%i%@", (int)((totalBytesWritten / (totalBytesExpectedToWrite * 1.0f)) * 100), @"%"]];
-            }
-        });
-    }];
-}
-*/
 
 @end

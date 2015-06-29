@@ -43,7 +43,8 @@
 {
     NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
     NSInteger rows = [self numberOfRowsInSection:section];
-    for (int i = 0; i < rows; i++) {
+    for (int i = 0; i < rows; i++)
+    {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:section];
         [indexPaths addObject:indexPath];
     }
@@ -54,13 +55,13 @@
 - (NSIndexPath *)getNextIndexPath:(NSUInteger)row forSection:(NSUInteger)section
 {
     NSArray *indexPaths = [self getIndexPathsForSection:section];
-    return [indexPaths objectAtIndex:row+1];
+    return [indexPaths objectAtIndex:row + 1];
 }
 
 - (NSIndexPath *)getPreviousIndexPath:(NSUInteger)row forSection:(NSUInteger)section
 {
     NSArray *indexPaths = [self getIndexPathsForSection:section];
-    return [indexPaths objectAtIndex:row-1];
+    return [indexPaths objectAtIndex:row - 1];
 }
 
 @end

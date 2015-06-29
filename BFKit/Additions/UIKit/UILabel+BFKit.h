@@ -27,11 +27,6 @@
 @import Foundation;
 @import UIKit;
 
-/**
- *  Remove the commment to this line if you want to use an UILabel to show the progress of an operation in AFNetworking
- */
-//#import "AFNetworking.h"
-
 #import "UIFont+BFKit.h"
 
 /**
@@ -82,10 +77,5 @@
                  alignment:(NSTextAlignment)alignment
                      lines:(NSInteger)lines
                shadowColor:(UIColor *)colorShadow;
-
-/**
- *  Remove the commment to this line if you want to use an UILabel to show the progress of an operation in AFNetworking
- */
-//- (void)setProgressWithUploadProgressOfOperation:(AFURLConnectionOperation *)operation;
 
 @end

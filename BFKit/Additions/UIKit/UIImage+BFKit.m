@@ -263,9 +263,9 @@ UIColor *colorForColorString(NSString *colorString)
     
     if((self.size.width > targetSize.width || targetSize.width == targetSize.height) && self.size.width > self.size.height)
     {
-        float factor = (targetSize.width*100)/self.size.width;
-        float newWidth = (self.size.width*factor)/100;
-        float newHeight = (self.size.height*factor)/100;
+        float factor = (targetSize.width * 100) / self.size.width;
+        float newWidth = (self.size.width * factor) / 100;
+        float newHeight = (self.size.height * factor) / 100;
         
         CGSize newSize = CGSizeMake(newWidth, newHeight);
         UIGraphicsBeginImageContextWithOptions(newSize, NO, [[UIScreen mainScreen] scale]);
@@ -273,9 +273,9 @@ UIColor *colorForColorString(NSString *colorString)
     }
     else if((self.size.height > targetSize.height || targetSize.width == targetSize.height) && self.size.width < self.size.height)
     {
-        float factor = (targetSize.height*100)/self.size.height;
-        float newWidth = (self.size.width*factor)/100;
-        float newHeight = (self.size.height*factor)/100;
+        float factor = (targetSize.height * 100) / self.size.height;
+        float newWidth = (self.size.width * factor) / 100;
+        float newHeight = (self.size.height * factor) / 100;
         
         CGSize newSize = CGSizeMake(newWidth, newHeight);
         UIGraphicsBeginImageContextWithOptions(newSize, NO, [[UIScreen mainScreen] scale]);
@@ -283,8 +283,8 @@ UIColor *colorForColorString(NSString *colorString)
     }
     else if((self.size.height > targetSize.height || self.size.width > targetSize.width ) && self.size.width == self.size.height)
     {
-        float factor = (targetSize.height*100)/self.size.height;
-        float newDimension = (self.size.height*factor)/100;
+        float factor = (targetSize.height * 100) / self.size.height;
+        float newDimension = (self.size.height * factor) / 100;
         
         CGSize newSize = CGSizeMake(newDimension, newDimension);
         UIGraphicsBeginImageContextWithOptions(newSize, NO, [[UIScreen mainScreen] scale]);
@@ -333,7 +333,7 @@ UIColor *colorForColorString(NSString *colorString)
     CGFloat scaledWidth = targetWidth;
     CGFloat scaledHeight = targetHeight;
     
-    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+    CGPoint thumbnailPoint = CGPointMake(0.0, 0.0);
     
     if(CGSizeEqualToSize(imageSize, targetSize) == NO)
     {
@@ -343,7 +343,7 @@ UIColor *colorForColorString(NSString *colorString)
         if(widthFactor < heightFactor) scaleFactor = widthFactor;
         else scaleFactor = heightFactor;
         
-        scaledWidth  = width * scaleFactor;
+        scaledWidth = width * scaleFactor;
         scaledHeight = height * scaleFactor;
         
         if(widthFactor < heightFactor)
@@ -356,7 +356,7 @@ UIColor *colorForColorString(NSString *colorString)
     
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
-    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.width = scaledWidth;
     thumbnailRect.size.height = scaledHeight;
     
     [sourceImage drawInRect:thumbnailRect];
@@ -366,7 +366,7 @@ UIColor *colorForColorString(NSString *colorString)
     
     if(newImage == nil) BFLog(@"Could not scale image");
     
-    return newImage ;
+    return newImage;
 }
 
 
@@ -387,7 +387,7 @@ UIColor *colorForColorString(NSString *colorString)
     
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
-    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.width = scaledWidth;
     thumbnailRect.size.height = scaledHeight;
     
     [sourceImage drawInRect:thumbnailRect];
@@ -397,7 +397,7 @@ UIColor *colorForColorString(NSString *colorString)
     
     if(newImage == nil) BFLog(@"Could not scale image");
     
-    return newImage ;
+    return newImage;
 }
 
 
@@ -406,7 +406,7 @@ UIColor *colorForColorString(NSString *colorString)
     return [self imageRotatedByDegrees:RadiansToDegrees(radians)];
 }
 
-- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees 
+- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees
 {
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.size.width, self.size.height)];
     CGAffineTransform t = CGAffineTransformMakeRotation(DegreesToRadians(degrees));
@@ -416,7 +416,7 @@ UIColor *colorForColorString(NSString *colorString)
     UIGraphicsBeginImageContextWithOptions(rotatedSize, NO, [[UIScreen mainScreen] scale]);
     CGContextRef bitmap = UIGraphicsGetCurrentContext();
     
-    CGContextTranslateCTM(bitmap, rotatedSize.width/2, rotatedSize.height/2);
+    CGContextTranslateCTM(bitmap, rotatedSize.width / 2, rotatedSize.height / 2);
     
     CGContextRotateCTM(bitmap, DegreesToRadians(degrees));
     
@@ -425,14 +425,14 @@ UIColor *colorForColorString(NSString *colorString)
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
     return newImage;
 }
 
 - (BOOL)hasAlpha
 {
     CGImageAlphaInfo alpha = CGImageGetAlphaInfo(self.CGImage);
-    return (alpha == kCGImageAlphaFirst || alpha == kCGImageAlphaLast ||
-            alpha == kCGImageAlphaPremultipliedFirst || alpha == kCGImageAlphaPremultipliedLast);
+    return (alpha == kCGImageAlphaFirst || alpha == kCGImageAlphaLast || alpha == kCGImageAlphaPremultipliedFirst || alpha == kCGImageAlphaPremultipliedLast);
 }
 
 - (UIImage *)removeAlpha
@@ -484,7 +484,7 @@ UIColor *colorForColorString(NSString *colorString)
     
     switch(clrMod)
     {
-        case kCGColorSpaceModelMonochrome : 
+        case kCGColorSpaceModelMonochrome:
             return YES;
         default:
             return NO;
@@ -532,7 +532,7 @@ UIColor *colorForColorString(NSString *colorString)
     CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeCopy);
     [self drawInRect:CGRectMake(0, 0, self.size.width, self.size.height)];
     CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeDifference);
-    CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(),[UIColor whiteColor].CGColor);
+    CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), [UIColor whiteColor].CGColor);
     CGContextFillRect(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, self.size.width, self.size.height));
     
     UIImage *returnImage = UIGraphicsGetImageFromCurrentImageContext();

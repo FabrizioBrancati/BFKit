@@ -31,8 +31,6 @@
 
 - (UIImage *)takeScreenshot
 {
-    // Source (Under MIT License): https://github.com/shinydevelopment/SDScreenshotCapture/blob/master/SDScreenshotCapture/SDScreenshotCapture.m#L35
-    
     BOOL ignoreOrientation = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0");
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
@@ -50,7 +48,6 @@
     CGContextConcatCTM(context, self.transform);
     CGContextTranslateCTM(context, -self.bounds.size.width * self.layer.anchorPoint.x, -self.bounds.size.height * self.layer.anchorPoint.y);
     
-    // Correct for the screen orientation
     if(!ignoreOrientation)
     {
         if(orientation == UIInterfaceOrientationLandscapeLeft)
