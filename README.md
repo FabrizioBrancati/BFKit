@@ -149,8 +149,9 @@ Author :neckbeard:
 ==================
 **Fabrizio Brancati**
 
-- **[Website](http://www.fabriziobrancati.com)**
-- **[Email](mailto:fabrizio.brancati@gmail.com)**
+[![Website](https://img.shields.io/badge/website-fabriziobrancati.com-4fb0c8.svg)](http://www.fabriziobrancati.com)
+<br>
+[![Email](https://img.shields.io/badge/email-fabrizio.brancati%40gmail.com-green.svg)](mailto:fabrizio.brancati@gmail.com)
 
 License :scroll:
 ================

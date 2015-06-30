@@ -66,7 +66,7 @@
     _bfkitNavigationController = [[UINavigationController alloc] initWithRootViewController:_bfkitViewController];
     
     _tabBarController = [[UITabBarController alloc] init];
-    [_tabBarController setViewControllers:@[_kitNavigationController ,_foundationNavigationController, _bfkitNavigationController]];
+    [_tabBarController setViewControllers:@[_bfkitNavigationController, _kitNavigationController ,_foundationNavigationController]];
     
     self.window.rootViewController = _tabBarController;
     [self.window makeKeyAndVisible];

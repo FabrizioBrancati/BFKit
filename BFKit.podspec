@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
                           :git => "https://github.com/FabrizioBrancati/BFKit.git",
                           :tag => "v1.6.4"
                        }
-  s.source_files     =  "BFKit/**/*.{h,m}"
+  s.source_files     = "BFKit/**/*.{h,m}"
   s.resources        = "BFKit/Languages/**"
   s.frameworks       = "Foundation", "UIKit", "CoreGraphics", "AudioToolbox", "CoreImage", "Accelerate", "QuartzCore"
   s.weak_frameworks  = 'LocalAuthentication'
