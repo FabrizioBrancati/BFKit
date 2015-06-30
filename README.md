@@ -103,12 +103,12 @@ Installing and Usage :computer:
 ```bash
   pod install
 ```
-- Import the file "**BFKit.h**"
+- Import BFKit with ```#import "BFKit.h"```
 - Enjoy!
 
 ####Pro version
 - ```pod 'BFKit'```
-- Import the file "**BFKit.h**"
+- Import BFKit with ```#import "BFKit.h"```
 - Enjoy!
 
 ###Manual
@@ -122,7 +122,7 @@ Installing and Usage :computer:
   - **Accelerate**
   - **AudioToolbox** (if you want to use **BFSystemSound** class)
   - **LocalAuthentication** (if you want to use **BFTouchID** class, and set it as weak if your App runs on iOS 7)
-- Import the file "**BFKit.h**"
+- Import BFKit with ```#import "BFKit.h"```
 - Enjoy!
 
 Documentation :100:
