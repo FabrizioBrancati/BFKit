@@ -5,7 +5,7 @@
 [![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Objective--C-blue.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
 [![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg)][CocoaDocs]
-[![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
 
 ###Swift  <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="20" width="20">
 If you are looking for Swift version check it out here: **[BFKit-Swift](https://github.com/FabrizioBrancati/BFKit-Swift)**
