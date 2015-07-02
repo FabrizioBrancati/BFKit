@@ -32,8 +32,8 @@
 @interface NSString (BFKit)
 
 /**
- *  Search in a given string a substring from the start char to the end char.
- *  Example: "This is a test" with start char 'h' and end char 't' will return "his is a "
+ *  Search in a given string a substring from the start char to the end char (excluded form final string).
+ *  Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
  *
  *  @param string The string to search in
  *  @param start  The start char
@@ -46,8 +46,8 @@
                      charEnd:(char)end;
 
 /**
- *  Search in self for a substring from the start char to the end char.
- *  Example: "This is a test" with start char 'h' and end char 't' will return "his is a "
+ *  Search in a given string a substring from the start char to the end char (excluded form final string).
+ *  Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
  *
  *  @param start  The start char
  *  @param end    The end char

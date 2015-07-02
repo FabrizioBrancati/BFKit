@@ -326,6 +326,8 @@
             return [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:fontSize];
         case FontNameAppleSDGothicNeoThin:
             return [UIFont fontWithName:@"AppleSDGothicNeo-Thin" size:fontSize];
+        case FontNameAppleSDGothicNeoUltraLight:
+            return [UIFont fontWithName:@"AppleSDGothicNeo-UltraLight" size:fontSize];
         case FontNameArialBoldItalicMT:
             return [UIFont fontWithName:@"Arial-BoldItalicMT" size:fontSize];
         case FontNameArialBoldMT:
@@ -397,7 +399,7 @@
         case FontNameAvenirNextDemiBold:
             return [UIFont fontWithName:@"AvenirNext-DemiBold" size:fontSize];
         case FontNameAvenirNextDemiBoldItalic:
-            return [UIFont fontWithName:@"AvenirNext-BoldItalic" size:fontSize];
+            return [UIFont fontWithName:@"AvenirNext-DemiBoldItalic" size:fontSize];
         case FontNameAvenirNextHeavy:
             return [UIFont fontWithName:@"AvenirNext-Heavy" size:fontSize];
         case FontNameAvenirNextItalic:
@@ -431,7 +433,7 @@
         case FontNameBaskervilleSemiBold:
             return [UIFont fontWithName:@"Baskerville-SemiBold" size:fontSize];
         case FontNameBaskervilleSemiBoldItalic:
-            return [UIFont fontWithName:@"Baskerville-BoldItalic" size:fontSize];
+            return [UIFont fontWithName:@"Baskerville-SemiBoldItalic" size:fontSize];
         case FontNameBodoniOrnamentsITCTT:
             return [UIFont fontWithName:@"BodoniOrnamentsITCTT" size:fontSize];
         case FontNameBodoniSvtyTwoITCTTBold:
@@ -635,11 +637,11 @@
         case FontNameKhmerSangamMN:
             return [UIFont fontWithName:@"KhmerSangamMN" size:fontSize];
         case FontNameKohinoorBanglaLight:
-            return [UIFont fontWithName:@"KohinoorDevanagari-Light" size:fontSize];
+            return [UIFont fontWithName:@"KohinoorBangla-Light" size:fontSize];
         case FontNameKohinoorBanglaMedium:
-            return [UIFont fontWithName:@"KohinoorDevanagari-Medium" size:fontSize];
+            return [UIFont fontWithName:@"KohinoorBangla-Medium" size:fontSize];
         case FontNameKohinoorBanglaRegular:
-            return [UIFont fontWithName:@"KohinoorDevanagari-Regular" size:fontSize];
+            return [UIFont fontWithName:@"KohinoorBangla-Regular" size:fontSize];
         case FontNameKohinoorDevanagariLight:
             return [UIFont fontWithName:@"KohinoorDevanagari-Light" size:fontSize];
         case FontNameKohinoorDevanagariMedium:

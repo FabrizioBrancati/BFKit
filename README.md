@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
 [![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit/issues)
 [![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)][CocoaDocs]
-[![Platform](https://img.shields.io/badge/platform-iOS-000000.svg)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Objective--C-blue.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
+[![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg)][CocoaDocs]
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
 
 ###Swift  <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="20" width="20">
@@ -89,7 +89,7 @@ Please make sure to follow my general coding style for new features!
 
 Installing and Usage :computer:
 ===============================
-###Pod
+###CocoaPods
 ####Newbie version
 - Create a **Podfile** in your **project directory**
 - Write:

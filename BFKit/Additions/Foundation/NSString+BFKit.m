@@ -49,7 +49,7 @@
     
     stop -= inizio;
     
-    return [[string substringFromIndex:inizio-1] substringToIndex:stop+1];
+    return [[string substringFromIndex:inizio] substringToIndex:stop];
 }
 
 - (NSString *)searchCharStart:(char)start charEnd:(char)end

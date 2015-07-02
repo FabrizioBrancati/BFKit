@@ -302,8 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				4902775619BDF424009B8BC1 /* BFKit.h */,
-				494AAF4E1A98A93C001E58F5 /* Additions */,
 				4902775119BDF424009B8BC1 /* BFKit */,
+				494AAF4E1A98A93C001E58F5 /* Additions */,
 				49C4537D19BE947000E5052C /* Languages */,
 			);
 			name = BFKit;

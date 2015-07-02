@@ -47,7 +47,7 @@ UIColor *colorForColorString(NSString *colorString)
         return [UIColor lightGrayColor];
     }
     
-    SEL colorSelector = NSSelectorFromString([colorString stringByAppendingString:@"Color"]);
+    SEL colorSelector = NSSelectorFromString([colorString.lowercaseString stringByAppendingString:@"Color"]);
     if([UIColor respondsToSelector:colorSelector])
     {
         return [UIColor performSelector:colorSelector];

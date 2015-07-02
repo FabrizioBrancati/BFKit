@@ -1,5 +1,8 @@
 Changelog
 =========
+###Version 1.6.5
+- Added ```currentAppCPUUsage``` in NSProcessInfo category
+
 ###Version 1.6.4
 - Added ```hex``` and ```hexString``` in UIColor category to easily create HEX colors from strings
 - Added dummy images and any blend mode in UIImage category
@@ -98,3 +101,6 @@ Thanks to [@antwork](https://github.com/antwork) for this release
 - Minor enhancements & bugfixes
 
 Thanks to [@hiralin](https://github.com/hiralin) & [@bontangster](https://github.com/bontangster) for this release
+
+###Version 1.0.0
+- Initial release
