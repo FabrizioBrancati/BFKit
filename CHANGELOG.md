@@ -2,6 +2,7 @@ Changelog
 =========
 ###Version 1.6.5
 - Added ```currentAppCPUUsage``` in NSProcessInfo category
+- Minor bugfixes
 
 ###Version 1.6.4
 - Added ```hex``` and ```hexString``` in UIColor category to easily create HEX colors from strings
