@@ -31,6 +31,11 @@
 
 + (float)cpuUsage
 {
+    return [self currentAppCPUUsage];
+}
+
++ (float)currentAppCPUUsage
+{
     kern_return_t kr;
     task_info_data_t tinfo;
     mach_msg_type_number_t task_info_count;
@@ -59,10 +64,7 @@
     {
         return -1;
     }
-    if(thread_count > 0)
-    {
-        stat_thread += thread_count;
-    }
+    if(thread_count > 0) stat_thread += thread_count;
     
     long tot_sec = 0;
     long tot_usec = 0;
@@ -79,13 +81,17 @@
         }
         
         basic_info_th = (thread_basic_info_t)thinfo;
+        
         if(!(basic_info_th->flags & TH_FLAGS_IDLE))
         {
             tot_sec = tot_sec + basic_info_th->user_time.seconds + basic_info_th->system_time.seconds;
             tot_usec = tot_usec + basic_info_th->system_time.microseconds + basic_info_th->system_time.microseconds;
-            tot_cpu = tot_cpu + basic_info_th->cpu_usage / (float)TH_USAGE_SCALE;
+            tot_cpu = tot_cpu + basic_info_th->cpu_usage / (float)TH_USAGE_SCALE * 100.0;
         }
     }
+    
+    kr = vm_deallocate(mach_task_self(), (vm_offset_t)thread_list, thread_count * sizeof(thread_t));
+    assert(kr == KERN_SUCCESS);
     
     return tot_cpu;
 }

@@ -36,6 +36,13 @@
  *
  *  @return Return the CPU usage
  */
-+ (float)cpuUsage;
++ (float)cpuUsage DEPRECATED_MSG_ATTRIBUTE("Use +currentAppCPUUsage");
+
+/**
+ *  Return the CPU usage by the current App
+ *
+ *  @return Return the CPU usage by the current App
+ */
++ (float)currentAppCPUUsage;
 
 @end
