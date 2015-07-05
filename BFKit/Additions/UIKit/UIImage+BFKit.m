@@ -40,24 +40,6 @@ CGSize sizeForSizeString(NSString *sizeString)
     return CGSizeMake([array[0] floatValue], [array[1] floatValue]);
 }
 
-UIColor *colorForColorString(NSString *colorString)
-{
-    if(!colorString)
-    {
-        return [UIColor lightGrayColor];
-    }
-    
-    SEL colorSelector = NSSelectorFromString([colorString.lowercaseString stringByAppendingString:@"Color"]);
-    if([UIColor respondsToSelector:colorSelector])
-    {
-        return [UIColor performSelector:colorSelector];
-    }
-    else
-    {
-        return [UIColor hex:colorString];
-    }
-}
-
 @implementation UIImage (BFKit)
 
 + (void)load
@@ -88,7 +70,7 @@ UIColor *colorForColorString(NSString *colorString)
         if(array.count >= 3)
             colorString = array[2];
         
-        return [self dummyImageWithSize:sizeForSizeString(sizeString) color:colorForColorString(colorString)];
+        return [self dummyImageWithSize:sizeForSizeString(sizeString) color:[UIColor colorForColorString:colorString]];
     }
     else
     {
@@ -195,17 +177,6 @@ UIColor *colorForColorString(NSString *colorString)
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
     
-    if([UIDevice isRetinaHD])
-    {
-        CGSize retinaTargetSize = CGSizeMake(targetSize.width * 3, targetSize.height * 3);
-        if(!CGSizeEqualToSize(imageSize, retinaTargetSize)) targetSize = retinaTargetSize;
-    }
-    else if([UIDevice isRetina])
-    {
-        CGSize retinaTargetSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2);
-        if(!CGSizeEqualToSize(imageSize, retinaTargetSize)) targetSize = retinaTargetSize;
-    }
-    
     CGFloat targetWidth = targetSize.width;
     CGFloat targetHeight = targetSize.height;
     
@@ -250,17 +221,6 @@ UIColor *colorForColorString(NSString *colorString)
 
 - (UIImage *)imageByScalingProportionallyToMaximumSize:(CGSize)targetSize
 {
-    if([UIDevice isRetinaHD])
-    {
-        CGSize retinaMaxtSize = CGSizeMake(targetSize.width * 3, targetSize.height * 3);
-        if(!CGSizeEqualToSize(targetSize, retinaMaxtSize)) targetSize = retinaMaxtSize;
-    }
-    else if([UIDevice isRetina])
-    {
-        CGSize retinaMaxtSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2);
-        if(!CGSizeEqualToSize(targetSize, retinaMaxtSize)) targetSize = retinaMaxtSize;
-    }
-    
     if((self.size.width > targetSize.width || targetSize.width == targetSize.height) && self.size.width > self.size.height)
     {
         float factor = (targetSize.width * 100) / self.size.width;
@@ -312,19 +272,6 @@ UIColor *colorForColorString(NSString *colorString)
     CGSize imageSize = sourceImage.size;
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
-    
-    if([UIDevice isRetinaHD])
-    {
-        CGSize retinaTargetSize = CGSizeMake(targetSize.width * 3, targetSize.height * 2);
-        if(!CGSizeEqualToSize(imageSize, retinaTargetSize))
-            targetSize = retinaTargetSize;
-    }
-    else if([UIDevice isRetina])
-    {
-        CGSize retinaTargetSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2);
-        if(!CGSizeEqualToSize(imageSize, retinaTargetSize))
-            targetSize = retinaTargetSize;
-    }
     
     CGFloat targetWidth = targetSize.width;
     CGFloat targetHeight = targetSize.height;
