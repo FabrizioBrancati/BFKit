@@ -1,5 +1,12 @@
 Changelog
 =========
+###Version 1.6.6
+- Added ```colorForColorString``` in UIColor category
+- Added ```getIndexPathsForSection``` in UITableView category
+- Added ```takeScreenshotAndSave:``` and ```takeScreenshotWithDelay:save:completion:``` in UIWindow category to save screenshots and make it after a delay
+- Minor changes on Documentation
+- Fixed a bug with Retina and Retina HD displays while resizing images
+
 ###Version 1.6.5
 - Added ```currentAppCPUUsage``` in NSProcessInfo category
 - Minor bugfixes

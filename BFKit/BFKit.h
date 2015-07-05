@@ -27,7 +27,7 @@
 /**
  *  Here is some BFKit defined variables
  */
-#define BFKIT_VERSION @"1.6.5"
+#define BFKIT_VERSION @"1.6.6"
 #define BFKIT_AUTHOR @"Fabrizio Brancati"
 
 /**
