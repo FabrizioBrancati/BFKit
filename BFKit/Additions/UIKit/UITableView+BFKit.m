@@ -39,7 +39,7 @@
     return tableView;
 }
 
-- (NSArray *)getIndexPathsForSection:(NSUInteger)section;
+- (NSArray *)getIndexPathsForSection:(NSUInteger)section
 {
     NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
     NSInteger rows = [self numberOfRowsInSection:section];
