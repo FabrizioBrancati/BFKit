@@ -95,6 +95,24 @@
 	return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0 green:((float)((hex & 0xFF00) >> 8)) / 255.0 blue:((float)(hex & 0xFF)) / 255.0 alpha:alpha];
 }
 
++ (UIColor *)colorForColorString:(NSString *)colorString
+{
+    if(!colorString)
+    {
+        return [UIColor lightGrayColor];
+    }
+    
+    SEL colorSelector = NSSelectorFromString([colorString.lowercaseString stringByAppendingString:@"Color"]);
+    if([UIColor respondsToSelector:colorSelector])
+    {
+        return [UIColor performSelector:colorSelector];
+    }
+    else
+    {
+        return [UIColor hex:colorString];
+    }
+}
+
 + (UIColor *)randomColor
 {
 	int r = arc4random() % 255;
