@@ -28,15 +28,33 @@
 @import UIKit;
 
 /**
- *  This category add some useful methods to UIWindow
+ *  This category adds some useful methods to UIWindow
  */
 @interface UIWindow (BFKit)
 
 /**
- *  Take a screenshot of current window
+ *  Take a screenshot of current window, without saving it
  *
- *  @return Return the screenshot as an UIImage
+ *  @return Returns the screenshot as an UIImage
  */
 - (UIImage *)takeScreenshot;
+
+/**
+ *  Take a screenshot of current window and choose if save it or not
+ *
+ *  @param save YES to save, NO to don't save
+ *
+ *  @return Returns the screenshot as an UIImage
+ */
+- (UIImage *)takeScreenshotAndSave:(BOOL)save;
+
+/**
+ *  Take a screenshot of current window, choose if save it or not after a delay
+ *
+ *  @param delay      The delay, in seconds
+ *  @param save       YES to save, NO to don't save
+ *  @param completion Completion handler with the UIImage
+ */
+- (void)takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^)(UIImage *screenshot))completion;
 
 @end

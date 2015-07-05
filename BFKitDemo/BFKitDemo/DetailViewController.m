@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 @interface DetailViewController ()
 {
@@ -331,6 +332,22 @@
             
             break;
         }
+        case DetailTypeUIWindow:
+        {
+            self.title = @"UIWindow";
+            [_scrollView removeFromSuperview];
+            
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate.window takeScreenshotWithDelay:3 completion:^(UIImage *screenshot) {
+                screenshot = [screenshot imageByScalingProportionallyToSize:CGSizeMake(SCREEN_WIDTH - 40, SCREEN_HEIGHT - 40 - 64 - 50 - 20)];
+                UIImageView *screenshotView = [[UIImageView alloc] initWithImage:screenshot];
+                [screenshotView setCenter:CGPointMake(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) + 64 - 50 - 10)];
+                [screenshotView createRectShadowWithOffset:CGSizeZero opacity:10.0 radius:10.0];
+                [self.view addSubview:screenshotView];
+            }];
+            
+            break;
+        }
         case DetailTypeNSArray:
         {
             self.title = @"NSArray";
@@ -379,7 +396,7 @@
 
         	NSDictionary *dic = @{@"Today": [today description], @"Description of today" :[NSDate dateInformationDescriptionWithInformation:[today dateInformation]], @"array": @[@1, @2, @3]};
         	BFLog(@"Normal Dictionary: %@", dic);
-        	BFLog(@"Dictionary to JSON: %@", [dic dictionaryToJson]);
+        	BFLog(@"Dictionary to JSON: %@", [dic dictionaryToJSON]);
             
             UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             [self.view addSubview:textView];

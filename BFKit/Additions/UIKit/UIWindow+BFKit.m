@@ -29,7 +29,7 @@
 
 @implementation UIWindow (BFKit)
 
-- (UIImage *)takeScreenshot
+- (UIImage *)takeScreenshotAndSave:(BOOL)save
 {
     BOOL ignoreOrientation = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0");
     
@@ -76,7 +76,22 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
+    if(save)
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    
     return image;
+}
+
+- (UIImage *)takeScreenshot
+{
+    return [self takeScreenshotAndSave:NO];
+}
+
+- (void)takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^)(UIImage *image))completion
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        completion([self takeScreenshotAndSave:save]);
+    });
 }
 
 @end
