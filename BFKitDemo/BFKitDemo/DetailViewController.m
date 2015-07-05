@@ -338,7 +338,7 @@
             [_scrollView removeFromSuperview];
             
             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            [appDelegate.window takeScreenshotWithDelay:3 completion:^(UIImage *screenshot) {
+            [appDelegate.window takeScreenshotWithDelay:3 save:NO completion:^(UIImage *screenshot) {
                 screenshot = [screenshot imageByScalingProportionallyToSize:CGSizeMake(SCREEN_WIDTH - 40, SCREEN_HEIGHT - 40 - 64 - 50 - 20)];
                 UIImageView *screenshotView = [[UIImageView alloc] initWithImage:screenshot];
                 [screenshotView setCenter:CGPointMake(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) + 64 - 50 - 10)];
