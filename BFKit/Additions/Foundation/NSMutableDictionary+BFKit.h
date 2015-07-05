@@ -27,7 +27,7 @@
 @import Foundation;
 
 /**
- *  This category add some useful methods to NSMutableDictionary
+ *  This category adds some useful methods to NSMutableDictionary
  */
 @interface NSMutableDictionary (BFKit)
 
@@ -37,7 +37,7 @@
 *  @param anObject The object
 *  @param aKey     The key
 *
-*  @return Return YES if has been setted, otherwise NO
+*  @return Returns YES if has been setted, otherwise NO
 */
 - (BOOL)safeSetObject:(id)anObject
                forKey:(id<NSCopying>)aKey;

@@ -27,7 +27,7 @@
 @import Foundation;
 
 /**
- *  This category add some useful methods to NSArray
+ *  This category adds some useful methods to NSArray
  */
 @interface NSArray (BFKit)
 
@@ -36,21 +36,21 @@
  *
  *  @param index The index
  *
- *  @return Return the object at a given index in safe mode (nil if self is empty or out of range)
+ *  @return Returns the object at a given index in safe mode (nil if self is empty or out of range)
  */
 - (id)safeObjectAtIndex:(NSUInteger)index;
 
 /**
  *  Create a reversed array from self
  *
- *  @return Return the reversed array
+ *  @return Returns the reversed array
  */
 - (NSArray *)reversedArray;
 
 /**
  *  Convert self to JSON as NSString
  *
- *  @return Return the JSON as NSString or nil if error while parsing
+ *  @return Returns the JSON as NSString or nil if error while parsing
  */
 - (NSString *)arrayToJson;
 
@@ -59,7 +59,7 @@
  *
  *  @param index The index
  *
- *  @return Return the object at a given index
+ *  @return Returns the object at a given index
  */
 - (id)objectAtCircleIndex:(NSInteger)index;
 
@@ -68,17 +68,17 @@
  *
  *  @param array The array to be converted
  *
- *  @return Return the reversed array
+ *  @return Returns the reversed array
  */
-+ (NSString *)arrayToJson:(NSArray *)array;
++ (NSArray *)reversedArray:(NSArray *)array;
 
 /**
  *  Convert the given array to JSON as NSString
  *
  *  @param array The array to be reversed
  *
- *  @return Return the JSON as NSString or nil if error while parsing
+ *  @return Returns the JSON as NSString or nil if error while parsing
  */
-+ (NSArray *)reversedArray:(NSArray *)array;
++ (NSString *)arrayToJson:(NSArray *)array;
 
 @end

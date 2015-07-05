@@ -27,21 +27,21 @@
 @import Foundation;
 
 /**
- *  This category add some useful methods to NSProcessInfo
+ *  This category adds some useful methods to NSProcessInfo
  */
 @interface NSProcessInfo (BFKit)
 
 /**
- *  Return the CPU usage
+ *  Returns the CPU usage
  *
- *  @return Return the CPU usage
+ *  @return Returns the CPU usage
  */
 + (float)cpuUsage DEPRECATED_MSG_ATTRIBUTE("Use +currentAppCPUUsage");
 
 /**
- *  Return the CPU usage by the current App
+ *  Returns the CPU usage by the current App
  *
- *  @return Return the CPU usage by the current App
+ *  @return Returns the CPU usage by the current App
  */
 + (float)currentAppCPUUsage;
 

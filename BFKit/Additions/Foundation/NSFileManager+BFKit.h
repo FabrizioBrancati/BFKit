@@ -50,17 +50,17 @@ typedef NS_ENUM(NSInteger, DirectoryType)
 };
 
 /**
- *  This category add some useful methods to NSFileManager
+ *  This category adds some useful methods to NSFileManager
  */
 @interface NSFileManager (BFKit)
 
 /**
- *  Read a file an return the content as NSString
+ *  Read a file an returns the content as NSString
  *
  *  @param file File name
  *  @param type File type
  *
- *  @return Return the content of the file a NSString
+ *  @return Returns the content of the file a NSString
  */
 + (NSString *)readTextFile:(NSString *)file
                     ofType:(NSString *)type;
@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param filename PLIST filename
  *  @param array    Array to save into PLIST
  *
- *  @return Return YES if the operation was successful, otherwise NO
+ *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)saveArrayToPath:(DirectoryType)path
            withFilename:(NSString *)fileName
@@ -84,7 +84,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param path     Path of the PLIST
  *  @param fileName PLIST filename
  *
- *  @return Return the loaded array
+ *  @return Returns the loaded array
  */
 + (NSArray *)loadArrayFromPath:(DirectoryType)path
                     withFilename:(NSString *)fileName;
@@ -94,7 +94,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *
  *  @param fileName Filename
  *
- *  @return Return the path as a NSString
+ *  @return Returns the path as a NSString
  */
 + (NSString *)getBundlePathForFile:(NSString *)fileName;
 
@@ -103,7 +103,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *
  *  @param fileName Filename
  *
- *  @return Return the directory as a NSString
+ *  @return Returns the directory as a NSString
  */
 + (NSString *)getDocumentsDirectoryForFile:(NSString *)fileName;
 
@@ -112,7 +112,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *
  *  @param fileName Filename
  *
- *  @return Return the directory as a NSString
+ *  @return Returns the directory as a NSString
  */
 + (NSString *)getLibraryDirectoryForFile:(NSString *)fileName;
 
@@ -121,27 +121,27 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *
  *  @param fileName Filename
  *
- *  @return Return the directory as a NSString
+ *  @return Returns the directory as a NSString
  */
 + (NSString *)getCacheDirectoryForFile:(NSString *)fileName;
 
 /**
- *  Return the size of the file
+ *  Returns the size of the file
  *
  *  @param fileName  Filename
  *  @param directory Directory of the file
  *
- *  @return Return the file size
+ *  @return Returns the file size
  */
 + (NSNumber *)fileSize:(NSString *)fileName fromDirectory:(DirectoryType)directory;
 
 /**
- *  Delete a file with the given filename.
+ *  Delete a file with the given filename
  *
  *  @param filename Filename to delete
  *  @param origin   Directory of the file
  *
- *  @return Return YES if the operation was successful, otherwise NO
+ *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)deleteFile:(NSString *)fileName
      fromDirectory:(DirectoryType)directory;
@@ -153,7 +153,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param origin      Origin directory of the file
  *  @param destination Destination directory of the file
  *
- *  @return Return YES if the operation was successful, otherwise NO
+ *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)moveLocalFile:(NSString *)fileName
         fromDirectory:(DirectoryType)origin
@@ -167,7 +167,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param destination Destination directory of the file
  *  @param folderName  Folder name where to move the file. If folder not exist it will be created automatically
  *
- *  @return Return YES if the operation was successful, otherwise NO
+ *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)moveLocalFile:(NSString *)fileName
         fromDirectory:(DirectoryType)origin
@@ -180,7 +180,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param origin      Origin path
  *  @param destination Destination path
  *
- *  @return Return YES if the operation was successful, otherwise NO
+ *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)duplicateFileAtPath:(NSString *)origin
                   toNewPath:(NSString *)destination;
@@ -193,7 +193,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param oldName Old filename
  *  @param newName New filename
  *
- *  @return Return YES if the operation was successful, otherwise NO
+ *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)renameFileFromDirectory:(DirectoryType)origin
                          atPath:(NSString *)path
@@ -205,7 +205,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *
  *  @param objKey Key to get the object
  *
- *  @return Return the object for the given key
+ *  @return Returns the object for the given key
  */
 + (id)getAppSettingsForObjectWithKey:(NSString *)objKey;
 
@@ -215,7 +215,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param value  Object to set
  *  @param objKey Key to set the object
  *
- *  @return Return YES if the operation was successful, otherwise NO
+ *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)setAppSettingsForObject:(id)value
                          forKey:(NSString *)objKey;
@@ -226,7 +226,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param settings Settings filename
  *  @param objKey   Key to set the object
  *
- *  @return Return the object for the given key
+ *  @return Returns the object for the given key
  */
 + (id)getSettings:(NSString *)settings
      objectForKey:(NSString *)objKey;
@@ -238,7 +238,7 @@ typedef NS_ENUM(NSInteger, DirectoryType)
  *  @param value    Object to set
  *  @param objKey   Key to set the object
  *
- *  @return Return YES if the operation was successful, otherwise NO
+ *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)setSettings:(NSString *)settings
              object:(id)value forKey:(NSString *)objKey;

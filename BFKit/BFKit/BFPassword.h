@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, PasswordStrengthLevel)
 };
 
 /**
- *  This class add some useful methods to manage passwords
+ *  This class adds some useful methods to manage passwords
  */
 @interface BFPassword : NSObject
 
@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, PasswordStrengthLevel)
  *
  *  @param password Password string
  *
- *  @return Return the password strength level with value from enum PasswordStrengthLevel
+ *  @return Returns the password strength level with value from enum PasswordStrengthLevel
  */
 + (PasswordStrengthLevel)checkPasswordStrength:(NSString *)password;
 

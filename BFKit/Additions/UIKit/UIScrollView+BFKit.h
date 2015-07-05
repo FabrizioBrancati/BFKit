@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This category add some useful methods to UIScrollView
+ *  This category adds some useful methods to UIScrollView
  */
 @interface UIScrollView (BFKit)
 
@@ -42,7 +42,7 @@
  *  @param showScrollIndicators Set if ScrollView has to show the scroll indicators, vertical and horizontal
  *  @param delegate             ScrollView's delegate
  *
- *  @return Return the created UIScrollView
+ *  @return Returns the created UIScrollView
  */
 + (UIScrollView *)initWithFrame:(CGRect)frame
                     contentSize:(CGSize)contentSize

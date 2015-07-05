@@ -89,28 +89,6 @@ Please make sure to follow my general coding style for new features!
 
 Installing and Usage :computer:
 ===============================
-###CocoaPods
-####Newbie version
-- Create a **Podfile** in your **project directory**
-- Write:
-```ruby
-  platform :ios, '7.0'
-  xcodeproj 'Project.xcodeproj'
-  pod 'BFKit'
-```
-- Obviously **change "Project"**  with your **real project name**
-- Open **Terminal**, go to **project directory** and type:
-```bash
-  pod install
-```
-- Import BFKit with ```#import "BFKit.h"```
-- Enjoy!
-
-####Pro version
-- ```pod 'BFKit'```
-- Import BFKit with ```#import "BFKit.h"```
-- Enjoy!
-
 ###Manual
 - Copy the **library** folder (**BFKit**) to the project
 - Add the following frameworks to the project:
@@ -122,6 +100,25 @@ Installing and Usage :computer:
   - **Accelerate**
   - **AudioToolbox** (if you want to use **BFSystemSound** class)
   - **LocalAuthentication** (if you want to use **BFTouchID** class, and set it as weak if your App runs on iOS 7)
+- Import BFKit with ```#import "BFKit.h"```
+- Enjoy!
+
+###CocoaPods
+####Newbie version
+- Create a **Podfile** in your **project directory**
+- Write:
+```ruby
+  platform :ios, '7.0'
+  xcodeproj 'Project.xcodeproj'
+  pod 'BFKit'
+```
+- Obviously **change "Project"**  with your **real project name**
+- Open **Terminal**, go to **project directory** and type: ```pod install```
+- Import BFKit with ```#import "BFKit.h"```
+- Enjoy!
+
+####Pro version
+- ```pod 'BFKit'```
 - Import BFKit with ```#import "BFKit.h"```
 - Enjoy!
 

@@ -30,10 +30,20 @@
 
 - (NSString *)dictionaryToJson
 {
-    return [NSDictionary dictionaryToJson:self];
+    return [self dictionaryToJSON];
+}
+
+- (NSString *)dictionaryToJSON
+{
+    return [NSDictionary dictionaryToJSON:self];
 }
 
 + (NSString *)dictionaryToJson:(NSDictionary *)dictionary
+{
+    return [self dictionaryToJSON:dictionary];
+}
+
++ (NSString *)dictionaryToJSON:(NSDictionary *)dictionary
 {
     NSString *json = nil;
     NSError *error = nil;

@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This category add some useful methods to UIWebView
+ *  This category adds some useful methods to UIWebView
  */
 @interface UIWebView (BFKit)
 

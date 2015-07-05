@@ -27,7 +27,7 @@
 @import Foundation;
 
 /**
- *  This category add some useful methods to NSMutableArray
+ *  This category adds some useful methods to NSMutableArray
  */
 @interface NSMutableArray (BFKit)
 
@@ -43,7 +43,7 @@
 /**
  *  Create a reversed array from self
  *
- *  @return Return the reversed array
+ *  @return Returns the reversed array
  */
 - (NSMutableArray *)reversedArray;
 
@@ -54,7 +54,7 @@
  *  @param array     The array to be ordered
  *  @param ascending A BOOL to choose if ascending or descending
  *
- *  @return Return the given array ordered by the given key ascending or descending
+ *  @return Returns the given array ordered by the given key ascending or descending
  */
 + (NSMutableArray *)sortArrayByKey:(NSString *)key
                              array:(NSMutableArray *)array

@@ -28,7 +28,7 @@
 @import CoreGraphics;
 
 /**
- *  This category add some useful methods to NSNumber
+ *  This category adds some useful methods to NSNumber
  */
 @interface NSNumber (BFKit)
 
@@ -38,17 +38,17 @@ extern "C" {
 /**
  *  Degrees to radians conversion
  *
- *  @param degrees Degrees to be converter
+ *  @param degrees Degrees to be converted
  *
- *  @return Return the convertion result
+ *  @return Returns the convertion result
  */
 CGFloat DegreesToRadians(CGFloat degrees);
 /**
  *  Radians to degrees conversion
  *
- *  @param radians Radians to be converter
+ *  @param radians Radians to be converted
  *
- *  @return Return the convertion result
+ *  @return Returns the convertion result
  */
 CGFloat RadiansToDegrees(CGFloat radians);
 #if _cplusplus
@@ -61,7 +61,7 @@ CGFloat RadiansToDegrees(CGFloat radians);
  *  @param minValue Mininum random value
  *  @param maxValue Maxinum random value
  *
- *  @return Return the created random integer
+ *  @return Returns the created random integer
  */
 + (NSInteger)randomIntBetweenMin:(NSInteger)minValue
                           andMax:(NSInteger)maxValue;
@@ -69,7 +69,7 @@ CGFloat RadiansToDegrees(CGFloat radians);
 /**
  *  Create a random float
  *
- *  @return Return the created random float
+ *  @return Returns the created random float
  */
 + (CGFloat)randomFloat;
 
@@ -79,7 +79,7 @@ CGFloat RadiansToDegrees(CGFloat radians);
  *  @param minValue Mininum random value
  *  @param maxValue Maxinum random value
  *
- *  @return Return the created random float
+ *  @return Returns the created random float
  */
 + (CGFloat)randomFloatBetweenMin:(CGFloat)minValue
                           andMax:(CGFloat)maxValue;
@@ -89,16 +89,16 @@ CGFloat RadiansToDegrees(CGFloat radians);
  *
  *  @param number Number to be powered
  *
- *  @return Return the number powered
+ *  @return Returns the number powered
  */
 + (NSInteger)nextPowerOfTwo:(NSInteger)number;
 
 /**
- *  Return if the number is a power of two
+ *  Returns if the number is a power of two
  *
  *  @param number Number to check
  *
- *  @return Return if the number is a power of two
+ *  @return Returns if the number is a power of two
  */
 + (BOOL)isPowerOfTwo:(NSInteger)number;
 

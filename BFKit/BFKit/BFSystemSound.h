@@ -522,7 +522,7 @@ typedef NS_ENUM(NSInteger, AudioID){
 };
 
 /**
- *  This class add some useful methods to play system sounds
+ *  This class adds some useful methods to play system sounds
  */
 @interface BFSystemSound : NSObject
 
@@ -543,7 +543,7 @@ typedef NS_ENUM(NSInteger, AudioID){
  *
  *  @param soundURL Sound URL
  *
- *  @return Return the SystemSoundID
+ *  @return Returns the SystemSoundID
  */
 + (SystemSoundID)playCustomSound:(NSURL *)soundURL;
 
@@ -552,7 +552,7 @@ typedef NS_ENUM(NSInteger, AudioID){
  *
  *  @param soundID SystemSoundID
  *
- *  @return Return YES if has been disposed, otherwise NO
+ *  @return Returns YES if has been disposed, otherwise NO
  */
 + (BOOL)disposeSound:(SystemSoundID)soundID;
 

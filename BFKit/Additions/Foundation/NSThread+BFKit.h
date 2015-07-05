@@ -39,7 +39,7 @@ NS_INLINE void runOnMainThread(void (^block)(void))
 }
 
 /**
- *  This category add some useful methods to NSThread
+ *  This category adds some useful methods to NSThread
  */
 @interface NSThread (BFKit)
 

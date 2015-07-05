@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This category add some useful methods to UIColor
+ *  This category adds some useful methods to UIColor
  */
 @interface UIColor (BFKit)
 
@@ -40,7 +40,7 @@
  *  @param b Blue value
  *  @param a Alpha value
  *
- *  @return Return the created UIColor
+ *  @return Returns the created UIColor
  */
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 
@@ -51,7 +51,7 @@
  *  @param g Green value
  *  @param b Blue value
  *
- *  @return Return the created UIColor
+ *  @return Returns the created UIColor
  */
 #define RGB(r, g, b) RGBA(r, g, b, 1.0f)
 
@@ -100,9 +100,9 @@
  *  - #RRGGBB
  *  - #AARRGGBB
  *
- *  @param hexString HEX string
+ *  @param hex HEX string
  *
- *  @return Return the UIColor instance
+ *  @return Returns the UIColor instance
  */
 + (UIColor *)hex:(NSString *)hexString;
 
@@ -116,7 +116,7 @@
  *
  *  @param hexString HEX string
  *
- *  @return Return the UIColor instance
+ *  @return Returns the UIColor instance
  */
 + (UIColor *)hexString:(NSString *)hexString;
 
@@ -125,7 +125,7 @@
  *
  *  @param hexString HEX string
  *
- *  @return Return the UIColor instance
+ *  @return Returns the UIColor instance
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString DEPRECATED_MSG_ATTRIBUTE("Use +hex");
 
@@ -134,7 +134,7 @@
  *
  *  @param hex HEX value
  *
- *  @return Return the UIColor instance
+ *  @return Returns the UIColor instance
  */
 + (UIColor *)colorWithHex:(unsigned int)hex;
 
@@ -144,15 +144,24 @@
  *  @param hex   HEX value
  *  @param alpha Alpha value
  *
- *  @return Return the UIColor instance
+ *  @return Returns the UIColor instance
  */
 + (UIColor *)colorWithHex:(unsigned int)hex
                     alpha:(float)alpha;
 
 /**
+ *  Create an UIColor from a given string (blue or ff00ff)
+ *
+ *  @param colorString String with the color
+ *
+ *  @return Returns the created UIColor
+ */
++ (UIColor *)colorForColorString:(NSString *)colorString;
+
+/**
  *  Create a random color
  *
- *  @return Return the UIColor instance
+ *  @return Returns the UIColor instance
  */
 + (UIColor *)randomColor;
 
@@ -162,7 +171,7 @@
  *  @param color UIColor value
  *  @param alpha Alpha value
  *
- *  @return Return the UIColor instance
+ *  @return Returns the UIColor instance
  */
 + (UIColor *)colorWithColor:(UIColor *)color
                       alpha:(float)alpha;
@@ -170,21 +179,21 @@
 /**
  *  Check if the color is in RGB format
  *
- *  @return Return if the color is in RGB format
+ *  @return Returns if the color is in RGB format
  */
 - (BOOL)canProvideRGBComponents;
 
 /**
  *  A good contrasting color, it will be either black or white
  *
- *  @return Return the color
+ *  @return Returns the color
  */
 - (UIColor *)contrastingColor;
 
 /**
  *  A complementary color that should look good
  *
- *  @return Return the color
+ *  @return Returns the color
  */
 - (UIColor *)complementaryColor;
 

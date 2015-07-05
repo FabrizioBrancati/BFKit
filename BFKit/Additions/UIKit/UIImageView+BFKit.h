@@ -29,7 +29,7 @@
 @import QuartzCore;
 
 /**
- *  This category add some useful methods to UIImageView
+ *  This category adds some useful methods to UIImageView
  */
 @interface UIImageView (BFKit)
 
@@ -39,7 +39,7 @@
  *  @param image UIImageView image
  *  @param rect  UIImageView frame
  *
- *  @return Return the created UIImageView
+ *  @return Returns the created UIImageView
  */
 + (id)initWithImage:(UIImage *)image
               frame:(CGRect)rect;
@@ -51,7 +51,7 @@
  *  @param size   UIImageView size
  *  @param center UIImageView center
  *
- *  @return Return the created UIImageView
+ *  @return Returns the created UIImageView
  */
 + (id)initWithImage:(UIImage *)image
                size:(CGSize)size
@@ -63,7 +63,7 @@
  *  @param image  UIImageView image
  *  @param center UIImageView center
  *
- *  @return Return the created UIImageView
+ *  @return Returns the created UIImageView
  */
 + (id)initWithImage:(UIImage *)image
              center:(CGPoint)center;

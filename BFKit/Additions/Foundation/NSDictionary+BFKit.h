@@ -27,24 +27,40 @@
 @import Foundation;
 
 /**
- *  This category add some useful methods to NSDictionary
+ *  This category adds some useful methods to NSDictionary
  */
 @interface NSDictionary (BFKit)
 
 /**
  *  Convert self to JSON as NSString
  *
- *  @return Return the JSON as NSString or nil if error while parsing
+ *  @return Returns the JSON as NSString or nil if error while parsing
  */
-- (NSString *)dictionaryToJson;
+- (NSString *)dictionaryToJson DEPRECATED_MSG_ATTRIBUTE("Use -dictionaryToJSON");
+
+/**
+ *  Convert self to JSON as NSString
+ *
+ *  @return Returns the JSON as NSString or nil if error while parsing
+ */
+- (NSString *)dictionaryToJSON;
 
 /**
  *  Convert the given dictionary to JSON as NSString
  *
  *  @param dictionary The dictionary to be converted
  *
- *  @return Return the JSON as NSString or nil if error while parsing
+ *  @return Returns the JSON as NSString or nil if error while parsing
  */
-+ (NSString *)dictionaryToJson:(NSDictionary *)dictionary;
++ (NSString *)dictionaryToJson:(NSDictionary *)dictionary DEPRECATED_MSG_ATTRIBUTE("Use +dictionaryToJSON:");
+
+/**
+ *  Convert the given dictionary to JSON as NSString
+ *
+ *  @param dictionary The dictionary to be converted
+ *
+ *  @return Returns the JSON as NSString or nil if error while parsing
+ */
++ (NSString *)dictionaryToJSON:(NSDictionary *)dictionary;
 
 @end

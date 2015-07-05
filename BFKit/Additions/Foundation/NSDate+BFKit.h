@@ -65,35 +65,35 @@ struct BFDateInformation {
 typedef struct BFDateInformation BFDateInformation;
 
 /**
- *  This category add some useful methods to NSDate
+ *  This category adds some useful methods to NSDate
  */
 @interface NSDate (BFKit)
 
 /**
  *  Create a NSDate with the yesterday date
  *
- *  @return Return a NSDate with the yesterday date
+ *  @return Returns a NSDate with the yesterday date
  */
 + (NSDate *)yesterday;
 
 /**
  *  Get the month from today
  *
- *  @return Return the month
+ *  @return Returns the month
  */
 + (NSDate *)month;
 
 /**
  *  Get the month from self
  *
- *  @return Return the month
+ *  @return Returns the month
  */
 - (NSDate *)month;
 
 /**
  *  Get the weekday number from self
  *
- *  @return Return weekday number
+ *  @return Returns weekday number
  *  [1 - Sunday]
  *  [2 - Monday]
  *  [3 - Tuerday]
@@ -107,7 +107,7 @@ typedef struct BFDateInformation BFDateInformation;
 /**
  *  Get the weekday as a localized string from self
  *
- *  @return Return weekday as a localized string
+ *  @return Returns weekday as a localized string
  *  [1 - Sunday]
  *  [2 - Monday]
  *  [3 - Tuerday]
@@ -123,7 +123,7 @@ typedef struct BFDateInformation BFDateInformation;
  *
  *  @param anotherDate The another date to compare as NSDate
  *
- *  @return Return YES if is same day, NO if not
+ *  @return Returns YES if is same day, NO if not
  */
 - (BOOL)isSameDay:(NSDate *)anotherDate;
 
@@ -132,7 +132,7 @@ typedef struct BFDateInformation BFDateInformation;
  *
  *  @param toDate The another date
  *
- *  @return Return the months between the two dates
+ *  @return Returns the months between the two dates
  */
 - (NSInteger)monthsBetweenDate:(NSDate *)toDate;
 
@@ -141,14 +141,14 @@ typedef struct BFDateInformation BFDateInformation;
  *
  *  @param toDate The another date
  *
- *  @return Return the days between the two dates
+ *  @return Returns the days between the two dates
  */
 - (NSInteger)daysBetweenDate:(NSDate *)toDate;
 
 /**
- *  Return if self is today
+ *  Returns if self is today
  *
- *  @return Return if self is today
+ *  @return Returns if self is today
  */
 - (BOOL)isToday;
 
@@ -157,7 +157,7 @@ typedef struct BFDateInformation BFDateInformation;
  *
  *  @param days The number of days to add
  *
- *  @return Return self by adding the gived days number
+ *  @return Returns self by adding the gived days number
  */
 - (NSDate *)dateByAddingDays:(NSUInteger)days;
 
@@ -169,7 +169,7 @@ typedef struct BFDateInformation BFDateInformation;
  *  @param aDate The first date for date
  *  @param aTime The second date for time
  *
- *  @return Return the created NSDate
+ *  @return Returns the created NSDate
  */
 + (NSDate *)dateWithDatePart:(NSDate *)aDate
                  andTimePart:(NSDate *)aTime;
@@ -177,14 +177,14 @@ typedef struct BFDateInformation BFDateInformation;
 /**
  *  Get the month string from self
  *
- *  @return Return the month string
+ *  @return Returns the month string
  */
 - (NSString *)monthString;
 
 /**
  *  Get the year string from self
  *
- *  @return Return the year string
+ *  @return Returns the year string
  */
 - (NSString *)yearString;
 
@@ -205,39 +205,42 @@ typedef struct BFDateInformation BFDateInformation;
  *  [11 - November]
  *  [12 - December]
  *
- *  @return Return the given month as a localized string
+ *  @return Returns the given month as a localized string
  */
 + (NSString *)monthStringWithMonthNumber:(NSInteger)month;
 
 /**
  *  Get self as a BFDateInformation structure
  *
- *  @return Return self as a BFDateInformation structure
+ *  @return Returns self as a BFDateInformation structure
  */
 - (BFDateInformation)dateInformation;
 
 /**
  *  Get self as a BFDateInformation structure with a given time zone
  *
- *  @return Return self as a BFDateInformation structure with a given time zone
+ *  @param timezone The timezone
+ *
+ *  @return Returns self as a BFDateInformation structure with a given time zone
  */
 - (BFDateInformation)dateInformationWithTimeZone:(NSTimeZone *)timezone;
 
 /**
- *  Return a date from a given BFDateInformation structure
+ *  Returns a date from a given BFDateInformation structure
  *
  *  @param info The BFDateInformation to be converted
  *
- *  @return Return a NSDate from a given BFDateInformation structure
+ *  @return Returns a NSDate from a given BFDateInformation structure
  */
 + (NSDate *)dateFromDateInformation:(BFDateInformation)info;
 
 /**
- *  Return a date from a given BFDateInformation structure with a given time zone
+ *  Returns a date from a given BFDateInformation structure with a given time zone
  *
- *  @param info The BFDateInformation to be converted
+ *  @param info     The BFDateInformation to be converted
+ *  @param timezone The timezone
  *
- *  @return Return a NSDate from a given BFDateInformation structure with a given time zone
+ *  @return Returns a NSDate from a given BFDateInformation structure with a given time zone
  */
 + (NSDate *)dateFromDateInformation:(BFDateInformation)info
                            timeZone:(NSTimeZone *)timezone;
@@ -248,7 +251,7 @@ typedef struct BFDateInformation BFDateInformation;
  *
  *  @param info The BFDateInformation to be formatted
  *
- *  @return Return a NSString in the following format:
+ *  @return Returns a NSString in the following format:
  *  D/M/Y H:M:S
  *  Example: 15/10/2013 10:38:43
  */
@@ -259,9 +262,9 @@ typedef struct BFDateInformation BFDateInformation;
  *
  *  @param info          The BFDateInformation to be formatted
  *  @param dateSeparator The string to be used as date separator
- *  @param usFormat       Set if the timestamp is in US format or not
+ *  @param usFormat      Set if the timestamp is in US format or not
  *
- *  @return Return a NSString in the following format (dateSeparator = "/" and usFormat to NO):
+ *  @return Returns a NSString in the following format (dateSeparator = "/" and usFormat to NO):
  *  D/M/Y H:M:S
  *  Example: 15/10/2013 10:38:43
  */

@@ -348,7 +348,7 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
 };
 
 /**
- *  All font names for all family available from iOS 7.0 to iOS 8.0
+ *  All font names for all family available from iOS 7.0 to iOS 9.0
  */
 typedef NS_ENUM(NSInteger, FontName)
 {
@@ -1335,14 +1335,14 @@ typedef NS_ENUM(NSInteger, FontName)
 };
 
 /**
- *  This category add some useful methods to UIFont
+ *  This category adds some useful methods to UIFont
  */
 @interface UIFont (BFKit)
 
 /**
 *  Print in console all family and font names
 *
-*  @return Return all the font family names
+*  @return Returns all the font family names
 */
 + (NSDictionary *)allFamilyAndFonts;
 
@@ -1352,7 +1352,7 @@ typedef NS_ENUM(NSInteger, FontName)
  *
  *  @param familyFontName Family to print the fonts
  *
- *  @return Return all the fonts for the given family
+ *  @return Returns all the fonts for the given family
  */
 + (NSArray *)fontsNameForFamilyName:(FamilyFontName)familyFontName;
 
@@ -1362,7 +1362,7 @@ typedef NS_ENUM(NSInteger, FontName)
  *  @param fontName Font name
  *  @param fontSize Size of the font
  *
- *  @return Return an UIFont from the given font name and size
+ *  @return Returns an UIFont from the given font name and size
  */
 + (UIFont *)fontForFontName:(FontName)fontName
                        size:(CGFloat)fontSize;

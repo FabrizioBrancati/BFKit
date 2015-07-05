@@ -30,7 +30,7 @@
 #import "UIFont+BFKit.h"
 
 /**
- *  This category add some useful methods to UITextField
+ *  This category adds some useful methods to UITextField
  */
 @interface UITextField (BFKit)
 
@@ -53,7 +53,7 @@
  *  @param autoCorrectionType            TextField's auto correction type
  *  @param delegate                      TextField's delegate. Set nil if it has no delegate
  *
- *  @return Return the created UITextField
+ *  @return Returns the created UITextField
  */
 + (UITextField *)initWithFrame:(CGRect)frame
                    placeholder:(NSString *)placeholder

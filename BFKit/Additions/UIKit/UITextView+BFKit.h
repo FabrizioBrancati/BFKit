@@ -30,7 +30,7 @@
 #import "UIFont+BFKit.h"
 
 /**
- *  This category add some useful methods to UITextView
+ *  This category adds some useful methods to UITextView
  */
 @interface UITextView (BFKit)
 
@@ -55,7 +55,7 @@
  *  @param autoCorrectionType            TextField's auto correction type
  *  @param delegate                      TextField's delegate. Set nil if it has no delegate
  *
- *  @return Return the created UITextView
+ *  @return Returns the created UITextView
  */
 + (UITextView *)initWithFrame:(CGRect)frame
                          text:(NSString *)text

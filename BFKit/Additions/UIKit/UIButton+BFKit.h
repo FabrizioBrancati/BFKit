@@ -30,7 +30,7 @@
 #import "UIFont+BFKit.h"
 
 /**
- *  This category add some useful methods to UIButton
+ *  This category adds some useful methods to UIButton
  */
 @interface UIButton (BFKit)
 
@@ -39,7 +39,7 @@
  *
  *  @param frame Button's frame
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame;
 
@@ -49,7 +49,7 @@
  *  @param frame Button's frame
  *  @param title Button's title, the title color will be white
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               title:(NSString *)title;
@@ -61,7 +61,7 @@
  *  @param title           Button's title
  *  @param backgroundImage Button's background image
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               title:(NSString *)title
@@ -75,7 +75,7 @@
  *  @param backgroundImage            Button's background image
  *  @param highlightedBackgroundImage Button's highlighted background image
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               title:(NSString *)title
@@ -89,7 +89,7 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *  @param title Button's title
  *  @param color Button's color, the highlighted color will be automatically created
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               title:(NSString *)title
@@ -103,7 +103,7 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *  @param color            Button's color
  *  @param highlightedColor Button's highlighted color
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               title:(NSString *)title
@@ -116,7 +116,7 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *  @param frame Button's frame
  *  @param color Button's color, the highlighted color will be automatically created
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               color:(UIColor *)color;
@@ -128,7 +128,7 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *  @param color            Button's color
  *  @param highlightedColor Button's highlighted color
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               color:(UIColor *)color
@@ -140,7 +140,7 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *  @param frame Button's frame
  *  @param image Button's image
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               image:(UIImage *)image;
@@ -152,7 +152,7 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *  @param image            Button's image
  *  @param highlightedImage Button's highlighted image
  *
- *  @return Return the UIButton instance
+ *  @return Returns the UIButton instance
  */
 + (id)initWithFrame:(CGRect)frame
               image:(UIImage *)image

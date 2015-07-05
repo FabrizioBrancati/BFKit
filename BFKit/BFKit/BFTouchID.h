@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, TouchIDResult)
 } NS_ENUM_AVAILABLE_IOS(8_0);
 
 /**
- *  This class add some useful methods to use TouchID
+ *  This class adds some useful methods to use TouchID
  */
 NS_CLASS_AVAILABLE_IOS(8_0) @interface BFTouchID : NSObject
 

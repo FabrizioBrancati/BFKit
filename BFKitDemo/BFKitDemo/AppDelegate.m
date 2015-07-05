@@ -32,7 +32,8 @@
                                                           @"UITextField",
                                                           @"UITextView",
                                                           @"UIView",
-                                                          @"UIWebView"]];
+                                                          @"UIWebView",
+                                                          @"UIWindow"]];
     
     _foundationArray = [[NSMutableArray alloc] initWithArray:@[@"NSArray",
                                                                @"NSDate",

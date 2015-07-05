@@ -37,7 +37,7 @@
 void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...);
 
 /**
- *  This class add some useful methods to NSLog
+ *  This class adds some useful methods to NSLog
  */
 @interface BFLog : NSObject
 
@@ -78,7 +78,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
  *  Get the log string.
  *  You can call it with the BFLogString macro
  *
- *  @return Return the log string
+ *  @return Returns the log string
  */
 + (NSString *)logString;
 
@@ -86,7 +86,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
  *  Get the detailed log string.
  *  You can call it with the BFLogDetailedString macro
  *
- *  @return Return the detailed log string
+ *  @return Returns the detailed log string
  */
 + (NSString *)detailedLogString;
 
@@ -94,7 +94,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
  *  Get the detailed log string.
  *  You can call it with the BFLogDetailedString macro
  *
- *  @return Return the detailed log string
+ *  @return Returns the detailed log string
  */
 + (NSString *)logDetailedString DEPRECATED_MSG_ATTRIBUTE("Use -detailedLogString");
 

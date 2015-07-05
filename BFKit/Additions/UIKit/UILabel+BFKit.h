@@ -30,7 +30,7 @@
 #import "UIFont+BFKit.h"
 
 /**
- *  This category add some useful methods to UILabel
+ *  This category adds some useful methods to UILabel
  */
 @interface UILabel (BFKit)
 
@@ -45,7 +45,7 @@
  *  @param alignment Label's text alignment
  *  @param lines     Label's text lines
  *
- *  @return Return the created label
+ *  @return Returns the created UILabel
  */
 + (UILabel *)initWithFrame:(CGRect)frame
                       text:(NSString *)text
@@ -67,7 +67,7 @@
  *  @param lines       Label's text lines
  *  @param colorShadow Label's text shadow color
  *
- *  @return Return the created label
+ *  @return Returns the created UILabel
  */
 + (UILabel *)initWithFrame:(CGRect)frame
                       text:(NSString *)text

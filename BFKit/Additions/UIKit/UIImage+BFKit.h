@@ -32,7 +32,7 @@
 #import "UIFont+BFKit.h"
 
 /**
- *  This category add some useful methods to UIImage
+ *  This category adds some useful methods to UIImage
  */
 @interface UIImage (BFKit)
 
@@ -41,23 +41,23 @@
  *
  *  @param name To use it, name parameter must contain: "dummy.100x100" and "dummy.100x100.#FFFFFF" or "dummy.100x100.blue" (if it's a color defined in UIColor class) if you want to define a color
  *
- *  @return Return the created dummy image
+ *  @return Returns the created dummy image
  */
 + (UIImage *)dummyImageNamed:(NSString *)name;
 
 /**
- *  Apple the given Blend Mode
+ *  Apply the given Blend Mode
  *
  *  @param blendMode The choosed Blend Mode
  *
- *  @return Return the image
+ *  @return Returns the image
  */
 - (UIImage *)blendMode:(CGBlendMode)blendMode;
 
 /**
  *  Apply the Blend Mode Overlay
  *
- *  @return Return the image
+ *  @return Returns the image
  */
 - (UIImage *)blendOverlay;
 
@@ -67,26 +67,26 @@
  *  @param image Mask image
  *  @param size  Mask size
  *
- *  @return Return the masked image
+ *  @return Returns the masked image
  */
 - (UIImage *)maskWithImage:(UIImage *)image
-                   andSize:(CGSize)size DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage UIImageView instance method");
+                   andSize:(CGSize)size DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage from UIImageView instance method");
 
 /**
  *  Mask self with another image
  *
  *  @param image Mask image
  *
- *  @return Return the masked image
+ *  @return Returns the masked image
  */
-- (UIImage *)maskWithImage:(UIImage *)image DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage UIImageView instance method");
+- (UIImage *)maskWithImage:(UIImage *)image DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage from UIImageView instance method");
 
 /**
  *  Create an image from a given rect of self
  *
  *  @param rect Rect to take the image
  *
- *  @return Return the image from a given rect
+ *  @return Returns the image from a given rect
  */
 - (UIImage *)imageAtRect:(CGRect)rect;
 
@@ -95,7 +95,7 @@
  *
  *  @param targetSize The site to scale to
  *
- *  @return Return the scaled image
+ *  @return Returns the scaled image
  */
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
 
@@ -104,7 +104,7 @@
  *
  *  @param targetSize The site to scale to
  *
- *  @return Return the scaled image
+ *  @return Returns the scaled image
  */
 - (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
 
@@ -113,7 +113,7 @@
  *
  *  @param maxSize The site to scale to
  *
- *  @return Return the scaled image
+ *  @return Returns the scaled image
  */
 - (UIImage *)imageByScalingProportionallyToMaximumSize:(CGSize)targetSize;
 
@@ -122,7 +122,7 @@
  *
  *  @param targetSize The site to scale to
  *
- *  @return Return the scaled image
+ *  @return Returns the scaled image
  */
 - (UIImage *)imageByScalingToSize:(CGSize)targetSize;
 
@@ -131,7 +131,7 @@
  *
  *  @param radians Radians to rotate to
  *
- *  @return Return the rotated image
+ *  @return Returns the rotated image
  */
 - (UIImage *)imageRotatedByRadians:(CGFloat)radians;
 
@@ -140,28 +140,28 @@
  *
  *  @param radians Degrees to rotate to
  *
- *  @return Return the rotated image
+ *  @return Returns the rotated image
  */
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
 
 /**
  *  Check if the image has alpha
  *
- *  @return Return YES if has alpha, NO if not
+ *  @return Returns YES if has alpha, NO if not
  */
 - (BOOL)hasAlpha;
 
 /**
  *  Remove the alpha of the image
  *
- *  @return Return the image without alpha
+ *  @return Returns the image without alpha
  */
 - (UIImage *)removeAlpha;
 
 /**
  *  Fill the alpha with the white color
  *
- *  @return Return the filled image
+ *  @return Returns the filled image
  */
 - (UIImage *)fillAlpha;
 
@@ -170,35 +170,35 @@
  *
  *  @param color Color to fill
  *
- *  @return Return the filled image
+ *  @return Returns the filled image
  */
 - (UIImage *)fillAlphaWithColor:(UIColor *)color;
 
 /**
  *  Check if the image is in grayscale
  *
- *  @return Return YES if is in grayscale, NO if not
+ *  @return Returns YES if is in grayscale, NO if not
  */
 - (BOOL)isGrayscale;
 
 /**
  *  Transform the image to grayscale
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)imageToGrayscale;
 
 /**
  *  Transform the image to black and white
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)imageToBlackAndWhite;
 
 /**
  *  Invert the color of the image
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)invertColors;
 
@@ -209,7 +209,7 @@
  *  @param radius    Radius of the bloom
  *  @param intensity Intensity of the bloom
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)bloom:(float)radius
          intensity:(float)intensity;
@@ -219,7 +219,7 @@
  *
  *  @param blur Radius of the blur
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)boxBlurImageWithBlur:(CGFloat)blur;
 
@@ -230,7 +230,7 @@
  *  @param radius Radius of the effect
  *  @param scale  Scale of the effect
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)bumpDistortion:(CIVector *)center
                      radius:(float)radius
@@ -244,7 +244,7 @@
  *  @param angle  Angle of the effect in radians
  *  @param scale  Scale of the effect
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)bumpDistortionLinear:(CIVector *)center
                            radius:(float)radius
@@ -257,7 +257,7 @@
  *  @param center Vector of the distortion, use [CIVector vectorWithX:Y:]
  *  @param radius Radius of the effect
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)circleSplashDistortion:(CIVector *)center
                              radius:(float)radius;
@@ -269,7 +269,7 @@
  *  @param radius Radius of the effect
  *  @param angle  Angle of the effect in radians
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)circularWrap:(CIVector *)center
                    radius:(float)radius
@@ -285,7 +285,7 @@
  *  @param gcr       GCR value
  *  @param ucr       UCR value
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)cmykHalftone:(CIVector *)center
                     width:(float)width
@@ -299,7 +299,7 @@
  *
  *  @param intensity Intensity of the filter
  *
- *  @return Return the transformed image
+ *  @return Returns the transformed image
  */
 - (UIImage *)sepiaToneWithIntensity:(float)intensity;
 
@@ -308,7 +308,7 @@
  *
  *  @param color Color value
  *
- *  @return Return the created UIImage
+ *  @return Returns the created UIImage
  */
 + (UIImage *)imageWithColor:(UIColor *)color;
 
@@ -320,7 +320,7 @@
  *  @param fontSize  Text's font size
  *  @param imageSize Image's size
  *
- *  @return Return the created UIImage
+ *  @return Returns the created UIImage
  */
 + (UIImage *)imageFromText:(NSString *)text
                       font:(FontName)fontName
@@ -336,7 +336,7 @@
  *  @param fontName        Text's font name
  *  @param fontSize        Text's font size
  *
- *  @return Return the created UIImage
+ *  @return Returns the created UIImage
  */
 + (UIImage *)imageWithSize:(CGSize)imageSize
            backgroundColor:(UIColor *)backgroundColor

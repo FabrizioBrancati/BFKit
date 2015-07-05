@@ -98,7 +98,7 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection)
 };
 
 /**
- *  This category add some useful methods to UIView
+ *  This category adds some useful methods to UIView
  */
 @interface UIView (BFKit)
 
@@ -215,7 +215,7 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection)
 /**
  *  Translate the UIView around the topView
  *
- *  @param topView       Top to translate to
+ *  @param topView       Top view to translate to
  *  @param duration      Duration of the translation
  *  @param direction     Direction of the translation
  *  @param repeat        If the animation must be repeat or no
@@ -230,14 +230,14 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection)
 /**
  *  Take a screenshot of the current view
  *
- *  @return Return screenshot as UIImage
+ *  @return Returns screenshot as UIImage
  */
 - (UIImage *)screenshot;
 
 /**
  *  Take a screenshot of the current view an saving to the saved photos album
  *
- *  @return Return screenshot as UIImage
+ *  @return Returns screenshot as UIImage
  */
 - (UIImage *)saveScreenshot;
 

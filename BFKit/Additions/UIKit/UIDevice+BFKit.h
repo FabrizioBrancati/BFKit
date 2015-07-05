@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This category add some useful methods to UIDevice
+ *  This category adds some useful methods to UIDevice
  */
 @interface UIDevice (BFKit)
 
@@ -48,7 +48,7 @@
  *
  *  @param v Version, like @"9.0"
  *
- *  @return Return a BOOL
+ *  @return Returns a BOOL
  */
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
@@ -59,7 +59,7 @@
 /**
  *  Macros that returns if the iOS version is greater or equal to choosed one
  *
- *  @return Return a BOOL
+ *  @return Returns a BOOL
  */
 #define IS_IOS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
 #define IS_IOS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
@@ -68,151 +68,151 @@
 #define IS_IOS_9_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 
 /**
- *  Return the device platform string
+ *  Returns the device platform string
  *  Example: "iPhone7,2"
  *
- *  @return Return the device platform string
+ *  @return Returns the device platform string
  */
 + (NSString *)devicePlatform;
 /**
- *  Return the user-friendly device platform string
+ *  Returns the user-friendly device platform string
  *  Example: "iPad Air (Cellular)"
  *
- *  @return Return the user-friendly device platform string
+ *  @return Returns the user-friendly device platform string
  */
 + (NSString *)devicePlatformString;
 
 /**
  *  Check if the current device is an iPad
  *
- *  @return Return YES if it's an iPad, NO if not
+ *  @return Returns YES if it's an iPad, NO if not
  */
 + (BOOL)isiPad;
 
 /**
  *  Check if the current device is an iPhone
  *
- *  @return Return YES if it's an iPhone, NO if not
+ *  @return Returns YES if it's an iPhone, NO if not
  */
 + (BOOL)isiPhone;
 
 /**
  *  Check if the current device is an iPod
  *
- *  @return Return YES if it's an iPod, NO if not
+ *  @return Returns YES if it's an iPod, NO if not
  */
 + (BOOL)isiPod;
 
 /**
  *  Check if the current device is an Apple TV
  *
- *  @return Return YES if it's an Apple TV, NO if not
+ *  @return Returns YES if it's an Apple TV, NO if not
  */
 + (BOOL)isAppleTV;
 
 /**
  *  Check if the current device is an Apple Watch
  *
- *  @return Return YES if it's an Apple Watch, NO if not
+ *  @return Returns YES if it's an Apple Watch, NO if not
  */
 + (BOOL)isAppleWatch;
 
 /**
  *  Check if the current device is the simulator
  *
- *  @return Return YES if it's the simulator, NO if not
+ *  @return Returns YES if it's the simulator, NO if not
  */
 + (BOOL)isSimulator;
 
 /**
  *  Check if the current device has a Retina display
  *
- *  @return Return YES if it has a Retina display, NO if not
+ *  @return Returns YES if it has a Retina display, NO if not
  */
 + (BOOL)isRetina;
 
 /**
  *  Check if the current device has a Retina HD display
  *
- *  @return Return YES if it has a Retina HD display, NO if not
+ *  @return Returns YES if it has a Retina HD display, NO if not
  */
 + (BOOL)isRetinaHD;
 
 /**
- *  Return the iOS version without the subversion
+ *  Returns the iOS version without the subversion
  *  Example: 7
  *
- *  @return Return the iOS version
+ *  @return Returns the iOS version
  */
 + (NSInteger)iOSVersion;
 
 /**
- *  Return the current device CPU frequency
+ *  Returns the current device CPU frequency
  *
- *  @return Return the current device CPU frequency
+ *  @return Returns the current device CPU frequency
  */
 + (NSUInteger)cpuFrequency;
 
 /**
- *  Return the current device BUS frequency
+ *  Returns the current device BUS frequency
  *
- *  @return Return the current device BUS frequency
+ *  @return Returns the current device BUS frequency
  */
 + (NSUInteger)busFrequency;
 
 /**
- *  Return the current device RAM size
+ *  Returns the current device RAM size
  *
- *  @return Return the current device RAM size
+ *  @return Returns the current device RAM size
  */
 + (NSUInteger)ramSize;
 
 /**
- *  Return the current device CPU number
+ *  Returns the current device CPU number
  *
- *  @return Return the current device CPU number
+ *  @return Returns the current device CPU number
  */
 + (NSUInteger)cpuNumber;
 
 /**
- *  Return the current device total memory
+ *  Returns the current device total memory
  *
- *  @return Return the current device total memory
+ *  @return Returns the current device total memory
  */
 + (NSUInteger)totalMemory;
 
 /**
- *  Return the current device non-kernel memory
+ *  Returns the current device non-kernel memory
  *
- *  @return Return the current device non-kernel memory
+ *  @return Returns the current device non-kernel memory
  */
 + (NSUInteger)userMemory;
 
 /**
- *  Return the current device total disk space
+ *  Returns the current device total disk space
  *
- *  @return Return the current device total disk space
+ *  @return Returns the current device total disk space
  */
 + (NSNumber *)totalDiskSpace;
 
 /**
- *  Return the current device free disk space
+ *  Returns the current device free disk space
  *
- *  @return Return the current device free disk space
+ *  @return Returns the current device free disk space
  */
 + (NSNumber *)freeDiskSpace;
 
 /**
- *  Return the current device MAC address
+ *  Returns the current device MAC address
  *
- *  @return Return the current device MAC address
+ *  @return Returns the current device MAC address
  */
 + (NSString *)macAddress DEPRECATED_MSG_ATTRIBUTE("In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00");
 
 /**
  *  Generate an unique identifier and store it into standardUserDefaults
  *
- *  @return Return a unique identifier as a NSString
+ *  @return Returns a unique identifier as a NSString
  */
 + (NSString *)uniqueIdentifier;
 

@@ -28,7 +28,7 @@
 @import UIKit;
 
 /**
- *  This class add some useful methods to UIButton that cannot be in a category
+ *  This class adds some useful methods to UIButton that cannot be in a category
  */
 @interface BFButton : UIButton
 
@@ -40,7 +40,7 @@
  *  @param highlightedImage Button's highlighted image
  *  @param fadeDuration     Fade duration
  *
- *  @return Return the created BFButton, subclass of UIButton
+ *  @return Returns the created BFButton, subclass of UIButton
  */
 - (id)initWithFrame:(CGRect)frame
               image:(UIImage *)image

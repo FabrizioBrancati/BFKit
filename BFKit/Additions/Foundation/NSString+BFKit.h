@@ -27,7 +27,7 @@
 @import Foundation;
 
 /**
- *  This category add some useful methods to NSString
+ *  This category adds some useful methods to NSString
  */
 @interface NSString (BFKit)
 
@@ -39,7 +39,7 @@
  *  @param start  The start char
  *  @param end    The end char
  *
- *  @return
+ *  @return Returns the substring
  */
 + (NSString *)searchInString:(NSString *)string
                    charStart:(char)start
@@ -52,7 +52,7 @@
  *  @param start  The start char
  *  @param end    The end char
  *
- *  @return
+ *  @return Returns the substring
  */
 - (NSString *)searchCharStart:(char)start
                       charEnd:(char)end;
@@ -60,28 +60,28 @@
 /**
  *  Create a MD5 string from self
  *
- *  @return Return the MD5 NSString from self
+ *  @return Returns the MD5 NSString from self
  */
 - (NSString *)MD5;
 
 /**
  *  Create a SHA1 string from self
  *
- *  @return Return the SHA1 NSString from self
+ *  @return Returns the SHA1 NSString from self
  */
 - (NSString *)SHA1;
 
 /**
  *  Create a SHA256 string from self
  *
- *  @return Return the SHA256 NSString from self
+ *  @return Returns the SHA256 NSString from self
  */
 - (NSString *)SHA256;
 
 /**
  *  Create a SHA512 string from self
  *
- *  @return Return the SHA512 NSString from self
+ *  @return Returns the SHA512 NSString from self
  */
 - (NSString *)SHA512;
 
@@ -90,7 +90,7 @@
  *
  *  @param substring The substring to be searched
  *
- *  @return Return YES if founded, NO if not
+ *  @return Returns YES if founded, NO if not
  */
 - (BOOL)hasString:(NSString *)substring;
 
@@ -100,14 +100,14 @@
  *  @param substring     The substring to be searched
  *  @param caseSensitive If the search has to be case-sensitive or not
  *
- *  @return Return YES if founded, NO if not
+ *  @return Returns YES if founded, NO if not
  */
 - (BOOL)hasString:(NSString *)substring caseSensitive:(BOOL)caseSensitive;
 
 /**
  *  Check if self is an email
  *
- *  @return Return YES if it's an email, NO if not
+ *  @return Returns YES if it's an email, NO if not
  */
 - (BOOL)isEmail;
 
@@ -116,7 +116,7 @@
  *
  *  @param email The string to be checked
  *
- *  @return Return YES if it's an email, NO if not
+ *  @return Returns YES if it's an email, NO if not
  */
 + (BOOL)isEmail:(NSString *)email;
 
@@ -125,7 +125,7 @@
  *
  *  @param string String to be converted
  *
- *  @return Return the converted string
+ *  @return Returns the converted string
  */
 + (NSString *)convertToUTF8Entities:(NSString *)string;
 
@@ -134,14 +134,14 @@
  *
  *  @param string String to encode
  *
- *  @return Return the converted string
+ *  @return Returns the encoded string
  */
 + (NSString *)encodeToBase64:(NSString *)string;
 
 /**
  *  Encode the given string to Base64
  *
- *  @return Return the converted string
+ *  @return Returns the encoded string
  */
 - (NSString *)encodeToBase64;
 
@@ -150,14 +150,14 @@
  *
  *  @param string String to decode
  *
- *  @return Return the decoded string
+ *  @return Returns the decoded string
  */
 + (NSString *)decodeBase64:(NSString *)string;
 
 /**
  *  Decode the given Base64 to string
  *
- *  @return Return the decoded string
+ *  @return Returns the decoded string
  */
 - (NSString *)decodeBase64;
 
@@ -165,28 +165,28 @@
  *  Conver self to a capitalized string.
  *  Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test"
  *
- *  @return Return the capitalized sentence string
+ *  @return Returns the capitalized sentence string
  */
 - (NSString *)sentenceCapitalizedString;
 
 /**
- *  Return a human legible string from a timestamp
+ *  Returns a human legible string from a timestamp
  *
- *  @return Return a human legible string from a timestamp
+ *  @return Returns a human legible string from a timestamp
  */
 - (NSString *)dateFromTimestamp;
 
 /**
  *  Encode self to an encoded url string
  *
- *  @return Return the encoded NSString
+ *  @return Returns the encoded NSString
  */
 - (NSString *)urlEncode DEPRECATED_MSG_ATTRIBUTE("Use -URLEncode");
 
 /**
  *  Encode self to an encoded url string
  *
- *  @return Return the encoded NSString
+ *  @return Returns the encoded NSString
  */
 - (NSString *)URLEncode;
 

@@ -27,14 +27,14 @@
 @import Foundation;
 
 /**
- *  This category add some useful methods to NSObject
+ *  This category adds some useful methods to NSObject
  */
 @interface NSObject (BFKit)
 
 /**
  *  Check if the object is valid (not nil or null)
  *
- *  @return Return if the object is valid
+ *  @return Returns if the object is valid
  */
 - (BOOL)isValid;
 
