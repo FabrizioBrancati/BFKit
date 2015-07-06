@@ -10,7 +10,13 @@
 
 typedef NS_ENUM(NSInteger, DetailType)
 {
-    DetailTypeUIButton = 0,
+    DetailTypeBFApp = 0,
+    DetailTypeBFButton,
+    DetailTypeBFLog,
+    DetailTypeBFPassword,
+    DetailTypeBFSystemSound,
+    DetailTypeBFTouchID,
+    DetailTypeUIButton,
     DetailTypeUIColor,
     DetailTypeUIDevice,
     DetailTypeUIFont,
@@ -34,13 +40,7 @@ typedef NS_ENUM(NSInteger, DetailType)
     DetailTypeNSObject,
     DetailTypeNSProcessInfo,
     DetailTypeNSString,
-    DetailTypeNSThread,
-    DetailTypeBFApp,
-    DetailTypeBFButton,
-    DetailTypeBFLog,
-    DetailTypeBFPassword,
-    DetailTypeBFSystemSound,
-    DetailTypeBFTouchID
+    DetailTypeNSThread
 };
 
 @interface DetailViewController : UIViewController

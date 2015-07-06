@@ -20,6 +20,13 @@
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.357 green:0.620 blue:0.746 alpha:1.000]];
     [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:0.357 green:0.620 blue:0.746 alpha:1.000]];
     
+    _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFApp",
+                                                          @"BFButton",
+                                                          @"BFLog",
+                                                          @"BFPassword",
+                                                          @"BFSystemSound",
+                                                          @"BFTouchID"]];
+    
     _uikitArray = [[NSMutableArray alloc] initWithArray:@[@"UIButton",
                                                           @"UIColor",
                                                           @"UIDevice",
@@ -47,24 +54,17 @@
                                                                @"NSString",
                                                                @"NSThread"]];
     
-    _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFApp",
-                                                          @"BFButton",
-                                                          @"BFLog",
-                                                          @"BFPassword",
-                                                          @"BFSystemSound",
-                                                          @"BFTouchID"]];
-    
     _infoViewController = [[InfoViewController alloc] init];
     _infoNavigationController = [[UINavigationController alloc] initWithRootViewController:_infoViewController];
+    
+    _bfkitViewController = [[BFKitViewController alloc] init];
+    _bfkitNavigationController = [[UINavigationController alloc] initWithRootViewController:_bfkitViewController];
     
     _kitViewController = [[UserInterfaceKitViewController alloc] init];
     _kitNavigationController = [[UINavigationController alloc] initWithRootViewController:_kitViewController];
     
     _foundationViewController = [[FoundationViewController alloc] init];
     _foundationNavigationController = [[UINavigationController alloc] initWithRootViewController:_foundationViewController];
-    
-    _bfkitViewController = [[BFKitViewController alloc] init];
-    _bfkitNavigationController = [[UINavigationController alloc] initWithRootViewController:_bfkitViewController];
     
     _tabBarController = [[UITabBarController alloc] init];
     [_tabBarController setViewControllers:@[_bfkitNavigationController, _kitNavigationController ,_foundationNavigationController]];

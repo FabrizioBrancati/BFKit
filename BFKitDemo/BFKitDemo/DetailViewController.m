@@ -45,6 +45,127 @@
 {
     switch(detailType)
     {
+        case DetailTypeBFApp:
+        {
+            self.title = @"BFApp";
+            [_scrollView removeFromSuperview];
+            
+            BFLogClear;
+            
+            BFLog(@"App name: %@", APP_NAME);
+            BFLog(@"App build: %@", APP_BUILD);
+            BFLog(@"App version: %@", APP_VERSION);
+            BFLog(@"Localized string from BFKit: %@", BFLocalizedString(@"OPEN", @""));
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
+            
+            break;
+        }
+        case DetailTypeBFButton:
+        {
+            self.title = @"BFButton";
+            [_scrollView removeFromSuperview];
+            
+            BFButton *button = [[BFButton alloc] initWithFrame:CGRectMake(20, 84, SCREEN_WIDTH - 40, 50) image:[UIImage imageWithSize:CGSizeMake(SCREEN_WIDTH, 50) backgroundColor:[UIColor colorWithRed:0.301 green:0.550 blue:0.686 alpha:1.000] maskedText:@"BFKit" font:FontNameHelveticaNeueBold fontSize:20] highlightedImage:[UIImage imageWithSize:CGSizeMake(SCREEN_WIDTH, 50) backgroundColor:[UIColor colorWithRed:0.9218 green:0.565 blue:0.139 alpha:1.0] maskedText:@"BFKit" font:FontNameHelveticaNeueBold fontSize:20] fadeDuration:1];
+            [self.view addSubview:button];
+            
+            break;
+        }
+        case DetailTypeBFLog:
+        {
+            self.title = @"BFLog";
+            [_scrollView removeFromSuperview];
+            
+            BFLogClear;
+            
+            BFLog(@"This will be shown only if in DEBUG mode");
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
+            
+            break;
+        }
+        case DetailTypeBFPassword:
+        {
+            self.title = @"BFPassword";
+            [_scrollView removeFromSuperview];
+            
+            BFLogClear;
+            
+            NSString *pass1 = @"Password";
+            PasswordStrengthLevel passLevel1 = [BFPassword checkPasswordStrength:pass1];
+            BFLog(@"Password: %@ - Level: %d of %d", pass1, passLevel1, PasswordStrengthLevelVerySecure);
+            NSString *pass2 = @"kqi019ASC.v1|!-2";
+            PasswordStrengthLevel passLevel2 = [BFPassword checkPasswordStrength:pass2];
+            BFLog(@"Password: %@ - Level: %d of %d", pass2, passLevel2, PasswordStrengthLevelVerySecure);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
+            
+            break;
+        }
+        case DetailTypeBFSystemSound:
+        {
+            self.title = @"BFSystemSound";
+            [_scrollView removeFromSuperview];
+            
+            BFLogClear;
+            
+            [BFSystemSound playSystemSoundVibrate];
+            BFLog(@"Vibrate");
+            [BFSystemSound playSystemSound:AudioIDRecivedMessage];
+            BFLog(@"Play sound");
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
+            
+            break;
+        }
+        case DetailTypeBFTouchID:
+        {
+            self.title = @"BFTouchID";
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            
+            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"Waiting for Touch ID..." font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
+            [_scrollView addSubview:normalLabel];
+            
+            if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+            {
+                [BFTouchID showTouchIDAuthenticationWithReason:BFLocalizedString(@"AUTHENTICATION", @"") completion:^(TouchIDResult result) {
+                    
+                    switch(result)
+                    {
+                        case TouchIDResultSuccess:
+                        {
+                            runOnMainThread(^{
+                                [normalLabel setText:BFLocalizedString(@"AUTHORIZED", @"")];
+                            });
+                            break;
+                        }
+                        case TouchIDResultAuthenticationFailed:
+                        {
+                            runOnMainThread(^{
+                                [normalLabel setText:BFLocalizedString(@"NOT_OWNER", @"")];
+                            });
+                            break;
+                        }
+                        default:
+                        {
+                            runOnMainThread(^{
+                                [normalLabel setText:[NSString stringWithFormat:@"%@: %li", BFLocalizedString(@"ERROR", @""), (long)result]];
+                            });
+                            break;
+                        }
+                    }
+                }];
+            }
+            else
+            {
+                [normalLabel setText:@"BFTouchID is available on iOS 8 or later"];
+            }
+            break;
+        }
         case DetailTypeUIButton:
         {
             self.title = @"UIButton";
@@ -534,122 +655,6 @@
             
             [self performSelectorInBackground:@selector(threadMethod) withObject:nil];
             
-            break;
-        }
-        case DetailTypeBFApp:
-        {
-            self.title = @"BFApp";
-            [_scrollView removeFromSuperview];
-            
-            BFLogClear;
-            
-            BFLog(@"App name: %@", APP_NAME);
-            BFLog(@"App build: %@", APP_BUILD);
-            BFLog(@"App version: %@", APP_VERSION);
-            BFLog(@"Localized string from BFKit: %@", BFLocalizedString(@"OPEN", @""));
-            
-            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
-            [self.view addSubview:textView];
-            
-            break;
-        }
-        case DetailTypeBFButton:
-        {
-            self.title = @"BFButton";
-            [_scrollView removeFromSuperview];
-            
-            BFButton *button = [[BFButton alloc] initWithFrame:CGRectMake(20, 84, SCREEN_WIDTH - 40, 50) image:[UIImage imageWithSize:CGSizeMake(SCREEN_WIDTH, 50) backgroundColor:[UIColor colorWithRed:0.301 green:0.550 blue:0.686 alpha:1.000] maskedText:@"BFKit" font:FontNameHelveticaNeueBold fontSize:20] highlightedImage:[UIImage imageWithSize:CGSizeMake(SCREEN_WIDTH, 50) backgroundColor:[UIColor colorWithRed:1.000 green:0.231 blue:0.188 alpha:1.000] maskedText:@"BFKit" font:FontNameHelveticaNeueBold fontSize:20] fadeDuration:1];
-            [self.view addSubview:button];
-            
-            break;
-        }
-        case DetailTypeBFLog:
-        {
-            self.title = @"BFLog";
-            [_scrollView removeFromSuperview];
-            
-            BFLogClear;
-            
-            BFLog(@"This will be shown only if in DEBUG mode");
-            
-            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
-            [self.view addSubview:textView];
-            
-            break;
-        }
-        case DetailTypeBFPassword:
-        {
-            self.title = @"BFPassword";
-            [_scrollView removeFromSuperview];
-            
-            BFLogClear;
-            
-            NSString *pass1 = @"Password";
-            PasswordStrengthLevel passLevel1 = [BFPassword checkPasswordStrength:pass1];
-            BFLog(@"Password: %@ - Level: %d of %d", pass1, passLevel1, PasswordStrengthLevelVerySecure);
-            NSString *pass2 = @"kqi019ASC.v1|!-2";
-            PasswordStrengthLevel passLevel2 = [BFPassword checkPasswordStrength:pass2];
-            BFLog(@"Password: %@ - Level: %d of %d", pass2, passLevel2, PasswordStrengthLevelVerySecure);
-            
-            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
-            [self.view addSubview:textView];
-            
-            break;
-        }
-        case DetailTypeBFSystemSound:
-        {
-            self.title = @"BFSystemSound";
-            [_scrollView removeFromSuperview];
-            
-            BFLogClear;
-            
-            [BFSystemSound playSystemSoundVibrate];
-            BFLog(@"Vibrate");
-            [BFSystemSound playSystemSound:AudioIDRecivedMessage];
-            BFLog(@"Play sound");
-            
-            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
-            [self.view addSubview:textView];
-            
-            break;
-        }
-        case DetailTypeBFTouchID:
-        {
-            self.title = @"BFTouchID";
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
-            
-            UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"Waiting for Touch ID..." font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
-            [_scrollView addSubview:normalLabel];
-            
-            if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
-            {
-                [BFTouchID showTouchIDAuthenticationWithReason:BFLocalizedString(@"AUTHENTICATION", @"") completion:^(TouchIDResult result) {
-                    switch(result)
-                    {
-                        case TouchIDResultSuccess:
-                        {
-                            runOnMainThread(^{
-                                [normalLabel setText:BFLocalizedString(@"AUTHORIZED", @"")];
-                            });
-                            break;
-                        }
-                        case TouchIDResultAuthenticationFailed:
-                        {
-                            runOnMainThread(^{
-                                [normalLabel setText:BFLocalizedString(@"NOT_OWNER", @"")];
-                            });
-                            break;
-                        }
-                        default:
-                        {
-                            runOnMainThread(^{
-                                [normalLabel setText:[NSString stringWithFormat:@"%@: %li", BFLocalizedString(@"ERROR", @""), (long)result]];
-                            });
-                            break;
-                        }
-                    }
-                }];
-            }
             break;
         }
         default:
