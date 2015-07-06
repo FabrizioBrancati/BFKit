@@ -69,6 +69,17 @@
              center:(CGPoint)center;
 
 /**
+ *  Create an UIImageView with an image and use it as a template with the given color
+ *
+ *  @param image     UIImageView image
+ *  @param tintColor UIImageView tint color
+ *
+ *  @return Returns the created UIImageView
+ */
++ (id)initWithImageAsTemplate:(UIImage *)image
+                    tintColor:(UIColor *)tintColor;
+
+/**
  *  Create a drop shadow effect
  *
  *  @param color   Shadow's color

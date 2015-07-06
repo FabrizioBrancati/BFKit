@@ -54,6 +54,15 @@
     return _image;
 }
 
++ (id)initWithImageAsTemplate:(UIImage *)image tintColor:(UIColor *)tintColor
+{
+    UIImageView *_image = [[UIImageView alloc] init];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [_image setImage:image];
+    [_image setTintColor:tintColor];
+    return _image;
+}
+
 - (void)setImageShadowColor:(UIColor *)color radius:(CGFloat)radius offset:(CGSize)offset opacity:(CGFloat)opacity
 {
     self.layer.shadowColor = color.CGColor;
