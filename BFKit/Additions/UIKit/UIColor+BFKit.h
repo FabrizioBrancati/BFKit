@@ -29,6 +29,10 @@
 
 /**
  *  This category adds some useful methods to UIColor
+ *
+ *  RGBA(r, g, b, a): Create an UIColor in format RGBA
+ *
+ *  RBG(r, g, b): Create an UIColor in format RGB
  */
 @interface UIColor (BFKit)
 

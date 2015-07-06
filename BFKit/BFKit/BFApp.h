@@ -54,6 +54,14 @@
 
 /**
  *  This class adds some useful methods to retrive the App info
+ *
+ *  APP_NAME: Get App name
+ *
+ *  APP_BUILD: Get App build
+ *
+ *  APP_VERSION: Get App version
+ *
+ *  BFLocalizedString: Use BFLocalizedString to use the string translated by BFKit
  */
 @interface BFApp : NSObject
 

@@ -29,6 +29,16 @@
 
 /**
  *  This category adds some useful methods to UIDevice
+ *
+ *  SCREEN_WIDTH: Get the screen width
+ *
+ *  SCREEN_HEIGHT: Get the screen height
+ *
+ *  IOS_VERSION: Get the iOS version string
+ *
+ *  SYSTEM_VERSION_...: Macros to compare system versions
+ *
+ *  IS_IOS_..._OR_LATER: Macros that returns if the iOS version is greater or equal to choosed one
  */
 @interface UIDevice (BFKit)
 

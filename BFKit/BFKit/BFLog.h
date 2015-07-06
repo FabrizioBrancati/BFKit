@@ -38,6 +38,14 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
 
 /**
  *  This class adds some useful methods to NSLog
+ *
+ *  BFLog(): Exented NSLog
+ *
+ *  BFLogString: Log string
+ *
+ *  BFLogDetailedString: Detailed log string
+ *
+ *  BFLogClear: Clear the log string
  */
 @interface BFLog : NSObject
 

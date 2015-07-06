@@ -1357,7 +1357,7 @@ typedef NS_ENUM(NSInteger, FontName)
 + (NSArray *)fontsNameForFamilyName:(FamilyFontName)familyFontName;
 
 /**
- *  Craete an UIFont object from the given font name and size
+ *  Create an UIFont object from the given font name and size
  *
  *  @param fontName Font name
  *  @param fontSize Size of the font
