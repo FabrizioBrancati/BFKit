@@ -414,24 +414,22 @@
             self.title = @"UIView";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, 240 + SCREEN_WIDTH)];
             
-            UIView *borderedView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 44)];
-            [borderedView setBackgroundColor:[UIColor colorWithRed:0.729 green:0.306 blue:0.122 alpha:1.000]];
+            UIView *borderedView = [UIView initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 44) backgroundColor:[UIColor colorWithRed:0.729 green:0.306 blue:0.122 alpha:1.000]];
             [borderedView createBordersWithColor:[UIColor colorWithRed:0.886 green:0.204 blue:0.000 alpha:1.000] withCornerRadius:10 andWidth:3];
             UILabel *borderedLabel = [UILabel initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 40, 44) text:@"Border View" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [borderedView addSubview:borderedLabel];
             [_scrollView addSubview:borderedView];
             
-            UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(20, 100, SCREEN_WIDTH - 40, 44)];
-            [shadowView setBackgroundColor:[UIColor colorWithRed:0.357 green:0.618 blue:0.746 alpha:1.000]];
+            UIView *shadowView = [UIView initWithFrame:CGRectMake(20, 100, SCREEN_WIDTH - 40, 44)  backgroundColor:[UIColor colorWithRed:0.357 green:0.618 blue:0.746 alpha:1.000]];
             [shadowView createRectShadowWithOffset:CGSizeMake(10, 10) opacity:0.5 radius:10];
             UILabel *shadowLabel = [UILabel initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 40, 44) text:@"Shadow View" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [shadowView addSubview:shadowLabel];
             [_scrollView addSubview:shadowView];
             
-            UIButton *coloredButton = [UIButton initWithFrame:CGRectMake(20, 180, SCREEN_WIDTH - 40, 44) title:@"Touch me!" color:[UIColor colorWithRed:0.301 green:0.550 blue:0.686 alpha:1.000] highlightedColor:[UIColor colorWithRed:0.250 green:0.457 blue:0.572 alpha:1.000]];
-            [coloredButton setTitleColor:[UIColor whiteColor] highlightedColor:[UIColor whiteColor]];
-            [coloredButton addTarget:self action:@selector(shakeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-            [_scrollView addSubview:coloredButton];
+            UIButton *shakeButton = [UIButton initWithFrame:CGRectMake(20, 180, SCREEN_WIDTH - 40, 44) title:@"Touch me!" color:[UIColor colorWithRed:0.301 green:0.550 blue:0.686 alpha:1.000] highlightedColor:[UIColor colorWithRed:0.250 green:0.457 blue:0.572 alpha:1.000]];
+            [shakeButton setTitleColor:[UIColor whiteColor] highlightedColor:[UIColor whiteColor]];
+            [shakeButton addTarget:self action:@selector(shakeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [_scrollView addSubview:shakeButton];
             
             UIView *gradientView = [[UIView alloc] initWithFrame:CGRectMake(20, 260, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             [gradientView createGradientWithColors:[NSArray arrayWithObjects:[UIColor redColor], [UIColor blueColor], nil] direction:UIViewLinearGradientDirectionDiagonalFromRightToLeftAndTopToDown];
@@ -459,7 +457,7 @@
             [_scrollView removeFromSuperview];
             
             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            [appDelegate.window takeScreenshotWithDelay:3 save:NO completion:^(UIImage *screenshot) {
+            [appDelegate.window takeScreenshotWithDelay:1 save:NO completion:^(UIImage *screenshot) {
                 screenshot = [screenshot imageByScalingProportionallyToSize:CGSizeMake(SCREEN_WIDTH - 40, SCREEN_HEIGHT - 40 - 64 - 50 - 20)];
                 UIImageView *screenshotView = [[UIImageView alloc] initWithImage:screenshot];
                 [screenshotView setCenter:CGPointMake(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) + 64 - 50 - 10)];
