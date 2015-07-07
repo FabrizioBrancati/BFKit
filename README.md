@@ -136,7 +136,6 @@ Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
 Todo :ballot_box_with_check:
 ============================
-- :heavy_minus_sign: Create instance methods for UIKit categories
 - :heavy_minus_sign: Create a category for every UIKit element
 - :heavy_minus_sign: Create tests
 - :heavy_check_mark: Add missing font for iOS 9
