@@ -1,5 +1,9 @@
 Changelog
 =========
+###Version 1.6.7
+- Added ```initWithImageAsTemplate:tintColor:``` in UIImageView category
+- Changed method to check if a NSString is an email
+
 ###Version 1.6.6
 - Added ```colorForColorString``` in UIColor category
 - Added ```getIndexPathsForSection``` in UITableView category

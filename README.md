@@ -19,41 +19,41 @@ For example you can use every iOS font with just an enum!
 It also adds some useful method to some classes like:
 
 ###BFKit:
-- [BFApp](http://cocoadocs.org/docsets/BFKit/1.6.6/Classes/BFApp.html)
-- [BFButton](http://cocoadocs.org/docsets/BFKit/1.6.6/Classes/BFButton.html)
-- [BFLog](http://cocoadocs.org/docsets/BFKit/1.6.6/Classes/BFLog.html)
-- [BFPassword](http://cocoadocs.org/docsets/BFKit/1.6.6/Classes/BFPassword.html)
-- [BFSystemSound](http://cocoadocs.org/docsets/BFKit/1.6.6/Classes/BFSystemSound.html)
-- [BFTouchID](http://cocoadocs.org/docsets/BFKit/1.6.6/Classes/BFTouchID.html) (iOS 8 or later)
+- [BFApp](http://cocoadocs.org/docsets/BFKit/1.6.7/Classes/BFApp.html)
+- [BFButton](http://cocoadocs.org/docsets/BFKit/1.6.7/Classes/BFButton.html)
+- [BFLog](http://cocoadocs.org/docsets/BFKit/1.6.7/Classes/BFLog.html)
+- [BFPassword](http://cocoadocs.org/docsets/BFKit/1.6.7/Classes/BFPassword.html)
+- [BFSystemSound](http://cocoadocs.org/docsets/BFKit/1.6.7/Classes/BFSystemSound.html)
+- [BFTouchID](http://cocoadocs.org/docsets/BFKit/1.6.7/Classes/BFTouchID.html) (iOS 8 or later)
 
 ###Foundation:
-- [NSArray](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSArray+BFKit.html)
-- [NSDate](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSDate+BFKit.html)
-- [NSDictionary](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSDictionary+BFKit.html)
-- [NSFileManager](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSFileManager+BFKit.html)
-- [NSMutableArray](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSMutableArray+BFKit.html)
-- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSMutableDictionary+BFKit.html)
-- [NSNumber](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSNumber+BFKit.html)
-- [NSObject](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSObject+BFKit.html)
-- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSProcessInfo+BFKit.html)
-- [NSString](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSString+BFKit.html)
-- [NSThread](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSThread+BFKit.html)
+- [NSArray](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSArray+BFKit.html)
+- [NSDate](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSDate+BFKit.html)
+- [NSDictionary](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSDictionary+BFKit.html)
+- [NSFileManager](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSFileManager+BFKit.html)
+- [NSMutableArray](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSMutableArray+BFKit.html)
+- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSMutableDictionary+BFKit.html)
+- [NSNumber](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSNumber+BFKit.html)
+- [NSObject](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSObject+BFKit.html)
+- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSProcessInfo+BFKit.html)
+- [NSString](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSString+BFKit.html)
+- [NSThread](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSThread+BFKit.html)
 
 ###UIKit:
-- [UIButton](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/NSArray+BFKit.html)
-- [UIColor](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIColor+BFKit.html)
-- [UIDevice](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIDevice+BFKit.html)
-- [UIFont](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIFont+BFKit.html)
-- [UIImage](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIImage+BFKit.html)
-- [UIImageView](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIImageView+BFKit.html)
-- [UILabel](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UILabel+BFKit.html)
-- [UIScrollView](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIScrollView+BFKit.html)
-- [UITableView](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UITableView+BFKit.html)
-- [UITextField](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UITextField+BFKit.html)
-- [UITextView](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UITextView+BFKit.html)
-- [UIView](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIView+BFKit.html)
-- [UIWebView](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIWebView+BFKit.html)
-- [UIWindow](http://cocoadocs.org/docsets/BFKit/1.6.6/Categories/UIWindow+BFKit.html)
+- [UIButton](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/NSArray+BFKit.html)
+- [UIColor](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIColor+BFKit.html)
+- [UIDevice](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIDevice+BFKit.html)
+- [UIFont](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIFont+BFKit.html)
+- [UIImage](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIImage+BFKit.html)
+- [UIImageView](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIImageView+BFKit.html)
+- [UILabel](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UILabel+BFKit.html)
+- [UIScrollView](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIScrollView+BFKit.html)
+- [UITableView](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UITableView+BFKit.html)
+- [UITextField](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UITextField+BFKit.html)
+- [UITextView](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UITextView+BFKit.html)
+- [UIView](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIView+BFKit.html)
+- [UIWebView](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIWebView+BFKit.html)
+- [UIWindow](http://cocoadocs.org/docsets/BFKit/1.6.7/Categories/UIWindow+BFKit.html)
 
 Language support :it:
 =====================
@@ -154,4 +154,4 @@ License :scroll:
 ================
 BFKit is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)** file for more info.
 
-[CocoaDocs]: http://cocoadocs.org/docsets/BFKit/1.6.6/
+[CocoaDocs]: http://cocoadocs.org/docsets/BFKit/1.6.7/
