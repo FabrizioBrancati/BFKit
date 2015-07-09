@@ -34,7 +34,7 @@
  *  @param functionName Function name
  *  @param format       Format
  */
-void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...);
+void ExtendNSLog(const char *file, int lineNumber, const char *function, NSString *format, ...);
 
 /**
  *  This class adds some useful methods to NSLog

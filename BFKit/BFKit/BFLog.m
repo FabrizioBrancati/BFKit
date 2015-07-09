@@ -32,7 +32,7 @@ static NSString *logDetailedString = @"";
 
 @implementation BFLog
 
-void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...)
+void ExtendNSLog(const char *file, int lineNumber, const char *function, NSString *format, ...)
 {
     va_list ap;
     
@@ -47,19 +47,20 @@ void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSS
     
     va_end(ap);
     
+    NSString *functionName = [NSString stringWithFormat:@"%s", function];
+    if([functionName hasString:@"_block_invoke"])
+    {
+        functionName = [functionName stringByReplacingWithRegex:@"__[0-9]*" withString:@""];
+        functionName = [functionName stringByReplacingOccurrencesOfString:@"_block_invoke" withString:@""];
+    }
+    
     NSString *fileName = [[NSString stringWithUTF8String:file] lastPathComponent].stringByDeletingPathExtension;
-    NSString *log = [NSString stringWithFormat:@"(%s) (%s:%d) %s", functionName, [fileName UTF8String], lineNumber, [body UTF8String]];
-    fprintf(stderr, "%s (%s) (%s:%d) %s", [[NSDate dateInformationDescriptionWithInformation:[[NSDate date] dateInformation] dateSeparator:@"-" usFormat:YES] UTF8String], functionName, [fileName UTF8String], lineNumber, [body UTF8String]);
+    NSString *log = [NSString stringWithFormat:@"%s:%d %s: %s", [fileName UTF8String], lineNumber, [functionName UTF8String], [body UTF8String]];
+    fprintf(stderr, "%s %s:%d %s: %s", [[NSDate dateInformationDescriptionWithInformation:[[NSDate date] dateInformation] dateSeparator:@"-" usFormat:YES nanosecond:YES] UTF8String], [fileName UTF8String], lineNumber, [functionName UTF8String], [body UTF8String]);
     
-    if([logString isEqualToString:@""])
-        logString = body;
-    else
-        logString = [NSString stringWithFormat:@"%@%@", logString, body];
+    logString = [logString stringByAppendingString:[NSString stringWithFormat:@"%@", body]];
     
-    if([logDetailedString isEqualToString:@""])
-        logDetailedString = log;
-    else
-        logDetailedString = [NSString stringWithFormat:@"%@%@", logDetailedString, log];
+    logDetailedString = [logDetailedString stringByAppendingString:[NSString stringWithFormat:@"%@", log]];
 }
 
 + (NSString *)logString
