@@ -65,4 +65,20 @@
  */
 @interface BFApp : NSObject
 
+/**
+ *  Executes a block on first start of the App for current version.
+ *  Remember to execute UI instuctions on main thread
+ *
+ *  @param block The block to execute, returns isFirstStartForCurrentVersion
+ */
++ (void)onFirstStart:(void (^)(BOOL isFirstStart))block;
+
+/**
+ *  Executes a block on first start of the App.
+ *  Remember to execute UI instuctions on main thread
+ *
+ *  @param block The block to execute, returns isFirstStart
+ */
++ (void)onFirstStartForCurrentVersion:(void (^)(BOOL isFirstStartForCurrentVersion))block;
+
 @end
