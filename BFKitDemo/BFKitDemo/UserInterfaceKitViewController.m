@@ -98,7 +98,7 @@ static NSString *CellIdentifier = @"UIKitCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DetailViewController *detailViewController = [[DetailViewController alloc] init];
-    [detailViewController prepareForDetail:indexPath.row];
+    [detailViewController prepareForDetail:indexPath.row + appDelegate.bfkitArray.count];
     
     [self.navigationController pushViewController:detailViewController animated:YES];
 }

@@ -98,7 +98,7 @@ static NSString *CellIdentifier = @"FoundationCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	DetailViewController *detailViewController = [[DetailViewController alloc] init];
-    [detailViewController prepareForDetail:indexPath.row + appDelegate.uikitArray.count];
+    [detailViewController prepareForDetail:indexPath.row + appDelegate.bfkitArray.count + appDelegate.uikitArray.count];
     
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
