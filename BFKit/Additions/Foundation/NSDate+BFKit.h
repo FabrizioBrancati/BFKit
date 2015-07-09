@@ -31,17 +31,18 @@
  */
 struct BFDateInformation {
     /**
-     *  Day of the year
+     *  Year
      */
-    NSInteger day;
+    NSInteger year;
     /**
      *  Month of the year
      */
-	NSInteger month;
+    NSInteger month;
     /**
-     *  Year
+     *  Day of the month
      */
-	NSInteger year;
+    NSInteger day;
+    
 	
     /**
      *  Day of the week
@@ -49,17 +50,21 @@ struct BFDateInformation {
 	NSInteger weekday;
 	
     /**
-     *  Minute of the day
-     */
-	NSInteger minute;
-    /**
      *  Hour of the day
      */
-	NSInteger hour;
+    NSInteger hour;
     /**
-     *  Second of the day
+     *  Minute of the hour
+     */
+    NSInteger minute;
+    /**
+     *  Second of the minute
      */
 	NSInteger second;
+    /**
+     *  Nanosecond of the second
+     */
+    NSInteger nanosecond;
 	
 };
 typedef struct BFDateInformation BFDateInformation;
@@ -263,11 +268,12 @@ typedef struct BFDateInformation BFDateInformation;
  *  @param info          The BFDateInformation to be formatted
  *  @param dateSeparator The string to be used as date separator
  *  @param usFormat      Set if the timestamp is in US format or not
+ *  @param nanosecond    Set if the timestamp has to have the nanosecond
  *
- *  @return Returns a NSString in the following format (dateSeparator = "/" and usFormat to NO):
+ *  @return Returns a NSString in the following format (dateSeparator = "/", usFormat to false and nanosecond to false). D/M/Y H:M:S. Example: 15/10/2013 10:38:43
  *  D/M/Y H:M:S
  *  Example: 15/10/2013 10:38:43
  */
-+ (NSString *)dateInformationDescriptionWithInformation:(BFDateInformation)info dateSeparator:(NSString *)dateSeparator usFormat:(BOOL)usFormat;
++ (NSString *)dateInformationDescriptionWithInformation:(BFDateInformation)info dateSeparator:(NSString *)dateSeparator usFormat:(BOOL)usFormat nanosecond:(BOOL)nanosecond;
 
 @end
