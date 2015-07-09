@@ -1,5 +1,12 @@
 Changelog
 =========
+###Version 1.6.8
+- Added ```onFirstStart``` and ```onFirstStartForCurrentVersion``` in BFApp class
+- Added ```stringByReplacingWithRegex:withString:``` in NSString category
+- BFLog now prints: ```timestamp filename:line function message```
+- NSDate category now has ```nanosecond``` and use ```autoupdatingCurrentCalendar```
+- Bug fix in DEMO App
+
 ###Version 1.6.7
 - Added ```initWithImageAsTemplate:tintColor:``` in UIImageView category
 - Changed method to check if a NSString is an email

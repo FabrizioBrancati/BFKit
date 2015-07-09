@@ -27,7 +27,7 @@
 /**
  *  BFKit version string
  */
-#define BFKIT_VERSION @"1.6.7"
+#define BFKIT_VERSION @"1.6.8"
 /**
  *  BFKit author string
  */
