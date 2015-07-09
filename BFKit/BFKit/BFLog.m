@@ -26,6 +26,7 @@
 
 #import "BFLog.h"
 #import "NSDate+BFKit.h"
+#import "NSString+BFKit.h"
 
 static NSString *logString = @"";
 static NSString *logDetailedString = @"";
