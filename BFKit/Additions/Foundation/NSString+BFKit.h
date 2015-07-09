@@ -190,4 +190,14 @@
  */
 - (NSString *)URLEncode;
 
+/**
+ *  Returns a new string containing matching regular expressions replaced with the template string
+ *
+ *  @param regexString The regex string
+ *  @param replacement The replacement string
+ *
+ *  @return Returns a new string containing matching regular expressions replaced with the template string
+ */
+- (NSString *)stringByReplacingWithRegex:(NSString *)regexString withString:(NSString *)replacement;
+
 @end
