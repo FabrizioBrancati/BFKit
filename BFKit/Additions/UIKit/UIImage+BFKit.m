@@ -29,59 +29,31 @@
 #import "UIColor+BFKit.h"
 #import "UIDevice+BFKit.h"
 #import "BFLog.h"
-#import <objc/runtime.h>
-
-CGSize sizeForSizeString(NSString *sizeString)
-{
-    NSArray *array = [sizeString componentsSeparatedByString:@"x"];
-    if(array.count != 2)
-        return CGSizeZero;
-    
-    return CGSizeMake([array[0] floatValue], [array[1] floatValue]);
-}
 
 @implementation UIImage (BFKit)
 
-+ (void)load
++ (UIImage *)dummyImageNamed:(NSString *)dummy
 {
-    static dispatch_once_t predicate;
-    dispatch_once(&predicate, ^{
-        Method fromMethod = class_getClassMethod(self, @selector(imageNamed:));
-        Method toMethod = class_getClassMethod(self, @selector(dummyImageNamed:));
-        method_exchangeImplementations(fromMethod, toMethod);
-    });
-}
-
-+ (UIImage *)dummyImageNamed:(NSString *)name
-{
-    if(!name)
+    if(!dummy)
         return nil;
     
-    UIImage *result;
+    CGSize size = CGSizeZero;
+    UIColor *color = [UIColor lightGrayColor];
     
-    NSArray *array = [name componentsSeparatedByString:@"."];
-    if([[array[0] lowercaseString] isEqualToString:@"dummy"])
+    NSArray *array = [dummy componentsSeparatedByString:@"."];
+    if(array.count > 0)
     {
-        NSString *sizeString = array[1];
+        NSString *sizeString = array[0];
         if(!sizeString)
             return nil;
         
         NSString *colorString = nil;
-        if(array.count >= 3)
-            colorString = array[2];
+        if(array.count >= 2)
+            colorString = array[1];
         
-        return [self dummyImageWithSize:sizeForSizeString(sizeString) color:[UIColor colorForColorString:colorString]];
-    }
-    else
-    {
-        result = [self dummyImageNamed:name];
+        size = [UIImage sizeForSizeString:sizeString];
     }
     
-    return result;
-}
-
-+ (UIImage *)dummyImageWithSize:(CGSize)size color:(UIColor *)color
-{
     UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScreen mainScreen] scale]);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -102,6 +74,15 @@ CGSize sizeForSizeString(NSString *sizeString)
     UIGraphicsEndImageContext();
     
     return result;
+}
+
++ (CGSize)sizeForSizeString:(NSString *)sizeString
+{
+    NSArray *array = [sizeString componentsSeparatedByString:@"x"];
+    if(array.count != 2)
+        return CGSizeZero;
+    
+    return CGSizeMake([array[0] floatValue], [array[1] floatValue]);
 }
 
 - (UIImage *)blendMode:(CGBlendMode)blendMode
