@@ -35,6 +35,13 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    BFHideTouchOnScreen;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -339,7 +346,7 @@
             [colorImageView addSubview:colorLabel];
             [_scrollView addSubview:colorImageView];
             
-            UIImage *dummyImage = [UIImage imageNamed:@"dummy.200x200.#5B9EBE"];
+            UIImage *dummyImage = [UIImage dummyImageNamed:@"200x200.#5B9EBE"];
             UIImageView *dummyImageView = [UIImageView initWithImage:dummyImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20 + colorImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *dummyLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Dummy Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [dummyImageView addSubview:dummyLabel];
@@ -471,6 +478,8 @@
                 [screenshotView createRectShadowWithOffset:CGSizeZero opacity:10.0 radius:10.0];
                 [self.view addSubview:screenshotView];
             }];
+            
+            BFShowTouchOnScreen;
             
             break;
         }
