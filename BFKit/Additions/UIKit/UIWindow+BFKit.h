@@ -28,7 +28,21 @@
 @import UIKit;
 
 /**
+ *  Show touch on screen
+ */
+#define BFShowTouchOnScreen [UIApplication.sharedApplication.keyWindow activateTouch]
+
+/**
+ *  Hide touch on screen
+ */
+#define BFHideTouchOnScreen [UIApplication.sharedApplication.keyWindow deactivateTouch]
+
+/**
  *  This category adds some useful methods to UIWindow
+ *
+ *  BFShowTouchOnScreen: Show touch on screen
+ *
+ *  BFHideTouchOnScreen: Hide touch on screen
  */
 @interface UIWindow (BFKit)
 
@@ -56,5 +70,15 @@
  *  @param completion Completion handler with the UIImage
  */
 - (void)takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^)(UIImage *screenshot))completion;
+
+/**
+ *  Show touch on screen. (Use BFShowTouchOnScreen macro)
+ */
+- (void)activateTouch;
+
+/**
+ *  Hide touch on screen. (Use BFHideTouchOnScreen macro)
+ */
+- (void)deactivateTouch;
 
 @end
