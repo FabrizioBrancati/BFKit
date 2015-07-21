@@ -35,7 +35,7 @@
 
 @implementation BFButton
 
-- (id)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage fadeDuration:(CGFloat)fadeDuration
+- (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage fadeDuration:(CGFloat)fadeDuration
 {
     if((self = [BFButton buttonWithType:UIButtonTypeCustom]))
     {
