@@ -70,6 +70,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     if ([platform isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
     if ([platform isEqualToString:@"iPod4,1"])      return @"iPod Touch 4G";
     if ([platform isEqualToString:@"iPod5,1"])      return @"iPod Touch 5G";
+    if ([platform isEqualToString:@"iPod7,1"])      return @"iPod Touch 6G";
     // iPad
     if ([platform isEqualToString:@"iPad1,1"])      return @"iPad 1";
     if ([platform isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
@@ -160,18 +161,12 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
 
 + (BOOL)isRetina
 {
-    if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0 || [UIScreen mainScreen].scale == 3.0))
-        return YES;
-    else
-        return NO;
+    return [UIScreen isRetina];
 }
 
 + (BOOL)isRetinaHD
 {
-    if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 3.0))
-        return YES;
-    else
-        return NO;
+    return [UIScreen isRetinaHD];
 }
 
 + (NSInteger)iOSVersion

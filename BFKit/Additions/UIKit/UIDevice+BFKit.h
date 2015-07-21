@@ -43,12 +43,6 @@
 @interface UIDevice (BFKit)
 
 /**
- *  Get the screen width and height
- */
-#define SCREEN_WIDTH ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height)
-#define SCREEN_HEIGHT ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
-
-/**
  *  Get the iOS version string
  */
 #define IOS_VERSION [UIDevice currentDevice].systemVersion
@@ -139,14 +133,14 @@
  *
  *  @return Returns YES if it has a Retina display, NO if not
  */
-+ (BOOL)isRetina;
++ (BOOL)isRetina DEPRECATED_MSG_ATTRIBUTE("Use +isRetina in UIScreen class");
 
 /**
  *  Check if the current device has a Retina HD display
  *
  *  @return Returns YES if it has a Retina HD display, NO if not
  */
-+ (BOOL)isRetinaHD;
++ (BOOL)isRetinaHD DEPRECATED_MSG_ATTRIBUTE("Use +isRetinaHD in UIScreen class");
 
 /**
  *  Returns the iOS version without the subversion
