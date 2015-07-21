@@ -30,7 +30,16 @@
 
 + (void)showTouchIDAuthenticationWithReason:(NSString *)reason completion:(void (^)(TouchIDResult result))completion
 {
+    [self showTouchIDAuthenticationWithReason:reason fallbackTitle:nil completion:^(TouchIDResult result) {
+        completion(result);
+    }];
+}
+
++ (void)showTouchIDAuthenticationWithReason:(NSString *)reason fallbackTitle:(NSString *)fallbackTitle completion:(void (^)(TouchIDResult))completion
+{
     LAContext *context = [[LAContext alloc] init];
+    
+    [context setLocalizedFallbackTitle:fallbackTitle];
     
     NSError *error = nil;
     if([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error])

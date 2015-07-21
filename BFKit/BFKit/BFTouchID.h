@@ -84,4 +84,15 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface BFTouchID : NSObject
 + (void)showTouchIDAuthenticationWithReason:(NSString *)reason
                                  completion:(void (^)(TouchIDResult result))completion;
 
+/**
+ *  Shows the TouchID alert
+ *
+ *  @param reason        Text to show in the alert
+ *  @param fallbackTitle Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
+ *  @param completion    Completion handler. It returns the TouchID result, from the TouchIDResult enum
+ */
++ (void)showTouchIDAuthenticationWithReason:(NSString *)reason
+                              fallbackTitle:(NSString *)fallbackTitle
+                                 completion:(void (^)(TouchIDResult result))completion;
+
 @end
