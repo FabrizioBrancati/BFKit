@@ -30,22 +30,22 @@
 
 @implementation UIButton (BFKit)
 
-+ (id)initWithFrame:(CGRect)frame
++ (instancetype)initWithFrame:(CGRect)frame
 {
     return [UIButton initWithFrame:frame title:nil];
 }
 
-+ (id)initWithFrame:(CGRect)frame title:(NSString *)title
++ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title
 {
     return [UIButton initWithFrame:frame title:title backgroundImage:nil];
 }
 
-+ (id)initWithFrame:(CGRect)frame title:(NSString *)title backgroundImage:(UIImage *)backgroundImage
++ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title backgroundImage:(UIImage *)backgroundImage
 {
     return [UIButton initWithFrame:frame title:title backgroundImage:backgroundImage highlightedBackgroundImage:nil];
 }
 
-+ (id)initWithFrame:(CGRect)frame title:(NSString *)title backgroundImage:(UIImage *)backgroundImage highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage
++ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title backgroundImage:(UIImage *)backgroundImage highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 	[button setFrame:frame];
@@ -56,34 +56,34 @@
 	return button;
 }
 
-+ (id)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)color
++ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)color
 {
     const CGFloat *components = CGColorGetComponents(color.CGColor);
     return [UIButton initWithFrame:frame title:title backgroundImage:[UIImage imageWithColor:color] highlightedBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:components[0]-0.1 green:components[1]-0.1 blue:components[2]-0.1 alpha:1]]];
 }
 
-+ (id)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)color highlightedColor:(UIColor *)highlightedColor
++ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)color highlightedColor:(UIColor *)highlightedColor
 {
     return [UIButton initWithFrame:frame title:title backgroundImage:[UIImage imageWithColor:color] highlightedBackgroundImage:[UIImage imageWithColor:highlightedColor]];
 }
 
-+ (id)initWithFrame:(CGRect)frame color:(UIColor *)color
++ (instancetype)initWithFrame:(CGRect)frame color:(UIColor *)color
 {
     const CGFloat *components = CGColorGetComponents(color.CGColor);
     return [UIButton initWithFrame:frame title:nil backgroundImage:[UIImage imageWithColor:color] highlightedBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:components[0]-0.1 green:components[1]-0.1 blue:components[2]-0.1 alpha:1]]];
 }
 
-+ (id)initWithFrame:(CGRect)frame color:(UIColor *)color highlightedColor:(UIColor *)highlightedColor
++ (instancetype)initWithFrame:(CGRect)frame color:(UIColor *)color highlightedColor:(UIColor *)highlightedColor
 {
     return [UIButton initWithFrame:frame title:nil backgroundImage:[UIImage imageWithColor:color] highlightedBackgroundImage:[UIImage imageWithColor:highlightedColor]];
 }
 
-+ (id)initWithFrame:(CGRect)frame image:(UIImage *)image
++ (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image
 {
     return [UIButton initWithFrame:frame image:image highlightedImage:nil];
 }
 
-+ (id)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage
++ (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:frame];

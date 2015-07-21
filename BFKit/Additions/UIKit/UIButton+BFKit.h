@@ -41,7 +41,7 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame;
++ (instancetype)initWithFrame:(CGRect)frame;
 
 /**
  *  Create an UIButton in a frame with a title and a clear color
@@ -51,8 +51,8 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              title:(NSString *)title;
++ (instancetype)initWithFrame:(CGRect)frame
+                        title:(NSString *)title;
 
 /**
  *  Create an UIButton in a frame with a title and a background image
@@ -63,9 +63,9 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              title:(NSString *)title
-    backgroundImage:(UIImage *)backgroundImage;
++ (instancetype)initWithFrame:(CGRect)frame
+                        title:(NSString *)title
+              backgroundImage:(UIImage *)backgroundImage;
 
 /**
  *  Create an UIButton in a frame with a title, a background image and highlighted background image
@@ -77,10 +77,10 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              title:(NSString *)title
-    backgroundImage:(UIImage *)backgroundImage
-highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
++ (instancetype)initWithFrame:(CGRect)frame
+                        title:(NSString *)title
+              backgroundImage:(UIImage *)backgroundImage
+   highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
 
 /**
  *  Create an UIButton in a frame with a title and a color
@@ -91,9 +91,9 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              title:(NSString *)title
-              color:(UIColor *)color;
++ (instancetype)initWithFrame:(CGRect)frame
+                        title:(NSString *)title
+                        color:(UIColor *)color;
 
 /**
  *  Create an UIButton in a frame with a title, a color and highlighted color
@@ -105,10 +105,10 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              title:(NSString *)title
-              color:(UIColor *)color
-   highlightedColor:(UIColor *)highlightedColor;
++ (instancetype)initWithFrame:(CGRect)frame
+                        title:(NSString *)title
+                        color:(UIColor *)color
+             highlightedColor:(UIColor *)highlightedColor;
 
 /**
  *  Create an UIButton in a frame with a color
@@ -118,8 +118,8 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              color:(UIColor *)color;
++ (instancetype)initWithFrame:(CGRect)frame
+                        color:(UIColor *)color;
 
 /**
  *  Create an UIButton in a frame with a color and highlighted color
@@ -130,9 +130,9 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              color:(UIColor *)color
-   highlightedColor:(UIColor *)highlightedColor;
++ (instancetype)initWithFrame:(CGRect)frame
+                        color:(UIColor *)color
+             highlightedColor:(UIColor *)highlightedColor;
 
 /**
  *  Create an UIButton in a frame with an image
@@ -142,8 +142,8 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              image:(UIImage *)image;
++ (instancetype)initWithFrame:(CGRect)frame
+                        image:(UIImage *)image;
 
 /**
  *  Create an UIButton in a frame with an image
@@ -154,9 +154,9 @@ highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
  *
  *  @return Returns the UIButton instance
  */
-+ (id)initWithFrame:(CGRect)frame
-              image:(UIImage *)image
-   highlightedImage:(UIImage *)highlightedImage;
++ (instancetype)initWithFrame:(CGRect)frame
+                        image:(UIImage *)image
+             highlightedImage:(UIImage *)highlightedImage;
 
 /**
  *  Set the title font with a size

@@ -28,7 +28,7 @@
 
 @implementation UIImageView (BFKit)
 
-+ (id)initWithImage:(UIImage *)image frame:(CGRect)rect
++ (instancetype)initWithImage:(UIImage *)image frame:(CGRect)rect
 {
     UIImageView *_image = [[UIImageView alloc] init];
     [_image setFrame:rect];
@@ -36,7 +36,7 @@
     return _image;
 }
 
-+ (id)initWithImage:(UIImage *)image size:(CGSize)size center:(CGPoint)center
++ (instancetype)initWithImage:(UIImage *)image size:(CGSize)size center:(CGPoint)center
 {
     UIImageView *_image = [[UIImageView alloc] init];
     [_image setFrame:CGRectMake(0, 0, size.width, size.height)];
@@ -45,7 +45,7 @@
     return _image;
 }
 
-+ (id)initWithImage:(UIImage *)image center:(CGPoint)center
++ (instancetype)initWithImage:(UIImage *)image center:(CGPoint)center
 {
     UIImageView *_image = [[UIImageView alloc] init];
     [_image setFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
@@ -54,7 +54,7 @@
     return _image;
 }
 
-+ (id)initWithImageAsTemplate:(UIImage *)image tintColor:(UIColor *)tintColor
++ (instancetype)initWithImageAsTemplate:(UIImage *)image tintColor:(UIColor *)tintColor
 {
     UIImageView *_image = [[UIImageView alloc] init];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];

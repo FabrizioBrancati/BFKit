@@ -41,8 +41,8 @@
  *
  *  @return Returns the created UIImageView
  */
-+ (id)initWithImage:(UIImage *)image
-              frame:(CGRect)rect;
++ (instancetype)initWithImage:(UIImage *)image
+                        frame:(CGRect)rect;
 
 /**
  *  Create an UIImageView with the given image, size and center
@@ -53,9 +53,9 @@
  *
  *  @return Returns the created UIImageView
  */
-+ (id)initWithImage:(UIImage *)image
-               size:(CGSize)size
-             center:(CGPoint)center;
++ (instancetype)initWithImage:(UIImage *)image
+                         size:(CGSize)size
+                       center:(CGPoint)center;
 
 /**
  *  Create an UIImageView with the given image and center
@@ -65,8 +65,8 @@
  *
  *  @return Returns the created UIImageView
  */
-+ (id)initWithImage:(UIImage *)image
-             center:(CGPoint)center;
++ (instancetype)initWithImage:(UIImage *)image
+                       center:(CGPoint)center;
 
 /**
  *  Create an UIImageView with an image and use it as a template with the given color
@@ -76,8 +76,8 @@
  *
  *  @return Returns the created UIImageView
  */
-+ (id)initWithImageAsTemplate:(UIImage *)image
-                    tintColor:(UIColor *)tintColor;
++ (instancetype)initWithImageAsTemplate:(UIImage *)image
+                              tintColor:(UIColor *)tintColor;
 
 /**
  *  Create a drop shadow effect
