@@ -26,6 +26,7 @@
 
 #import "UIWindow+BFKit.h"
 #import "UIDevice+BFKit.h"
+#import "UIImage+BFKit.h"
 #import <objc/runtime.h>
 
 @implementation UIWindow (BFKit)
