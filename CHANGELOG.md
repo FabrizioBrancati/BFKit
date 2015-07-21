@@ -1,5 +1,18 @@
 Changelog
 =========
+###Version 1.7.0
+- Added UINavigationBar category
+- Added UIToolbar & UIBarButtonItem categories
+- Added BFDataStructures class with primitive data structures
+- Added new substring and indexOf methods in NSString category
+- Added ```fallbackTitle``` parameter in ```showTouchIDAuthenticationWithReason``` method in BFTouchID class
+- Added touch on screen with ```BFShowTouchOnScreen``` and ```BFHideTouchOnScreen``` macros
+- Added support for iPod Touch 6G
+- Now to create dummy images you have to explicitly call ```dummyImageNamed:``` method in UIImage
+- Changed all ```id``` to ```instancetype``` in instance creation
+- Removed UIScreen methods from UIDevice category and created UIScreen category
+- Changed ```SCREEN_WIDTH``` & ```SCREEN_HEIGHT``` macros and Fixed #13. Thanks to @jiongge
+
 ###Version 1.6.8
 - Added ```onFirstStart``` and ```onFirstStartForCurrentVersion``` in BFApp class
 - Added ```stringByReplacingWithRegex:withString:``` in NSString category
