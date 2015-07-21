@@ -90,6 +90,13 @@ static NSString *CellIdentifier = @"UIKitCell";
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    if([[appDelegate.uikitArray objectAtIndex:indexPath.row] isEqualToString:@"UIToolbar"])
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        
+        [[cell detailTextLabel] setText:@"+ UIBarButtonItem"];
+    }
+    
     [[cell textLabel] setText:[appDelegate.uikitArray objectAtIndex:indexPath.row]];
 	
 	return cell;

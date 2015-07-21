@@ -22,6 +22,7 @@
     
     _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFApp",
                                                           @"BFButton",
+                                                          @"BFDataStructures",
                                                           @"BFLog",
                                                           @"BFPassword",
                                                           @"BFSystemSound",
@@ -34,10 +35,13 @@
                                                           @"UIImage",
                                                           @"UIImageView",
                                                           @"UILabel",
+                                                          @"UINavigationBar",
+                                                          @"UIScreen",
                                                           @"UIScrollView",
                                                           @"UITableView",
                                                           @"UITextField",
                                                           @"UITextView",
+                                                          @"UIToolbar",
                                                           @"UIView",
                                                           @"UIWebView",
                                                           @"UIWindow"]];

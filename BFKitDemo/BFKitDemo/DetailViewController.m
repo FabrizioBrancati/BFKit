@@ -12,6 +12,7 @@
 @interface DetailViewController ()
 {
     UIScrollView *_scrollView;
+    DetailType _detailType;
 }
 @end
 
@@ -39,7 +40,24 @@
 {
     [super viewDidDisappear:animated];
     
-    BFHideTouchOnScreen;
+    switch(_detailType)
+    {
+        case DetailTypeUINavigationBar:
+        {
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate.kitNavigationController.navigationBar setTransparent:NO];
+            
+            break;
+        }
+        case DetailTypeUIWindow:
+        {
+            BFHideTouchOnScreen;
+            
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +68,9 @@
 
 - (void)prepareForDetail:(DetailType)detailType
 {
-    switch(detailType)
+    _detailType = detailType;
+    
+    switch(_detailType)
     {
         case DetailTypeBFApp:
         {
@@ -83,6 +103,57 @@
             
             BFButton *button = [[BFButton alloc] initWithFrame:CGRectMake(20, 84, SCREEN_WIDTH - 40, 50) image:[UIImage imageWithSize:CGSizeMake(SCREEN_WIDTH, 50) backgroundColor:[UIColor colorWithRed:0.301 green:0.550 blue:0.686 alpha:1.000] maskedText:@"BFKit" font:FontNameHelveticaNeueBold fontSize:20] highlightedImage:[UIImage imageWithSize:CGSizeMake(SCREEN_WIDTH, 50) backgroundColor:[UIColor colorWithRed:0.9218 green:0.565 blue:0.139 alpha:1.0] maskedText:@"BFKit" font:FontNameHelveticaNeueBold fontSize:20] fadeDuration:1];
             [self.view addSubview:button];
+            
+            break;
+        }
+        case DetailTypeBFDataStructures:
+        {
+            self.title = @"BFDataStructures";
+            [_scrollView removeFromSuperview];
+            
+            BFLogClear;
+            
+            Stack *stack = [[Stack alloc] init];
+            [stack push:@"1"];
+            [stack push:@"2"];
+            BFLog(@"Push: 1\nPush: 2\nStack: %@", stack);
+            [stack pop];
+            BFLog(@"Pop\nStack: %@", stack);
+            if([stack empty])
+            {
+                BFLog(@"Is empty");
+            }
+            else
+            {
+                BFLog(@"Is not empty");
+            }
+            
+            List *list = [[List alloc] init];
+            [list insert:@"1"];
+            [list insert:@"2"];
+            [list insert:@"3"];
+            BFLog(@"\n\nInsert: 1\nInsert: 2\nInsert: 3\nList: %@", list);
+            BFLog(@"Search index 0: %@", [list searchObjectAtIndex:0]);
+            NSInteger search = [list searchObject:@"3"];
+            BFLog(@"Search object \"3\": %li", search);
+            [list deleteObject:@"3"];
+            BFLog(@"Delete: 3\nList: %@", list);
+            [list deleteObjectAtIndex:0];
+            BFLog(@"Delete index: 0\nList: %@", list);
+            
+            Queue *queue = [[Queue alloc] init];
+            [queue enqueue:@"1"];
+            [queue enqueue:@"2"];
+            [queue enqueue:@"3"];
+            BFLog(@"\n\nEnqueue: 1\nEnqueue: 2\nEnqueue: 3\nQueue: %@", queue);
+            BFLog(@"Top: %@", [queue top]);
+            [queue dequeue];
+            BFLog(@"Dequeue\nQueue: %@", queue);
+            [queue emptyQueue];
+            BFLog(@"Empty queue: %@", queue);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
             
             break;
         }
@@ -251,16 +322,6 @@
             else if([UIDevice isSimulator])
                 [deviceInfoString appendString:@"Device: Simulator\n"];
             
-            if([UIDevice isRetina])
-                [deviceInfoString appendString:@"Retina: Yes\n"];
-            else
-                [deviceInfoString appendString:@"Retina: No\n"];
-            
-            if([UIDevice isRetinaHD])
-                [deviceInfoString appendString:@"Retina HD: Yes\n"];
-            else
-                [deviceInfoString appendString:@"Retina HD: No\n"];
-            
             [deviceInfoString appendString:[NSString stringWithFormat:@"iOS Version: %li\n", (long)[UIDevice iOSVersion]]];
             
             [deviceInfoString appendString:[NSString stringWithFormat:@"RAM Size: %lu MB\n", (long)[UIDevice ramSize] / 1024 / 1024]];
@@ -383,6 +444,41 @@
             
             break;
         }
+        case DetailTypeUINavigationBar:
+        {
+            self.title = @"UINavigationBar";
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate.kitNavigationController.navigationBar setTransparent:YES];
+
+            UILabel *navigationInfoLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 200) text:@"Check the transparent UINavigationBar 🔝" font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor whiteColor]];
+            [_scrollView addSubview:navigationInfoLabel];
+            
+            break;
+        }
+        case DetailTypeUIScreen:
+        {
+            self.title = @"UIScreen";
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            
+            NSMutableString *screenInfoString = [[NSMutableString alloc] init];
+            
+            if([UIScreen isRetina])
+                [screenInfoString appendString:@"Retina: Yes\n"];
+            else
+                [screenInfoString appendString:@"Retina: No\n"];
+            
+            if([UIScreen isRetinaHD])
+                [screenInfoString appendString:@"Retina HD: Yes\n"];
+            else
+                [screenInfoString appendString:@"Retina HD: No\n"];
+            
+            UILabel *screenInfoLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 200) text:screenInfoString font:FontNameHelveticaLight size:16 color:[UIColor blackColor] alignment:NSTextAlignmentLeft lines:8];
+            [_scrollView addSubview:screenInfoLabel];
+            
+            break;
+        }
         case DetailTypeUIScrollView:
         {
             self.title = @"UIScrollView";
@@ -420,6 +516,18 @@
             
             UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:@"This is a text view\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia blandit eros, sit amet aliquet tellus sollicitudin et. Nullam a ipsum nec libero hendrerit aliquet. Pellentesque faucibus pretium odio, sit amet accumsan arcu malesuada ut. Cras rhoncus volutpat nisl consequat eleifend. Donec tincidunt consectetur justo, molestie hendrerit justo dictum vel. Vestibulum nec commodo arcu. Donec sodales, augue vel fermentum ultrices, nunc augue vulputate tortor, sit amet eleifend nisl sapien eget magna. Donec aliquet mattis mi vel fermentum. Donec elementum pellentesque libero, in aliquam mauris luctus vel. In et vulputate nibh, id tristique ipsum. Donec fermentum ante et augue cursus aliquam. Vivamus nisi justo, pulvinar porta dolor id, tristique pretium augue. Nulla blandit felis felis, ut rutrum eros rutrum eu. Morbi mauris dolor, feugiat non placerat non, ultrices nec eros. Sed at eleifend felis. Mauris blandit feugiat nulla eget tempor. Nunc semper suscipit magna et semper. Suspendisse a arcu vitae diam scelerisque vestibulum ut eu dolor. Suspendisse accumsan venenatis leo, id maximus turpis. Pellentesque ac nunc augue. Etiam pharetra velit quis metus ornare vehicula. Cras eleifend sapien vitae est ultrices, a ullamcorper nibh scelerisque. Pellentesque tempor tortor dignissim, cursus tortor ac, sagittis felis. Praesent ultrices scelerisque odio, in fringilla sem tincidunt quis. Aenean sem augue, mattis luctus magna vel, accumsan volutpat felis. Nam blandit venenatis tincidunt. Pellentesque sodales lectus at orci tempus, vel pharetra massa vestibulum. Integer scelerisque ex aliquet quam molestie, a laoreet augue mattis. Etiam ut ex nisi. Mauris mollis tincidunt hendrerit. Nunc mi lectus, viverra ut nunc et, sagittis maximus augue. Pellentesque ullamcorper condimentum enim, vitae tempus risus. Maecenas facilisis lectus eget sem luctus porta. Etiam ut nunc non diam facilisis volutpat. Phasellus a augue feugiat, iaculis metus sit amet, pharetra lacus. Nulla facilisi. Maecenas sollicitudin justo ac auctor feugiat. Nunc ac dui sem. Aliquam fringilla porttitor massa, quis mattis nisl sodales a. Pellentesque iaculis non nisi aliquam malesuada. Aliquam erat volutpat. Donec arcu dui, rutrum ut tortor id, hendrerit aliquam ligula." color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             [self.view addSubview:textView];
+            
+            break;
+        }
+        case DetailTypeUIToolbar:
+        {
+            self.title = @"UIToolbar";
+            [_scrollView removeFromSuperview];
+            
+            UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 50 - 44, SCREEN_WIDTH, 44)];
+            [toolbar setItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(barButtonItemsAction:)], [[UIBarButtonItem alloc] initWithBarButtonFlexibleSpace], [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(barButtonItemsAction:)]] animated: YES];
+            [toolbar setTransparent:YES];
+            [self.view addSubview:toolbar];
             
             break;
         }
@@ -676,10 +784,14 @@
     }
 }
 
-- (IBAction)shakeButtonAction:(id)sender
+- (IBAction)shakeButtonAction:(UIButton *)button
 {
-    UIButton *button = (UIButton *)sender;
     [button shakeView];
+}
+
+- (IBAction)barButtonItemsAction:(UIBarButtonItem *)button
+{
+    BFLog(@"Bar button pressed");
 }
 
 - (void)threadMethod

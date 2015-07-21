@@ -27,11 +27,22 @@
 /**
  *  BFKit version string
  */
-#define BFKIT_VERSION @"1.6.8"
+#define BFKIT_VERSION @"1.7.0"
 /**
  *  BFKit author string
  */
 #define BFKIT_AUTHOR @"Fabrizio Brancati"
+
+/**
+ *  BFKit Classes
+ */
+#import "BFApp.h"
+#import "BFButton.h"
+#import "BFDataStructures.h"
+#import "BFLog.h"
+#import "BFPassword.h"
+#import "BFSystemSound.h"
+#import "BFTouchID.h"
 
 /**
  *  Foundation Additions
@@ -51,6 +62,7 @@
 /**
  *  UIKit Additions
  */
+#import "UIBarButtonItem+BFKit.h"
 #import "UIButton+BFKit.h"
 #import "UIColor+BFKit.h"
 #import "UIDevice+BFKit.h"
@@ -58,20 +70,13 @@
 #import "UIImage+BFKit.h"
 #import "UIImageView+BFKit.h"
 #import "UILabel+BFKit.h"
+#import "UINavigationBar+BFKit.h"
+#import "UIScreen+BFKit.h"
 #import "UIScrollView+BFKit.h"
 #import "UITableView+BFKit.h"
 #import "UITextField+BFKit.h"
 #import "UITextView+BFKit.h"
+#import "UIToolbar+BFKit.h"
 #import "UIView+BFKit.h"
 #import "UIWebView+BFKit.h"
 #import "UIWindow+BFKit.h"
-
-/**
- *  BFKit Classes
- */
-#import "BFApp.h"
-#import "BFButton.h"
-#import "BFLog.h"
-#import "BFPassword.h"
-#import "BFSystemSound.h"
-#import "BFTouchID.h"
