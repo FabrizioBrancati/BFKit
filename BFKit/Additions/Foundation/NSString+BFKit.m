@@ -57,6 +57,37 @@
     return [NSString searchInString:self charStart:start charEnd:end];
 }
 
+- (NSInteger)indexOfCharacter:(char)character
+{
+    for(NSUInteger i = 0; i < [self length]; i++)
+    {
+        if([self characterAtIndex:i] == character)
+        {
+            return i;
+        }
+    }
+    
+    return -1;
+}
+
+- (NSString *)substringFromCharacter:(char)character
+{
+    NSInteger index = [self indexOfCharacter:character];
+    if(index != -1)
+        return [self substringFromIndex:index];
+    else
+        return @"";
+}
+
+- (NSString *)substringToCharacter:(char)character
+{
+    NSInteger index = [self indexOfCharacter:character];
+    if(index != -1)
+        return [self substringToIndex:index];
+    else
+        return @"";
+}
+
 - (NSString *)MD5
 {
     if(self == nil || [self length] == 0)

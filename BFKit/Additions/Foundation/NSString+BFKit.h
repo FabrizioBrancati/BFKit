@@ -58,6 +58,33 @@
                       charEnd:(char)end;
 
 /**
+ *  Returns the index of the given character
+ *
+ *  @param character The character to search
+ *
+ *  @return Returns the index of the given character, -1 if not found
+ */
+- (NSInteger)indexOfCharacter:(char)character;
+
+/**
+ *  Creates a substring from the given character
+ *
+ *  @param character The character
+ *
+ *  @return Returns the substring from character
+ */
+- (NSString *)substringFromCharacter:(char)character;
+
+/**
+ *  Creates a substring to the given character
+ *
+ *  @param character The character
+ *
+ *  @return Returns the substring to character
+ */
+- (NSString *)substringToCharacter:(char)character;
+
+/**
  *  Create a MD5 string from self
  *
  *  @return Returns the MD5 NSString from self
