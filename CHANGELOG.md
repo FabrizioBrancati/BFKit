@@ -11,7 +11,7 @@ Changelog
 - Now to create dummy images you have to explicitly call ```dummyImageNamed:``` method in UIImage
 - Changed all ```id``` to ```instancetype``` in instance creation
 - Removed UIScreen methods from UIDevice category and created UIScreen category
-- Changed ```SCREEN_WIDTH``` & ```SCREEN_HEIGHT``` macros and Fixed #13. Thanks to @jiongge
+- Changed ```SCREEN_WIDTH``` & ```SCREEN_HEIGHT``` macros and Fixed [#13](https://github.com/FabrizioBrancati/BFKit/issues/13). Thanks to [@jiongge](https://github.com/jiongge)
 
 ###Version 1.6.8
 - Added ```onFirstStart``` and ```onFirstStartForCurrentVersion``` in BFApp class

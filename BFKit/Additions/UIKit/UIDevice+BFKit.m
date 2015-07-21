@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "UIDevice+BFKit.h"
+#import "UIScreen+BFKit.h"
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #include <sys/socket.h>
