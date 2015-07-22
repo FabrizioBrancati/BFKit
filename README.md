@@ -21,6 +21,7 @@ It also adds some useful method to some classes like:
 ###BFKit:
 - [BFApp](http://cocoadocs.org/docsets/BFKit/1.7.0/Classes/BFApp.html)
 - [BFButton](http://cocoadocs.org/docsets/BFKit/1.7.0/Classes/BFButton.html)
+- BFDataStructures ([List](http://cocoadocs.org/docsets/BFKit/1.7.0/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit/1.7.0/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit/1.7.0/Classes/Stack.html))
 - [BFLog](http://cocoadocs.org/docsets/BFKit/1.7.0/Classes/BFLog.html)
 - [BFPassword](http://cocoadocs.org/docsets/BFKit/1.7.0/Classes/BFPassword.html)
 - [BFSystemSound](http://cocoadocs.org/docsets/BFKit/1.7.0/Classes/BFSystemSound.html)
@@ -40,6 +41,7 @@ It also adds some useful method to some classes like:
 - [NSThread](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/NSThread+BFKit.html)
 
 ###UIKit:
+- [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIBarButtonItem+BFKit.html)
 - [UIButton](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/NSArray+BFKit.html)
 - [UIColor](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIColor+BFKit.html)
 - [UIDevice](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIDevice+BFKit.html)
@@ -47,10 +49,13 @@ It also adds some useful method to some classes like:
 - [UIImage](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIImage+BFKit.html)
 - [UIImageView](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIImageView+BFKit.html)
 - [UILabel](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UILabel+BFKit.html)
+- [UINavigationBar](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UINavigationBar+BFKit.html)
+- [UIScreen](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIScreen+BFKit.html)
 - [UIScrollView](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIScrollView+BFKit.html)
 - [UITableView](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UITableView+BFKit.html)
 - [UITextField](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UITextField+BFKit.html)
 - [UITextView](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UITextView+BFKit.html)
+- [UIToolbar](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIToolbar+BFKit.html)
 - [UIView](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIView+BFKit.html)
 - [UIWebView](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIWebView+BFKit.html)
 - [UIWindow](http://cocoadocs.org/docsets/BFKit/1.7.0/Categories/UIWindow+BFKit.html)
