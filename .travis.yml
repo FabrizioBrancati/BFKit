@@ -1,4 +1,5 @@
 language: objective-c
+osx_image: xcode6.4
 script:
 - cd BFKitDemo
-- xcodebuild build -scheme BFKitDemo -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1'
+- xcodebuild build -scheme BFKitDemo -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4'
