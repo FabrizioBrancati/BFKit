@@ -226,5 +226,11 @@
  *  @return Returns a new string containing matching regular expressions replaced with the template string
  */
 - (NSString *)stringByReplacingWithRegex:(NSString *)regexString withString:(NSString *)replacement;
-
+/**
+ *  Convert HEX string (separated by space) to "usual" characters string.
+ *	"68 65 6c 6c 6f" -> "hello"
+ *
+ *  @return Readable string
+ */
+-(NSString *)stringFromHEXstring;
 @end
