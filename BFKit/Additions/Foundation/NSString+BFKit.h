@@ -233,4 +233,11 @@
  *  @return Readable string
  */
 -(NSString *)stringFromHEXstring;
+
+/**
+ *  Remove double or more duplicated spaces
+ *
+ *  @return String without additional spaces
+ */
+-(NSString *)removeExtraSpaces;
 @end

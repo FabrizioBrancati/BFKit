@@ -285,4 +285,13 @@
 	return newString;
 }
 
+-(NSString *)removeExtraSpaces{
+	NSString *squashed = [self stringByReplacingOccurrencesOfString:@"[ ]+"
+																   withString:@" "
+																	  options:NSRegularExpressionSearch
+																  range:NSMakeRange(0, self.length)];
+	NSString *final = [squashed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	return final;
+}
+
 @end
