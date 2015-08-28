@@ -240,4 +240,12 @@
  *  @return String without additional spaces
  */
 -(NSString *)removeExtraSpaces;
+
+/**
+ *  Convert HEX string (separated by spaces) to NSData object
+ *	"68 65 6c 6c 6f" -> data bytes
+ *
+ *  @return NSData encoded string
+ */
+-(NSData *)HEXData;
 @end
