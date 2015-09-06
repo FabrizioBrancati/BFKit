@@ -657,6 +657,8 @@
             BFLog([NSFileManager saveArrayToPath:DirectoryTypeDocuments withFilename:@"temp" array:array] ? @"Save array: Yes" : @"Save array: No");
             BFLog(@"Directory: %@", [NSFileManager getDocumentsDirectoryForFile:@"temp.plist"]);
             BFLog([NSFileManager deleteFile:@"temp.plist" fromDirectory:DirectoryTypeDocuments] ? @"Delete file: Yes" : @"Delete file: No");
+            BFLog([NSFileManager setSettings:@"temp" object:@"test" forKey:@"key"] ? @"Saved settings: YES" : @"Saved settings: NO");
+            BFLog(@"%@", [NSFileManager getSettings:@"temp" objectForKey:@"key"]);
             
             UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             [self.view addSubview:textView];
