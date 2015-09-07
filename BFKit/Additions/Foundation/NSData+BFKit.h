@@ -33,10 +33,19 @@
 
 /**
  *  Hexadecimal string of NSData. Empty string if data is empty.
+ *  From a NSData like <48656c6c 6f>, returns the NSString rapresentation of the data, 48 65 6c 6c 6f.
  *
  *  @return HEX string space separated
  */
 - (NSString *)HEXstring;
+
+/**
+ *  Hexadecimal string of NSData. Empty string if data is empty.
+ *  From a NSData like <48656c6c 6f>, returns the NSString rapresentation of the data, Hello.
+ *
+ *  @return HEX string space separated
+ */
+- (NSString *)HEXstringRapresentation;
 
 
 @end

@@ -37,4 +37,8 @@
 	return [NSString stringWithString:hexString];
 }
 
+- (NSString *)HEXstringRapresentation{
+	return [[self HEXstring]stringFromHEXstring];
+}
+
 @end
