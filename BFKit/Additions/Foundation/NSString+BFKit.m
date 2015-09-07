@@ -295,7 +295,7 @@
 }
 
 -(NSData *)HEXData{
-	return [[self stringFromHEXstring] dataUsingEncoding:NSUTF8StringEncoding];
+	return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end

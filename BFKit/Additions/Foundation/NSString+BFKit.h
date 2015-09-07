@@ -243,6 +243,7 @@
 
 /**
  *  Convert HEX string (separated by spaces) to NSData object
+ *	From a NSString like @"Hello", returns the NSData of the string, <48656c6c 6f>.
  *	"68 65 6c 6c 6f" -> data bytes
  *
  *  @return NSData encoded string
