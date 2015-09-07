@@ -763,6 +763,28 @@
             BFLog(@"SHA512: %@", [search SHA512]);
             BFLog([search isEmail] ? @"Is email: Yes" : @"Is email: No");
             
+			
+			NSString *testHEX = @"68 65 6c 6c 6f";
+			NSString *testString = @"hello";
+			BFLog(testString);
+			BFLog(testHEX);
+			
+			NSData *testData = [testString HEXData];
+			BFLog(@"%@", testData);
+			BFLog(@"%@",[testData HEXstring]);
+			
+			NSString *stringRapreesentationOfData = [testData HEXstringRapresentation];
+			BFLog(@"%@",stringRapreesentationOfData);
+			
+			testString = [testHEX stringFromHEXstring];
+			BFLog(testString);
+			
+			testString = @"This    is    a     test";
+			BFLog(testString);
+			testString = [testString removeExtraSpaces];
+			BFLog(testString);
+			
+			
             UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             [self.view addSubview:textView];
             
