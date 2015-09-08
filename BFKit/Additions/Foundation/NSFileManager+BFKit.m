@@ -302,22 +302,18 @@
     NSString *path = [self getLibraryDirectoryForFile:@""];
     path = [path stringByAppendingString:@"/Preferences/"];
     path = [path stringByAppendingString:[NSString stringWithFormat:@"%@-Settings.plist", settings]];
-    BFLog(@"%@", path);
     
     NSMutableDictionary *loadedPlist;
     if([[NSFileManager defaultManager] fileExistsAtPath:path])
     {
-        BFLog(@"File exist");
         loadedPlist = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-        BFLog(@"Letto %@", loadedPlist);
     }
     else
     {
-        loadedPlist = [[NSMutableDictionary alloc] init];
-        BFLog(@"Creato %@", loadedPlist);
+        return nil;
     }
     
-    return loadedPlist;
+    return loadedPlist[objKey];
 }
 
 + (BOOL)setSettings:(NSString *)settings object:(id)value forKey:(NSString *)objKey
@@ -325,19 +321,15 @@
     NSString *path = [self getLibraryDirectoryForFile:@""];
     path = [path stringByAppendingString:@"/Preferences/"];
     path = [path stringByAppendingString:[NSString stringWithFormat:@"%@-Settings.plist", settings]];
-    BFLog(@"%@", path);
     
     NSMutableDictionary *loadedPlist;
     if([[NSFileManager defaultManager] fileExistsAtPath:path])
     {
-        BFLog(@"File exist");
         loadedPlist = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-        BFLog(@"Letto %@", loadedPlist);
     }
     else
     {
         loadedPlist = [[NSMutableDictionary alloc] init];
-        BFLog(@"Creato %@", loadedPlist);
     }
     
     [loadedPlist setObject:value forKey:objKey];
