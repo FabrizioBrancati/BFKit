@@ -24,6 +24,7 @@
 //  SOFTWARE.
 
 #import "NSData+BFKit.h"
+#import "NSString+BFKit.h"
 
 @implementation NSData (BFKit)
 
