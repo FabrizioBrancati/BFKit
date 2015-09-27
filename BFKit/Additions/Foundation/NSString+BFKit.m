@@ -274,4 +274,28 @@
     return [regex stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length]) withTemplate:@""];
 }
 
+-(NSString *)stringFromHEXstring{
+	NSMutableString * newString = [NSMutableString string];
+	NSArray * components = [self componentsSeparatedByString:@" "];
+	for ( NSString * component in components ) {
+		int value = 0;
+		sscanf([component cStringUsingEncoding:NSASCIIStringEncoding], "%x", &value);
+		[newString appendFormat:@"%c", (char)value];
+	}
+	return newString;
+}
+
+-(NSString *)removeExtraSpaces{
+	NSString *squashed = [self stringByReplacingOccurrencesOfString:@"[ ]+"
+																   withString:@" "
+																	  options:NSRegularExpressionSearch
+																  range:NSMakeRange(0, self.length)];
+	NSString *final = [squashed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	return final;
+}
+
+-(NSData *)HEXData{
+	return [self dataUsingEncoding:NSUTF8StringEncoding];
+}
+
 @end
