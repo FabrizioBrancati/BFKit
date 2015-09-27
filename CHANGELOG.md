@@ -1,5 +1,12 @@
 Changelog
 =========
+###Version 1.7.1
+- Added new devices (iPhone, iPad and AppleTV)
+- Added new methods for HEX representation
+- Fixed a bug with ```getSettings:objectForKey:``` & ```setSettings:object:forKey``` in NSFileManager category [#15](https://github.com/FabrizioBrancati/BFKit/issues/15)
+
+Thanks to [@jiongge](https://github.com/jiongge) and [@fabiosoft](https://github.com/fabiosoft) for this release
+
 ###Version 1.7.0
 - Added UINavigationBar category
 - Added UIToolbar & UIBarButtonItem categories
@@ -11,7 +18,9 @@ Changelog
 - Now to create dummy images you have to explicitly call ```dummyImageNamed:``` method in UIImage
 - Changed all ```id``` to ```instancetype``` in instance creation
 - Removed UIScreen methods from UIDevice category and created UIScreen category
-- Changed ```SCREEN_WIDTH``` & ```SCREEN_HEIGHT``` macros and Fixed [#13](https://github.com/FabrizioBrancati/BFKit/issues/13). Thanks to [@jiongge](https://github.com/jiongge)
+- Changed ```SCREEN_WIDTH``` & ```SCREEN_HEIGHT``` macros and fixed [#13](https://github.com/FabrizioBrancati/BFKit/issues/13).
+
+Thanks to [@jiongge](https://github.com/jiongge) for this release
 
 ###Version 1.6.8
 - Added ```onFirstStart``` and ```onFirstStartForCurrentVersion``` in BFApp class
