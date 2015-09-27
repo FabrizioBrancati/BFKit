@@ -768,18 +768,8 @@
 			
 			NSString *testHEX = @"68 65 6c 6c 6f";
 			NSString *testString = @"hello";
-			BFLog(testString);
-			BFLog(testHEX);
-			
-			NSData *testData = [testString HEXData];
-			BFLog(@"%@", testData);
-			BFLog(@"%@",[testData HEXstring]);
-			
-			NSString *stringRapreesentationOfData = [testData HEXstringRapresentation];
-			BFLog(@"%@",stringRapreesentationOfData);
-			
-			testString = [testHEX stringFromHEXstring];
-			BFLog(testString);
+            BFLog(@"String: %@ - To HEX: %@", testString, [testString stringToHEX]);
+            BFLog(@"HEX: %@ - To String: %@", testHEX, [testHEX HEXToString]);
 			
 			testString = @"This    is    a     test";
 			BFLog(testString);

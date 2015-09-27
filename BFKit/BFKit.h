@@ -49,7 +49,6 @@
  */
 #import "NSArray+BFKit.h"
 #import "NSDate+BFKit.h"
-#import "NSData+BFKit.h"
 #import "NSDictionary+BFKit.h"
 #import "NSFileManager+BFKit.h"
 #import "NSMutableArray+BFKit.h"

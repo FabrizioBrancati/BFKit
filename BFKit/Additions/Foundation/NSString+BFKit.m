@@ -268,16 +268,24 @@
     return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
 }
 
+- (NSString *)removeExtraSpaces
+{
+    NSString *squashed = [self stringByReplacingOccurrencesOfString:@"[ ]+" withString:@" " options:NSRegularExpressionSearch range:NSMakeRange(0, self.length)];
+    return [squashed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 - (NSString *)stringByReplacingWithRegex:(NSString *)regexString withString:(NSString *)replacement
 {
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionCaseInsensitive error:nil];
     return [regex stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length]) withTemplate:@""];
 }
 
--(NSString *)stringFromHEXstring{
+- (NSString *)HEXToString
+{
 	NSMutableString * newString = [NSMutableString string];
 	NSArray * components = [self componentsSeparatedByString:@" "];
-	for ( NSString * component in components ) {
+	for(NSString * component in components)
+    {
 		int value = 0;
 		sscanf([component cStringUsingEncoding:NSASCIIStringEncoding], "%x", &value);
 		[newString appendFormat:@"%c", (char)value];
@@ -285,17 +293,21 @@
 	return newString;
 }
 
--(NSString *)removeExtraSpaces{
-	NSString *squashed = [self stringByReplacingOccurrencesOfString:@"[ ]+"
-																   withString:@" "
-																	  options:NSRegularExpressionSearch
-																  range:NSMakeRange(0, self.length)];
-	NSString *final = [squashed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	return final;
-}
-
--(NSData *)HEXData{
-	return [self dataUsingEncoding:NSUTF8StringEncoding];
+- (NSString *)stringToHEX
+{
+    NSUInteger len = [self length];
+    unichar *chars = malloc(len * sizeof(unichar));
+    [self getCharacters:chars];
+    
+    NSMutableString *hexString = [[NSMutableString alloc] init];
+    
+    for(NSUInteger i = 0; i < len; i++ )
+    {
+        [hexString appendFormat:@"%02x", chars[i]];
+    }
+    free(chars);
+    
+    return hexString;
 }
 
 @end

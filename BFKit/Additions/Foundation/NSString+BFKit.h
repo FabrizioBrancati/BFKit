@@ -218,6 +218,13 @@
 - (NSString *)URLEncode;
 
 /**
+ *  Remove double or more duplicated spaces
+ *
+ *  @return String without additional spaces
+ */
+- (NSString *)removeExtraSpaces;
+
+/**
  *  Returns a new string containing matching regular expressions replaced with the template string
  *
  *  @param regexString The regex string
@@ -226,27 +233,15 @@
  *  @return Returns a new string containing matching regular expressions replaced with the template string
  */
 - (NSString *)stringByReplacingWithRegex:(NSString *)regexString withString:(NSString *)replacement;
+
 /**
  *  Convert HEX string (separated by space) to "usual" characters string.
  *	"68 65 6c 6c 6f" -> "hello"
  *
  *  @return Readable string
  */
--(NSString *)stringFromHEXstring;
+- (NSString *)HEXToString;
 
-/**
- *  Remove double or more duplicated spaces
- *
- *  @return String without additional spaces
- */
--(NSString *)removeExtraSpaces;
+- (NSString *)stringToHEX;
 
-/**
- *  Convert HEX string (separated by spaces) to NSData object
- *	From a NSString like @"Hello", returns the NSData of the string, <48656c6c 6f>.
- *	"68 65 6c 6c 6f" -> data bytes
- *
- *  @return NSData encoded string
- */
--(NSData *)HEXData;
 @end
