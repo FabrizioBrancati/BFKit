@@ -65,6 +65,8 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     if ([platform isEqualToString:@"iPhone6,2"])    return @"iPhone 5S (Global)";
     if ([platform isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
     if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
+    if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6S";
+    if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6S Plus";
     // iPod
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
@@ -99,10 +101,13 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     if ([platform isEqualToString:@"iPad4,7"])      return @"iPad mini 3 (WiFi)";
     if ([platform isEqualToString:@"iPad4,8"])      return @"iPad mini 3 (Cellular)";
     if ([platform isEqualToString:@"iPad4,9"])      return @"iPad mini 3 (China)";
+    if ([platform isEqualToString:@"iPad5,1"])      return @"iPad mini 4 (WiFi)";
+    if ([platform isEqualToString:@"iPad5,2"])      return @"iPad mini 4 (Cellular)";
     // Apple TV
     if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
     if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3G";
     if ([platform isEqualToString:@"AppleTV3,2"])   return @"Apple TV 3G";
+    if ([platform isEqualToString:@"AppleTV5,3"])   return @"Apple TV 4G";
     // Apple Watch
     if ([platform isEqualToString:@"Watch1,1"])     return @"Apple Watch 38mm";
     if ([platform isEqualToString:@"Watch1,2"])     return @"Apple Watch 42mm";
