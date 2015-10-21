@@ -236,12 +236,18 @@
 
 /**
  *  Convert HEX string (separated by space) to "usual" characters string.
- *	"68 65 6c 6c 6f" -> "hello"
+ *	Example: "68 65 6c 6c 6f" -> "hello"
  *
  *  @return Readable string
  */
 - (NSString *)HEXToString;
 
+/**
+ *  Convert string to HEX string
+ *	Example: "hello" -> "68656c6c6f"
+ *
+ *  @return HEX string
+ */
 - (NSString *)stringToHEX;
 
 @end
