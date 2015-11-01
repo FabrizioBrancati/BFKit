@@ -29,27 +29,30 @@
 
 @implementation NSString (BFKit)
 
-+ (NSString *)searchInString:(NSString *)string charStart:(char)start charEnd:(char)end
++ (NSString *)searchInString:(NSString *)string charStart:(char)charStart charEnd:(char)charEnd
 {
-    int inizio = 0, stop = 0;
+    int start = 0, end = 0;
     
-    for(int i = 0; i < [string length]; i++) 
+    for(int i = 0; i < [string length]; i++)
     {
-        if([string characterAtIndex:i] == start) 
+        if([string characterAtIndex:i] == charStart && start == 0)
         {
-            inizio = i+1;
+            start = i+1;
             i += 1;
+            continue;
         }
-        if([string characterAtIndex:i] == end) 
+        if([string characterAtIndex:i] == charEnd)
         {
-            stop = i;
+            end = i;
             break;
         }
     }
     
-    stop -= inizio;
+    end -= start;
     
-    return [[string substringFromIndex:inizio] substringToIndex:stop];
+    if (end < 0) end = 0;
+    
+    return [[string substringFromIndex:start] substringToIndex:end];
 }
 
 - (NSString *)searchCharStart:(char)start charEnd:(char)end
