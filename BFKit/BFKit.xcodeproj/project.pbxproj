@@ -10,79 +10,79 @@
 		492C96961BEE593800CDC75F /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96951BEE593800CDC75F /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C969D1BEE593800CDC75F /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492C96921BEE593800CDC75F /* BFKit.framework */; };
 		492C96A21BEE593800CDC75F /* BFKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96A11BEE593800CDC75F /* BFKitTests.m */; };
-		492C97031BEE59C200CDC75F /* NSArray+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96AE1BEE59C200CDC75F /* NSArray+BFKit.h */; };
+		492C97031BEE59C200CDC75F /* NSArray+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96AE1BEE59C200CDC75F /* NSArray+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97041BEE59C200CDC75F /* NSArray+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96AF1BEE59C200CDC75F /* NSArray+BFKit.m */; };
-		492C97051BEE59C200CDC75F /* NSDate+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B01BEE59C200CDC75F /* NSDate+BFKit.h */; };
+		492C97051BEE59C200CDC75F /* NSDate+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B01BEE59C200CDC75F /* NSDate+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97061BEE59C200CDC75F /* NSDate+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96B11BEE59C200CDC75F /* NSDate+BFKit.m */; };
-		492C97071BEE59C200CDC75F /* NSDictionary+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B21BEE59C200CDC75F /* NSDictionary+BFKit.h */; };
+		492C97071BEE59C200CDC75F /* NSDictionary+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B21BEE59C200CDC75F /* NSDictionary+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97081BEE59C200CDC75F /* NSDictionary+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96B31BEE59C200CDC75F /* NSDictionary+BFKit.m */; };
-		492C97091BEE59C200CDC75F /* NSFileManager+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B41BEE59C200CDC75F /* NSFileManager+BFKit.h */; };
+		492C97091BEE59C200CDC75F /* NSFileManager+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B41BEE59C200CDC75F /* NSFileManager+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C970A1BEE59C200CDC75F /* NSFileManager+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96B51BEE59C200CDC75F /* NSFileManager+BFKit.m */; };
-		492C970B1BEE59C200CDC75F /* NSMutableArray+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B61BEE59C200CDC75F /* NSMutableArray+BFKit.h */; };
+		492C970B1BEE59C200CDC75F /* NSMutableArray+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B61BEE59C200CDC75F /* NSMutableArray+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C970C1BEE59C200CDC75F /* NSMutableArray+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96B71BEE59C200CDC75F /* NSMutableArray+BFKit.m */; };
-		492C970D1BEE59C200CDC75F /* NSMutableDictionary+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B81BEE59C200CDC75F /* NSMutableDictionary+BFKit.h */; };
+		492C970D1BEE59C200CDC75F /* NSMutableDictionary+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96B81BEE59C200CDC75F /* NSMutableDictionary+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C970E1BEE59C200CDC75F /* NSMutableDictionary+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96B91BEE59C200CDC75F /* NSMutableDictionary+BFKit.m */; };
-		492C970F1BEE59C200CDC75F /* NSNumber+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96BA1BEE59C200CDC75F /* NSNumber+BFKit.h */; };
+		492C970F1BEE59C200CDC75F /* NSNumber+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96BA1BEE59C200CDC75F /* NSNumber+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97101BEE59C200CDC75F /* NSNumber+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96BB1BEE59C200CDC75F /* NSNumber+BFKit.m */; };
-		492C97111BEE59C200CDC75F /* NSObject+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96BC1BEE59C200CDC75F /* NSObject+BFKit.h */; };
+		492C97111BEE59C200CDC75F /* NSObject+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96BC1BEE59C200CDC75F /* NSObject+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97121BEE59C200CDC75F /* NSObject+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96BD1BEE59C200CDC75F /* NSObject+BFKit.m */; };
-		492C97131BEE59C200CDC75F /* NSProcessInfo+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96BE1BEE59C200CDC75F /* NSProcessInfo+BFKit.h */; };
+		492C97131BEE59C200CDC75F /* NSProcessInfo+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96BE1BEE59C200CDC75F /* NSProcessInfo+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97141BEE59C200CDC75F /* NSProcessInfo+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96BF1BEE59C200CDC75F /* NSProcessInfo+BFKit.m */; };
-		492C97151BEE59C200CDC75F /* NSString+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C01BEE59C200CDC75F /* NSString+BFKit.h */; };
+		492C97151BEE59C200CDC75F /* NSString+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C01BEE59C200CDC75F /* NSString+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97161BEE59C200CDC75F /* NSString+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96C11BEE59C200CDC75F /* NSString+BFKit.m */; };
-		492C97171BEE59C200CDC75F /* NSThread+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C21BEE59C200CDC75F /* NSThread+BFKit.h */; };
+		492C97171BEE59C200CDC75F /* NSThread+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C21BEE59C200CDC75F /* NSThread+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97181BEE59C200CDC75F /* NSThread+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96C31BEE59C200CDC75F /* NSThread+BFKit.m */; };
-		492C97191BEE59C200CDC75F /* UIBarButtonItem+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C51BEE59C200CDC75F /* UIBarButtonItem+BFKit.h */; };
+		492C97191BEE59C200CDC75F /* UIBarButtonItem+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C51BEE59C200CDC75F /* UIBarButtonItem+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C971A1BEE59C200CDC75F /* UIBarButtonItem+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96C61BEE59C200CDC75F /* UIBarButtonItem+BFKit.m */; };
-		492C971B1BEE59C200CDC75F /* UIButton+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C71BEE59C200CDC75F /* UIButton+BFKit.h */; };
+		492C971B1BEE59C200CDC75F /* UIButton+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C71BEE59C200CDC75F /* UIButton+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C971C1BEE59C200CDC75F /* UIButton+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96C81BEE59C200CDC75F /* UIButton+BFKit.m */; };
-		492C971D1BEE59C200CDC75F /* UIColor+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C91BEE59C200CDC75F /* UIColor+BFKit.h */; };
+		492C971D1BEE59C200CDC75F /* UIColor+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96C91BEE59C200CDC75F /* UIColor+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C971E1BEE59C200CDC75F /* UIColor+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96CA1BEE59C200CDC75F /* UIColor+BFKit.m */; };
-		492C971F1BEE59C200CDC75F /* UIDevice+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96CB1BEE59C200CDC75F /* UIDevice+BFKit.h */; };
+		492C971F1BEE59C200CDC75F /* UIDevice+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96CB1BEE59C200CDC75F /* UIDevice+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97201BEE59C200CDC75F /* UIDevice+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96CC1BEE59C200CDC75F /* UIDevice+BFKit.m */; };
-		492C97211BEE59C200CDC75F /* UIFont+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96CD1BEE59C200CDC75F /* UIFont+BFKit.h */; };
+		492C97211BEE59C200CDC75F /* UIFont+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96CD1BEE59C200CDC75F /* UIFont+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97221BEE59C200CDC75F /* UIFont+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96CE1BEE59C200CDC75F /* UIFont+BFKit.m */; };
-		492C97231BEE59C200CDC75F /* UIImage+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96CF1BEE59C200CDC75F /* UIImage+BFKit.h */; };
+		492C97231BEE59C200CDC75F /* UIImage+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96CF1BEE59C200CDC75F /* UIImage+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97241BEE59C200CDC75F /* UIImage+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96D01BEE59C200CDC75F /* UIImage+BFKit.m */; };
-		492C97251BEE59C200CDC75F /* UIImageView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D11BEE59C200CDC75F /* UIImageView+BFKit.h */; };
+		492C97251BEE59C200CDC75F /* UIImageView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D11BEE59C200CDC75F /* UIImageView+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97261BEE59C200CDC75F /* UIImageView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96D21BEE59C200CDC75F /* UIImageView+BFKit.m */; };
-		492C97271BEE59C200CDC75F /* UILabel+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D31BEE59C200CDC75F /* UILabel+BFKit.h */; };
+		492C97271BEE59C200CDC75F /* UILabel+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D31BEE59C200CDC75F /* UILabel+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97281BEE59C200CDC75F /* UILabel+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96D41BEE59C200CDC75F /* UILabel+BFKit.m */; };
-		492C97291BEE59C200CDC75F /* UINavigationBar+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D51BEE59C200CDC75F /* UINavigationBar+BFKit.h */; };
+		492C97291BEE59C200CDC75F /* UINavigationBar+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D51BEE59C200CDC75F /* UINavigationBar+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C972A1BEE59C200CDC75F /* UINavigationBar+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96D61BEE59C200CDC75F /* UINavigationBar+BFKit.m */; };
-		492C972B1BEE59C200CDC75F /* UIScreen+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D71BEE59C200CDC75F /* UIScreen+BFKit.h */; };
+		492C972B1BEE59C200CDC75F /* UIScreen+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D71BEE59C200CDC75F /* UIScreen+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C972C1BEE59C200CDC75F /* UIScreen+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96D81BEE59C200CDC75F /* UIScreen+BFKit.m */; };
-		492C972D1BEE59C200CDC75F /* UIScrollView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D91BEE59C200CDC75F /* UIScrollView+BFKit.h */; };
+		492C972D1BEE59C200CDC75F /* UIScrollView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96D91BEE59C200CDC75F /* UIScrollView+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C972E1BEE59C200CDC75F /* UIScrollView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96DA1BEE59C200CDC75F /* UIScrollView+BFKit.m */; };
-		492C972F1BEE59C200CDC75F /* UITableView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96DB1BEE59C200CDC75F /* UITableView+BFKit.h */; };
+		492C972F1BEE59C200CDC75F /* UITableView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96DB1BEE59C200CDC75F /* UITableView+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97301BEE59C200CDC75F /* UITableView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96DC1BEE59C200CDC75F /* UITableView+BFKit.m */; };
-		492C97311BEE59C200CDC75F /* UITextField+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96DD1BEE59C200CDC75F /* UITextField+BFKit.h */; };
+		492C97311BEE59C200CDC75F /* UITextField+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96DD1BEE59C200CDC75F /* UITextField+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97321BEE59C200CDC75F /* UITextField+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96DE1BEE59C200CDC75F /* UITextField+BFKit.m */; };
-		492C97331BEE59C200CDC75F /* UITextView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96DF1BEE59C200CDC75F /* UITextView+BFKit.h */; };
+		492C97331BEE59C200CDC75F /* UITextView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96DF1BEE59C200CDC75F /* UITextView+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97341BEE59C200CDC75F /* UITextView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E01BEE59C200CDC75F /* UITextView+BFKit.m */; };
-		492C97351BEE59C200CDC75F /* UIToolbar+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E11BEE59C200CDC75F /* UIToolbar+BFKit.h */; };
+		492C97351BEE59C200CDC75F /* UIToolbar+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E11BEE59C200CDC75F /* UIToolbar+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97361BEE59C200CDC75F /* UIToolbar+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E21BEE59C200CDC75F /* UIToolbar+BFKit.m */; };
-		492C97371BEE59C200CDC75F /* UIView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E31BEE59C200CDC75F /* UIView+BFKit.h */; };
+		492C97371BEE59C200CDC75F /* UIView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E31BEE59C200CDC75F /* UIView+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97381BEE59C200CDC75F /* UIView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E41BEE59C200CDC75F /* UIView+BFKit.m */; };
-		492C97391BEE59C200CDC75F /* UIWebView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E51BEE59C200CDC75F /* UIWebView+BFKit.h */; };
+		492C97391BEE59C200CDC75F /* UIWebView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E51BEE59C200CDC75F /* UIWebView+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C973A1BEE59C200CDC75F /* UIWebView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E61BEE59C200CDC75F /* UIWebView+BFKit.m */; };
-		492C973B1BEE59C200CDC75F /* UIWindow+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E71BEE59C200CDC75F /* UIWindow+BFKit.h */; };
+		492C973B1BEE59C200CDC75F /* UIWindow+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E71BEE59C200CDC75F /* UIWindow+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C973C1BEE59C200CDC75F /* UIWindow+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E81BEE59C200CDC75F /* UIWindow+BFKit.m */; };
-		492C973D1BEE59C200CDC75F /* BFApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96EA1BEE59C200CDC75F /* BFApp.h */; };
+		492C973D1BEE59C200CDC75F /* BFApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96EA1BEE59C200CDC75F /* BFApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C973E1BEE59C200CDC75F /* BFApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96EB1BEE59C200CDC75F /* BFApp.m */; };
-		492C973F1BEE59C200CDC75F /* BFButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96EC1BEE59C200CDC75F /* BFButton.h */; };
+		492C973F1BEE59C200CDC75F /* BFButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96EC1BEE59C200CDC75F /* BFButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97401BEE59C200CDC75F /* BFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96ED1BEE59C200CDC75F /* BFButton.m */; };
-		492C97411BEE59C200CDC75F /* BFDataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96EE1BEE59C200CDC75F /* BFDataStructures.h */; };
+		492C97411BEE59C200CDC75F /* BFDataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96EE1BEE59C200CDC75F /* BFDataStructures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97421BEE59C200CDC75F /* BFDataStructures.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96EF1BEE59C200CDC75F /* BFDataStructures.m */; };
-		492C97431BEE59C200CDC75F /* BFLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F01BEE59C200CDC75F /* BFLog.h */; };
+		492C97431BEE59C200CDC75F /* BFLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F01BEE59C200CDC75F /* BFLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97441BEE59C200CDC75F /* BFLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96F11BEE59C200CDC75F /* BFLog.m */; };
-		492C97451BEE59C200CDC75F /* BFPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F21BEE59C200CDC75F /* BFPassword.h */; };
+		492C97451BEE59C200CDC75F /* BFPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F21BEE59C200CDC75F /* BFPassword.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97461BEE59C200CDC75F /* BFPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96F31BEE59C200CDC75F /* BFPassword.m */; };
-		492C97471BEE59C200CDC75F /* BFSystemSound.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F41BEE59C200CDC75F /* BFSystemSound.h */; };
+		492C97471BEE59C200CDC75F /* BFSystemSound.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F41BEE59C200CDC75F /* BFSystemSound.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97481BEE59C200CDC75F /* BFSystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96F51BEE59C200CDC75F /* BFSystemSound.m */; };
-		492C97491BEE59C200CDC75F /* BFTouchID.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F61BEE59C200CDC75F /* BFTouchID.h */; };
+		492C97491BEE59C200CDC75F /* BFTouchID.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F61BEE59C200CDC75F /* BFTouchID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C974A1BEE59C200CDC75F /* BFTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96F71BEE59C200CDC75F /* BFTouchID.m */; };
-		492C974B1BEE59C200CDC75F /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F81BEE59C200CDC75F /* BFKit.h */; };
+		492C974B1BEE59C200CDC75F /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F81BEE59C200CDC75F /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C974C1BEE59C200CDC75F /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492C96FA1BEE59C200CDC75F /* BFKit.strings */; };
 /* End PBXBuildFile section */
 
@@ -386,7 +386,6 @@
 				492C97211BEE59C200CDC75F /* UIFont+BFKit.h in Headers */,
 				492C971B1BEE59C200CDC75F /* UIButton+BFKit.h in Headers */,
 				492C97271BEE59C200CDC75F /* UILabel+BFKit.h in Headers */,
-				492C974B1BEE59C200CDC75F /* BFKit.h in Headers */,
 				492C971D1BEE59C200CDC75F /* UIColor+BFKit.h in Headers */,
 				492C97031BEE59C200CDC75F /* NSArray+BFKit.h in Headers */,
 				492C97091BEE59C200CDC75F /* NSFileManager+BFKit.h in Headers */,
@@ -396,13 +395,14 @@
 				492C97351BEE59C200CDC75F /* UIToolbar+BFKit.h in Headers */,
 				492C97191BEE59C200CDC75F /* UIBarButtonItem+BFKit.h in Headers */,
 				492C97051BEE59C200CDC75F /* NSDate+BFKit.h in Headers */,
-				492C96961BEE593800CDC75F /* BFKit.h in Headers */,
 				492C97311BEE59C200CDC75F /* UITextField+BFKit.h in Headers */,
 				492C971F1BEE59C200CDC75F /* UIDevice+BFKit.h in Headers */,
 				492C973D1BEE59C200CDC75F /* BFApp.h in Headers */,
 				492C97491BEE59C200CDC75F /* BFTouchID.h in Headers */,
 				492C97411BEE59C200CDC75F /* BFDataStructures.h in Headers */,
 				492C97331BEE59C200CDC75F /* UITextView+BFKit.h in Headers */,
+				492C974B1BEE59C200CDC75F /* BFKit.h in Headers */,
+				492C96961BEE593800CDC75F /* BFKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
