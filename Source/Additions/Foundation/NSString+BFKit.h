@@ -250,4 +250,11 @@
  */
 - (NSString *)stringToHEX;
 
+/**
+ *  Used to create an UUID as NSString
+ *
+ *  @return Returns the created UUID string
+ */
++ (NSString *)generateUUID;
+
 @end

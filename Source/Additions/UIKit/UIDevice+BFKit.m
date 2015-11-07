@@ -52,19 +52,20 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 2G";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
     if ([platform isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
-    if ([platform isEqualToString:@"iPhone3,1"])    return @"iPhone 4";
+    if ([platform isEqualToString:@"iPhone3,1"])    return @"iPhone 4 (GSM)";
+    if ([platform isEqualToString:@"iPhone3,1"])    return @"iPhone 4 (Rev. A)";
     if ([platform isEqualToString:@"iPhone3,3"])    return @"iPhone 4 (CDMA)";
     if ([platform isEqualToString:@"iPhone4,1"])    return @"iPhone 4S";
     if ([platform isEqualToString:@"iPhone5,1"])    return @"iPhone 5 (GSM)";
     if ([platform isEqualToString:@"iPhone5,2"])    return @"iPhone 5 (CDMA)";
-    if ([platform isEqualToString:@"iPhone5,3"])    return @"iPhone 5C (GSM)";
-    if ([platform isEqualToString:@"iPhone5,4"])    return @"iPhone 5C (Global)";
-    if ([platform isEqualToString:@"iPhone6,1"])    return @"iPhone 5S (GSM)";
-    if ([platform isEqualToString:@"iPhone6,2"])    return @"iPhone 5S (Global)";
+    if ([platform isEqualToString:@"iPhone5,3"])    return @"iPhone 5c (GSM)";
+    if ([platform isEqualToString:@"iPhone5,4"])    return @"iPhone 5c (Global)";
+    if ([platform isEqualToString:@"iPhone6,1"])    return @"iPhone 5s (GSM)";
+    if ([platform isEqualToString:@"iPhone6,2"])    return @"iPhone 5s (Global)";
     if ([platform isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
     if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
-    if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6S";
-    if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6S Plus";
+    if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6s";
+    if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
     // iPod
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
@@ -101,6 +102,9 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     if ([platform isEqualToString:@"iPad4,9"])      return @"iPad mini 3 (China)";
     if ([platform isEqualToString:@"iPad5,1"])      return @"iPad mini 4 (WiFi)";
     if ([platform isEqualToString:@"iPad5,2"])      return @"iPad mini 4 (Cellular)";
+    // iPad Pro
+    if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro (WiFi)";
+    if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro (Cellular)";
     // Apple TV
     if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
     if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3G";
@@ -112,6 +116,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     // Simulator
     if ([platform isEqualToString:@"i386"])         return @"Simulator";
     if ([platform isEqualToString:@"x86_64"])       return @"Simulator";
+    
     return platform;
 }
 
@@ -271,19 +276,12 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         uuid = [defaults objectForKey:BFUniqueIdentifierDefaultsKey];
         if (!uuid) {
-            uuid = [self generateUUID];
+            uuid = [NSString generateUUID];
             [defaults setObject:uuid forKey:BFUniqueIdentifierDefaultsKey];
             [defaults synchronize];
         }
     }
     return uuid;
-}
-
-+ (NSString *)generateUUID {
-    CFUUIDRef theUUID = CFUUIDCreate(NULL);
-    CFStringRef string = CFUUIDCreateString(NULL, theUUID);
-    CFRelease(theUUID);
-    return (__bridge_transfer NSString *)string;
 }
 
 @end
