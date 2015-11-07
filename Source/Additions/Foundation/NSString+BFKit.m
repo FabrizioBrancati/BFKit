@@ -285,8 +285,8 @@
 
 - (NSString *)HEXToString
 {
-	NSMutableString * newString = [NSMutableString string];
-	NSArray * components = [self componentsSeparatedByString:@" "];
+	NSMutableString *newString = [NSMutableString string];
+	NSArray *components = [self componentsSeparatedByString:@" "];
 	for(NSString * component in components)
     {
 		int value = 0;

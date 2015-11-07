@@ -243,7 +243,7 @@
 - (NSString *)HEXToString;
 
 /**
- *  Convert string to HEX string
+ *  Convert string to HEX string.
  *	Example: "hello" -> "68656c6c6f"
  *
  *  @return HEX string
