@@ -145,6 +145,20 @@
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
 
 /**
+ *  Flip the image horizontally
+ *
+ *  @return Returns the flipped image
+ */
+- (UIImage *)flipImageHorizontally;
+
+/**
+ *  Flip the image vertically
+ *
+ *  @return Returns the flipped image
+ */
+- (UIImage *)flipImageVertically;
+
+/**
  *  Check if the image has alpha
  *
  *  @return Returns YES if has alpha, NO if not

@@ -417,7 +417,7 @@
 		490276E419BDF3F8009B8BC1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Fabrizio Brancati";
 			};
 			buildConfigurationList = 490276E719BDF3F8009B8BC1 /* Build configuration list for PBXProject "BFKitDemo" */;
@@ -568,6 +568,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Fabrizio Brancati (63PBW86687)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fabrizio Brancati (63PBW86687)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -609,6 +610,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fabrizio Brancati (2PN5CL25E2)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -636,6 +638,7 @@
 				GCC_PREFIX_HEADER = "BFKitDemo/BFKitDemo-Prefix.pch";
 				INFOPLIST_FILE = "BFKitDemo/BFKitDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.FabrizioBrancati.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -654,6 +657,7 @@
 				GCC_PREFIX_HEADER = "BFKitDemo/BFKitDemo-Prefix.pch";
 				INFOPLIST_FILE = "BFKitDemo/BFKitDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.FabrizioBrancati.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
