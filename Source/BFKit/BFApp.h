@@ -81,4 +81,36 @@
  */
 + (void)onFirstStartForCurrentVersion:(void (^)(BOOL isFirstStartForCurrentVersion))block;
 
+/**
+ *  Executes a block on first start of the App for current given version.
+ *  Remember to execute UI instuctions on main thread
+ *
+ *  @param version Version to be checked
+ *  @param block   The block to execute, returns isFirstStartForVersion
+ */
++ (void)onFirstStartForVersion:(NSString *)version block:(void (^)(BOOL isFirstStartForCurrentVersion))block;
+
+/**
+ *  Returns if is the first start of the App
+ *
+ *  @return Returns if is the first start of the App
+ */
++ (BOOL)isFirstStart;
+
+/**
+ *  Returns if is the first start of the App for current version
+ *
+ *  @return Returns if is the first start of the App for current version
+ */
++ (BOOL)isFirstStartForCurrentVersion;
+
+/**
+ *  Returns if is the first start of the App for the given version
+ *
+ *  @param version Version to be checked
+ *
+ *  @return Returns if is the first start of the App for the given version
+ */
++ (BOOL)isFirstStartForVersion:(NSString *)version;
+
 @end

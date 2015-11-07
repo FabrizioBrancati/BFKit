@@ -34,7 +34,7 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
 + (void)onFirstStart:(void (^)(BOOL isFirstStart))block {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL hasBeenOpened = [defaults boolForKey:BFHasBeenOpened];
-    if (!hasBeenOpened) {
+    if (hasBeenOpened != true) {
         [defaults setBool:YES forKey:BFHasBeenOpened];
         [defaults synchronize];
     }
@@ -43,15 +43,59 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
 }
 
 + (void)onFirstStartForCurrentVersion:(void (^)(BOOL isFirstStartForCurrentVersion))block {
-    BFHasBeenOpenedForCurrentVersion = [NSString stringWithFormat:@"BFHasBeenOpened%@", APP_VERSION];
+    BFHasBeenOpenedForCurrentVersion = [NSString stringWithFormat:@"%@%@", BFHasBeenOpened, APP_VERSION];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL hasBeenOpenedForCurrentVersion = [defaults boolForKey:BFHasBeenOpenedForCurrentVersion];
-    if (!hasBeenOpenedForCurrentVersion) {
+    if (hasBeenOpenedForCurrentVersion != true) {
         [defaults setBool:YES forKey:BFHasBeenOpenedForCurrentVersion];
         [defaults synchronize];
     }
     
     block(!hasBeenOpenedForCurrentVersion);
+}
+
++ (void)onFirstStartForVersion:(NSString *)version block:(void (^)(BOOL isFirstStartForCurrentVersion))block {
+    NSString *BFHasBeenOpenedForVersion = [NSString stringWithFormat:@"%@%@", BFHasBeenOpened, version];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL hasBeenOpenedForVersion = [defaults boolForKey:BFHasBeenOpenedForCurrentVersion];
+    if (hasBeenOpenedForVersion != true) {
+        [defaults setBool:YES forKey:BFHasBeenOpenedForVersion];
+        [defaults synchronize];
+    }
+    
+    block(!hasBeenOpenedForVersion);
+}
+
++ (BOOL)isFirstStart {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL hasBeenOpened = [defaults boolForKey:BFHasBeenOpened];
+    if (hasBeenOpened != true) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
++ (BOOL)isFirstStartForCurrentVersion {
+    BFHasBeenOpenedForCurrentVersion = [NSString stringWithFormat:@"%@%@", BFHasBeenOpened, APP_VERSION];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL hasBeenOpenedForCurrentVersion = [defaults boolForKey:BFHasBeenOpenedForCurrentVersion];
+    if (hasBeenOpenedForCurrentVersion != true) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
++ (BOOL)isFirstStartForVersion:(NSString *)version {
+    NSString *BFHasBeenOpenedForVersion = [NSString stringWithFormat:@"%@%@", BFHasBeenOpened, version];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL hasBeenOpenedForVersion = [defaults boolForKey:BFHasBeenOpenedForVersion];
+    if (hasBeenOpenedForVersion != true) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end
