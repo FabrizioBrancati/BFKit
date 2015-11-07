@@ -28,21 +28,16 @@
 
 @implementation UINavigationBar (BFKit)
 
-- (void)setTransparent:(BOOL)transparent
-{
+- (void)setTransparent:(BOOL)transparent {
     [self setTransparent:transparent translucent:YES];
 }
 
-- (void)setTransparent:(BOOL)transparent translucent:(BOOL)translucent
-{
-    if(transparent)
-    {
+- (void)setTransparent:(BOOL)transparent translucent:(BOOL)translucent {
+    if (transparent) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         self.shadowImage = [UIImage new];
         self.translucent = translucent;
-    }
-    else
-    {
+    } else {
         [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
         self.shadowImage = nil;
         self.translucent = translucent;

@@ -31,12 +31,10 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
 
 @implementation BFApp
 
-+ (void)onFirstStart:(void (^)(BOOL isFirstStart))block
-{
++ (void)onFirstStart:(void (^)(BOOL isFirstStart))block {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL hasBeenOpened = [defaults boolForKey:BFHasBeenOpened];
-    if(!hasBeenOpened)
-    {
+    if (!hasBeenOpened) {
         [defaults setBool:YES forKey:BFHasBeenOpened];
         [defaults synchronize];
     }
@@ -44,13 +42,11 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
     block(!hasBeenOpened);
 }
 
-+ (void)onFirstStartForCurrentVersion:(void (^)(BOOL isFirstStartForCurrentVersion))block
-{
++ (void)onFirstStartForCurrentVersion:(void (^)(BOOL isFirstStartForCurrentVersion))block {
     BFHasBeenOpenedForCurrentVersion = [NSString stringWithFormat:@"BFHasBeenOpened%@", APP_VERSION];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL hasBeenOpenedForCurrentVersion = [defaults boolForKey:BFHasBeenOpenedForCurrentVersion];
-    if(!hasBeenOpenedForCurrentVersion)
-    {
+    if (!hasBeenOpenedForCurrentVersion) {
         [defaults setBool:YES forKey:BFHasBeenOpenedForCurrentVersion];
         [defaults synchronize];
     }

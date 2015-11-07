@@ -30,7 +30,7 @@
 /**
  *  Audio IDs enum - http://iphonedevwiki.net/index.php/AudioServices
  */
-typedef NS_ENUM(NSInteger, AudioID){
+typedef NS_ENUM(NSInteger, AudioID) {
     /**
      *  New Mail
      */

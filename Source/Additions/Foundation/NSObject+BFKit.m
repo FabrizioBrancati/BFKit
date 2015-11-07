@@ -28,16 +28,13 @@
 
 @implementation NSObject (BFKit)
 
-- (BOOL)isValid
-{
+- (BOOL)isValid {
     return !(self == nil || [self isKindOfClass:[NSNull class]]);
 }
 
-- (id)performSelector:(SEL)aSelector withObjects:(id)object, ...
-{
+- (id)performSelector:(SEL)aSelector withObjects:(id)object, ... {
     NSMethodSignature *signature = [self methodSignatureForSelector:aSelector];
-    if(signature)
-    {
+    if (signature) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
         [invocation setTarget:self];
         [invocation setSelector:aSelector];
@@ -49,8 +46,7 @@
         
         id arg = nil;
         int index = 3;
-        while((arg = va_arg(args, id)))
-        {
+        while ((arg = va_arg(args, id))) {
             [invocation setArgument:&arg atIndex:index];
             index++;
         }
@@ -58,19 +54,14 @@
         va_end(args);
         
         [invocation invoke];
-        if(signature.methodReturnLength)
-        {
+        if (signature.methodReturnLength) {
             id anObject;
             [invocation getReturnValue:&anObject];
             return anObject;
-        }
-        else
-        {
+        } else {
             return nil;
         }
-    }
-    else
-    {
+    } else {
         return nil;
     }
 }

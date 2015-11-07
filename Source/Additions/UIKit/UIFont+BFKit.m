@@ -30,15 +30,13 @@
 
 @implementation UIFont (BFKit)
 
-+ (NSDictionary *)allFamilyAndFonts
-{
++ (NSDictionary *)allFamilyAndFonts {
     NSMutableArray *fontFamilies = (NSMutableArray *)[UIFont familyNames];
     fontFamilies = [NSMutableArray sortArrayByKey:@"" array:fontFamilies ascending:YES];
     
     NSMutableDictionary *fontFamilyDic = [[NSMutableDictionary alloc] init];
     
-    for(int i = 0; i < [fontFamilies count]; i++)
-    {
+    for (int i = 0; i < [fontFamilies count]; i++) {
         NSString *fontFamily = [fontFamilies objectAtIndex:i];
         NSArray *fontNames = [UIFont fontNamesForFamilyName:fontFamily];
         [fontFamilyDic setObject:fontNames forKey:fontFamily];
@@ -49,12 +47,10 @@
     return fontFamilyDic;
 }
 
-+ (NSArray *)fontsNameForFamilyName:(FamilyFontName)familyFontName
-{
++ (NSArray *)fontsNameForFamilyName:(FamilyFontName)familyFontName {
     NSArray *fontNames;
     
-    switch(familyFontName)
-    {
+    switch (familyFontName) {
         case FamilyFontNameAcademyEngravedLET:
             fontNames = [UIFont fontNamesForFamilyName:@"Academy Engraved LET"];
             break;
@@ -280,9 +276,6 @@
         case FamilyFontNameZapfino:
             fontNames = [UIFont fontNamesForFamilyName:@"Zapfino"];
             break;
-        default:
-            fontNames = nil;
-            break;
     }
     
     BFLog(@"%@", fontNames);
@@ -290,10 +283,8 @@
     return fontNames;
 }
 
-+ (UIFont *)fontForFontName:(FontName)fontName size:(CGFloat)fontSize
-{
-    switch(fontName)
-    {
++ (UIFont *)fontForFontName:(FontName)fontName size:(CGFloat)fontSize {
+    switch (fontName) {
         case FontNameAcademyEngravedLetPlain:
             return [UIFont fontWithName:@"AcademyEngravedLetPlain" size:fontSize];
         case FontNameAlNile:
@@ -784,8 +775,6 @@
             return [UIFont fontWithName:@"ZapfDingbatsITC" size:fontSize];
         case FontNameZapfino:
             return [UIFont fontWithName:@"Zapfino" size:fontSize];
-        default:
-            return nil;
     }
 }
 

@@ -28,8 +28,7 @@
 
 @implementation BFPassword
 
-+ (PasswordStrengthLevel)checkPasswordStrength:(NSString *)password
-{
++ (PasswordStrengthLevel)checkPasswordStrength:(NSString *)password {
     NSInteger length = [password length];
     int lowercase = [self countLowercaseLetters:password];
     int uppercase = [self countUppercaseLetters:password];
@@ -38,52 +37,52 @@
     
     int score = 0;
     
-    if(length < 5)
+    if (length < 5)
         score += 5;
     else
-        if(length > 4 && length < 8)
+        if (length > 4 && length < 8)
             score += 10;
         else
-            if(length > 7)
+            if (length > 7)
                 score += 20;
     
-    if(numbers == 1)
+    if (numbers == 1)
         score += 10;
     else
-        if(numbers == 2)
+        if (numbers == 2)
             score += 15;
         else
-            if(numbers > 2)
+            if (numbers > 2)
                 score += 20;
     
-    if(symbols == 1)
+    if (symbols == 1)
         score += 10;
     else
-        if(symbols == 2)
+        if (symbols == 2)
             score += 15;
         else
-            if(symbols > 2)
+            if (symbols > 2)
                 score += 20;
     
-    if(lowercase == 1)
+    if (lowercase == 1)
         score += 10;
     else
-        if(lowercase == 2)
+        if (lowercase == 2)
             score += 15;
         else
-            if(lowercase > 2)
+            if (lowercase > 2)
                 score += 20;
     
-    if(uppercase == 1)
+    if (uppercase == 1)
         score += 10;
     else
-        if(uppercase == 2)
+        if (uppercase == 2)
             score += 15;
     else
-        if(uppercase > 2)
+        if (uppercase > 2)
             score += 20;
     
-    if(score == 100)
+    if (score == 100)
         return PasswordStrengthLevelVerySecure;
     else
         if (score >= 90)
@@ -104,57 +103,53 @@
                             return PasswordStrengthLevelVeryWeak;
 }
 
-+ (int)countLowercaseLetters:(NSString *)password
-{
++ (int)countLowercaseLetters:(NSString *)password {
     int count = 0;
     
-    for (int i = 0; i < [password length]; i++)
-    {
+    for (int i = 0; i < [password length]; i++) {
         BOOL isLowercase = [[NSCharacterSet lowercaseLetterCharacterSet] characterIsMember:[password characterAtIndex:i]];
-        if(isLowercase == YES)
+        if (isLowercase == YES) {
             count++;
+        }
     }
     
     return count;
 }
 
-+ (int)countUppercaseLetters:(NSString *)password
-{
++ (int)countUppercaseLetters:(NSString *)password {
     int count = 0;
     
-    for (int i = 0; i < [password length]; i++)
-    {
+    for (int i = 0; i < [password length]; i++) {
         BOOL isUppercase = [[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[password characterAtIndex:i]];
-        if(isUppercase == YES)
+        if (isUppercase == YES) {
             count++;
+        }
     }
     
     return count;
 }
 
-+ (int)countNumbers:(NSString *)password
-{
++ (int)countNumbers:(NSString *)password {
     int count = 0;
     
-    for (int i = 0; i < [password length]; i++)
-    {
+    for (int i = 0; i < [password length]; i++) {
         BOOL isNumber = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] characterIsMember:[password characterAtIndex:i]];
-        if(isNumber == YES)
+        if (isNumber == YES) {
             count++;
+        }
     }
     
     return count;
 }
 
-+ (int)countSymbols:(NSString *)password
-{
++ (int)countSymbols:(NSString *)password {
     int count = 0;
     
-    for (int i = 0; i < [password length]; i++)
-    {
+    for (int i = 0; i < [password length]; i++) {
         BOOL isSymbol = [[NSCharacterSet characterSetWithCharactersInString:@"`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/"] characterIsMember:[password characterAtIndex:i]];
-        if(isSymbol == YES)
+        if (isSymbol == YES) {
             count++;
+        }
     }
     
     return count;

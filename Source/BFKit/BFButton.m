@@ -35,10 +35,8 @@
 
 @implementation BFButton
 
-- (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage fadeDuration:(CGFloat)fadeDuration
-{
-    if((self = [BFButton buttonWithType:UIButtonTypeCustom]))
-    {
+- (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage fadeDuration:(CGFloat)fadeDuration {
+    if ((self = [BFButton buttonWithType:UIButtonTypeCustom])) {
         self.frame = frame;
         
         self.fadeDuration = fadeDuration;
@@ -55,18 +53,14 @@
 }
 
 
-- (void)setHighlighted:(BOOL)highlighted
-{
-    if(![self isHighlighted] && highlighted)
-    {
+- (void)setHighlighted:(BOOL)highlighted {
+    if (![self isHighlighted] && highlighted) {
         [self addSubview:self.overlayImgView];
         
         [UIView animateWithDuration:self.fadeDuration animations:^{
             self.overlayImgView.alpha = 1;
         } completion:NULL];
-    }
-    else if([self isHighlighted] && !highlighted)
-    {
+    } else if ([self isHighlighted] && !highlighted) {
         [UIView animateWithDuration:self.fadeDuration animations:^{
             self.overlayImgView.alpha = 0;
         } completion:^(BOOL finished) {
@@ -77,10 +71,8 @@
     [super setHighlighted:highlighted];
 }
 
-- (void)setOverlayImgView:(UIImageView *)overlayImgView
-{
-    if(overlayImgView != _overlayImgView)
-    {
+- (void)setOverlayImgView:(UIImageView *)overlayImgView {
+    if (overlayImgView != _overlayImgView) {
         _overlayImgView = overlayImgView;
     }
     

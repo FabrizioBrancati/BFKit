@@ -28,31 +28,24 @@
 
 @implementation BFTouchID
 
-+ (void)showTouchIDAuthenticationWithReason:(NSString *)reason completion:(void (^)(TouchIDResult result))completion
-{
++ (void)showTouchIDAuthenticationWithReason:(NSString *)reason completion:(void (^)(TouchIDResult result))completion {
     [self showTouchIDAuthenticationWithReason:reason fallbackTitle:nil completion:^(TouchIDResult result) {
         completion(result);
     }];
 }
 
-+ (void)showTouchIDAuthenticationWithReason:(NSString *)reason fallbackTitle:(NSString *)fallbackTitle completion:(void (^)(TouchIDResult))completion
-{
++ (void)showTouchIDAuthenticationWithReason:(NSString *)reason fallbackTitle:(NSString *)fallbackTitle completion:(void (^)(TouchIDResult))completion {
     LAContext *context = [[LAContext alloc] init];
     
     [context setLocalizedFallbackTitle:fallbackTitle];
     
     NSError *error = nil;
-    if([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error])
-    {
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:reason reply:^(BOOL success, NSError *error) {
-            if(success)
-            {
+            if (success) {
                 completion(TouchIDResultSuccess);
-            }
-            else
-            {
-                switch(error.code)
-                {
+            } else {
+                switch (error.code) {
                     case LAErrorAuthenticationFailed:
                         completion(TouchIDResultAuthenticationFailed);
                         break;
@@ -71,11 +64,8 @@
                 }
             }
         }];
-    }
-    else
-    {
-        switch(error.code)
-        {
+    } else {
+        switch (error.code) {
             case LAErrorPasscodeNotSet:
                 completion(TouchIDResultPasscodeNotSet);
                 break;

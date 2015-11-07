@@ -33,14 +33,12 @@ static NSString *logDetailedString = @"";
 
 @implementation BFLog
 
-void ExtendNSLog(const char *file, int lineNumber, const char *function, NSString *format, ...)
-{
+void ExtendNSLog(const char *file, int lineNumber, const char *function, NSString *format, ...) {
     va_list ap;
     
     va_start(ap, format);
     
-    if(![format hasSuffix: @"\n"])
-    {
+    if (![format hasSuffix: @"\n"]) {
         format = [format stringByAppendingString: @"\n"];
     }
     
@@ -49,8 +47,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *function, NSStrin
     va_end(ap);
     
     NSString *functionName = [NSString stringWithFormat:@"%s", function];
-    if([functionName hasString:@"_block_invoke"])
-    {
+    if ([functionName hasString:@"_block_invoke"]) {
         functionName = [functionName stringByReplacingWithRegex:@"__[0-9]*" withString:@""];
         functionName = [functionName stringByReplacingOccurrencesOfString:@"_block_invoke" withString:@""];
     }
@@ -64,23 +61,19 @@ void ExtendNSLog(const char *file, int lineNumber, const char *function, NSStrin
     logDetailedString = [logDetailedString stringByAppendingString:[NSString stringWithFormat:@"%@", log]];
 }
 
-+ (NSString *)logString
-{
++ (NSString *)logString {
     return logString;
 }
 
-+ (NSString *)detailedLogString
-{
++ (NSString *)detailedLogString {
     return logDetailedString;
 }
 
-+ (NSString *)logDetailedString
-{
++ (NSString *)logDetailedString {
     return logDetailedString;
 }
 
-+ (void)clearLog
-{
++ (void)clearLog {
     logString = @"";
     logDetailedString = @"";
 }

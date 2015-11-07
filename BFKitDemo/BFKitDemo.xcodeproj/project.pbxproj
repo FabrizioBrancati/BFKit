@@ -13,10 +13,6 @@
 		490276FC19BDF3F8009B8BC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 490276FB19BDF3F8009B8BC1 /* main.m */; };
 		4902770019BDF3F8009B8BC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 490276FF19BDF3F8009B8BC1 /* AppDelegate.m */; };
 		4902770919BDF3F8009B8BC1 /* FoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902770819BDF3F8009B8BC1 /* FoundationViewController.m */; };
-		4902771219BDF3F8009B8BC1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4902771119BDF3F8009B8BC1 /* XCTest.framework */; };
-		4902771319BDF3F8009B8BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490276EF19BDF3F8009B8BC1 /* Foundation.framework */; };
-		4902771419BDF3F8009B8BC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490276F319BDF3F8009B8BC1 /* UIKit.framework */; };
-		4902771E19BDF3F8009B8BC1 /* BFKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902771D19BDF3F8009B8BC1 /* BFKitDemoTests.m */; };
 		4902772819BDF40B009B8BC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4902772719BDF40B009B8BC1 /* AudioToolbox.framework */; };
 		4902777619BDF658009B8BC1 /* FoundationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4902777519BDF658009B8BC1 /* FoundationViewController.xib */; };
 		4902778219BE0064009B8BC1 /* BFKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902778019BE0064009B8BC1 /* BFKitViewController.m */; };
@@ -70,16 +66,6 @@
 		49B2719819BFC9EC0079FA5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2719719BFC9EC0079FA5A /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4902771519BDF3F8009B8BC1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 490276E419BDF3F8009B8BC1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 490276EB19BDF3F8009B8BC1;
-			remoteInfo = BFKitDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		490276EC19BDF3F8009B8BC1 /* BFKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		490276EF19BDF3F8009B8BC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,28 +78,24 @@
 		490276FF19BDF3F8009B8BC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4902770719BDF3F8009B8BC1 /* FoundationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundationViewController.h; sourceTree = "<group>"; };
 		4902770819BDF3F8009B8BC1 /* FoundationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoundationViewController.m; sourceTree = "<group>"; };
-		4902771019BDF3F8009B8BC1 /* BFKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4902771119BDF3F8009B8BC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4902771919BDF3F8009B8BC1 /* BFKitDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BFKitDemoTests-Info.plist"; sourceTree = "<group>"; };
-		4902771D19BDF3F8009B8BC1 /* BFKitDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFKitDemoTests.m; sourceTree = "<group>"; };
 		4902772719BDF40B009B8BC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4902777519BDF658009B8BC1 /* FoundationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundationViewController.xib; sourceTree = "<group>"; };
 		4902777F19BE0064009B8BC1 /* BFKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFKitViewController.h; sourceTree = "<group>"; };
-		4902778019BE0064009B8BC1 /* BFKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFKitViewController.m; sourceTree = "<group>"; };
+		4902778019BE0064009B8BC1 /* BFKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFKitViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4902778119BE0064009B8BC1 /* BFKitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFKitViewController.xib; sourceTree = "<group>"; };
 		4902778E19BE0265009B8BC1 /* UserInterfaceKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInterfaceKitViewController.h; sourceTree = "<group>"; };
 		4902778F19BE0265009B8BC1 /* UserInterfaceKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInterfaceKitViewController.m; sourceTree = "<group>"; };
 		4902779319BE049B009B8BC1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		4902779419BE049B009B8BC1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4902779419BE049B009B8BC1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4902779519BE049B009B8BC1 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		492C974F1BEE5F6E00CDC75F /* NSArray+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BFKit.h"; sourceTree = "<group>"; };
 		492C97501BEE5F6E00CDC75F /* NSArray+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BFKit.m"; sourceTree = "<group>"; };
 		492C97511BEE5F6E00CDC75F /* NSDate+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BFKit.h"; sourceTree = "<group>"; };
-		492C97521BEE5F6E00CDC75F /* NSDate+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BFKit.m"; sourceTree = "<group>"; };
+		492C97521BEE5F6E00CDC75F /* NSDate+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSDate+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97531BEE5F6E00CDC75F /* NSDictionary+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BFKit.h"; sourceTree = "<group>"; };
 		492C97541BEE5F6E00CDC75F /* NSDictionary+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BFKit.m"; sourceTree = "<group>"; };
 		492C97551BEE5F6E00CDC75F /* NSFileManager+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+BFKit.h"; sourceTree = "<group>"; };
-		492C97561BEE5F6E00CDC75F /* NSFileManager+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+BFKit.m"; sourceTree = "<group>"; };
+		492C97561BEE5F6E00CDC75F /* NSFileManager+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSFileManager+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97571BEE5F6E00CDC75F /* NSMutableArray+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+BFKit.h"; sourceTree = "<group>"; };
 		492C97581BEE5F6E00CDC75F /* NSMutableArray+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+BFKit.m"; sourceTree = "<group>"; };
 		492C97591BEE5F6E00CDC75F /* NSMutableDictionary+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+BFKit.h"; sourceTree = "<group>"; };
@@ -133,13 +115,13 @@
 		492C97681BEE5F6E00CDC75F /* UIButton+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFKit.h"; sourceTree = "<group>"; };
 		492C97691BEE5F6E00CDC75F /* UIButton+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BFKit.m"; sourceTree = "<group>"; };
 		492C976A1BEE5F6E00CDC75F /* UIColor+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BFKit.h"; sourceTree = "<group>"; };
-		492C976B1BEE5F6E00CDC75F /* UIColor+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BFKit.m"; sourceTree = "<group>"; };
+		492C976B1BEE5F6E00CDC75F /* UIColor+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIColor+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C976C1BEE5F6E00CDC75F /* UIDevice+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BFKit.h"; sourceTree = "<group>"; };
 		492C976D1BEE5F6E00CDC75F /* UIDevice+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BFKit.m"; sourceTree = "<group>"; };
 		492C976E1BEE5F6E00CDC75F /* UIFont+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+BFKit.h"; sourceTree = "<group>"; };
-		492C976F1BEE5F6E00CDC75F /* UIFont+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+BFKit.m"; sourceTree = "<group>"; };
+		492C976F1BEE5F6E00CDC75F /* UIFont+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIFont+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97701BEE5F6E00CDC75F /* UIImage+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BFKit.h"; sourceTree = "<group>"; };
-		492C97711BEE5F6E00CDC75F /* UIImage+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BFKit.m"; sourceTree = "<group>"; };
+		492C97711BEE5F6E00CDC75F /* UIImage+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIImage+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97721BEE5F6E00CDC75F /* UIImageView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+BFKit.h"; sourceTree = "<group>"; };
 		492C97731BEE5F6E00CDC75F /* UIImageView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+BFKit.m"; sourceTree = "<group>"; };
 		492C97741BEE5F6E00CDC75F /* UILabel+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BFKit.h"; sourceTree = "<group>"; };
@@ -159,23 +141,23 @@
 		492C97821BEE5F6E00CDC75F /* UIToolbar+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+BFKit.h"; sourceTree = "<group>"; };
 		492C97831BEE5F6E00CDC75F /* UIToolbar+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+BFKit.m"; sourceTree = "<group>"; };
 		492C97841BEE5F6E00CDC75F /* UIView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BFKit.h"; sourceTree = "<group>"; };
-		492C97851BEE5F6E00CDC75F /* UIView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BFKit.m"; sourceTree = "<group>"; };
+		492C97851BEE5F6E00CDC75F /* UIView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIView+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97861BEE5F6E00CDC75F /* UIWebView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+BFKit.h"; sourceTree = "<group>"; };
 		492C97871BEE5F6E00CDC75F /* UIWebView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+BFKit.m"; sourceTree = "<group>"; };
 		492C97881BEE5F6E00CDC75F /* UIWindow+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+BFKit.h"; sourceTree = "<group>"; };
 		492C97891BEE5F6E00CDC75F /* UIWindow+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+BFKit.m"; sourceTree = "<group>"; };
 		492C978B1BEE5F6E00CDC75F /* BFApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFApp.h; sourceTree = "<group>"; };
-		492C978C1BEE5F6E00CDC75F /* BFApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFApp.m; sourceTree = "<group>"; };
+		492C978C1BEE5F6E00CDC75F /* BFApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFApp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C978D1BEE5F6E00CDC75F /* BFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFButton.h; sourceTree = "<group>"; };
-		492C978E1BEE5F6E00CDC75F /* BFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFButton.m; sourceTree = "<group>"; };
+		492C978E1BEE5F6E00CDC75F /* BFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFButton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C978F1BEE5F6E00CDC75F /* BFDataStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFDataStructures.h; sourceTree = "<group>"; };
-		492C97901BEE5F6E00CDC75F /* BFDataStructures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFDataStructures.m; sourceTree = "<group>"; };
+		492C97901BEE5F6E00CDC75F /* BFDataStructures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFDataStructures.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97911BEE5F6E00CDC75F /* BFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLog.h; sourceTree = "<group>"; };
-		492C97921BEE5F6E00CDC75F /* BFLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFLog.m; sourceTree = "<group>"; };
+		492C97921BEE5F6E00CDC75F /* BFLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFLog.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97931BEE5F6E00CDC75F /* BFPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPassword.h; sourceTree = "<group>"; };
-		492C97941BEE5F6E00CDC75F /* BFPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFPassword.m; sourceTree = "<group>"; };
+		492C97941BEE5F6E00CDC75F /* BFPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFPassword.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97951BEE5F6E00CDC75F /* BFSystemSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFSystemSound.h; sourceTree = "<group>"; };
-		492C97961BEE5F6E00CDC75F /* BFSystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFSystemSound.m; sourceTree = "<group>"; };
+		492C97961BEE5F6E00CDC75F /* BFSystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFSystemSound.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97971BEE5F6E00CDC75F /* BFTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTouchID.h; sourceTree = "<group>"; };
 		492C97981BEE5F6E00CDC75F /* BFTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTouchID.m; sourceTree = "<group>"; };
 		492C97991BEE5F6E00CDC75F /* BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFKit.h; path = ../Source/BFKit.h; sourceTree = "<group>"; };
@@ -212,16 +194,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4902770D19BDF3F8009B8BC1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4902771219BDF3F8009B8BC1 /* XCTest.framework in Frameworks */,
-				4902771419BDF3F8009B8BC1 /* UIKit.framework in Frameworks */,
-				4902771319BDF3F8009B8BC1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -230,7 +202,6 @@
 			children = (
 				4902772919BDF424009B8BC1 /* BFKit */,
 				490276F519BDF3F8009B8BC1 /* BFKitDemo */,
-				4902771719BDF3F8009B8BC1 /* BFKitDemoTests */,
 				490276EE19BDF3F8009B8BC1 /* Frameworks */,
 				490276ED19BDF3F8009B8BC1 /* Products */,
 			);
@@ -240,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				490276EC19BDF3F8009B8BC1 /* BFKitDemo.app */,
-				4902771019BDF3F8009B8BC1 /* BFKitDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,14 +218,13 @@
 		490276EE19BDF3F8009B8BC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */,
-				494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */,
-				493482301A5DBE3F006D5380 /* LocalAuthentication.framework */,
 				4902772719BDF40B009B8BC1 /* AudioToolbox.framework */,
-				490276EF19BDF3F8009B8BC1 /* Foundation.framework */,
 				490276F119BDF3F8009B8BC1 /* CoreGraphics.framework */,
+				494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */,
+				490276EF19BDF3F8009B8BC1 /* Foundation.framework */,
+				493482301A5DBE3F006D5380 /* LocalAuthentication.framework */,
 				490276F319BDF3F8009B8BC1 /* UIKit.framework */,
-				4902771119BDF3F8009B8BC1 /* XCTest.framework */,
+				494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,23 +261,6 @@
 				490276F719BDF3F8009B8BC1 /* BFKitDemo-Info.plist */,
 				490276FB19BDF3F8009B8BC1 /* main.m */,
 				490276FD19BDF3F8009B8BC1 /* BFKitDemo-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4902771719BDF3F8009B8BC1 /* BFKitDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				4902771D19BDF3F8009B8BC1 /* BFKitDemoTests.m */,
-				4902771819BDF3F8009B8BC1 /* Supporting Files */,
-			);
-			path = BFKitDemoTests;
-			sourceTree = "<group>";
-		};
-		4902771819BDF3F8009B8BC1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4902771919BDF3F8009B8BC1 /* BFKitDemoTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -459,24 +411,6 @@
 			productReference = 490276EC19BDF3F8009B8BC1 /* BFKitDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4902770F19BDF3F8009B8BC1 /* BFKitDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4902772419BDF3F8009B8BC1 /* Build configuration list for PBXNativeTarget "BFKitDemoTests" */;
-			buildPhases = (
-				4902770C19BDF3F8009B8BC1 /* Sources */,
-				4902770D19BDF3F8009B8BC1 /* Frameworks */,
-				4902770E19BDF3F8009B8BC1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4902771619BDF3F8009B8BC1 /* PBXTargetDependency */,
-			);
-			name = BFKitDemoTests;
-			productName = BFKitDemoTests;
-			productReference = 4902771019BDF3F8009B8BC1 /* BFKitDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -485,11 +419,6 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Fabrizio Brancati";
-				TargetAttributes = {
-					4902770F19BDF3F8009B8BC1 = {
-						TestTargetID = 490276EB19BDF3F8009B8BC1;
-					};
-				};
 			};
 			buildConfigurationList = 490276E719BDF3F8009B8BC1 /* Build configuration list for PBXProject "BFKitDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -511,7 +440,6 @@
 			projectRoot = "";
 			targets = (
 				490276EB19BDF3F8009B8BC1 /* BFKitDemo */,
-				4902770F19BDF3F8009B8BC1 /* BFKitDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -528,13 +456,6 @@
 				4902778319BE0064009B8BC1 /* BFKitViewController.xib in Resources */,
 				49932B021A17AB890093B13C /* InfoViewController.xib in Resources */,
 				492C97C81BEE5F6E00CDC75F /* BFKit.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4902770E19BDF3F8009B8BC1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,23 +528,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4902770C19BDF3F8009B8BC1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4902771E19BDF3F8009B8BC1 /* BFKitDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4902771619BDF3F8009B8BC1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 490276EB19BDF3F8009B8BC1 /* BFKitDemo */;
-			targetProxy = 4902771519BDF3F8009B8BC1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		492C979B1BEE5F6E00CDC75F /* BFKit.strings */ = {
@@ -724,6 +629,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Fabrizio Brancati (63PBW86687)";
+				ENABLE_BITCODE = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				ENABLE_TESTABILITY = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BFKitDemo/BFKitDemo-Prefix.pch";
 				INFOPLIST_FILE = "BFKitDemo/BFKitDemo-Info.plist";
@@ -739,54 +647,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Fabrizio Brancati (2PN5CL25E2)";
+				ENABLE_BITCODE = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				ENABLE_TESTABILITY = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BFKitDemo/BFKitDemo-Prefix.pch";
 				INFOPLIST_FILE = "BFKitDemo/BFKitDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		4902772519BDF3F8009B8BC1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BFKitDemo.app/BFKitDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BFKitDemo/BFKitDemo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BFKitDemoTests/BFKitDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		4902772619BDF3F8009B8BC1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BFKitDemo.app/BFKitDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BFKitDemo/BFKitDemo-Prefix.pch";
-				INFOPLIST_FILE = "BFKitDemoTests/BFKitDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -807,15 +676,6 @@
 			buildConfigurations = (
 				4902772219BDF3F8009B8BC1 /* Debug */,
 				4902772319BDF3F8009B8BC1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4902772419BDF3F8009B8BC1 /* Build configuration list for PBXNativeTarget "BFKitDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4902772519BDF3F8009B8BC1 /* Debug */,
-				4902772619BDF3F8009B8BC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

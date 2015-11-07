@@ -29,33 +29,27 @@
 
 @implementation BFSystemSound
 
-+ (void)playSystemSound:(AudioID)audioID
-{
++ (void)playSystemSound:(AudioID)audioID {
     AudioServicesPlaySystemSound(audioID);
 }
 
-+ (void)playSystemSoundVibrate
-{
++ (void)playSystemSoundVibrate {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
-+ (SystemSoundID)playCustomSound:(NSURL *)soundURL
-{
++ (SystemSoundID)playCustomSound:(NSURL *)soundURL {
     SystemSoundID soundID;
 
     OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(soundURL), &soundID);
-    if(error != kAudioServicesNoError)
-    {
+    if (error != kAudioServicesNoError) {
         BFLog(@"Could not load %@", soundURL);
     }
     return soundID;
 }
 
-+ (BOOL)disposeSound:(SystemSoundID)soundID
-{
++ (BOOL)disposeSound:(SystemSoundID)soundID {
     OSStatus error = AudioServicesDisposeSystemSoundID(soundID);
-    if(error != kAudioServicesNoError)
-    {
+    if (error != kAudioServicesNoError) {
         BFLog(@"Error while disposing sound %i", (unsigned int)soundID);
         return NO;
     }

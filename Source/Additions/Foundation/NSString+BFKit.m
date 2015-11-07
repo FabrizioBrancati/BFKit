@@ -29,20 +29,16 @@
 
 @implementation NSString (BFKit)
 
-+ (NSString *)searchInString:(NSString *)string charStart:(char)charStart charEnd:(char)charEnd
-{
++ (NSString *)searchInString:(NSString *)string charStart:(char)charStart charEnd:(char)charEnd {
     int start = 0, end = 0;
     
-    for(int i = 0; i < [string length]; i++)
-    {
-        if([string characterAtIndex:i] == charStart && start == 0)
-        {
+    for (int i = 0; i < [string length]; i++) {
+        if ([string characterAtIndex:i] == charStart && start == 0) {
             start = i+1;
             i += 1;
             continue;
         }
-        if([string characterAtIndex:i] == charEnd)
-        {
+        if ([string characterAtIndex:i] == charEnd) {
             end = i;
             break;
         }
@@ -55,17 +51,13 @@
     return [[string substringFromIndex:start] substringToIndex:end];
 }
 
-- (NSString *)searchCharStart:(char)start charEnd:(char)end
-{
+- (NSString *)searchCharStart:(char)start charEnd:(char)end {
     return [NSString searchInString:self charStart:start charEnd:end];
 }
 
-- (NSInteger)indexOfCharacter:(char)character
-{
-    for(NSUInteger i = 0; i < [self length]; i++)
-    {
-        if([self characterAtIndex:i] == character)
-        {
+- (NSInteger)indexOfCharacter:(char)character {
+    for (NSUInteger i = 0; i < [self length]; i++) {
+        if ([self characterAtIndex:i] == character) {
             return i;
         }
     }
@@ -73,112 +65,105 @@
     return -1;
 }
 
-- (NSString *)substringFromCharacter:(char)character
-{
+- (NSString *)substringFromCharacter:(char)character {
     NSInteger index = [self indexOfCharacter:character];
-    if(index != -1)
+    if (index != -1) {
         return [self substringFromIndex:index];
-    else
+    } else {
         return @"";
+    }
 }
 
-- (NSString *)substringToCharacter:(char)character
-{
+- (NSString *)substringToCharacter:(char)character {
     NSInteger index = [self indexOfCharacter:character];
-    if(index != -1)
+    if (index != -1) {
         return [self substringToIndex:index];
-    else
+    } else {
         return @"";
+    }
 }
 
-- (NSString *)MD5
-{
-    if(self == nil || [self length] == 0)
+- (NSString *)MD5 {
+    if (self == nil || [self length] == 0) {
         return nil;
+    }
     
     unsigned char digest[CC_MD5_DIGEST_LENGTH], i;
 	CC_MD5([self UTF8String], (int)[self lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
 	NSMutableString *ms = [NSMutableString string];
-	for(i=0;i<CC_MD5_DIGEST_LENGTH;i++)
-    {
+	for (i=0;i<CC_MD5_DIGEST_LENGTH;i++) {
 		[ms appendFormat: @"%02x", (int)(digest[i])];
 	}
 	return [ms copy];
 }
 
-- (NSString *)SHA1
-{
-    if(self == nil || [self length] == 0)
+- (NSString *)SHA1 {
+    if (self == nil || [self length] == 0) {
         return nil;
+    }
     
     unsigned char digest[CC_SHA1_DIGEST_LENGTH], i;
 	CC_SHA1([self UTF8String], (int)[self lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
 	NSMutableString *ms = [NSMutableString string];
-	for(i=0;i<CC_SHA1_DIGEST_LENGTH;i++)
-    {
+	for (i=0;i<CC_SHA1_DIGEST_LENGTH;i++) {
 		[ms appendFormat: @"%02x", (int)(digest[i])];
 	}
 	return [ms copy];
 }
 
-- (NSString *)SHA256
-{
-    if(self == nil || [self length] == 0)
+- (NSString *)SHA256 {
+    if (self == nil || [self length] == 0) {
         return nil;
+    }
     
     unsigned char digest[CC_SHA256_DIGEST_LENGTH], i;
 	CC_SHA256([self UTF8String], (int)[self lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
 	NSMutableString *ms = [NSMutableString string];
-	for(i=0;i<CC_SHA256_DIGEST_LENGTH;i++)
-    {
+	for (i=0;i<CC_SHA256_DIGEST_LENGTH;i++) {
 		[ms appendFormat: @"%02x", (int)(digest[i])];
 	}
 	return [ms copy];
 }
 
-- (NSString *)SHA512
-{
-    if(self == nil || [self length] == 0)
+- (NSString *)SHA512 {
+    if (self == nil || [self length] == 0) {
         return nil;
+    }
     
     unsigned char digest[CC_SHA512_DIGEST_LENGTH], i;
 	CC_SHA512([self UTF8String], (int)[self lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
 	NSMutableString *ms = [NSMutableString string];
-	for(i=0;i<CC_SHA512_DIGEST_LENGTH;i++)
+	for (i=0;i<CC_SHA512_DIGEST_LENGTH;i++)
     {
 		[ms appendFormat: @"%02x", (int)(digest[i])];
 	}
 	return [ms copy];
 }
 
-- (BOOL)hasString:(NSString *)substring
-{
+- (BOOL)hasString:(NSString *)substring {
     return [self hasString:substring caseSensitive:YES];
 }
 
-- (BOOL)hasString:(NSString *)substring caseSensitive:(BOOL)caseSensitive
-{
-    if(caseSensitive)
+- (BOOL)hasString:(NSString *)substring caseSensitive:(BOOL)caseSensitive {
+    if (caseSensitive) {
         return [self rangeOfString:substring].location != NSNotFound;
-    else
+    } else {
         return [self.lowercaseString rangeOfString:substring.lowercaseString].location != NSNotFound;
+    }
 }
 
-- (BOOL)isEmail
-{
+- (BOOL)isEmail {
     return [NSString isEmail:self];
 }
 
-+ (BOOL)isEmail:(NSString *)email
-{
++ (BOOL)isEmail:(NSString *)email {
     NSString *emailRegEx = @"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
 	
     NSPredicate *regExPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
     return [regExPredicate evaluateWithObject:[email lowercaseString]];
 }
 
-+ (NSString *)convertToUTF8Entities:(NSString *)string
-{
++ (NSString *)convertToUTF8Entities:(NSString *)string {
     return [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[string
                                              stringByReplacingOccurrencesOfString:@"%27" withString:@"'"]
                                              stringByReplacingOccurrencesOfString:[@"%e2%80%99" capitalizedString] withString:@"’"]
@@ -216,32 +201,26 @@
                                              stringByReplacingOccurrencesOfString:@"%20" withString:@" "];
 }
 
-+ (NSString *)encodeToBase64:(NSString *)string
-{
++ (NSString *)encodeToBase64:(NSString *)string {
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
     return [data base64EncodedStringWithOptions:0];
 }
 
-- (NSString *)encodeToBase64
-{
+- (NSString *)encodeToBase64 {
     return [NSString encodeToBase64:self];
 }
 
-+ (NSString *)decodeBase64:(NSString *)string
-{
++ (NSString *)decodeBase64:(NSString *)string {
     NSData *data = [[NSData alloc] initWithBase64EncodedString:string options:0];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
-- (NSString *)decodeBase64
-{
+- (NSString *)decodeBase64 {
     return [NSString decodeBase64:self];
 }
 
-- (NSString *)sentenceCapitalizedString
-{
-    if(![self length])
-    {
+- (NSString *)sentenceCapitalizedString {
+    if (![self length]) {
         return @"";
     }
     NSString *uppercase = [[self substringToIndex:1] uppercaseString];
@@ -250,8 +229,7 @@
     return [uppercase stringByAppendingString:lowercase];
 }
 
-- (NSString *)dateFromTimestamp
-{
+- (NSString *)dateFromTimestamp {
     NSString *year = [self substringToIndex:4];
     NSString *month = [[self substringFromIndex:5] substringToIndex:2];
     NSString *day = [[self substringFromIndex:8] substringToIndex:2];
@@ -261,34 +239,28 @@
     return [NSString stringWithFormat:@"%@/%@/%@ %@:%@", day, month, year, hours, minutes];
 }
 
-- (NSString *)urlEncode
-{
+- (NSString *)urlEncode {
     return [self URLEncode];
 }
 
-- (NSString *)URLEncode
-{
+- (NSString *)URLEncode {
     return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
 }
 
-- (NSString *)removeExtraSpaces
-{
+- (NSString *)removeExtraSpaces {
     NSString *squashed = [self stringByReplacingOccurrencesOfString:@"[ ]+" withString:@" " options:NSRegularExpressionSearch range:NSMakeRange(0, self.length)];
     return [squashed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-- (NSString *)stringByReplacingWithRegex:(NSString *)regexString withString:(NSString *)replacement
-{
+- (NSString *)stringByReplacingWithRegex:(NSString *)regexString withString:(NSString *)replacement {
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionCaseInsensitive error:nil];
     return [regex stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length]) withTemplate:@""];
 }
 
-- (NSString *)HEXToString
-{
+- (NSString *)HEXToString {
 	NSMutableString *newString = [NSMutableString string];
 	NSArray *components = [self componentsSeparatedByString:@" "];
-	for(NSString * component in components)
-    {
+	for (NSString * component in components) {
 		int value = 0;
 		sscanf([component cStringUsingEncoding:NSASCIIStringEncoding], "%x", &value);
 		[newString appendFormat:@"%c", (char)value];
@@ -296,16 +268,14 @@
 	return newString;
 }
 
-- (NSString *)stringToHEX
-{
+- (NSString *)stringToHEX {
     NSUInteger len = [self length];
     unichar *chars = malloc(len * sizeof(unichar));
     [self getCharacters:chars];
     
     NSMutableString *hexString = [[NSMutableString alloc] init];
     
-    for(NSUInteger i = 0; i < len; i++ )
-    {
+    for (NSUInteger i = 0; i < len; i++ ) {
         [hexString appendFormat:@"%02x", chars[i]];
     }
     free(chars);

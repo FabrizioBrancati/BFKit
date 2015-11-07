@@ -29,8 +29,7 @@
 /**
  *  Password strength level enum, from 0 (min) to 6 (max)
  */
-typedef NS_ENUM(NSInteger, PasswordStrengthLevel)
-{
+typedef NS_ENUM(NSInteger, PasswordStrengthLevel) {
     /**
      *  Password strength very weak
      */

@@ -28,8 +28,7 @@
 
 @implementation UITextField (BFKit)
 
-+ (UITextField *)initWithFrame:(CGRect)frame placeholder:(NSString *)placeholder color:(UIColor *)color font:(FontName)fontName size:(float)size returnType:(UIReturnKeyType)returnType keyboardType:(UIKeyboardType)keyboardType secure:(BOOL)secure borderStyle:(UITextBorderStyle)borderStyle autoCapitalization:(UITextAutocapitalizationType)capitalization keyboardAppearance:(UIKeyboardAppearance)keyboardAppearence enablesReturnKeyAutomatically:(BOOL)enablesReturnKeyAutomatically clearButtonMode:(UITextFieldViewMode)clearButtonMode autoCorrectionType:(UITextAutocorrectionType)autoCorrectionType delegate:(id<UITextFieldDelegate>)delegate
-{
++ (UITextField *)initWithFrame:(CGRect)frame placeholder:(NSString *)placeholder color:(UIColor *)color font:(FontName)fontName size:(float)size returnType:(UIReturnKeyType)returnType keyboardType:(UIKeyboardType)keyboardType secure:(BOOL)secure borderStyle:(UITextBorderStyle)borderStyle autoCapitalization:(UITextAutocapitalizationType)capitalization keyboardAppearance:(UIKeyboardAppearance)keyboardAppearence enablesReturnKeyAutomatically:(BOOL)enablesReturnKeyAutomatically clearButtonMode:(UITextFieldViewMode)clearButtonMode autoCorrectionType:(UITextAutocorrectionType)autoCorrectionType delegate:(id<UITextFieldDelegate>)delegate {
     UITextField *textField = [[UITextField alloc] initWithFrame:frame];
     [textField setBorderStyle:borderStyle];
     [textField setAutocorrectionType:autoCorrectionType];
@@ -49,8 +48,7 @@
 }
 
 /*
-- (void)drawPlaceholderInRect:(CGRect)rect
-{
+- (void)drawPlaceholderInRect:(CGRect)rect {
     [[UIColor colorWithWhite:0.400 alpha:1.000] setFill];
     [self.placeholder drawInRect:rect withFont:[self.font fontWithSize:self.font.pointSize]];
 }

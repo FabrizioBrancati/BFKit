@@ -29,8 +29,7 @@
 /**
  *  Directory type enum
  */
-typedef NS_ENUM(NSInteger, DirectoryType)
-{
+typedef NS_ENUM(NSInteger, DirectoryType) {
     /**
      *  Main bundle directory
      */

@@ -29,27 +29,24 @@
 
 @implementation NSMutableArray (BFKit)
 
-- (void)moveObjectFromIndex:(NSUInteger)from toIndex:(NSUInteger)to
-{
-    if(to != from)
-    {
+- (void)moveObjectFromIndex:(NSUInteger)from toIndex:(NSUInteger)to {
+    if (to != from) {
         id obj = [self safeObjectAtIndex:from];
         [self removeObjectAtIndex:from];
         
-        if(to >= [self count])
+        if (to >= [self count]) {
             [self addObject:obj];
-        else
+        } else {
             [self insertObject:obj atIndex:to];
+        }
     }
 }
 
-- (NSMutableArray *)reversedArray
-{
+- (NSMutableArray *)reversedArray {
     return (NSMutableArray *)[NSArray reversedArray:self];
 }
 
-+ (NSMutableArray *)sortArrayByKey:(NSString *)key array:(NSMutableArray *)array ascending:(BOOL)ascending
-{
++ (NSMutableArray *)sortArrayByKey:(NSString *)key array:(NSMutableArray *)array ascending:(BOOL)ascending {
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     [tempArray removeAllObjects];
     [tempArray addObjectsFromArray:array];

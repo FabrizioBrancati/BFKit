@@ -28,8 +28,7 @@
 
 @implementation UIScrollView (BFKit)
 
-+ (UIScrollView *)initWithFrame:(CGRect)frame contentSize:(CGSize)contentSize clipsToBounds:(BOOL)clipsToBounds pagingEnabled:(BOOL)pagingEnabled showScrollIndicators:(BOOL)showScrollIndicators delegate:(id<UIScrollViewDelegate>)delegate
-{
++ (UIScrollView *)initWithFrame:(CGRect)frame contentSize:(CGSize)contentSize clipsToBounds:(BOOL)clipsToBounds pagingEnabled:(BOOL)pagingEnabled showScrollIndicators:(BOOL)showScrollIndicators delegate:(id<UIScrollViewDelegate>)delegate {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [scrollView setDelegate:delegate];
     [scrollView setPagingEnabled:pagingEnabled];

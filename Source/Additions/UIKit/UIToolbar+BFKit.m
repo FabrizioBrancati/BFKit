@@ -28,15 +28,11 @@
 
 @implementation UIToolbar (BFKit)
 
-- (void)setTransparent:(BOOL)transparent
-{
-    if(transparent)
-    {
+- (void)setTransparent:(BOOL)transparent {
+    if (transparent) {
         [self setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
         [self setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
-    }
-    else
-    {
+    } else {
         [self setBackgroundImage:nil forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
         [self setShadowImage:nil forToolbarPosition:UIBarPositionAny];
     }

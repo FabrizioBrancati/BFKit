@@ -28,40 +28,33 @@
 
 #pragma mark - Stack
 
-@interface Stack ()
-{
+@interface Stack () {
     NSMutableArray *stack;
 }
 @end
 
 @implementation Stack
 
-- (instancetype)init
-{
-    if(self = [super init])
-    {
+- (instancetype)init {
+    if (self = [super init]) {
         stack = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (NSString *)description
-{
+- (NSString *)description {
     return [NSString stringWithFormat:@"%@", stack];
 }
 
-- (BOOL)empty
-{
+- (BOOL)empty {
     return stack.count > 0 ? YES : NO;
 }
 
-- (void)push:(id)object
-{
+- (void)push:(id)object {
     [stack addObject:object];
 }
 
-- (NSObject *)pop
-{
+- (NSObject *)pop {
     id popped = stack[stack.count - 1];
     [stack removeObjectAtIndex:stack.count - 1];
     
@@ -72,50 +65,41 @@
 
 #pragma mark - List
 
-@interface List ()
-{
+@interface List () {
     NSMutableArray *list;
 }
 @end
 
 @implementation List
 
-- (instancetype)init
-{
-    if(self = [super init])
-    {
+- (instancetype)init {
+    if (self = [super init]) {
         list = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (NSString *)description
-{
+- (NSString *)description {
     return [NSString stringWithFormat:@"%@", list];
 }
 
-- (NSInteger)searchObject:(id)object
-{
+- (NSInteger)searchObject:(id)object {
     return [list indexOfObject:object];
 }
 
-- (id)searchObjectAtIndex:(NSInteger)index
-{
+- (id)searchObjectAtIndex:(NSInteger)index {
     return [list objectAtIndex:index];
 }
 
-- (void)insert:(id)object
-{
+- (void)insert:(id)object {
     [list addObject:object];
 }
 
-- (void)deleteObject:(id)object
-{
+- (void)deleteObject:(id)object {
     [list removeObject:object];
 }
 
-- (void)deleteObjectAtIndex:(NSInteger)index
-{
+- (void)deleteObjectAtIndex:(NSInteger)index {
     [list removeObjectAtIndex:index];
 }
 
@@ -123,45 +107,37 @@
 
 #pragma mark - Queue
 
-@interface Queue ()
-{
+@interface Queue () {
     NSMutableArray *queue;
 }
 @end
 
 @implementation Queue
 
-- (instancetype)init
-{
-    if(self = [super init])
-    {
+- (instancetype)init {
+    if (self = [super init]) {
         queue = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (NSString *)description
-{
+- (NSString *)description {
     return [NSString stringWithFormat:@"%@", queue];
 }
 
-- (void)enqueue:(id)object
-{
+- (void)enqueue:(id)object {
     [queue addObject:object];
 }
 
-- (void)dequeue
-{
+- (void)dequeue {
     [queue removeObjectAtIndex:0];
 }
 
-- (id)top
-{
+- (id)top {
     return [queue objectAtIndex:queue.count -1];
 }
 
-- (void)emptyQueue
-{
+- (void)emptyQueue {
     [queue removeAllObjects];
 }
 

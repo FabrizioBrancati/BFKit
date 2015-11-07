@@ -30,8 +30,7 @@
 /**
  *  Touch result enum
  */
-typedef NS_ENUM(NSInteger, TouchIDResult)
-{
+typedef NS_ENUM(NSInteger, TouchIDResult) {
     /**
      *  Success
      */

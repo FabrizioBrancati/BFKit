@@ -28,64 +28,55 @@
 
 @implementation NSArray (BFKit)
 
-- (id)safeObjectAtIndex:(NSUInteger)index
-{
-    if([self count] > 0 && [self count] > index)
+- (id)safeObjectAtIndex:(NSUInteger)index {
+    if ([self count] > 0 && [self count] > index) {
         return [self objectAtIndex:index];
-    else
+    } else {
         return nil;
+    }
 }
 
-- (NSArray *)reversedArray
-{
+- (NSArray *)reversedArray {
     return [NSArray reversedArray:self];
 }
 
-- (NSString *)arrayToJson
-{
+- (NSString *)arrayToJson {
     return [NSArray arrayToJson:self];
 }
 
-- (NSInteger)superCircle:(NSInteger)index maxSize:(NSInteger)maxSize
-{
-    if(index < 0)
-    {
+- (NSInteger)superCircle:(NSInteger)index maxSize:(NSInteger)maxSize {
+    if (index < 0) {
         index = index % maxSize;
         index += maxSize;
     }
-    if(index >= maxSize)
-    {
+    if (index >= maxSize) {
         index = index % maxSize;
     }
     
     return index;
 }
 
-- (id)objectAtCircleIndex:(NSInteger)index
-{
+- (id)objectAtCircleIndex:(NSInteger)index {
     return [self objectAtIndex:[self superCircle:index maxSize:self.count]];
 }
 
-+ (NSString *)arrayToJson:(NSArray*)array
-{
++ (NSString *)arrayToJson:(NSArray*)array {
     NSString *json = nil;
     NSError *error = nil;
     NSData *data = [NSJSONSerialization dataWithJSONObject:array options:0 error:&error];
-    if(!error)
-    {
+    if (!error) {
         json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         return json;
-    }
-    else
+    } else {
         return error.localizedDescription;
+    }
 }
 
-+ (NSArray *)reversedArray:(NSArray*)array
-{
++ (NSArray *)reversedArray:(NSArray*)array {
     NSMutableArray *arrayTemp = [NSMutableArray arrayWithCapacity:[array count]];
     NSEnumerator *enumerator = [array reverseObjectEnumerator];
     
-    for(id element in enumerator) [arrayTemp addObject:element];
+    for (id element in enumerator) [arrayTemp addObject:element];
     
     return arrayTemp;
 }

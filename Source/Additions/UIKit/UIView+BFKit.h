@@ -31,8 +31,7 @@
 /**
  *  Direction of flip animation
  */
-typedef NS_ENUM(NSInteger, UIViewAnimationFlipDirection)
-{
+typedef NS_ENUM(NSInteger, UIViewAnimationFlipDirection) {
     /**
      *  Flip animation from top
      */
@@ -54,8 +53,7 @@ typedef NS_ENUM(NSInteger, UIViewAnimationFlipDirection)
 /**
  *  Direction of the translation
  */
-typedef NS_ENUM(NSInteger, UIViewAnimationTranslationDirection)
-{
+typedef NS_ENUM(NSInteger, UIViewAnimationTranslationDirection) {
     /**
      *  Translation from left to right
      */
@@ -69,8 +67,7 @@ typedef NS_ENUM(NSInteger, UIViewAnimationTranslationDirection)
 /**
  *  Direction of the linear gradient
  */
-typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection)
-{
+typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection) {
     /**
      *  Linear gradient vertical
      */

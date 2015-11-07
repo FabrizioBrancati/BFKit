@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, DetailType)
-{
+typedef NS_ENUM(NSInteger, DetailType) {
     DetailTypeBFApp = 0,
     DetailTypeBFButton,
     DetailTypeBFDataStructures,

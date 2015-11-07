@@ -36,8 +36,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
 
 @implementation UIDevice (BFKit)
 
-+ (NSString *)devicePlatform
-{
++ (NSString *)devicePlatform {
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -47,8 +46,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     return platform;
 }
 
-+ (NSString *)devicePlatformString
-{
++ (NSString *)devicePlatformString {
     NSString *platform = [self devicePlatform];
     // iPhone
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 2G";
@@ -117,71 +115,67 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     return platform;
 }
 
-+ (BOOL)isiPad
-{
-    if([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPad"])
++ (BOOL)isiPad {
+    if ([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPad"]) {
         return YES;
-    else
+    } else {
         return NO;
+    }
 }
 
-+ (BOOL)isiPhone
-{
-    if([[[self devicePlatform] substringToIndex:6] isEqualToString:@"iPhone"])
++ (BOOL)isiPhone {
+    if ([[[self devicePlatform] substringToIndex:6] isEqualToString:@"iPhone"]) {
         return YES;
-    else
+    } else {
         return NO;
+    }
 }
 
-+ (BOOL)isiPod
-{
-    if([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPod"])
++ (BOOL)isiPod {
+    if ([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPod"]) {
         return YES;
-    else
+    } else {
         return NO;
+    }
 }
 
-+ (BOOL)isAppleTV
-{
-    if([[[self devicePlatform] substringToIndex:7] isEqualToString:@"AppleTV"])
++ (BOOL)isAppleTV {
+    if ([[[self devicePlatform] substringToIndex:7] isEqualToString:@"AppleTV"]) {
         return YES;
-    else
+    } else {
         return NO;
+    }
 }
 
-+ (BOOL)isAppleWatch
-{
-    if([[[self devicePlatform] substringToIndex:5] isEqualToString:@"Watch"])
++ (BOOL)isAppleWatch {
+    if ([[[self devicePlatform] substringToIndex:5] isEqualToString:@"Watch"]) {
         return YES;
-    else
+    } else {
         return NO;
+    }
 }
 
-+ (BOOL)isSimulator
-{
-    if([[self devicePlatform] isEqualToString:@"i386"] || [[self devicePlatform] isEqualToString:@"x86_64"])
++ (BOOL)isSimulator {
+    if ([[self devicePlatform] isEqualToString:@"i386"] || [[self devicePlatform] isEqualToString:@"x86_64"]) {
         return YES;
-    else
+    } else {
         return NO;
+    }
 }
 
-+ (BOOL)isRetina
-{
++ (BOOL)isRetina {
     return [UIScreen isRetina];
 }
 
-+ (BOOL)isRetinaHD
-{
++ (BOOL)isRetinaHD {
     return [UIScreen isRetinaHD];
 }
 
-+ (NSInteger)iOSVersion
-{
++ (NSInteger)iOSVersion {
     return [[[UIDevice currentDevice] systemVersion] integerValue];
 }
 
-+ (NSUInteger)getSysInfo:(uint)typeSpecifier
-{
++ (NSUInteger)getSysInfo:(uint)typeSpecifier {
     size_t size = sizeof(int);
     int results;
     int mib[2] = {CTL_HW, typeSpecifier};
@@ -189,50 +183,41 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     return (NSUInteger) results;
 }
 
-+ (NSUInteger)cpuFrequency
-{
++ (NSUInteger)cpuFrequency {
     return [self getSysInfo:HW_CPU_FREQ];
 }
 
-+ (NSUInteger)busFrequency
-{
++ (NSUInteger)busFrequency {
     return [self getSysInfo:HW_TB_FREQ];
 }
 
-+ (NSUInteger)ramSize
-{
++ (NSUInteger)ramSize {
     return [self getSysInfo:HW_MEMSIZE];
 }
 
-+ (NSUInteger)cpuNumber
-{
++ (NSUInteger)cpuNumber {
     return [self getSysInfo:HW_NCPU];
 }
 
-+ (NSUInteger)totalMemory
-{
++ (NSUInteger)totalMemory {
     return [self getSysInfo:HW_PHYSMEM];
 }
 
-+ (NSUInteger)userMemory
-{
++ (NSUInteger)userMemory {
     return [self getSysInfo:HW_USERMEM];
 }
 
-+ (NSNumber *)totalDiskSpace
-{
++ (NSNumber *)totalDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemSize];
 }
 
-+ (NSNumber *)freeDiskSpace
-{
++ (NSNumber *)freeDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemFreeSize];
 }
 
-+ (NSString *)macAddress
-{
++ (NSString *)macAddress {
     // In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00
     /*int                 mib[6];
     size_t              len;
@@ -247,26 +232,22 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     mib[3] = AF_LINK;
     mib[4] = NET_RT_IFLIST;
     
-    if((mib[5] = if_nametoindex("en0")) == 0)
-    {
+    if ((mib[5] = if_nametoindex("en0")) == 0) {
         printf("Error: if_nametoindex error\n");
         return NULL;
     }
     
-    if(sysctl(mib, 6, NULL, &len, NULL, 0) < 0)
-    {
+    if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 1\n");
         return NULL;
     }
     
-    if((buf = malloc(len)) == NULL)
-    {
+    if ((buf = malloc(len)) == NULL) {
         printf("Could not allocate memory. Rrror!\n");
         return NULL;
     }
     
-    if(sysctl(mib, 6, buf, &len, NULL, 0) < 0)
-    {
+    if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 2");
         return NULL;
     }
@@ -282,15 +263,11 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     return @"02:00:00:00:00:00";
 }
 
-+ (NSString *)uniqueIdentifier
-{
++ (NSString *)uniqueIdentifier {
     NSString *uuid;
-    if([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
-    {
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)]) {
         uuid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    }
-    else
-    {
+    } else {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         uuid = [defaults objectForKey:BFUniqueIdentifierDefaultsKey];
         if (!uuid) {
@@ -302,8 +279,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     return uuid;
 }
 
-+ (NSString *)generateUUID
-{
++ (NSString *)generateUUID {
     CFUUIDRef theUUID = CFUUIDCreate(NULL);
     CFStringRef string = CFUUIDCreateString(NULL, theUUID);
     CFRelease(theUUID);

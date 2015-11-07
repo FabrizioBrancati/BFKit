@@ -43,8 +43,7 @@ static UIFont *boldFont;
 /**
  *  All font family names available from iOS 7.0 to iOS 9.0
  */
-typedef NS_ENUM(NSInteger, FamilyFontName)
-{
+typedef NS_ENUM(NSInteger, FamilyFontName) {
     /**
      *  Academy Engraved LET
      */
@@ -350,8 +349,7 @@ typedef NS_ENUM(NSInteger, FamilyFontName)
 /**
  *  All font names for all family available from iOS 7.0 to iOS 9.0
  */
-typedef NS_ENUM(NSInteger, FontName)
-{
+typedef NS_ENUM(NSInteger, FontName) {
     /**
      *  Academy Engraved Let Plain
      */

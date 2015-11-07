@@ -28,10 +28,8 @@
 
 @implementation NSMutableDictionary (BFKit)
 
-- (BOOL)safeSetObject:(id)anObject forKey:(id<NSCopying>)aKey
-{
-    if(anObject == nil)
-    {
+- (BOOL)safeSetObject:(id)anObject forKey:(id<NSCopying>)aKey {
+    if (anObject == nil) {
         return NO;
     }
     

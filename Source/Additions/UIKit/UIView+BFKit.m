@@ -28,16 +28,14 @@
 
 @implementation UIView (BFKit)
 
-+ (UIView *)initWithFrame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor
-{
++ (UIView *)initWithFrame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor {
     UIView *view = [[UIView alloc] initWithFrame:frame];
     [view setBackgroundColor:backgroundColor];
     
     return view;
 }
 
-- (void)createBordersWithColor:(UIColor *)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width
-{
+- (void)createBordersWithColor:(UIColor *)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width {
     self.layer.borderWidth = width;
     self.layer.cornerRadius = radius;
     self.layer.shouldRasterize = NO;
@@ -52,28 +50,24 @@
     CGColorSpaceRelease(space);
 }
 
-- (void)removeBorders
-{
+- (void)removeBorders {
     self.layer.borderWidth = 0;
     self.layer.cornerRadius = 0;
     self.layer.borderColor = nil;
 }
 
-- (void)removeShadow
-{
+- (void)removeShadow {
     [self.layer setShadowColor:[[UIColor clearColor] CGColor]];
     [self.layer setShadowOpacity:0.0f];
     [self.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
 }
 
-- (void)setCornerRadius:(CGFloat)radius
-{
+- (void)setCornerRadius:(CGFloat)radius {
     self.layer.cornerRadius = radius;
     [self.layer setMasksToBounds:YES];
 }
 
-- (void)createRectShadowWithOffset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius
-{
+- (void)createRectShadowWithOffset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = opacity;
     self.layer.shadowOffset = offset;
@@ -81,8 +75,7 @@
     self.layer.masksToBounds = NO;
 }
 
-- (void)createCornerRadiusShadowWithCornerRadius:(CGFloat)cornerRadius offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius
-{
+- (void)createCornerRadiusShadowWithCornerRadius:(CGFloat)cornerRadius offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = opacity;
     self.layer.shadowOffset = offset;
@@ -93,67 +86,53 @@
     self.layer.masksToBounds = NO;
 }
 
-- (void)createGradientWithColors:(NSArray *)colors direction:(UIViewLinearGradientDirection)direction
-{
+- (void)createGradientWithColors:(NSArray *)colors direction:(UIViewLinearGradientDirection)direction {
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
     
     NSMutableArray *mutableColors = colors.mutableCopy;
-    for(int i = 0; i < colors.count; i++)
-    {
+    for (int i = 0; i < colors.count; i++) {
         UIColor *currentColor = colors[i];
         [mutableColors replaceObjectAtIndex:i withObject:(id)currentColor.CGColor];
     }
     gradient.colors = mutableColors;
     
-    switch (direction)
-    {
-        case UIViewLinearGradientDirectionVertical:
-        {
+    switch (direction) {
+        case UIViewLinearGradientDirectionVertical: {
             gradient.startPoint = CGPointMake(0.5f, 0.0f);
             gradient.endPoint = CGPointMake(0.5f, 1.0f);
             break;
         }
-        case UIViewLinearGradientDirectionHorizontal:
-        {
+        case UIViewLinearGradientDirectionHorizontal: {
             gradient.startPoint = CGPointMake(0.0f, 0.5f);
             gradient.endPoint = CGPointMake(1.0f, 0.5f);
             break;
         }
-        case UIViewLinearGradientDirectionDiagonalFromLeftToRightAndTopToDown:
-        {
+        case UIViewLinearGradientDirectionDiagonalFromLeftToRightAndTopToDown: {
             gradient.startPoint = CGPointMake(0.0f, 0.0f);
             gradient.endPoint = CGPointMake(1.0f, 1.0f);
             break;
         }
-        case UIViewLinearGradientDirectionDiagonalFromLeftToRightAndDownToTop:
-        {
+        case UIViewLinearGradientDirectionDiagonalFromLeftToRightAndDownToTop: {
             gradient.startPoint = CGPointMake(0.0f, 1.0f);
             gradient.endPoint = CGPointMake(1.0f, 0.0f);
             break;
         }
-        case UIViewLinearGradientDirectionDiagonalFromRightToLeftAndTopToDown:
-        {
+        case UIViewLinearGradientDirectionDiagonalFromRightToLeftAndTopToDown: {
             gradient.startPoint = CGPointMake(1.0f, 0.0f);
             gradient.endPoint = CGPointMake(0.0f, 1.0f);
             break;
         }
-        case UIViewLinearGradientDirectionDiagonalFromRightToLeftAndDownToTop:
-        {
+        case UIViewLinearGradientDirectionDiagonalFromRightToLeftAndDownToTop: {
             gradient.startPoint = CGPointMake(1.0f, 1.0f);
             gradient.endPoint = CGPointMake(0.0f, 0.0f);
-            break;
-        }
-        default:
-        {
             break;
         }
     }
     [self.layer insertSublayer:gradient atIndex:0];
 }
 
-- (void)shakeView
-{
+- (void)shakeView {
     CAKeyframeAnimation *shake = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     shake.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-5.0f, 0.0f, 0.0f)], [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(5.0f, 0.0f, 0.0f)]];
     shake.autoreverses = YES;
@@ -163,33 +142,27 @@
     [self.layer addAnimation:shake forKey:@"shake"];
 }
 
-- (void)pulseViewWithDuration:(CGFloat)duration
-{
+- (void)pulseViewWithDuration:(CGFloat)duration {
     [UIView animateWithDuration:duration / 6 animations:^{
         [self setTransform:CGAffineTransformMakeScale(1.1, 1.1)];
     } completion:^(BOOL finished) {
-        if(finished)
-        {
+        if (finished) {
             [UIView animateWithDuration:duration / 6 animations:^{
                 [self setTransform:CGAffineTransformMakeScale(0.96, 0.96)];
             } completion:^(BOOL finished) {
-                if(finished)
-                {
+                if (finished) {
                     [UIView animateWithDuration:duration / 6 animations:^{
                         [self setTransform:CGAffineTransformMakeScale(1.03, 1.03)];
                     } completion:^(BOOL finished) {
-                        if(finished)
-                        {
+                        if (finished) {
                             [UIView animateWithDuration:duration / 6 animations:^{
                                 [self setTransform:CGAffineTransformMakeScale(0.985, 0.985)];
                             } completion:^(BOOL finished) {
-                                if(finished)
-                                {
+                                if (finished) {
                                     [UIView animateWithDuration:duration / 6 animations:^{
                                         [self setTransform:CGAffineTransformMakeScale(1.007, 1.007)];
                                     } completion:^(BOOL finished) {
-                                        if(finished)
-                                        {
+                                        if (finished) {
                                             [UIView animateWithDuration:duration / 6 animations:^{
                                                 [self setTransform:CGAffineTransformMakeScale(1, 1)];
                                             } completion:nil];
@@ -205,13 +178,11 @@
     }];
 }
 
-- (void)pulseViewWithTime:(CGFloat)seconds
-{
+- (void)pulseViewWithTime:(CGFloat)seconds {
     [self pulseViewWithDuration:seconds];
 }
 
-- (void)heartbeatViewWithDuration:(CGFloat)duration
-{
+- (void)heartbeatViewWithDuration:(CGFloat)duration {
     float maxSize = 1.4f, durationPerBeat = 0.5f;
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
@@ -235,8 +206,7 @@
     [self.layer addAnimation:animation forKey:@"heartbeat"];
 }
 
-- (void)applyMotionEffects
-{
+- (void)applyMotionEffects {
     UIInterpolatingMotionEffect *horizontalEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
     horizontalEffect.minimumRelativeValue = @(-10.0f);
     horizontalEffect.maximumRelativeValue = @(10.0f);
@@ -249,12 +219,10 @@
     [self addMotionEffect:motionEffectGroup];
 }
 
-- (void)flipWithDuration:(NSTimeInterval)duration direction:(UIViewAnimationFlipDirection)direction
-{
+- (void)flipWithDuration:(NSTimeInterval)duration direction:(UIViewAnimationFlipDirection)direction {
     NSString *subtype = nil;
     
-    switch(direction)
-    {
+    switch (direction) {
         case UIViewAnimationFlipDirectionFromTop:
             subtype = @"fromTop";
             break;
@@ -283,43 +251,35 @@
     [self.layer addAnimation:transition forKey:@"flip"];
 }
 
-- (void)translateAroundTheView:(UIView *)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge
-{
+- (void)translateAroundTheView:(UIView *)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge {
     CGFloat startPosition = self.center.x, endPosition;
-    switch(direction)
-    {
-        case UIViewAnimationTranslationDirectionFromLeftToRight:
-        {
+    switch (direction) {
+        case UIViewAnimationTranslationDirectionFromLeftToRight: {
             startPosition = self.frame.size.width / 2;
             endPosition = -(self.frame.size.width / 2) + topView.frame.size.width;
             break;
         }
         case UIViewAnimationTranslationDirectionFromRightToLeft:
-        default:
-        {
+        default: {
             startPosition = -(self.frame.size.width / 2) + topView.frame.size.width;
             endPosition = self.frame.size.width / 2;
             break;
         }
     }
     
-    if(startFromEdge)
-    {
+    if (startFromEdge) {
         [self setCenter:CGPointMake(startPosition, self.center.y)];
     }
     
     [UIView animateWithDuration:duration / 2 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [self setCenter:CGPointMake(endPosition, self.center.y)];
     } completion:^(BOOL finished) {
-        if(finished)
-        {
+        if (finished) {
             [UIView animateWithDuration:duration / 2 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 [self setCenter:CGPointMake(startPosition, self.center.y)];
             } completion:^(BOOL finished) {
-                if(finished)
-                {
-                    if(repeat)
-                    {
+                if (finished) {
+                    if (repeat) {
                         [self translateAroundTheView:topView duration:duration direction:direction repeat:repeat startFromEdge:startFromEdge];
                     }
                 }
@@ -328,8 +288,7 @@
     }];
 }
 
-- (UIImage *)screenshot
-{
+- (UIImage *)screenshot {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
     
     [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
@@ -343,8 +302,7 @@
     return image;
 }
 
-- (UIImage *)saveScreenshot
-{
+- (UIImage *)saveScreenshot {
     UIImage *image = [self screenshot];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     
