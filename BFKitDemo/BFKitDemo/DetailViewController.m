@@ -9,8 +9,7 @@
 #import "DetailViewController.h"
 #import "AppDelegate.h"
 
-@interface DetailViewController ()
-{
+@interface DetailViewController () {
     UIScrollView *_scrollView;
     DetailType _detailType;
 }
@@ -18,8 +17,7 @@
 
 @implementation DetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -30,27 +28,22 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    switch(_detailType)
-    {
-        case DetailTypeUINavigationBar:
-        {
+    switch (_detailType) {
+        case DetailTypeUINavigationBar: {
             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
             [appDelegate.kitNavigationController.navigationBar setTransparent:NO];
             
             break;
         }
-        case DetailTypeUIWindow:
-        {
+        case DetailTypeUIWindow: {
             BFHideTouchOnScreen;
             
             break;
@@ -60,20 +53,16 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForDetail:(DetailType)detailType
-{
+- (void)prepareForDetail:(DetailType)detailType {
     _detailType = detailType;
     
-    switch(_detailType)
-    {
-        case DetailTypeBFApp:
-        {
+    switch (_detailType) {
+        case DetailTypeBFApp: {
             self.title = @"BFApp";
             [_scrollView removeFromSuperview];
             
@@ -85,19 +74,19 @@
             BFLog(@"Localized string from BFKit: %@", BFLocalizedString(@"OPEN", @""));
             
             [BFApp onFirstStart:^(BOOL isFirstStart) {
-                if(isFirstStart)
+                if (isFirstStart) {
                     BFLog(@"Is first start!")
-                else
+                } else {
                     BFLog(@"Is not first start!")
-             }];
+                }
+            }];
             
             UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             [self.view addSubview:textView];
             
             break;
         }
-        case DetailTypeBFButton:
-        {
+        case DetailTypeBFButton: {
             self.title = @"BFButton";
             [_scrollView removeFromSuperview];
             
@@ -106,8 +95,7 @@
             
             break;
         }
-        case DetailTypeBFDataStructures:
-        {
+        case DetailTypeBFDataStructures: {
             self.title = @"BFDataStructures";
             [_scrollView removeFromSuperview];
             
@@ -119,12 +107,9 @@
             BFLog(@"Push: 1\nPush: 2\nStack: %@", stack);
             [stack pop];
             BFLog(@"Pop\nStack: %@", stack);
-            if([stack empty])
-            {
+            if ([stack empty]) {
                 BFLog(@"Is empty");
-            }
-            else
-            {
+            } else {
                 BFLog(@"Is not empty");
             }
             
@@ -157,8 +142,7 @@
             
             break;
         }
-        case DetailTypeBFLog:
-        {
+        case DetailTypeBFLog: {
             self.title = @"BFLog";
             [_scrollView removeFromSuperview];
             
@@ -171,8 +155,7 @@
             
             break;
         }
-        case DetailTypeBFPassword:
-        {
+        case DetailTypeBFPassword: {
             self.title = @"BFPassword";
             [_scrollView removeFromSuperview];
             
@@ -190,8 +173,7 @@
             
             break;
         }
-        case DetailTypeBFSystemSound:
-        {
+        case DetailTypeBFSystemSound: {
             self.title = @"BFSystemSound";
             [_scrollView removeFromSuperview];
             
@@ -207,36 +189,30 @@
             
             break;
         }
-        case DetailTypeBFTouchID:
-        {
+        case DetailTypeBFTouchID: {
             self.title = @"BFTouchID";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
             UILabel *normalLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 50) text:@"Waiting for Touch ID..." font:FontNameHelveticaNeue size:16 color:[UIColor blackColor] alignment:NSTextAlignmentCenter lines:2];
             [_scrollView addSubview:normalLabel];
             
-            if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
-            {
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
                 [BFTouchID showTouchIDAuthenticationWithReason:BFLocalizedString(@"AUTHENTICATION", @"") completion:^(TouchIDResult result) {
                     
-                    switch(result)
-                    {
-                        case TouchIDResultSuccess:
-                        {
+                    switch (result) {
+                        case TouchIDResultSuccess: {
                             runOnMainThread(^{
                                 [normalLabel setText:BFLocalizedString(@"AUTHORIZED", @"")];
                             });
                             break;
                         }
-                        case TouchIDResultAuthenticationFailed:
-                        {
+                        case TouchIDResultAuthenticationFailed: {
                             runOnMainThread(^{
                                 [normalLabel setText:BFLocalizedString(@"NOT_OWNER", @"")];
                             });
                             break;
                         }
-                        default:
-                        {
+                        default: {
                             runOnMainThread(^{
                                 [normalLabel setText:[NSString stringWithFormat:@"%@: %li", BFLocalizedString(@"ERROR", @""), (long)result]];
                             });
@@ -244,15 +220,12 @@
                         }
                     }
                 }];
-            }
-            else
-            {
+            } else {
                 [normalLabel setText:@"BFTouchID is available on iOS 8 or later"];
             }
             break;
         }
-        case DetailTypeUIButton:
-        {
+        case DetailTypeUIButton: {
             self.title = @"UIButton";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
@@ -281,8 +254,7 @@
             
             break;
         }
-        case DetailTypeUIColor:
-        {
+        case DetailTypeUIColor: {
             self.title = @"UIColor";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
@@ -306,21 +278,21 @@
             
             break;
         }
-        case DetailTypeUIDevice:
-        {
+        case DetailTypeUIDevice: {
             self.title = @"UIDevice";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
             NSMutableString *deviceInfoString = [[NSMutableString alloc] init];
             
-            if([UIDevice isiPhone])
+            if ([UIDevice isiPhone]) {
                 [deviceInfoString appendString:@"Device: iPhone\n"];
-            else if([UIDevice isiPad])
+            } else if ([UIDevice isiPad]) {
                 [deviceInfoString appendString:@"Device: iPad\n"];
-            else if([UIDevice isiPod])
+            } else if ([UIDevice isiPod]) {
                 [deviceInfoString appendString:@"Device: iPod\n"];
-            else if([UIDevice isSimulator])
+            } else if ([UIDevice isSimulator]) {
                 [deviceInfoString appendString:@"Device: Simulator\n"];
+            }
             
             [deviceInfoString appendString:[NSString stringWithFormat:@"iOS Version: %li\n", (long)[UIDevice iOSVersion]]];
             
@@ -333,8 +305,7 @@
             
             break;
         }
-        case DetailTypeUIFont:
-        {
+        case DetailTypeUIFont: {
             self.title = @"UIFont";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
@@ -348,8 +319,7 @@
             
             break;
         }
-        case DetailTypeUIImage:
-        {
+        case DetailTypeUIImage: {
             self.title = @"UIImage";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 10) + (20 * 11))];
             
@@ -383,7 +353,7 @@
             [invertedImageView addSubview:invertedLabel];
             [_scrollView addSubview:invertedImageView];
             
-            UIImage *blurredImage = [[UIImage imageNamed:@"Logo"] boxBlurImageWithBlur:1];
+            UIImage *blurredImage = [[UIImage imageNamed:@"Logo"] blurImageWithBlur:1];
             UIImageView *blurredImageView = [UIImageView initWithImage:blurredImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *blurredLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Blurred Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [blurredImageView addSubview:blurredLabel];
@@ -415,8 +385,7 @@
             
             break;
         }
-        case DetailTypeUIImageView:
-        {
+        case DetailTypeUIImageView: {
             self.title = @"UIImageView";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 2) + (20 * 3))];
             
@@ -431,8 +400,7 @@
             
             break;
         }
-        case DetailTypeUILabel:
-        {
+        case DetailTypeUILabel: {
             self.title = @"UILabel";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
@@ -444,8 +412,7 @@
             
             break;
         }
-        case DetailTypeUINavigationBar:
-        {
+        case DetailTypeUINavigationBar: {
             self.title = @"UINavigationBar";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
@@ -457,30 +424,22 @@
             
             break;
         }
-        case DetailTypeUIScreen:
-        {
+        case DetailTypeUIScreen: {
             self.title = @"UIScreen";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
             NSMutableString *screenInfoString = [[NSMutableString alloc] init];
             
-            if([UIScreen isRetina])
-                [screenInfoString appendString:@"Retina: Yes\n"];
-            else
-                [screenInfoString appendString:@"Retina: No\n"];
+            [UIScreen isRetina] ? [screenInfoString appendString:@"Retina: Yes\n"] : [screenInfoString appendString:@"Retina: No\n"];
             
-            if([UIScreen isRetinaHD])
-                [screenInfoString appendString:@"Retina HD: Yes\n"];
-            else
-                [screenInfoString appendString:@"Retina HD: No\n"];
+            [UIScreen isRetinaHD] ? [screenInfoString appendString:@"Retina HD: Yes\n"] : [screenInfoString appendString:@"Retina HD: No\n"];
             
             UILabel *screenInfoLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 200) text:screenInfoString font:FontNameHelveticaLight size:16 color:[UIColor blackColor] alignment:NSTextAlignmentLeft lines:8];
             [_scrollView addSubview:screenInfoLabel];
             
             break;
         }
-        case DetailTypeUIScrollView:
-        {
+        case DetailTypeUIScrollView: {
             self.title = @"UIScrollView";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, 1000)];
             
@@ -489,8 +448,7 @@
             
             break;
         }
-        case DetailTypeUITableView:
-        {
+        case DetailTypeUITableView: {
             self.title = @"UITableView";
             [_scrollView removeFromSuperview];
             
@@ -499,8 +457,7 @@
             
             break;
         }
-        case DetailTypeUITextField:
-        {
+        case DetailTypeUITextField: {
             self.title = @"UITextField";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
@@ -509,8 +466,7 @@
             
             break;
         }
-        case DetailTypeUITextView:
-        {
+        case DetailTypeUITextView: {
             self.title = @"UITextView";
             [_scrollView removeFromSuperview];
             
@@ -519,8 +475,7 @@
             
             break;
         }
-        case DetailTypeUIToolbar:
-        {
+        case DetailTypeUIToolbar: {
             self.title = @"UIToolbar";
             [_scrollView removeFromSuperview];
             
@@ -531,8 +486,7 @@
             
             break;
         }
-        case DetailTypeUIView:
-        {
+        case DetailTypeUIView: {
             self.title = @"UIView";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, 240 + SCREEN_WIDTH)];
             
@@ -561,20 +515,18 @@
             
             break;
         }
-        case DetailTypeUIWebView:
-        {
+        case DetailTypeUIWebView: {
             self.title = @"UIWebView";
             [_scrollView removeFromSuperview];
             
             UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-            [webView loadWebsite:@"http://www.google.com"];
+            [webView loadWebsite:@"https://www.google.com"];
             [webView removeShadow];
             [self.view addSubview:webView];
             
             break;
         }
-        case DetailTypeUIWindow:
-        {
+        case DetailTypeUIWindow: {
             self.title = @"UIWindow";
             [_scrollView removeFromSuperview];
             
@@ -591,8 +543,7 @@
             
             break;
         }
-        case DetailTypeNSArray:
-        {
+        case DetailTypeNSArray: {
             self.title = @"NSArray";
             [_scrollView removeFromSuperview];
             
@@ -609,8 +560,7 @@
             
             break;
         }
-        case DetailTypeNSDate:
-        {
+        case DetailTypeNSDate: {
             self.title = @"NSDate";
             [_scrollView removeFromSuperview];
             
@@ -628,8 +578,7 @@
             
             break;
         }
-        case DetailTypeNSDictionary:
-        {
+        case DetailTypeNSDictionary: {
         	self.title = @"NSDictionary";
             [_scrollView removeFromSuperview];
             
@@ -645,8 +594,7 @@
             [self.view addSubview:textView];
         	break;
     	}
-        case DetailTypeNSFileManager:
-        {
+        case DetailTypeNSFileManager: {
             self.title = @"NSFileManager";
             [_scrollView removeFromSuperview];
             
@@ -665,8 +613,7 @@
             
             break;
         }
-        case DetailTypeNSMutableArray:
-        {
+        case DetailTypeNSMutableArray: {
             self.title = @"NSMutableArray";
             [_scrollView removeFromSuperview];
             
@@ -683,8 +630,7 @@
             
             break;
         }
-        case DetailTypeNSMutableDictionary:
-        {
+        case DetailTypeNSMutableDictionary: {
             self.title = @"NSMutableDictionary";
             [_scrollView removeFromSuperview];
             
@@ -700,8 +646,7 @@
             
             break;
         }
-        case DetailTypeNSNumber:
-        {
+        case DetailTypeNSNumber: {
             self.title = @"NSNumber";
             [_scrollView removeFromSuperview];
             
@@ -716,8 +661,7 @@
             
             break;
         }
-        case DetailTypeNSObject:
-        {
+        case DetailTypeNSObject: {
             self.title = @"NSObject";
             [_scrollView removeFromSuperview];
             
@@ -736,8 +680,7 @@
             
             break;
         }
-        case DetailTypeNSProcessInfo:
-        {
+        case DetailTypeNSProcessInfo: {
             self.title = @"NSProcessInfo";
             [_scrollView removeFromSuperview];
             
@@ -750,8 +693,7 @@
             
             break;
         }
-        case DetailTypeNSString:
-        {
+        case DetailTypeNSString: {
             self.title = @"NSString";
             [_scrollView removeFromSuperview];
             
@@ -766,7 +708,6 @@
             BFLog(@"SHA512: %@", [search SHA512]);
             BFLog([search isEmail] ? @"Is email: Yes" : @"Is email: No");
             
-			
 			NSString *testHEX = @"68 65 6c 6c 6f";
 			NSString *testString = @"hello";
             BFLog(@"String: %@ - To HEX: %@", testString, [testString stringToHEX]);
@@ -777,14 +718,12 @@
 			testString = [testString removeExtraSpaces];
 			BFLog(testString);
 			
-			
             UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             [self.view addSubview:textView];
             
             break;
         }
-        case DetailTypeNSThread:
-        {
+        case DetailTypeNSThread: {
             self.title = @"NSThread";
             [_scrollView removeFromSuperview];
             
@@ -794,23 +733,18 @@
             
             break;
         }
-        default:
-            break;
     }
 }
 
-- (IBAction)shakeButtonAction:(UIButton *)button
-{
+- (IBAction)shakeButtonAction:(UIButton *)button {
     [button shakeView];
 }
 
-- (IBAction)barButtonItemsAction:(UIBarButtonItem *)button
-{
+- (IBAction)barButtonItemsAction:(UIBarButtonItem *)button {
     BFLog(@"Bar button pressed");
 }
 
-- (void)threadMethod
-{
+- (void)threadMethod {
     BFLog(@"Background: %@", [NSThread currentThread]);
     
     runOnMainThread(^{
@@ -821,8 +755,7 @@
     });
 }
 
-- (void)multiArgumentsSelectorWithString:(NSString *)string1 string:(NSString *)string2 string:(NSString *)string3 string:(NSString *)string4
-{
+- (void)multiArgumentsSelectorWithString:(NSString *)string1 string:(NSString *)string2 string:(NSString *)string3 string:(NSString *)string4 {
     BFLog(@"\nString 1: %@\nString 2: %@\nString 3: %@\nString 4: %@", string1, string2, string3, string4);
 }
 

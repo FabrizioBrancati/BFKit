@@ -11,8 +11,7 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 
-@interface UserInterfaceKitViewController ()
-{
+@interface UserInterfaceKitViewController () {
     IBOutlet UITableView *_uikitTableView;
     
     AppDelegate *appDelegate;
@@ -23,8 +22,7 @@ static NSString *CellIdentifier = @"UIKitCell";
 
 @implementation UserInterfaceKitViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -35,8 +33,7 @@ static NSString *CellIdentifier = @"UIKitCell";
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
@@ -49,14 +46,12 @@ static NSString *CellIdentifier = @"UIKitCell";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self deselect:_uikitTableView];
@@ -64,34 +59,28 @@ static NSString *CellIdentifier = @"UIKitCell";
 
 #pragma mark - Show Info
 
-- (IBAction)showInfo:(id)sender
-{
+- (IBAction)showInfo:(id)sender {
     [self presentViewController:appDelegate.infoNavigationController animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-{
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 	return [NSString stringWithFormat:@"By %@ - BFKit v%@ (%@)", BFKIT_AUTHOR, APP_VERSION, APP_BUILD];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [appDelegate.uikitArray count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if([[appDelegate.uikitArray objectAtIndex:indexPath.row] isEqualToString:@"UIToolbar"])
-    {
+    if ([[appDelegate.uikitArray objectAtIndex:indexPath.row] isEqualToString:@"UIToolbar"]) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
         [[cell detailTextLabel] setText:@"+ UIBarButtonItem"];
@@ -102,16 +91,14 @@ static NSString *CellIdentifier = @"UIKitCell";
 	return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailViewController *detailViewController = [[DetailViewController alloc] init];
     [detailViewController prepareForDetail:indexPath.row + appDelegate.bfkitArray.count];
     
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-- (void)deselect:(UITableView *)tableView
-{
+- (void)deselect:(UITableView *)tableView {
 	[tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
 }
 
