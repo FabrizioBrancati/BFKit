@@ -31,7 +31,7 @@
  *
  *  @param ^block Block to be executed
  */
-NS_INLINE void runOnMainThread(void (^block)(void)) {
+NS_INLINE void runOnMainThread(void  (^ _Nonnull block)(void)) {
     dispatch_async(dispatch_get_main_queue(), ^{
         block();
     });

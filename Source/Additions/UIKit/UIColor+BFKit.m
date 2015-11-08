@@ -28,7 +28,7 @@
 
 @implementation UIColor (BFKit)
 
-+ (UIColor *)hex:(NSString *)hexString {
++ (UIColor * _Nonnull)hex:(NSString *)hexString {
     NSString *colorString = [[hexString stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
     CGFloat alpha, red, blue, green;
     switch ([colorString length]) {
@@ -63,15 +63,15 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-+ (UIColor *)hexString:(NSString *)hexString {
++ (UIColor * _Nonnull )hexString:(NSString *)hexString {
     return [UIColor hex:hexString];
 }
 
-+ (UIColor *)colorWithHexString:(NSString *)hexString {
++ (UIColor * _Nonnull)colorWithHexString:(NSString *)hexString {
     return [UIColor hex:hexString];
 }
 
-+ (CGFloat)colorComponentFrom:(NSString *)string start:(NSUInteger)start length:(NSUInteger)length {
++ (CGFloat)colorComponentFrom:(NSString * _Nonnull)string start:(NSUInteger)start length:(NSUInteger)length {
     NSString *substring = [string substringWithRange:NSMakeRange(start, length)];
     NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat:@"%@%@", substring, substring];
     unsigned hexComponent;
@@ -80,15 +80,15 @@
     return hexComponent / 255.0;
 }
 
-+ (id)colorWithHex:(unsigned int)hex {
++ (id _Nonnull)colorWithHex:(unsigned int)hex {
 	return [UIColor colorWithHex:hex alpha:1.0];
 }
 
-+ (id)colorWithHex:(unsigned int)hex alpha:(float)alpha {
++ (id _Nonnull)colorWithHex:(unsigned int)hex alpha:(float)alpha {
 	return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0 green:((float)((hex & 0xFF00) >> 8)) / 255.0 blue:((float)(hex & 0xFF)) / 255.0 alpha:alpha];
 }
 
-+ (UIColor *)colorForColorString:(NSString *)colorString {
++ (UIColor * _Nonnull)colorForColorString:(NSString * _Nonnull)colorString {
     if (!colorString) {
         return [UIColor lightGrayColor];
     }
@@ -101,7 +101,7 @@
     }
 }
 
-+ (UIColor *)randomColor {
++ (UIColor * _Nonnull)randomColor {
 	int r = arc4random() % 255;
 	int g = arc4random() % 255;
 	int b = arc4random() % 255;
@@ -109,7 +109,7 @@
 	return [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0];
 }
 
-+ (UIColor *)colorWithColor:(UIColor *)color alpha:(float)alpha {
++ (UIColor * _Nonnull)colorWithColor:(UIColor * _Nonnull)color alpha:(float)alpha {
     return [color colorWithAlphaComponent:alpha];
 }
 
@@ -210,11 +210,11 @@
     return 0.0;
 }
 
-- (UIColor *)contrastingColor {
+- (UIColor * _Nonnull)contrastingColor {
     return (self.luminance > 0.5f) ? [UIColor blackColor] : [UIColor whiteColor];
 }
 
-- (UIColor *)complementaryColor {
+- (UIColor * _Nonnull)complementaryColor {
     CGFloat h, s, v, a;
     if (![self hue:&h saturation:&s brightness:&v alpha:&a]) {
         return nil;
@@ -227,7 +227,7 @@
     return [UIColor colorWithHue:h saturation:s brightness:v alpha:a];
 }
 
-- (BOOL)hue:(CGFloat *)hue saturation:(CGFloat *)saturation brightness:(CGFloat *)brightness alpha:(CGFloat *)alpha {
+- (BOOL)hue:(CGFloat * _Nullable)hue saturation:(CGFloat * _Nullable)saturation brightness:(CGFloat * _Nullable)brightness alpha:(CGFloat * _Nullable)alpha {
     CGFloat r, g, b, a;
     if (![self red:&r green:&g blue:&b alpha:&a]) {
         return NO;
@@ -241,7 +241,7 @@
     return YES;
 }
 
-- (BOOL)red:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha {
+- (BOOL)red:(CGFloat * _Nonnull)red green:(CGFloat * _Nonnull)green blue:(CGFloat * _Nonnull)blue alpha:(CGFloat * _Nullable)alpha {
     const CGFloat *components = CGColorGetComponents(self.CGColor);
     
     CGFloat r, g, b, a;
@@ -280,7 +280,7 @@
     return YES;
 }
 
-+ (void)red:(CGFloat)r green:(CGFloat)g blue:(CGFloat)b toHue:(CGFloat *)pH saturation:(CGFloat *)pS brightness:(CGFloat *)pV {
++ (void)red:(CGFloat)r green:(CGFloat)g blue:(CGFloat)b toHue:(CGFloat * _Nonnull)pH saturation:(CGFloat * _Nonnull)pS brightness:(CGFloat * _Nonnull)pV {
     CGFloat h,s,v;
     
     CGFloat max = MAX(r, MAX(g, b));

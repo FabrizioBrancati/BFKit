@@ -36,14 +36,14 @@
  *
  *  @return Returns the JSON as NSString or nil if error while parsing
  */
-- (NSString *)dictionaryToJson DEPRECATED_MSG_ATTRIBUTE("Use -dictionaryToJSON");
+- (NSString * _Nonnull)dictionaryToJson DEPRECATED_MSG_ATTRIBUTE("Use -dictionaryToJSON");
 
 /**
  *  Convert self to JSON as NSString
  *
  *  @return Returns the JSON as NSString or nil if error while parsing
  */
-- (NSString *)dictionaryToJSON;
+- (NSString * _Nonnull)dictionaryToJSON;
 
 /**
  *  Convert the given dictionary to JSON as NSString
@@ -52,7 +52,7 @@
  *
  *  @return Returns the JSON as NSString or nil if error while parsing
  */
-+ (NSString *)dictionaryToJson:(NSDictionary *)dictionary DEPRECATED_MSG_ATTRIBUTE("Use +dictionaryToJSON:");
++ (NSString * _Nonnull)dictionaryToJson:(NSDictionary * _Nonnull)dictionary DEPRECATED_MSG_ATTRIBUTE("Use +dictionaryToJSON:");
 
 /**
  *  Convert the given dictionary to JSON as NSString
@@ -61,6 +61,6 @@
  *
  *  @return Returns the JSON as NSString or nil if error while parsing
  */
-+ (NSString *)dictionaryToJSON:(NSDictionary *)dictionary;
++ (NSString * _Nonnull)dictionaryToJSON:(NSDictionary * _Nonnull)dictionary;
 
 @end

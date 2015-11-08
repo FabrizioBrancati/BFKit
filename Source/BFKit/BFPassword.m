@@ -28,7 +28,7 @@
 
 @implementation BFPassword
 
-+ (PasswordStrengthLevel)checkPasswordStrength:(NSString *)password {
++ (PasswordStrengthLevel)checkPasswordStrength:(NSString * _Nonnull)password {
     NSInteger length = [password length];
     int lowercase = [self countLowercaseLetters:password];
     int uppercase = [self countUppercaseLetters:password];
@@ -103,7 +103,7 @@
                             return PasswordStrengthLevelVeryWeak;
 }
 
-+ (int)countLowercaseLetters:(NSString *)password {
++ (int)countLowercaseLetters:(NSString * _Nonnull)password {
     int count = 0;
     
     for (int i = 0; i < [password length]; i++) {
@@ -116,7 +116,7 @@
     return count;
 }
 
-+ (int)countUppercaseLetters:(NSString *)password {
++ (int)countUppercaseLetters:(NSString * _Nonnull)password {
     int count = 0;
     
     for (int i = 0; i < [password length]; i++) {
@@ -129,7 +129,7 @@
     return count;
 }
 
-+ (int)countNumbers:(NSString *)password {
++ (int)countNumbers:(NSString * _Nonnull)password {
     int count = 0;
     
     for (int i = 0; i < [password length]; i++) {
@@ -142,7 +142,7 @@
     return count;
 }
 
-+ (int)countSymbols:(NSString *)password {
++ (int)countSymbols:(NSString * _Nonnull)password {
     int count = 0;
     
     for (int i = 0; i < [password length]; i++) {

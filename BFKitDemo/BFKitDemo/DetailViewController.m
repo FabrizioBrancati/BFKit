@@ -79,7 +79,7 @@
                 } else {
                     BFLog(@"Is not first start!")
                 }
-             }];
+            }];
             
             UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             [self.view addSubview:textView];
@@ -353,7 +353,7 @@
             [invertedImageView addSubview:invertedLabel];
             [_scrollView addSubview:invertedImageView];
             
-            UIImage *blurredImage = [[UIImage imageNamed:@"Logo"] boxBlurImageWithBlur:1];
+            UIImage *blurredImage = [[UIImage imageNamed:@"Logo"] blurImageWithBlur:1];
             UIImageView *blurredImageView = [UIImageView initWithImage:blurredImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *blurredLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Blurred Image" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [blurredImageView addSubview:blurredLabel];
@@ -520,7 +520,7 @@
             [_scrollView removeFromSuperview];
             
             UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-            [webView loadWebsite:@"http://www.google.com"];
+            [webView loadWebsite:@"https://www.google.com"];
             [webView removeShadow];
             [self.view addSubview:webView];
             

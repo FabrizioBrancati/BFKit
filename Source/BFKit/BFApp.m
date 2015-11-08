@@ -31,7 +31,7 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
 
 @implementation BFApp
 
-+ (void)onFirstStart:(void (^)(BOOL isFirstStart))block {
++ (void)onFirstStart:(void (^ _Nullable)(BOOL isFirstStart))block {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL hasBeenOpened = [defaults boolForKey:BFHasBeenOpened];
     if (hasBeenOpened != true) {
@@ -42,7 +42,7 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
     block(!hasBeenOpened);
 }
 
-+ (void)onFirstStartForCurrentVersion:(void (^)(BOOL isFirstStartForCurrentVersion))block {
++ (void)onFirstStartForCurrentVersion:(void (^ _Nullable)(BOOL isFirstStartForCurrentVersion))block {
     BFHasBeenOpenedForCurrentVersion = [NSString stringWithFormat:@"%@%@", BFHasBeenOpened, APP_VERSION];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL hasBeenOpenedForCurrentVersion = [defaults boolForKey:BFHasBeenOpenedForCurrentVersion];
@@ -54,7 +54,7 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
     block(!hasBeenOpenedForCurrentVersion);
 }
 
-+ (void)onFirstStartForVersion:(NSString *)version block:(void (^)(BOOL isFirstStartForCurrentVersion))block {
++ (void)onFirstStartForVersion:(NSString * _Nonnull)version block:(void (^ _Nullable)(BOOL isFirstStartForCurrentVersion))block {
     NSString *BFHasBeenOpenedForVersion = [NSString stringWithFormat:@"%@%@", BFHasBeenOpened, version];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL hasBeenOpenedForVersion = [defaults boolForKey:BFHasBeenOpenedForCurrentVersion];
@@ -87,7 +87,7 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
     }
 }
 
-+ (BOOL)isFirstStartForVersion:(NSString *)version {
++ (BOOL)isFirstStartForVersion:(NSString * _Nonnull)version {
     NSString *BFHasBeenOpenedForVersion = [NSString stringWithFormat:@"%@%@", BFHasBeenOpened, version];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL hasBeenOpenedForVersion = [defaults boolForKey:BFHasBeenOpenedForVersion];

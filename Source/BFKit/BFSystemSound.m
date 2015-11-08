@@ -37,7 +37,7 @@
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
-+ (SystemSoundID)playCustomSound:(NSURL *)soundURL {
++ (SystemSoundID)playCustomSound:(NSURL * _Nonnull)soundURL {
     SystemSoundID soundID;
 
     OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(soundURL), &soundID);

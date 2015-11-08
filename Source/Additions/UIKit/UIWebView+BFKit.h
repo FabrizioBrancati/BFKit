@@ -42,6 +42,6 @@
  *
  *  @param website Website to load
  */
-- (void)loadWebsite:(NSString *)website;
+- (void)loadWebsite:(NSString * _Nonnull)website;
 
 @end

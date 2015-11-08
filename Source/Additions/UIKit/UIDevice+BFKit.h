@@ -77,14 +77,14 @@
  *
  *  @return Returns the device platform string
  */
-+ (NSString *)devicePlatform;
++ (NSString * _Nonnull)devicePlatform;
 /**
  *  Returns the user-friendly device platform string
  *  Example: "iPad Air (Cellular)"
  *
  *  @return Returns the user-friendly device platform string
  */
-+ (NSString *)devicePlatformString;
++ (NSString * _Nonnull)devicePlatformString;
 
 /**
  *  Check if the current device is an iPad
@@ -197,27 +197,27 @@
  *
  *  @return Returns the current device total disk space
  */
-+ (NSNumber *)totalDiskSpace;
++ (NSNumber * _Nonnull)totalDiskSpace;
 
 /**
  *  Returns the current device free disk space
  *
  *  @return Returns the current device free disk space
  */
-+ (NSNumber *)freeDiskSpace;
++ (NSNumber * _Nonnull)freeDiskSpace;
 
 /**
  *  Returns the current device MAC address
  *
  *  @return Returns the current device MAC address
  */
-+ (NSString *)macAddress DEPRECATED_MSG_ATTRIBUTE("In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00");
++ (NSString * _Nonnull)macAddress DEPRECATED_MSG_ATTRIBUTE("In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00");
 
 /**
  *  Generate an unique identifier and store it into standardUserDefaults
  *
  *  @return Returns a unique identifier as a NSString
  */
-+ (NSString *)uniqueIdentifier;
++ (NSString * _Nonnull)uniqueIdentifier;
 
 @end

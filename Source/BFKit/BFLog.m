@@ -33,7 +33,7 @@ static NSString *logDetailedString = @"";
 
 @implementation BFLog
 
-void ExtendNSLog(const char *file, int lineNumber, const char *function, NSString *format, ...) {
+void ExtendNSLog(const char * _Nonnull file, int lineNumber, const char * _Nonnull function, NSString *format, ...) {
     va_list ap;
     
     va_start(ap, format);
@@ -61,15 +61,15 @@ void ExtendNSLog(const char *file, int lineNumber, const char *function, NSStrin
     logDetailedString = [logDetailedString stringByAppendingString:[NSString stringWithFormat:@"%@", log]];
 }
 
-+ (NSString *)logString {
++ (NSString * _Nonnull)logString {
     return logString;
 }
 
-+ (NSString *)detailedLogString {
++ (NSString * _Nonnull)detailedLogString {
     return logDetailedString;
 }
 
-+ (NSString *)logDetailedString {
++ (NSString * _Nonnull)logDetailedString {
     return logDetailedString;
 }
 

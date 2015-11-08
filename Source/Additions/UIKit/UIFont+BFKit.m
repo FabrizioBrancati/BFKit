@@ -30,7 +30,7 @@
 
 @implementation UIFont (BFKit)
 
-+ (NSDictionary *)allFamilyAndFonts {
++ (NSDictionary * _Nonnull)allFamilyAndFonts {
     NSMutableArray *fontFamilies = (NSMutableArray *)[UIFont familyNames];
     fontFamilies = [NSMutableArray sortArrayByKey:@"" array:fontFamilies ascending:YES];
     
@@ -47,7 +47,7 @@
     return fontFamilyDic;
 }
 
-+ (NSArray *)fontsNameForFamilyName:(FamilyFontName)familyFontName {
++ (NSArray * _Nonnull)fontsNameForFamilyName:(FamilyFontName)familyFontName {
     NSArray *fontNames;
     
     switch (familyFontName) {
@@ -283,7 +283,7 @@
     return fontNames;
 }
 
-+ (UIFont *)fontForFontName:(FontName)fontName size:(CGFloat)fontSize {
++ (UIFont * _Nonnull)fontForFontName:(FontName)fontName size:(CGFloat)fontSize {
     switch (fontName) {
         case FontNameAcademyEngravedLetPlain:
             return [UIFont fontWithName:@"AcademyEngravedLetPlain" size:fontSize];

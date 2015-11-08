@@ -37,7 +37,7 @@
     }
 }
 
-- (void)loadWebsite:(NSString *)website {
+- (void)loadWebsite:(NSString * _Nonnull)website {
     [self loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:website]]];
 }
 

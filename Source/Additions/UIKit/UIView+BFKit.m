@@ -28,14 +28,14 @@
 
 @implementation UIView (BFKit)
 
-+ (UIView *)initWithFrame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame backgroundColor:(UIColor * _Nonnull)backgroundColor {
     UIView *view = [[UIView alloc] initWithFrame:frame];
     [view setBackgroundColor:backgroundColor];
     
     return view;
 }
 
-- (void)createBordersWithColor:(UIColor *)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width {
+- (void)createBordersWithColor:(UIColor * _Nonnull)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width {
     self.layer.borderWidth = width;
     self.layer.cornerRadius = radius;
     self.layer.shouldRasterize = NO;
@@ -86,7 +86,7 @@
     self.layer.masksToBounds = NO;
 }
 
-- (void)createGradientWithColors:(NSArray *)colors direction:(UIViewLinearGradientDirection)direction {
+- (void)createGradientWithColors:(NSArray * _Nonnull)colors direction:(UIViewLinearGradientDirection)direction {
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
     
@@ -251,7 +251,7 @@
     [self.layer addAnimation:transition forKey:@"flip"];
 }
 
-- (void)translateAroundTheView:(UIView *)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge {
+- (void)translateAroundTheView:(UIView * _Nonnull)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge {
     CGFloat startPosition = self.center.x, endPosition;
     switch (direction) {
         case UIViewAnimationTranslationDirectionFromLeftToRight: {
@@ -288,7 +288,7 @@
     }];
 }
 
-- (UIImage *)screenshot {
+- (UIImage * _Nonnull)screenshot {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
     
     [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
@@ -302,7 +302,7 @@
     return image;
 }
 
-- (UIImage *)saveScreenshot {
+- (UIImage * _Nonnull)saveScreenshot {
     UIImage *image = [self screenshot];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     

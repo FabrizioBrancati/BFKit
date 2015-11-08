@@ -30,19 +30,19 @@
 
 @implementation UIButton (BFKit)
 
-+ (instancetype)initWithFrame:(CGRect)frame {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame {
     return [UIButton initWithFrame:frame title:nil];
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame title:(NSString * _Nullable)title {
     return [UIButton initWithFrame:frame title:title backgroundImage:nil];
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title backgroundImage:(UIImage *)backgroundImage {
++ (instancetype _Nonnull )initWithFrame:(CGRect)frame title:(NSString * _Nullable)title backgroundImage:(UIImage * _Nullable)backgroundImage {
     return [UIButton initWithFrame:frame title:title backgroundImage:backgroundImage highlightedBackgroundImage:nil];
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title backgroundImage:(UIImage *)backgroundImage highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame title:(NSString * _Nullable)title backgroundImage:(UIImage * _Nullable)backgroundImage highlightedBackgroundImage:(UIImage * _Nullable)highlightedBackgroundImage {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 	[button setFrame:frame];
 	[button setTitle:title forState:UIControlStateNormal];
@@ -52,29 +52,29 @@
 	return button;
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)color {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame title:(NSString * _Nonnull)title color:(UIColor * _Nonnull)color {
     const CGFloat *components = CGColorGetComponents(color.CGColor);
     return [UIButton initWithFrame:frame title:title backgroundImage:[UIImage imageWithColor:color] highlightedBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:components[0]-0.1 green:components[1]-0.1 blue:components[2]-0.1 alpha:1]]];
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)color highlightedColor:(UIColor *)highlightedColor {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame title:(NSString * _Nonnull)title color:(UIColor * _Nonnull)color highlightedColor:(UIColor * _Nonnull)highlightedColor {
     return [UIButton initWithFrame:frame title:title backgroundImage:[UIImage imageWithColor:color] highlightedBackgroundImage:[UIImage imageWithColor:highlightedColor]];
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame color:(UIColor *)color {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame color:(UIColor * _Nonnull)color {
     const CGFloat *components = CGColorGetComponents(color.CGColor);
     return [UIButton initWithFrame:frame title:nil backgroundImage:[UIImage imageWithColor:color] highlightedBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:components[0]-0.1 green:components[1]-0.1 blue:components[2]-0.1 alpha:1]]];
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame color:(UIColor *)color highlightedColor:(UIColor *)highlightedColor {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame color:(UIColor * _Nonnull)color highlightedColor:(UIColor * _Nonnull)highlightedColor {
     return [UIButton initWithFrame:frame title:nil backgroundImage:[UIImage imageWithColor:color] highlightedBackgroundImage:[UIImage imageWithColor:highlightedColor]];
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame image:(UIImage * _Nonnull)image {
     return [UIButton initWithFrame:frame image:image highlightedImage:nil];
 }
 
-+ (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image highlightedImage:(UIImage *)highlightedImage {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame image:(UIImage * _Nonnull)image highlightedImage:(UIImage * _Nullable)highlightedImage {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:frame];
     [button setImage:image forState:UIControlStateNormal];
@@ -87,11 +87,11 @@
     [self.titleLabel setFont:[UIFont fontForFontName:fontName size:size]];
 }
 
-- (void)setTitleColor:(UIColor *)color {
+- (void)setTitleColor:(UIColor * _Nonnull)color {
     [self setTitleColor:color highlightedColor:[color colorWithAlphaComponent:0.4]];
 }
 
-- (void)setTitleColor:(UIColor *)color highlightedColor:(UIColor *)highlightedColor {
+- (void)setTitleColor:(UIColor * _Nonnull)color highlightedColor:(UIColor * _Nullable)highlightedColor {
     [self setTitleColor:color forState:UIControlStateNormal];
     [self setTitleColor:highlightedColor forState:UIControlStateHighlighted];
 }

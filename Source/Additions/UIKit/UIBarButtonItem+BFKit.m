@@ -29,11 +29,11 @@
 
 @implementation UIBarButtonItem (BFKit)
 
-- (instancetype)initWithBarButtonFlexibleSpace {
+- (instancetype _Nonnull)initWithBarButtonFlexibleSpace {
     return [self initWithBarButtonSpaceType:UIBarButtonSystemItemFlexibleSpace width:0];
 }
 
-- (instancetype)initWithBarButtonSpaceType:(UIBarButtonSystemItem)spaceType width:(CGFloat)width {
+- (instancetype _Nonnull)initWithBarButtonSpaceType:(UIBarButtonSystemItem)spaceType width:(CGFloat)width {
     if (spaceType == UIBarButtonSystemItemFixedSpace || spaceType == UIBarButtonSystemItemFlexibleSpace) {
         self = [self initWithBarButtonSystemItem:spaceType target:nil action:nil];
         if (spaceType == UIBarButtonSystemItemFixedSpace) {

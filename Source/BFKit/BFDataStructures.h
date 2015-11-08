@@ -36,12 +36,14 @@
  *
  *  @return Returns the Stack object
  */
-- (instancetype)init;
+- (instancetype _Nonnull)init;
 
 /**
  *  Describe the Stack
+ *
+ *  @return Describe the Stack
  */
-- (NSString *)description;
+- (NSString * _Nonnull)description;
 
 /**
  *  Returns if the Stack is empty or not
@@ -55,14 +57,14 @@
  *
  *  @param object The element to add
  */
-- (void)push:(NSObject *)object;
+- (void)push:(id _Nonnull)object;
 
 /**
  *  Removes an element on top of the Stack
  *
  *  @return Returns the removed element
  */
-- (NSObject *)pop;
+- (id _Nullable)pop;
 
 @end
 
@@ -76,12 +78,14 @@
  *
  *  @return Returns the List object
  */
-- (instancetype)init;
+- (instancetype _Nonnull)init;
 
 /**
  *  Describe the List
+ *
+ *  @return Describe the List
  */
-- (NSString *)description;
+- (NSString * _Nonnull)description;
 
 /**
  *  Search an element and returns the index
@@ -90,7 +94,7 @@
  *
  *  @return Returns the index of the searched element
  */
-- (NSInteger)searchObject:(NSObject *)object;
+- (NSInteger)searchObject:(NSObject * _Nonnull)object;
 
 /**
  *  Search for an index and returns the element
@@ -99,28 +103,32 @@
  *
  *  @return Returns the element of the searched index
  */
-- (NSObject *)searchObjectAtIndex:(NSInteger)index;
+- (id _Nullable)searchObjectAtIndex:(NSInteger)index;
 
 /**
  *  Insert an element in the List
  *
  *  @param object The element to insert in the List
  */
-- (void)insert:(NSObject *)object;
+- (void)insert:(id _Nonnull)object;
 
 /**
  *  Delete an element in the List
  *
  *  @param object The object to be deleted
+ *
+ *  @return Returns YES if deleted, otherwise NO
  */
-- (void)deleteObject:(NSObject *)object;
+- (BOOL)deleteObject:(id _Nonnull)object;
 
 /**
  *  Delete an element at the given index
  *
  *  @param index The index to delete
+ *
+ *  @return Returns YES if deleted, otherwise NO
  */
-- (void)deleteObjectAtIndex:(NSInteger)index;
+- (BOOL)deleteObjectAtIndex:(NSInteger)index;
 
 @end
 
@@ -134,31 +142,35 @@
  *
  *  @return Returns the Queue object
  */
-- (instancetype)init;
+- (_Nonnull instancetype)init;
 
 /**
  *  Describe the Queue
+ *
+ *  @return Describe the Queue
  */
-- (NSString *)description;
+- (NSString * _Nonnull)description;
 
 /**
  *  Adds an element to the Queue
  *
  *  @param object The element to add
  */
-- (void)enqueue:(NSObject *)object;
+- (void)enqueue:(id _Nonnull)object;
 
 /**
  *  Dequeue the first element
+ *
+ *  @return Returns YES if dequeue an element, otherwise NO
  */
-- (void)dequeue;
+- (BOOL)dequeue;
 
 /**
  *  Returns the element on the top of the Queue
  *
  *  @return Returns the element on the top of the Queue
  */
-- (NSObject *)top;
+- (id _Nullable)top;
 
 /**
  *  Remove all the elements in the Queue

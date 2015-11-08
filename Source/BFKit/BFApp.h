@@ -71,7 +71,7 @@
  *
  *  @param block The block to execute, returns isFirstStartForCurrentVersion
  */
-+ (void)onFirstStart:(void (^)(BOOL isFirstStart))block;
++ (void)onFirstStart:(void (^ _Nullable)(BOOL isFirstStart))block;
 
 /**
  *  Executes a block on first start of the App.
@@ -79,7 +79,7 @@
  *
  *  @param block The block to execute, returns isFirstStart
  */
-+ (void)onFirstStartForCurrentVersion:(void (^)(BOOL isFirstStartForCurrentVersion))block;
++ (void)onFirstStartForCurrentVersion:(void (^ _Nullable)(BOOL isFirstStartForCurrentVersion))block;
 
 /**
  *  Executes a block on first start of the App for current given version.
@@ -88,7 +88,8 @@
  *  @param version Version to be checked
  *  @param block   The block to execute, returns isFirstStartForVersion
  */
-+ (void)onFirstStartForVersion:(NSString *)version block:(void (^)(BOOL isFirstStartForCurrentVersion))block;
++ (void)onFirstStartForVersion:(NSString * _Nonnull)version
+                         block:(void (^ _Nullable)(BOOL isFirstStartForCurrentVersion))block;
 
 /**
  *  Returns if is the first start of the App
@@ -111,6 +112,6 @@
  *
  *  @return Returns if is the first start of the App for the given version
  */
-+ (BOOL)isFirstStartForVersion:(NSString *)version;
++ (BOOL)isFirstStartForVersion:(NSString * _Nonnull)version;
 
 @end

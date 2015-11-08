@@ -545,7 +545,7 @@ typedef NS_ENUM(NSInteger, AudioID) {
  *
  *  @return Returns the SystemSoundID
  */
-+ (SystemSoundID)playCustomSound:(NSURL *)soundURL;
++ (SystemSoundID)playCustomSound:(NSURL * _Nonnull)soundURL;
 
 /**
  *  Dispose custom sound

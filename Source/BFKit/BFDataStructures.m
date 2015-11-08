@@ -35,14 +35,14 @@
 
 @implementation Stack
 
-- (instancetype)init {
+- (instancetype _Nonnull)init {
     if (self = [super init]) {
         stack = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (NSString *)description {
+- (NSString * _Nonnull)description {
     return [NSString stringWithFormat:@"%@", stack];
 }
 
@@ -50,13 +50,16 @@
     return stack.count > 0 ? YES : NO;
 }
 
-- (void)push:(id)object {
+- (void)push:(id _Nonnull)object {
     [stack addObject:object];
 }
 
-- (NSObject *)pop {
-    id popped = stack[stack.count - 1];
-    [stack removeObjectAtIndex:stack.count - 1];
+- (id _Nullable)pop {
+    id popped = nil;
+    if (![self empty]) {
+        popped = stack[stack.count - 1];
+        [stack removeObjectAtIndex:stack.count - 1];
+    }
     
     return popped;
 }
@@ -72,35 +75,49 @@
 
 @implementation List
 
-- (instancetype)init {
+- (instancetype _Nonnull)init {
     if (self = [super init]) {
         list = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (NSString *)description {
+- (NSString * _Nonnull)description {
     return [NSString stringWithFormat:@"%@", list];
 }
 
-- (NSInteger)searchObject:(id)object {
+- (NSInteger)searchObject:(id _Nonnull)object {
     return [list indexOfObject:object];
 }
 
-- (id)searchObjectAtIndex:(NSInteger)index {
-    return [list objectAtIndex:index];
+- (id _Nullable)searchObjectAtIndex:(NSInteger)index {
+    if (index > 0 && index <= list.count) {
+        return [list objectAtIndex:index];
+    } else {
+        return nil;
+    }
 }
 
-- (void)insert:(id)object {
+- (void)insert:(id _Nonnull)object {
     [list addObject:object];
 }
 
-- (void)deleteObject:(id)object {
-    [list removeObject:object];
+- (BOOL)deleteObject:(id _Nonnull)object {
+    if ([self searchObject:object]) {
+        [list removeObject:object];
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
-- (void)deleteObjectAtIndex:(NSInteger)index {
-    [list removeObjectAtIndex:index];
+- (BOOL)deleteObjectAtIndex:(NSInteger)index {
+    if (index > 0 && index <= list.count) {
+        [list removeObjectAtIndex:index];
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end
@@ -114,27 +131,36 @@
 
 @implementation Queue
 
-- (instancetype)init {
+- (instancetype _Nonnull)init {
     if (self = [super init]) {
         queue = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (NSString *)description {
+- (NSString * _Nonnull)description {
     return [NSString stringWithFormat:@"%@", queue];
 }
 
-- (void)enqueue:(id)object {
+- (void)enqueue:(id _Nonnull)object {
     [queue addObject:object];
 }
 
-- (void)dequeue {
-    [queue removeObjectAtIndex:0];
+- (BOOL)dequeue {
+    if (queue.count > 0) {
+        [queue removeObjectAtIndex:0];
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
-- (id)top {
-    return [queue objectAtIndex:queue.count -1];
+- (id _Nullable)top {
+    if (queue.count > 0) {
+        return [queue objectAtIndex:queue.count -1];
+    } else {
+        return nil;
+    }
 }
 
 - (void)emptyQueue {

@@ -38,21 +38,21 @@
  *
  *  @return Returns the object at a given index in safe mode (nil if self is empty or out of range)
  */
-- (id)safeObjectAtIndex:(NSUInteger)index;
+- (id _Nullable)safeObjectAtIndex:(NSUInteger)index;
 
 /**
  *  Create a reversed array from self
  *
  *  @return Returns the reversed array
  */
-- (NSArray *)reversedArray;
+- (NSArray * _Nonnull)reversedArray;
 
 /**
  *  Convert self to JSON as NSString
  *
  *  @return Returns the JSON as NSString or nil if error while parsing
  */
-- (NSString *)arrayToJson;
+- (NSString * _Nonnull)arrayToJson;
 
 /**
  *  Simulates the array as a circle. When it is out of range, begins again
@@ -61,7 +61,7 @@
  *
  *  @return Returns the object at a given index
  */
-- (id)objectAtCircleIndex:(NSInteger)index;
+- (id _Nullable)objectAtCircleIndex:(NSInteger)index;
 
 /**
  *  Create a reversed array from the given array
@@ -70,7 +70,7 @@
  *
  *  @return Returns the reversed array
  */
-+ (NSArray *)reversedArray:(NSArray *)array;
++ (NSArray * _Nonnull)reversedArray:(NSArray * _Nonnull)array;
 
 /**
  *  Convert the given array to JSON as NSString
@@ -79,6 +79,6 @@
  *
  *  @return Returns the JSON as NSString or nil if error while parsing
  */
-+ (NSString *)arrayToJson:(NSArray *)array;
++ (NSString * _Nonnull)arrayToJson:(NSArray * _Nonnull)array;
 
 @end

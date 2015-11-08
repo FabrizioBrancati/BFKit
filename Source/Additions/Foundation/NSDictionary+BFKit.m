@@ -28,19 +28,19 @@
 
 @implementation NSDictionary (BFKit)
 
-- (NSString *)dictionaryToJson {
+- (NSString * _Nonnull)dictionaryToJson {
     return [self dictionaryToJSON];
 }
 
-- (NSString *)dictionaryToJSON {
+- (NSString * _Nonnull)dictionaryToJSON {
     return [NSDictionary dictionaryToJSON:self];
 }
 
-+ (NSString *)dictionaryToJson:(NSDictionary *)dictionary {
++ (NSString * _Nonnull)dictionaryToJson:(NSDictionary * _Nonnull)dictionary {
     return [self dictionaryToJSON:dictionary];
 }
 
-+ (NSString *)dictionaryToJSON:(NSDictionary *)dictionary {
++ (NSString * _Nonnull)dictionaryToJSON:(NSDictionary * _Nonnull)dictionary {
     NSString *json = nil;
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];

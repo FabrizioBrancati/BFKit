@@ -29,17 +29,17 @@
 
 @implementation NSDate (BFKit)
 
-+ (NSDate *)yesterday {
++ (NSDate * _Nonnull)yesterday {
 	BFDateInformation inf = [[NSDate date] dateInformation];
 	inf.day--;
 	return [self dateFromDateInformation:inf];
 }
 
-+ (NSDate *)month {
++ (NSDate * _Nonnull)month {
     return [[NSDate date] month];
 }
 
-- (NSDate *)month {
+- (NSDate * _Nonnull)month {
 	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
 	NSDateComponents *comp = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:self];
 	[comp setDay:1];
@@ -54,7 +54,7 @@
 	return [comps weekday];
 }
 
-- (NSString *)dayFromWeekday {
+- (NSString * _Nonnull)dayFromWeekday {
     switch ([self weekday]) {
         case 1:
             return BFLocalizedString(@"SUNDAY", @"");
@@ -83,21 +83,21 @@
     }
 }
 
-- (NSDate *)timelessDate  {
+- (NSDate * _Nonnull)timelessDate  {
 	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
 	NSDateComponents *comp = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
     
 	return [calendar dateFromComponents:comp];
 }
 
-- (NSDate *)monthlessDate  {
+- (NSDate * _Nonnull)monthlessDate  {
 	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
 	NSDateComponents *comp = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:self];
 	
     return [calendar dateFromComponents:comp];
 }
 
-- (BOOL)isSameDay:(NSDate *)anotherDate {
+- (BOOL)isSameDay:(NSDate * _Nonnull)anotherDate {
 	NSCalendar* calendar = [NSCalendar currentCalendar];
 	NSDateComponents* components1 = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
 	NSDateComponents* components2 = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:anotherDate];
@@ -105,7 +105,7 @@
 	return ([components1 year] == [components2 year] && [components1 month] == [components2 month] && [components1 day] == [components2 day]);
 }
 
-- (NSInteger)monthsBetweenDate:(NSDate *)toDate {
+- (NSInteger)monthsBetweenDate:(NSDate * _Nonnull)toDate {
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     
     NSDateComponents *components = [calendar components:NSCalendarUnitMonth fromDate:[self monthlessDate] toDate:[toDate monthlessDate] options:0];
@@ -113,7 +113,7 @@
     return abs((int)[components month]);
 }
 
-- (NSInteger)daysBetweenDate:(NSDate *)anotherDate {
+- (NSInteger)daysBetweenDate:(NSDate * _Nonnull)anotherDate {
     NSTimeInterval time = [self timeIntervalSinceDate:anotherDate];
     return (NSInteger)fabs(time / 60 / 60 / 24);
 }
@@ -122,11 +122,11 @@
 	return [self isSameDay:[NSDate date]];
 }
 
-- (NSDate *)dateByAddingDays:(NSUInteger)days  {
+- (NSDate * _Nonnull)dateByAddingDays:(NSUInteger)days  {
     return [self dateByAddingTimeInterval:days * 24 * 60 * 60];
 }
 
-+ (NSDate *)dateWithDatePart:(NSDate *)aDate andTimePart:(NSDate *)aTime {
++ (NSDate * _Nonnull)dateWithDatePart:(NSDate *)aDate andTimePart:(NSDate *)aTime {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"dd/MM/yyyy"];
 	NSString *datePortion = [dateFormatter stringFromDate:aDate];
@@ -140,14 +140,14 @@
 	return [dateFormatter dateFromString:dateTime];
 }
 
-- (NSString *)monthString {
+- (NSString * _Nonnull)monthString {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];	
 	[dateFormatter setDateFormat:@"MMMM"];
     
 	return [dateFormatter stringFromDate:self];
 }
 
-+ (NSString *)monthStringWithMonthNumber:(NSInteger)month {
++ (NSString * _Nonnull)monthStringWithMonthNumber:(NSInteger)month {
     switch (month) {
         case 1:
             return BFLocalizedString(@"JANUARY", @"");
@@ -191,7 +191,7 @@
     }
 }
 
-- (NSString *)yearString {
+- (NSString * _Nonnull)yearString {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];	
 	[dateFormatter setDateFormat:@"yyyy"];
     
@@ -202,7 +202,7 @@
     return [self dateInformationWithTimeZone:[NSTimeZone systemTimeZone]];
 }
 
-- (BFDateInformation)dateInformationWithTimeZone:(NSTimeZone *)timezone {		
+- (BFDateInformation)dateInformationWithTimeZone:(NSTimeZone * _Nonnull)timezone {
 	BFDateInformation info;
 	
 	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
@@ -222,11 +222,11 @@
 	return info;	
 }
 
-+ (NSDate *)dateFromDateInformation:(BFDateInformation)info {
++ (NSDate * _Nonnull)dateFromDateInformation:(BFDateInformation)info {
     return [NSDate dateFromDateInformation:info timeZone:[NSTimeZone systemTimeZone]];
 }
 
-+ (NSDate *)dateFromDateInformation:(BFDateInformation)info timeZone:(NSTimeZone *)timezone {
++ (NSDate * _Nonnull)dateFromDateInformation:(BFDateInformation)info timeZone:(NSTimeZone * _Nonnull)timezone {
 	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
 	[calendar setTimeZone:timezone];
 	NSDateComponents *comp = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:[NSDate date]];
@@ -244,11 +244,11 @@
 	return [calendar dateFromComponents:comp];
 }
 
-+ (NSString *)dateInformationDescriptionWithInformation:(BFDateInformation)info {
++ (NSString * _Nonnull)dateInformationDescriptionWithInformation:(BFDateInformation)info {
     return [NSDate dateInformationDescriptionWithInformation:info dateSeparator:@"/" usFormat:NO nanosecond:NO];
 }
 
-+ (NSString *)dateInformationDescriptionWithInformation:(BFDateInformation)info dateSeparator:(NSString *)dateSeparator usFormat:(BOOL)usFormat nanosecond:(BOOL)nanosecond {
++ (NSString * _Nonnull)dateInformationDescriptionWithInformation:(BFDateInformation)info dateSeparator:(NSString *)dateSeparator usFormat:(BOOL)usFormat nanosecond:(BOOL)nanosecond {
     NSString *description;
     
     if (usFormat) {

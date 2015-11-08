@@ -51,7 +51,7 @@
  *
  *  @return Returns the screenshot as an UIImage
  */
-- (UIImage *)takeScreenshot;
+- (UIImage * _Nonnull)takeScreenshot;
 
 /**
  *  Take a screenshot of current window and choose if save it or not
@@ -60,7 +60,7 @@
  *
  *  @return Returns the screenshot as an UIImage
  */
-- (UIImage *)takeScreenshotAndSave:(BOOL)save;
+- (UIImage * _Nonnull)takeScreenshotAndSave:(BOOL)save;
 
 /**
  *  Take a screenshot of current window, choose if save it or not after a delay
@@ -69,7 +69,7 @@
  *  @param save       YES to save, NO to don't save
  *  @param completion Completion handler with the UIImage
  */
-- (void)takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^)(UIImage *screenshot))completion;
+- (void)takeScreenshotWithDelay:(CGFloat)delay save:(BOOL)save completion:(void (^ _Nullable)(UIImage * _Nonnull screenshot))completion;
 
 /**
  *  Show touch on screen. (Use BFShowTouchOnScreen macro)

@@ -28,7 +28,7 @@
 
 @implementation UITableView (BFKit)
 
-+ (UITableView *)initWithFrame:(CGRect)frame style:(UITableViewStyle)style cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle separatorInset:(UIEdgeInsets)separatorInset dataSource:(id<UITableViewDataSource>)dataSource delegate:(id<UITableViewDelegate>)delegate {
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame style:(UITableViewStyle)style cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle separatorInset:(UIEdgeInsets)separatorInset dataSource:(id<UITableViewDataSource> _Nullable)dataSource delegate:(id<UITableViewDelegate> _Nullable)delegate {
     UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
     [tableView setSeparatorStyle:cellSeparatorStyle];
     [tableView setSeparatorInset:separatorInset];
@@ -38,7 +38,7 @@
     return tableView;
 }
 
-- (NSArray *)getIndexPathsForSection:(NSUInteger)section {
+- (NSArray * _Nonnull)getIndexPathsForSection:(NSUInteger)section {
     NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
     NSInteger rows = [self numberOfRowsInSection:section];
     for (int i = 0; i < rows; i++) {
@@ -49,12 +49,12 @@
     return (NSArray *)indexPaths;
 }
 
-- (NSIndexPath *)getNextIndexPath:(NSUInteger)row forSection:(NSUInteger)section {
+- (NSIndexPath * _Nonnull)getNextIndexPath:(NSUInteger)row forSection:(NSUInteger)section {
     NSArray *indexPaths = [self getIndexPathsForSection:section];
     return [indexPaths objectAtIndex:row + 1];
 }
 
-- (NSIndexPath *)getPreviousIndexPath:(NSUInteger)row forSection:(NSUInteger)section {
+- (NSIndexPath * _Nonnull)getPreviousIndexPath:(NSUInteger)row forSection:(NSUInteger)section {
     NSArray *indexPaths = [self getIndexPathsForSection:section];
     return [indexPaths objectAtIndex:row - 1];
 }

@@ -45,7 +45,7 @@
  *
  *  @return Returns the reversed array
  */
-- (NSMutableArray *)reversedArray;
+- (NSMutableArray * _Nonnull)reversedArray;
 
 /**
  *  Sort an array by a given key with option for ascending or descending
@@ -56,8 +56,8 @@
  *
  *  @return Returns the given array ordered by the given key ascending or descending
  */
-+ (NSMutableArray *)sortArrayByKey:(NSString *)key
-                             array:(NSMutableArray *)array
-                         ascending:(BOOL)ascending;
++ (NSMutableArray * _Nonnull)sortArrayByKey:(NSString * _Nonnull)key
+                                      array:(NSMutableArray * _Nonnull)array
+                                  ascending:(BOOL)ascending;
 
 @end

@@ -44,11 +44,11 @@
  *
  *  @return Returns the created UIScrollView
  */
-+ (UIScrollView *)initWithFrame:(CGRect)frame
-                    contentSize:(CGSize)contentSize
-                  clipsToBounds:(BOOL)clipsToBounds
-                  pagingEnabled:(BOOL)pagingEnabled
-           showScrollIndicators:(BOOL)showScrollIndicators
-                       delegate:(id<UIScrollViewDelegate>)delegate;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                             contentSize:(CGSize)contentSize
+                           clipsToBounds:(BOOL)clipsToBounds
+                           pagingEnabled:(BOOL)pagingEnabled
+                    showScrollIndicators:(BOOL)showScrollIndicators
+                                delegate:(id<UIScrollViewDelegate> _Nullable)delegate;
 
 @end

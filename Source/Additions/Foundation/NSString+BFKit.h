@@ -41,9 +41,9 @@
  *
  *  @return Returns the substring
  */
-+ (NSString *)searchInString:(NSString *)string
-                   charStart:(char)start
-                     charEnd:(char)end;
++ (NSString * _Nonnull)searchInString:(NSString *_Nonnull)string
+                            charStart:(char)start
+                              charEnd:(char)end;
 
 /**
  *  Search in a given string a substring from the start char to the end char (excluded form final string).
@@ -54,8 +54,8 @@
  *
  *  @return Returns the substring
  */
-- (NSString *)searchCharStart:(char)start
-                      charEnd:(char)end;
+- (NSString * _Nonnull)searchCharStart:(char)start
+                               charEnd:(char)end;
 
 /**
  *  Returns the index of the given character
@@ -73,7 +73,7 @@
  *
  *  @return Returns the substring from character
  */
-- (NSString *)substringFromCharacter:(char)character;
+- (NSString * _Nonnull)substringFromCharacter:(char)character;
 
 /**
  *  Creates a substring to the given character
@@ -82,35 +82,35 @@
  *
  *  @return Returns the substring to character
  */
-- (NSString *)substringToCharacter:(char)character;
+- (NSString * _Nonnull)substringToCharacter:(char)character;
 
 /**
  *  Create a MD5 string from self
  *
  *  @return Returns the MD5 NSString from self
  */
-- (NSString *)MD5;
+- (NSString * _Nullable)MD5;
 
 /**
  *  Create a SHA1 string from self
  *
  *  @return Returns the SHA1 NSString from self
  */
-- (NSString *)SHA1;
+- (NSString * _Nullable)SHA1;
 
 /**
  *  Create a SHA256 string from self
  *
  *  @return Returns the SHA256 NSString from self
  */
-- (NSString *)SHA256;
+- (NSString * _Nullable)SHA256;
 
 /**
  *  Create a SHA512 string from self
  *
  *  @return Returns the SHA512 NSString from self
  */
-- (NSString *)SHA512;
+- (NSString * _Nullable)SHA512;
 
 /**
  *  Check if self has the given substring in case-sensitive
@@ -119,7 +119,7 @@
  *
  *  @return Returns YES if founded, NO if not
  */
-- (BOOL)hasString:(NSString *)substring;
+- (BOOL)hasString:(NSString * _Nonnull)substring;
 
 /**
  *  Check if self has the given substring specifying if is case-sensitive or not
@@ -129,7 +129,8 @@
  *
  *  @return Returns YES if founded, NO if not
  */
-- (BOOL)hasString:(NSString *)substring caseSensitive:(BOOL)caseSensitive;
+- (BOOL)hasString:(NSString * _Nonnull)substring
+    caseSensitive:(BOOL)caseSensitive;
 
 /**
  *  Check if self is an email
@@ -145,7 +146,7 @@
  *
  *  @return Returns YES if it's an email, NO if not
  */
-+ (BOOL)isEmail:(NSString *)email;
++ (BOOL)isEmail:(NSString * _Nonnull)email;
 
 /**
  *  Convert a string to UTF8
@@ -154,7 +155,7 @@
  *
  *  @return Returns the converted string
  */
-+ (NSString *)convertToUTF8Entities:(NSString *)string;
++ (NSString * _Nonnull)convertToUTF8Entities:(NSString * _Nonnull)string;
 
 /**
  *  Encode the given string to Base64
@@ -163,14 +164,14 @@
  *
  *  @return Returns the encoded string
  */
-+ (NSString *)encodeToBase64:(NSString *)string;
++ (NSString * _Nonnull)encodeToBase64:(NSString * _Nonnull)string;
 
 /**
  *  Encode the given string to Base64
  *
  *  @return Returns the encoded string
  */
-- (NSString *)encodeToBase64;
+- (NSString * _Nonnull)encodeToBase64;
 
 /**
  *  Decode the given Base64 to string
@@ -179,14 +180,14 @@
  *
  *  @return Returns the decoded string
  */
-+ (NSString *)decodeBase64:(NSString *)string;
++ (NSString * _Nonnull)decodeBase64:(NSString * _Nonnull)string;
 
 /**
  *  Decode the given Base64 to string
  *
  *  @return Returns the decoded string
  */
-- (NSString *)decodeBase64;
+- (NSString * _Nonnull)decodeBase64;
 
 /**
  *  Conver self to a capitalized string.
@@ -194,35 +195,35 @@
  *
  *  @return Returns the capitalized sentence string
  */
-- (NSString *)sentenceCapitalizedString;
+- (NSString * _Nonnull)sentenceCapitalizedString;
 
 /**
  *  Returns a human legible string from a timestamp
  *
  *  @return Returns a human legible string from a timestamp
  */
-- (NSString *)dateFromTimestamp;
+- (NSString * _Nonnull)dateFromTimestamp;
 
 /**
  *  Encode self to an encoded url string
  *
  *  @return Returns the encoded NSString
  */
-- (NSString *)urlEncode DEPRECATED_MSG_ATTRIBUTE("Use -URLEncode");
+- (NSString * _Nonnull)urlEncode DEPRECATED_MSG_ATTRIBUTE("Use -URLEncode");
 
 /**
  *  Encode self to an encoded url string
  *
  *  @return Returns the encoded NSString
  */
-- (NSString *)URLEncode;
+- (NSString * _Nonnull)URLEncode;
 
 /**
  *  Remove double or more duplicated spaces
  *
  *  @return String without additional spaces
  */
-- (NSString *)removeExtraSpaces;
+- (NSString * _Nonnull)removeExtraSpaces;
 
 /**
  *  Returns a new string containing matching regular expressions replaced with the template string
@@ -232,7 +233,7 @@
  *
  *  @return Returns a new string containing matching regular expressions replaced with the template string
  */
-- (NSString *)stringByReplacingWithRegex:(NSString *)regexString withString:(NSString *)replacement;
+- (NSString * _Nonnull)stringByReplacingWithRegex:(NSString * _Nonnull)regexString withString:(NSString * _Nonnull)replacement;
 
 /**
  *  Convert HEX string (separated by space) to "usual" characters string.
@@ -240,7 +241,7 @@
  *
  *  @return Readable string
  */
-- (NSString *)HEXToString;
+- (NSString * _Nonnull)HEXToString;
 
 /**
  *  Convert string to HEX string.
@@ -248,13 +249,13 @@
  *
  *  @return HEX string
  */
-- (NSString *)stringToHEX;
+- (NSString * _Nonnull)stringToHEX;
 
 /**
  *  Used to create an UUID as NSString
  *
  *  @return Returns the created UUID string
  */
-+ (NSString *)generateUUID;
++ (NSString * _Nonnull)generateUUID;
 
 @end

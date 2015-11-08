@@ -39,7 +39,7 @@
 *
 *  @return Returns YES if has been setted, otherwise NO
 */
-- (BOOL)safeSetObject:(id)anObject
-               forKey:(id<NSCopying>)aKey;
+- (BOOL)safeSetObject:(id _Nonnull)anObject
+               forKey:(id<NSCopying> _Nonnull)aKey;
 
 @end

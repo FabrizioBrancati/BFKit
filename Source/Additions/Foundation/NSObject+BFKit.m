@@ -32,7 +32,7 @@
     return !(self == nil || [self isKindOfClass:[NSNull class]]);
 }
 
-- (id)performSelector:(SEL)aSelector withObjects:(id)object, ... {
+- (id _Nonnull)performSelector:(SEL _Nonnull)aSelector withObjects:(id _Nullable)object, ... {
     NSMethodSignature *signature = [self methodSignatureForSelector:aSelector];
     if (signature) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];

@@ -61,8 +61,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the content of the file a NSString
  */
-+ (NSString *)readTextFile:(NSString *)file
-                    ofType:(NSString *)type;
++ (NSString * _Nullable)readTextFile:(NSString * _Nonnull)file
+                              ofType:(NSString * _Nonnull)type;
 
 /**
  *  Save a given array into a PLIST with the given filename
@@ -74,8 +74,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)saveArrayToPath:(DirectoryType)path
-           withFilename:(NSString *)fileName
-                  array:(NSArray *)array;
+           withFilename:(NSString * _Nonnull)fileName
+                  array:(NSArray * _Nonnull)array;
 
 /**
  *  Load array from a PLIST with the given filename
@@ -85,8 +85,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the loaded array
  */
-+ (NSArray *)loadArrayFromPath:(DirectoryType)path
-                    withFilename:(NSString *)fileName;
++ (NSArray * _Nullable)loadArrayFromPath:(DirectoryType)path
+                            withFilename:(NSString * _Nonnull)fileName;
 
 /**
  *  Get the Bundle path for a filename
@@ -95,7 +95,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the path as a NSString
  */
-+ (NSString *)getBundlePathForFile:(NSString *)fileName;
++ (NSString * _Nonnull)getBundlePathForFile:(NSString * _Nonnull)fileName;
 
 /**
  *  Get the Documents directory for a filename
@@ -104,7 +104,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the directory as a NSString
  */
-+ (NSString *)getDocumentsDirectoryForFile:(NSString *)fileName;
++ (NSString * _Nonnull)getDocumentsDirectoryForFile:(NSString * _Nonnull)fileName;
 
 /**
  *  Get the Library directory for a filename
@@ -113,7 +113,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the directory as a NSString
  */
-+ (NSString *)getLibraryDirectoryForFile:(NSString *)fileName;
++ (NSString * _Nonnull)getLibraryDirectoryForFile:(NSString * _Nonnull)fileName;
 
 /**
  *  Get the Cache directory for a filename
@@ -122,7 +122,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the directory as a NSString
  */
-+ (NSString *)getCacheDirectoryForFile:(NSString *)fileName;
++ (NSString * _Nonnull)getCacheDirectoryForFile:(NSString * _Nonnull)fileName;
 
 /**
  *  Returns the size of the file
@@ -132,7 +132,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the file size
  */
-+ (NSNumber *)fileSize:(NSString *)fileName fromDirectory:(DirectoryType)directory;
++ (NSNumber * _Nullable)fileSize:(NSString * _Nonnull)fileName
+                   fromDirectory:(DirectoryType)directory;
 
 /**
  *  Delete a file with the given filename
@@ -142,7 +143,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns YES if the operation was successful, otherwise NO
  */
-+ (BOOL)deleteFile:(NSString *)fileName
++ (BOOL)deleteFile:(NSString * _Nonnull)fileName
      fromDirectory:(DirectoryType)directory;
 
 /**
@@ -154,7 +155,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns YES if the operation was successful, otherwise NO
  */
-+ (BOOL)moveLocalFile:(NSString *)fileName
++ (BOOL)moveLocalFile:(NSString * _Nonnull)fileName
         fromDirectory:(DirectoryType)origin
           toDirectory:(DirectoryType)destination;
 
@@ -168,10 +169,10 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns YES if the operation was successful, otherwise NO
  */
-+ (BOOL)moveLocalFile:(NSString *)fileName
++ (BOOL)moveLocalFile:(NSString * _Nonnull)fileName
         fromDirectory:(DirectoryType)origin
           toDirectory:(DirectoryType)destination
-       withFolderName:(NSString *)folderName;
+       withFolderName:(NSString * _Nullable)folderName;
 
 /**
  *  Duplicate a file into another directory
@@ -181,8 +182,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns YES if the operation was successful, otherwise NO
  */
-+ (BOOL)duplicateFileAtPath:(NSString *)origin
-                  toNewPath:(NSString *)destination;
++ (BOOL)duplicateFileAtPath:(NSString * _Nonnull)origin
+                  toNewPath:(NSString * _Nonnull)destination;
 
 /**
  *  Rename a file with another filename
@@ -195,9 +196,9 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *  @return Returns YES if the operation was successful, otherwise NO
  */
 + (BOOL)renameFileFromDirectory:(DirectoryType)origin
-                         atPath:(NSString *)path
-                    withOldName:(NSString *)oldName
-                     andNewName:(NSString *)newName;
+                         atPath:(NSString * _Nonnull)path
+                    withOldName:(NSString * _Nonnull)oldName
+                     andNewName:(NSString * _Nonnull)newName;
 
 /**
  *  Get the App settings for a given key
@@ -206,7 +207,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the object for the given key
  */
-+ (id)getAppSettingsForObjectWithKey:(NSString *)objKey;
++ (id _Nullable)getAppSettingsForObjectWithKey:(NSString * _Nonnull)objKey;
 
 /**
  *  Set the App settings for a given object and key. The file will be saved in the Library directory
@@ -216,8 +217,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns YES if the operation was successful, otherwise NO
  */
-+ (BOOL)setAppSettingsForObject:(id)value
-                         forKey:(NSString *)objKey;
++ (BOOL)setAppSettingsForObject:(id _Nonnull)value
+                         forKey:(NSString * _Nonnull)objKey;
 
 /**
  *  Get the given settings for a given key
@@ -227,8 +228,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns the object for the given key
  */
-+ (id)getSettings:(NSString *)settings
-     objectForKey:(NSString *)objKey;
++ (id _Nullable)getSettings:(NSString * _Nonnull)settings
+               objectForKey:(NSString * _Nonnull)objKey;
 
 /**
  *  Set the given settings for a given object and key. The file will be saved in the Library directory
@@ -239,7 +240,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
  *
  *  @return Returns YES if the operation was successful, otherwise NO
  */
-+ (BOOL)setSettings:(NSString *)settings
-             object:(id)value forKey:(NSString *)objKey;
++ (BOOL)setSettings:(NSString * _Nonnull)settings
+             object:(id _Nonnull)value
+             forKey:(NSString * _Nonnull)objKey;
 
 @end

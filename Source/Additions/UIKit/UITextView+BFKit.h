@@ -57,22 +57,22 @@
  *
  *  @return Returns the created UITextView
  */
-+ (UITextView *)initWithFrame:(CGRect)frame
-                         text:(NSString *)text
-                        color:(UIColor *)color
-                         font:(FontName)fontName
-                         size:(float)size
-                    alignment:(NSTextAlignment)alignment
-            dataDetectorTypes:(UIDataDetectorTypes)dataDetectorTypes
-                     editable:(BOOL)editable
-                   selectable:(BOOL)selectable
-                   returnType:(UIReturnKeyType)returnType
-                 keyboardType:(UIKeyboardType)keyboardType
-                       secure:(BOOL)secure
-           autoCapitalization:(UITextAutocapitalizationType)capitalization
-           keyboardAppearance:(UIKeyboardAppearance)keyboardAppearence
-enablesReturnKeyAutomatically:(BOOL)enablesReturnKeyAutomatically
-           autoCorrectionType:(UITextAutocorrectionType)autoCorrectionType
-                     delegate:(id<UITextViewDelegate>)delegate;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                  text:(NSString * _Nonnull)text
+                                 color:(UIColor * _Nonnull)color
+                                  font:(FontName)fontName
+                                  size:(float)size
+                             alignment:(NSTextAlignment)alignment
+                     dataDetectorTypes:(UIDataDetectorTypes)dataDetectorTypes
+                              editable:(BOOL)editable
+                            selectable:(BOOL)selectable
+                            returnType:(UIReturnKeyType)returnType
+                          keyboardType:(UIKeyboardType)keyboardType
+                                secure:(BOOL)secure
+                    autoCapitalization:(UITextAutocapitalizationType)capitalization
+                    keyboardAppearance:(UIKeyboardAppearance)keyboardAppearence
+         enablesReturnKeyAutomatically:(BOOL)enablesReturnKeyAutomatically
+                    autoCorrectionType:(UITextAutocorrectionType)autoCorrectionType
+                              delegate:(id<UITextViewDelegate> _Nullable)delegate;
 
 @end

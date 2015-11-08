@@ -41,7 +41,7 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame;
 
 /**
  *  Create an UIButton in a frame with a title and a clear color
@@ -51,8 +51,8 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        title:(NSString *)title;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 title:(NSString * _Nullable)title;
 
 /**
  *  Create an UIButton in a frame with a title and a background image
@@ -63,9 +63,9 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        title:(NSString *)title
-              backgroundImage:(UIImage *)backgroundImage;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 title:(NSString * _Nullable)title
+                       backgroundImage:(UIImage * _Nullable)backgroundImage;
 
 /**
  *  Create an UIButton in a frame with a title, a background image and highlighted background image
@@ -77,10 +77,10 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        title:(NSString *)title
-              backgroundImage:(UIImage *)backgroundImage
-   highlightedBackgroundImage:(UIImage *)highlightedBackgroundImage;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 title:(NSString * _Nullable)title
+                       backgroundImage:(UIImage * _Nullable)backgroundImage
+            highlightedBackgroundImage:(UIImage * _Nullable)highlightedBackgroundImage;
 
 /**
  *  Create an UIButton in a frame with a title and a color
@@ -91,9 +91,9 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        title:(NSString *)title
-                        color:(UIColor *)color;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 title:(NSString * _Nonnull)title
+                                 color:(UIColor * _Nonnull)color;
 
 /**
  *  Create an UIButton in a frame with a title, a color and highlighted color
@@ -105,10 +105,10 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        title:(NSString *)title
-                        color:(UIColor *)color
-             highlightedColor:(UIColor *)highlightedColor;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 title:(NSString * _Nonnull)title
+                                 color:(UIColor * _Nonnull)color
+                      highlightedColor:(UIColor * _Nonnull)highlightedColor;
 
 /**
  *  Create an UIButton in a frame with a color
@@ -118,8 +118,8 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        color:(UIColor *)color;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 color:(UIColor * _Nonnull)color;
 
 /**
  *  Create an UIButton in a frame with a color and highlighted color
@@ -130,9 +130,9 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        color:(UIColor *)color
-             highlightedColor:(UIColor *)highlightedColor;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 color:(UIColor * _Nonnull)color
+                      highlightedColor:(UIColor * _Nonnull)highlightedColor;
 
 /**
  *  Create an UIButton in a frame with an image
@@ -142,8 +142,8 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        image:(UIImage *)image;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 image:(UIImage * _Nonnull)image;
 
 /**
  *  Create an UIButton in a frame with an image
@@ -154,9 +154,9 @@
  *
  *  @return Returns the UIButton instance
  */
-+ (instancetype)initWithFrame:(CGRect)frame
-                        image:(UIImage *)image
-             highlightedImage:(UIImage *)highlightedImage;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 image:(UIImage * _Nonnull)image
+                      highlightedImage:(UIImage * _Nullable)highlightedImage;
 
 /**
  *  Set the title font with a size
@@ -172,7 +172,7 @@
  *
  *  @param color Font color, the highlighted color will be automatically created
  */
-- (void)setTitleColor:(UIColor *)color;
+- (void)setTitleColor:(UIColor * _Nonnull)color;
 
 /**
  *  Set the title color and highlighted color
@@ -180,7 +180,7 @@
  *  @param color            Button's color
  *  @param highlightedColor Button's highlighted color
  */
-- (void)setTitleColor:(UIColor *)color
-     highlightedColor:(UIColor *)highlightedColor;
+- (void)setTitleColor:(UIColor * _Nonnull)color
+     highlightedColor:(UIColor * _Nullable)highlightedColor;
 
 @end

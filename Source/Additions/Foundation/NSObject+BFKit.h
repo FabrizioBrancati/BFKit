@@ -46,7 +46,7 @@
  *
  *  @return An object that is the result of the message
  */
-- (id)performSelector:(SEL)aSelector
-          withObjects:(id)object, ... NS_REQUIRES_NIL_TERMINATION;
+- (id _Nonnull)performSelector:(SEL _Nonnull)aSelector
+                   withObjects:(id _Nullable)object, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end

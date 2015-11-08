@@ -105,8 +105,8 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection) {
  *  @param frame           UIView's frame
  *  @param backgroundColor UIView's background color
  */
-+ (UIView *)initWithFrame:(CGRect)frame
-          backgroundColor:(UIColor *)backgroundColor;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                   backgroundColor:(UIColor * _Nonnull)backgroundColor;
 
 /**
  *  Create a border around the UIView
@@ -115,9 +115,9 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection) {
  *  @param radius Border's radius
  *  @param width  Border's width
  */
-- (void)createBordersWithColor:(UIColor *)color
-              withCornerRadius:(CGFloat)radius
-                      andWidth:(CGFloat)width;
+- (void)createBordersWithColor:(UIColor * _Nonnull)color
+                withCornerRadius:(CGFloat)radius
+                        andWidth:(CGFloat)width;
 
 /**
  *  Remove the borders around the UIView
@@ -166,7 +166,7 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection) {
  *  @param colors    NSArray of UIColor instances
  *  @param direction Direction of the gradient
  */
-- (void)createGradientWithColors:(NSArray *)colors
+- (void)createGradientWithColors:(NSArray * _Nonnull)colors
                        direction:(UIViewLinearGradientDirection)direction;
 
 /**
@@ -218,24 +218,24 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection) {
  *  @param repeat        If the animation must be repeat or no
  *  @param startFromEdge If the animation must start from the edge
  */
-- (void)translateAroundTheView:(UIView *)topView
-                      duration:(CGFloat)duration
-                     direction:(UIViewAnimationTranslationDirection)direction
-                        repeat:(BOOL)repeat
-                 startFromEdge:(BOOL)startFromEdge;
+- (void)translateAroundTheView:(UIView * _Nonnull)topView
+                        duration:(CGFloat)duration
+                        direction:(UIViewAnimationTranslationDirection)direction
+                            repeat:(BOOL)repeat
+                    startFromEdge:(BOOL)startFromEdge;
 
 /**
  *  Take a screenshot of the current view
  *
  *  @return Returns screenshot as UIImage
  */
-- (UIImage *)screenshot;
+- (UIImage * _Nonnull)screenshot;
 
 /**
  *  Take a screenshot of the current view an saving to the saved photos album
  *
  *  @return Returns screenshot as UIImage
  */
-- (UIImage *)saveScreenshot;
+- (UIImage * _Nonnull)saveScreenshot;
 
 @end

@@ -36,7 +36,7 @@
  *
  *  @return Returns the created UIBarButtonItem
  */
-- (instancetype)initWithBarButtonFlexibleSpace;
+- (instancetype _Nonnull)initWithBarButtonFlexibleSpace;
 
 /**
  *  Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
@@ -46,6 +46,7 @@
  *
  *  @return Returns the created UIBarButtonItem
  */
-- (instancetype)initWithBarButtonSpaceType:(UIBarButtonSystemItem)spaceType width:(CGFloat)width;
+- (instancetype _Nonnull)initWithBarButtonSpaceType:(UIBarButtonSystemItem)spaceType
+                                              width:(CGFloat)width;
 
 @end

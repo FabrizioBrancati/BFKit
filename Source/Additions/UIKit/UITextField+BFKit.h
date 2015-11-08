@@ -55,20 +55,20 @@
  *
  *  @return Returns the created UITextField
  */
-+ (UITextField *)initWithFrame:(CGRect)frame
-                   placeholder:(NSString *)placeholder
-                         color:(UIColor *)color
-                          font:(FontName)fontName
-                          size:(float)size
-                    returnType:(UIReturnKeyType)returnType
-                  keyboardType:(UIKeyboardType)keyboardType
-                        secure:(BOOL)secure
-                   borderStyle:(UITextBorderStyle)borderStyle
-            autoCapitalization:(UITextAutocapitalizationType)capitalization
-            keyboardAppearance:(UIKeyboardAppearance)keyboardAppearence
- enablesReturnKeyAutomatically:(BOOL)enablesReturnKeyAutomatically
-               clearButtonMode:(UITextFieldViewMode)clearButtonMode
-            autoCorrectionType:(UITextAutocorrectionType)autoCorrectionType
-                      delegate:(id<UITextFieldDelegate>)delegate;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                            placeholder:(NSString * _Nonnull)placeholder
+                                  color:(UIColor * _Nonnull)color
+                                   font:(FontName)fontName
+                                   size:(float)size
+                             returnType:(UIReturnKeyType)returnType
+                           keyboardType:(UIKeyboardType)keyboardType
+                                 secure:(BOOL)secure
+                            borderStyle:(UITextBorderStyle)borderStyle
+                     autoCapitalization:(UITextAutocapitalizationType)capitalization
+                     keyboardAppearance:(UIKeyboardAppearance)keyboardAppearence
+          enablesReturnKeyAutomatically:(BOOL)enablesReturnKeyAutomatically
+                        clearButtonMode:(UITextFieldViewMode)clearButtonMode
+                     autoCorrectionType:(UITextAutocorrectionType)autoCorrectionType
+                               delegate:(id<UITextFieldDelegate> _Nullable)delegate;
 
 @end

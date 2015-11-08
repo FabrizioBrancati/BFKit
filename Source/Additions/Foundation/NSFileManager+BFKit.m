@@ -29,11 +29,11 @@
 
 @implementation NSFileManager (BFKit)
 
-+ (NSString *)readTextFile:(NSString *)file ofType:(NSString *)type {
++ (NSString * _Nullable)readTextFile:(NSString * _Nonnull)file ofType:(NSString * _Nonnull)type {
     return [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:file ofType:type] encoding:NSUTF8StringEncoding error:nil];
 }
 
-+ (BOOL)saveArrayToPath:(DirectoryType)path withFilename:(NSString *)fileName array:(NSArray *)array {
++ (BOOL)saveArrayToPath:(DirectoryType)path withFilename:(NSString * _Nonnull)fileName array:(NSArray * _Nonnull)array {
     NSString *_path;
     
     switch (path) {
@@ -54,7 +54,7 @@
     return [NSKeyedArchiver archiveRootObject:array toFile:_path];
 }
 
-+ (NSArray *)loadArrayFromPath:(DirectoryType)path withFilename:(NSString *)fileName {
++ (NSArray * _Nullable)loadArrayFromPath:(DirectoryType)path withFilename:(NSString * _Nonnull)fileName {
     NSString *_path;
     
     switch (path) {
@@ -75,27 +75,27 @@
     return [NSKeyedUnarchiver unarchiveObjectWithFile:_path];
 }
 
-+ (NSString *)getBundlePathForFile:(NSString *)fileName {
++ (NSString * _Nonnull)getBundlePathForFile:(NSString * _Nonnull)fileName {
     NSString *fileExtension = [fileName pathExtension];
     return [[NSBundle mainBundle] pathForResource:[fileName stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@", fileExtension] withString:@""] ofType:fileExtension];
 }
 
-+ (NSString *)getDocumentsDirectoryForFile:(NSString *)fileName {
++ (NSString * _Nonnull)getDocumentsDirectoryForFile:(NSString * _Nonnull)fileName {
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/", fileName]];
 }
 
-+ (NSString *)getLibraryDirectoryForFile:(NSString *)fileName {
++ (NSString * _Nonnull)getLibraryDirectoryForFile:(NSString * _Nonnull)fileName {
     NSString *libraryDirectory = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [libraryDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/", fileName]];
 }
 
-+ (NSString *)getCacheDirectoryForFile:(NSString *)fileName {
++ (NSString * _Nonnull)getCacheDirectoryForFile:(NSString * _Nonnull)fileName {
     NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [cacheDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/", fileName]];
 }
 
-+ (NSNumber *)fileSize:(NSString *)fileName fromDirectory:(DirectoryType)directory {
++ (NSNumber * _Nullable)fileSize:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)directory {
     if (fileName.length > 0) {
         NSString *path;
         
@@ -125,7 +125,7 @@
     return nil;
 }
 
-+ (BOOL)deleteFile:(NSString *)fileName fromDirectory:(DirectoryType)directory {
++ (BOOL)deleteFile:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)directory {
     if (fileName.length > 0) {
         NSString *path;
         
@@ -152,11 +152,11 @@
     return NO;
 }
 
-+ (BOOL)moveLocalFile:(NSString *)fileName fromDirectory:(DirectoryType)origin toDirectory:(DirectoryType)destination {
++ (BOOL)moveLocalFile:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)origin toDirectory:(DirectoryType)destination {
     return [self moveLocalFile:fileName fromDirectory:origin toDirectory:destination withFolderName:nil];
 }
 
-+ (BOOL)moveLocalFile:(NSString *)fileName fromDirectory:(DirectoryType)origin toDirectory:(DirectoryType)destination withFolderName:(NSString *)folderName {
++ (BOOL)moveLocalFile:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)origin toDirectory:(DirectoryType)destination withFolderName:(NSString * _Nullable)folderName {
     NSString *originPath;
     
     switch (origin) {
@@ -224,14 +224,14 @@
     return NO;
 }
 
-+ (BOOL)duplicateFileAtPath:(NSString *)origin toNewPath:(NSString *)destination {
++ (BOOL)duplicateFileAtPath:(NSString * _Nonnull)origin toNewPath:(NSString * _Nonnull)destination {
     if ([[NSFileManager defaultManager] fileExistsAtPath:origin]) {
         return [[NSFileManager defaultManager] copyItemAtPath:origin toPath:destination error:nil];
     }
     return NO;
 }
 
-+ (BOOL)renameFileFromDirectory:(DirectoryType)origin atPath:(NSString *)path withOldName:(NSString *)oldName andNewName:(NSString *)newName {
++ (BOOL)renameFileFromDirectory:(DirectoryType)origin atPath:(NSString * _Nonnull)path withOldName:(NSString * _Nonnull)oldName andNewName:(NSString * _Nonnull)newName {
     NSString *originPath;
     
     switch (origin) {
@@ -260,7 +260,7 @@
     return NO;
 }
 
-+ (id)getSettings:(NSString *)settings objectForKey:(NSString *)objKey {
++ (id _Nullable)getSettings:(NSString * _Nonnull)settings objectForKey:(NSString * _Nonnull)objKey {
     NSString *path = [self getLibraryDirectoryForFile:@""];
     path = [path stringByAppendingString:@"/Preferences/"];
     path = [path stringByAppendingString:[NSString stringWithFormat:@"%@-Settings.plist", settings]];
@@ -275,7 +275,7 @@
     return loadedPlist[objKey];
 }
 
-+ (BOOL)setSettings:(NSString *)settings object:(id)value forKey:(NSString *)objKey {
++ (BOOL)setSettings:(NSString * _Nonnull)settings object:(id _Nonnull)value forKey:(NSString * _Nonnull)objKey {
     NSString *path = [self getLibraryDirectoryForFile:@""];
     path = [path stringByAppendingString:@"/Preferences/"];
     path = [path stringByAppendingString:[NSString stringWithFormat:@"%@-Settings.plist", settings]];
@@ -292,11 +292,11 @@
     return [loadedPlist writeToFile:path atomically:YES];
 }
 
-+ (id)getAppSettingsForObjectWithKey:(NSString *)objKey {
++ (id _Nullable)getAppSettingsForObjectWithKey:(NSString * _Nonnull)objKey {
     return [self getSettings:APP_NAME objectForKey:objKey];
 }
 
-+ (BOOL)setAppSettingsForObject:(id)value forKey:(NSString *)objKey {
++ (BOOL)setAppSettingsForObject:(id _Nonnull)value forKey:(NSString * _Nonnull)objKey {
     return [self setSettings:APP_NAME object:value forKey:objKey];
 }
 

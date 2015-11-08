@@ -42,9 +42,9 @@
  *
  *  @return Returns the created BFButton, subclass of UIButton
  */
-- (instancetype)initWithFrame:(CGRect)frame
-                        image:(UIImage *)image
-             highlightedImage:(UIImage *)highlightedImage
-                 fadeDuration:(CGFloat)fadeDuration;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                 image:(UIImage * _Nonnull)image
+                      highlightedImage:(UIImage * _Nonnull)highlightedImage
+                          fadeDuration:(CGFloat)fadeDuration;
 
 @end

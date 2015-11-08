@@ -47,13 +47,13 @@
  *
  *  @return Returns the created UILabel
  */
-+ (UILabel *)initWithFrame:(CGRect)frame
-                      text:(NSString *)text
-                      font:(FontName)fontName
-                      size:(CGFloat)size
-                     color:(UIColor *)color
-                 alignment:(NSTextAlignment)alignment
-                     lines:(NSInteger)lines;
++ (UILabel * _Nonnull)initWithFrame:(CGRect)frame
+                               text:(NSString * _Nonnull)text
+                               font:(FontName)fontName
+                               size:(CGFloat)size
+                              color:(UIColor * _Nonnull)color
+                          alignment:(NSTextAlignment)alignment
+                              lines:(NSInteger)lines;
 
 /**
  *  Create an UILabel with the given parameters
@@ -69,13 +69,13 @@
  *
  *  @return Returns the created UILabel
  */
-+ (UILabel *)initWithFrame:(CGRect)frame
-                      text:(NSString *)text
-                      font:(FontName)fontName
-                      size:(CGFloat)size
-                     color:(UIColor *)color
-                 alignment:(NSTextAlignment)alignment
-                     lines:(NSInteger)lines
-               shadowColor:(UIColor *)colorShadow;
++ (UILabel * _Nonnull)initWithFrame:(CGRect)frame
+                               text:(NSString * _Nonnull)text
+                               font:(FontName)fontName
+                               size:(CGFloat)size
+                              color:(UIColor * _Nonnull)color
+                          alignment:(NSTextAlignment)alignment
+                              lines:(NSInteger)lines
+                        shadowColor:(UIColor * _Nonnull)colorShadow;
 
 @end

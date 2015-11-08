@@ -108,7 +108,7 @@
  *
  *  @return Returns the UIColor instance
  */
-+ (UIColor *)hex:(NSString *)hexString;
++ (UIColor * _Nonnull)hex:(NSString * _Nonnull)hexString;
 
 /**
  *  Create a color from a HEX string.
@@ -122,7 +122,7 @@
  *
  *  @return Returns the UIColor instance
  */
-+ (UIColor *)hexString:(NSString *)hexString;
++ (UIColor * _Nonnull)hexString:(NSString * _Nonnull)hexString;
 
 /**
  *  Create a color from a HEX string
@@ -131,7 +131,7 @@
  *
  *  @return Returns the UIColor instance
  */
-+ (UIColor *)colorWithHexString:(NSString *)hexString DEPRECATED_MSG_ATTRIBUTE("Use +hex");
++ (UIColor * _Nonnull)colorWithHexString:(NSString * _Nonnull)hexString DEPRECATED_MSG_ATTRIBUTE("Use +hex");
 
 /**
  *  Create a color from HEX
@@ -140,7 +140,7 @@
  *
  *  @return Returns the UIColor instance
  */
-+ (UIColor *)colorWithHex:(unsigned int)hex;
++ (UIColor * _Nonnull)colorWithHex:(unsigned int)hex;
 
 /**
  *  Create a color from HEX with alpha
@@ -150,8 +150,8 @@
  *
  *  @return Returns the UIColor instance
  */
-+ (UIColor *)colorWithHex:(unsigned int)hex
-                    alpha:(float)alpha;
++ (UIColor * _Nonnull)colorWithHex:(unsigned int)hex
+                             alpha:(float)alpha;
 
 /**
  *  Create an UIColor from a given string (blue or ff00ff)
@@ -160,14 +160,14 @@
  *
  *  @return Returns the created UIColor
  */
-+ (UIColor *)colorForColorString:(NSString *)colorString;
++ (UIColor * _Nonnull)colorForColorString:(NSString * _Nonnull)colorString;
 
 /**
  *  Create a random color
  *
  *  @return Returns the UIColor instance
  */
-+ (UIColor *)randomColor;
++ (UIColor * _Nonnull)randomColor;
 
 /**
  *  Creates and returns a color object that has the same color space and component values as the given color, but has the specified alpha component
@@ -177,8 +177,8 @@
  *
  *  @return Returns the UIColor instance
  */
-+ (UIColor *)colorWithColor:(UIColor *)color
-                      alpha:(float)alpha;
++ (UIColor * _Nonnull)colorWithColor:(UIColor * _Nonnull)color
+                               alpha:(float)alpha;
 
 /**
  *  Check if the color is in RGB format
@@ -192,13 +192,13 @@
  *
  *  @return Returns the color
  */
-- (UIColor *)contrastingColor;
+- (UIColor * _Nonnull)contrastingColor;
 
 /**
  *  A complementary color that should look good
  *
  *  @return Returns the color
  */
-- (UIColor *)complementaryColor;
+- (UIColor * _Nonnull)complementaryColor;
 
 @end

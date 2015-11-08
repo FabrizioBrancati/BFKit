@@ -34,7 +34,7 @@
  *  @param functionName Function name
  *  @param format       Format
  */
-void ExtendNSLog(const char *file, int lineNumber, const char *function, NSString *format, ...);
+void ExtendNSLog(const char * _Nonnull file, int lineNumber, const char * _Nonnull function, NSString * _Nonnull format, ...);
 
 /**
  *  This class adds some useful methods to NSLog
@@ -88,7 +88,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *function, NSStrin
  *
  *  @return Returns the log string
  */
-+ (NSString *)logString;
++ (NSString * _Nonnull)logString;
 
 /**
  *  Get the detailed log string.
@@ -96,7 +96,7 @@ void ExtendNSLog(const char *file, int lineNumber, const char *function, NSStrin
  *
  *  @return Returns the detailed log string
  */
-+ (NSString *)detailedLogString;
++ (NSString * _Nonnull)detailedLogString;
 
 /**
  *  Get the detailed log string.
@@ -104,6 +104,6 @@ void ExtendNSLog(const char *file, int lineNumber, const char *function, NSStrin
  *
  *  @return Returns the detailed log string
  */
-+ (NSString *)logDetailedString DEPRECATED_MSG_ATTRIBUTE("Use -detailedLogString");
++ (NSString * _Nonnull)logDetailedString DEPRECATED_MSG_ATTRIBUTE("Use -detailedLogString");
 
 @end

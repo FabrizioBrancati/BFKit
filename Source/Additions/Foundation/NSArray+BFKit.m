@@ -28,7 +28,7 @@
 
 @implementation NSArray (BFKit)
 
-- (id)safeObjectAtIndex:(NSUInteger)index {
+- (id _Nullable)safeObjectAtIndex:(NSUInteger)index {
     if ([self count] > 0 && [self count] > index) {
         return [self objectAtIndex:index];
     } else {
@@ -36,11 +36,11 @@
     }
 }
 
-- (NSArray *)reversedArray {
+- (NSArray * _Nonnull)reversedArray {
     return [NSArray reversedArray:self];
 }
 
-- (NSString *)arrayToJson {
+- (NSString * _Nonnull)arrayToJson {
     return [NSArray arrayToJson:self];
 }
 
@@ -56,11 +56,11 @@
     return index;
 }
 
-- (id)objectAtCircleIndex:(NSInteger)index {
+- (id _Nullable)objectAtCircleIndex:(NSInteger)index {
     return [self objectAtIndex:[self superCircle:index maxSize:self.count]];
 }
 
-+ (NSString *)arrayToJson:(NSArray*)array {
++ (NSString * _Nonnull)arrayToJson:(NSArray * _Nonnull)array {
     NSString *json = nil;
     NSError *error = nil;
     NSData *data = [NSJSONSerialization dataWithJSONObject:array options:0 error:&error];
@@ -72,7 +72,7 @@
     }
 }
 
-+ (NSArray *)reversedArray:(NSArray*)array {
++ (NSArray * _Nonnull)reversedArray:(NSArray * _Nonnull)array {
     NSMutableArray *arrayTemp = [NSMutableArray arrayWithCapacity:[array count]];
     NSEnumerator *enumerator = [array reverseObjectEnumerator];
     

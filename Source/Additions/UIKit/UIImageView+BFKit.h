@@ -41,8 +41,8 @@
  *
  *  @return Returns the created UIImageView
  */
-+ (instancetype)initWithImage:(UIImage *)image
-                        frame:(CGRect)rect;
++ (instancetype _Nonnull)initWithImage:(UIImage * _Nonnull)image
+                                 frame:(CGRect)rect;
 
 /**
  *  Create an UIImageView with the given image, size and center
@@ -53,9 +53,9 @@
  *
  *  @return Returns the created UIImageView
  */
-+ (instancetype)initWithImage:(UIImage *)image
-                         size:(CGSize)size
-                       center:(CGPoint)center;
++ (instancetype _Nonnull)initWithImage:(UIImage * _Nonnull)image
+                                  size:(CGSize)size
+                                center:(CGPoint)center;
 
 /**
  *  Create an UIImageView with the given image and center
@@ -65,8 +65,8 @@
  *
  *  @return Returns the created UIImageView
  */
-+ (instancetype)initWithImage:(UIImage *)image
-                       center:(CGPoint)center;
++ (instancetype _Nonnull)initWithImage:(UIImage * _Nonnull)image
+                                center:(CGPoint)center;
 
 /**
  *  Create an UIImageView with an image and use it as a template with the given color
@@ -76,8 +76,8 @@
  *
  *  @return Returns the created UIImageView
  */
-+ (instancetype)initWithImageAsTemplate:(UIImage *)image
-                              tintColor:(UIColor *)tintColor;
++ (instancetype _Nonnull)initWithImageAsTemplate:(UIImage * _Nonnull)image
+                                       tintColor:(UIColor * _Nonnull)tintColor;
 
 /**
  *  Create a drop shadow effect
@@ -87,16 +87,16 @@
  *  @param offset  Shadow's offset
  *  @param opacity Shadow's opacity
  */
-- (void)setImageShadowColor:(UIColor *)color
-                     radius:(CGFloat)radius
-                     offset:(CGSize)offset
-                    opacity:(CGFloat)opacity;
+- (void)setImageShadowColor:(UIColor * _Nonnull)color
+                        radius:(CGFloat)radius
+                        offset:(CGSize)offset
+                        opacity:(CGFloat)opacity;
 
 /**
  *  Mask the current UIImageView with an UIImage
  *
  *  @param image The mask UIImage
  */
-- (void)setMaskImage:(UIImage *)image;
+- (void)setMaskImage:(UIImage * _Nonnull)image;
 
 @end

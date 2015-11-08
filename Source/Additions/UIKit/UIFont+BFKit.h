@@ -30,15 +30,15 @@
 /**
  *  Static light font to use in App
  */
-static UIFont *lightFont;
+static UIFont * _Nullable lightFont;
 /**
  *  Static regular font to use in App
  */
-static UIFont *regularFont;
+static UIFont * _Nullable regularFont;
 /**
  *  Static bold font to use in App
  */
-static UIFont *boldFont;
+static UIFont * _Nullable boldFont;
 
 /**
  *  All font family names available from iOS 7.0 to iOS 9.0
@@ -1342,7 +1342,7 @@ typedef NS_ENUM(NSInteger, FontName) {
 *
 *  @return Returns all the font family names
 */
-+ (NSDictionary *)allFamilyAndFonts;
++ (NSDictionary * _Nonnull)allFamilyAndFonts;
 
 
 /**
@@ -1352,7 +1352,7 @@ typedef NS_ENUM(NSInteger, FontName) {
  *
  *  @return Returns all the fonts for the given family
  */
-+ (NSArray *)fontsNameForFamilyName:(FamilyFontName)familyFontName;
++ (NSArray * _Nonnull)fontsNameForFamilyName:(FamilyFontName)familyFontName;
 
 /**
  *  Create an UIFont object from the given font name and size
@@ -1362,7 +1362,7 @@ typedef NS_ENUM(NSInteger, FontName) {
  *
  *  @return Returns an UIFont from the given font name and size
  */
-+ (UIFont *)fontForFontName:(FontName)fontName
-                       size:(CGFloat)fontSize;
++ (UIFont * _Nonnull)fontForFontName:(FontName)fontName
+                                size:(CGFloat)fontSize;
 
 @end

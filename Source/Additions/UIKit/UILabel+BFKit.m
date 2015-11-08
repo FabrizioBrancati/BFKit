@@ -28,11 +28,11 @@
 
 @implementation UILabel (BFKit)
 
-+ (UILabel *)initWithFrame:(CGRect)frame text:(NSString *)text font:(FontName)fontName size:(CGFloat)size color:(UIColor *)color alignment:(NSTextAlignment)alignment lines:(NSInteger)lines {
++ (UILabel * _Nonnull)initWithFrame:(CGRect)frame text:(NSString * _Nonnull)text font:(FontName)fontName size:(CGFloat)size color:(UIColor * _Nonnull)color alignment:(NSTextAlignment)alignment lines:(NSInteger)lines {
     return [UILabel initWithFrame:frame text:text font:fontName size:size color:color alignment:alignment lines:lines shadowColor:[UIColor clearColor]];
 }
 
-+ (UILabel *)initWithFrame:(CGRect)frame text:(NSString *)text font:(FontName)fontName size:(CGFloat)size color:(UIColor *)color alignment:(NSTextAlignment)alignment lines:(NSInteger)lines shadowColor:(UIColor *)colorShadow {
++ (UILabel * _Nonnull)initWithFrame:(CGRect)frame text:(NSString * _Nonnull)text font:(FontName)fontName size:(CGFloat)size color:(UIColor * _Nonnull)color alignment:(NSTextAlignment)alignment lines:(NSInteger)lines shadowColor:(UIColor * _Nonnull)colorShadow {
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     [label setFont:[UIFont fontForFontName:fontName size:size]];
     [label setText:text];

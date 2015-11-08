@@ -32,7 +32,7 @@
 
 @implementation UIImage (BFKit)
 
-+ (UIImage *)dummyImageNamed:(NSString *)dummy {
++ (UIImage * _Nullable)dummyImageNamed:(NSString * _Nonnull)dummy {
     if (!dummy) {
         return nil;
     }
@@ -78,7 +78,7 @@
     return result;
 }
 
-+ (CGSize)sizeForSizeString:(NSString *)sizeString {
++ (CGSize)sizeForSizeString:(NSString * _Nonnull)sizeString {
     NSArray *array = [sizeString componentsSeparatedByString:@"x"];
     if (array.count != 2) {
         return CGSizeZero;
@@ -87,7 +87,7 @@
     return CGSizeMake([array[0] floatValue], [array[1] floatValue]);
 }
 
-- (UIImage *)blendMode:(CGBlendMode)blendMode {
+- (UIImage * _Nonnull)blendMode:(CGBlendMode)blendMode {
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.size.width, self.size.height), NO, [[UIScreen mainScreen] scale]);
     [self drawInRect:CGRectMake(0.0, 0.0, self.size.width, self.size.height) blendMode:blendMode alpha:1];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -96,11 +96,11 @@
     return image;
 }
 
-- (UIImage *)blendOverlay {
+- (UIImage * _Nonnull)blendOverlay {
     return [self blendMode:kCGBlendModeOverlay];
 }
 
-- (UIImage *)maskWithImage:(UIImage *)image andSize:(CGSize)size {
+- (UIImage * _Nullable)maskWithImage:(UIImage * _Nonnull)image andSize:(CGSize)size {
 	CGContextRef mainViewContentContext;
 	CGColorSpaceRef colorSpace;
 	colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -108,7 +108,7 @@
 	CGColorSpaceRelease(colorSpace);
 	
     if (mainViewContentContext == NULL) {
-        return NULL;
+        return nil;
     }
 	
 	CGContextClipToMask(mainViewContentContext, CGRectMake(0, 0, size.width, size.height), image.CGImage);
@@ -121,7 +121,7 @@
 	return returnImage;
 }
 
-- (UIImage *)maskWithImage:(UIImage *)image {
+- (UIImage * _Nullable)maskWithImage:(UIImage * _Nonnull)image {
     CGContextRef context;
     CGColorSpaceRef colorSpace;
     colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -142,7 +142,7 @@
     return returnImage;
 }
 
-- (UIImage *)imageAtRect:(CGRect)rect {
+- (UIImage * _Nonnull)imageAtRect:(CGRect)rect {
     CGImageRef imageRef = CGImageCreateWithImageInRect([self CGImage], rect);
     UIImage *subImage = [UIImage imageWithCGImage:imageRef];
     CGImageRelease(imageRef);
@@ -150,7 +150,7 @@
     return subImage;
 }
 
-- (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize  {
+- (UIImage * _Nonnull)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize  {
     UIImage *sourceImage = self;
     UIImage *newImage = nil;
     
@@ -205,7 +205,7 @@
     return newImage;
 }
 
-- (UIImage *)imageByScalingProportionallyToMaximumSize:(CGSize)targetSize {
+- (UIImage * _Nonnull)imageByScalingProportionallyToMaximumSize:(CGSize)targetSize {
     if ((self.size.width > targetSize.width || targetSize.width == targetSize.height) && self.size.width > self.size.height)
     {
         float factor = (targetSize.width * 100) / self.size.width;
@@ -243,7 +243,7 @@
 }
 
 
-- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize {
+- (UIImage * _Nonnull)imageByScalingProportionallyToSize:(CGSize)targetSize {
     UIImage *sourceImage = self;
     UIImage *newImage = nil;
     
@@ -292,13 +292,15 @@
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    if (newImage == nil) BFLog(@"Could not scale image");
+    if (newImage == nil) {
+        BFLog(@"Could not scale image");
+    }
     
     return newImage;
 }
 
 
-- (UIImage *)imageByScalingToSize:(CGSize)targetSize {
+- (UIImage * _Nonnull)imageByScalingToSize:(CGSize)targetSize {
     UIImage *sourceImage = self;
     UIImage *newImage = nil;
     
@@ -322,17 +324,19 @@
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    if (newImage == nil) BFLog(@"Could not scale image");
+    if (newImage == nil) {
+        BFLog(@"Could not scale image");
+    }
     
     return newImage;
 }
 
 
-- (UIImage *)imageRotatedByRadians:(CGFloat)radians {
+- (UIImage * _Nonnull)imageRotatedByRadians:(CGFloat)radians {
     return [self imageRotatedByDegrees:RadiansToDegrees(radians)];
 }
 
-- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees {
+- (UIImage * _Nonnull)imageRotatedByDegrees:(CGFloat)degrees {
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.size.width, self.size.height)];
     CGAffineTransform t = CGAffineTransformMakeRotation(DegreesToRadians(degrees));
     rotatedViewBox.transform = t;
@@ -354,11 +358,11 @@
     return newImage;
 }
 
-- (UIImage *)flipImageHorizontally {
+- (UIImage * _Nonnull)flipImageHorizontally {
     return [[UIImage alloc] initWithCGImage:self.CGImage scale:self.scale orientation:UIImageOrientationUpMirrored];
 }
 
-- (UIImage *)flipImageVertically {
+- (UIImage * _Nonnull)flipImageVertically {
     return [[UIImage alloc] initWithCGImage:self.CGImage scale:self.scale orientation:UIImageOrientationLeftMirrored];
 }
 
@@ -367,7 +371,7 @@
     return (alpha == kCGImageAlphaFirst || alpha == kCGImageAlphaLast || alpha == kCGImageAlphaPremultipliedFirst || alpha == kCGImageAlphaPremultipliedLast);
 }
 
-- (UIImage *)removeAlpha {
+- (UIImage * _Nonnull)removeAlpha {
     if (![self hasAlpha]) {
         return self;
     }
@@ -385,11 +389,11 @@
     return returnImage;
 }
 
-- (UIImage *)fillAlpha {
+- (UIImage * _Nonnull)fillAlpha {
     return [self fillAlphaWithColor:[UIColor whiteColor]];
 }
 
-- (UIImage *)fillAlphaWithColor:(UIColor *)color {
+- (UIImage * _Nonnull)fillAlphaWithColor:(UIColor * _Nonnull)color {
     CGRect im_r;
 	im_r.origin = CGPointZero;
 	im_r.size = self.size;
@@ -420,7 +424,7 @@
     }
 }
 
-- (UIImage *)imageToGrayscale {
+- (UIImage * _Nonnull)imageToGrayscale {
     CGSize size = self.size;
     CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     
@@ -436,7 +440,7 @@
     return returnImage;
 }
 
-- (UIImage *)imageToBlackAndWhite {
+- (UIImage * _Nonnull)imageToBlackAndWhite {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
     CGContextRef context = CGBitmapContextCreate(nil, self.size.width, self.size.height, 8, self.size.width, colorSpace, (CGBitmapInfo)kCGImageAlphaNone);
     CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
@@ -453,7 +457,7 @@
     return returnImage;
 }
 
-- (UIImage *)invertColors {
+- (UIImage * _Nonnull)invertColors {
     UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
     CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeCopy);
     [self drawInRect:CGRectMake(0, 0, self.size.width, self.size.height)];
@@ -467,7 +471,7 @@
     return returnImage;
 }
 
-- (UIImage *)bloom:(float)radius intensity:(float)intensity {
+- (UIImage * _Nonnull)bloom:(float)radius intensity:(float)intensity {
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *image = [CIImage imageWithCGImage:[self CGImage]];
     CIFilter *filter = [CIFilter filterWithName:@"CIBloom"];
@@ -483,7 +487,7 @@
     return returnImage;
 }
 
-- (UIImage *)bumpDistortion:(CIVector *)center radius:(float)radius scale:(float)scale {
+- (UIImage * _Nonnull)bumpDistortion:(CIVector *)center radius:(float)radius scale:(float)scale {
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *image = [CIImage imageWithCGImage:[self CGImage]];
     CIFilter *filter = [CIFilter filterWithName:@"CIBumpDistortion"];
@@ -500,7 +504,7 @@
     return returnImage;
 }
 
-- (UIImage *)bumpDistortionLinear:(CIVector *)center radius:(float)radius angle:(float)angle scale:(float)scale {
+- (UIImage * _Nonnull)bumpDistortionLinear:(CIVector * _Nonnull)center radius:(float)radius angle:(float)angle scale:(float)scale {
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *image = [CIImage imageWithCGImage:[self CGImage]];
     CIFilter *filter = [CIFilter filterWithName:@"CIBumpDistortionLinear"];
@@ -518,7 +522,7 @@
     return returnImage;
 }
 
-- (UIImage *)circleSplashDistortion:(CIVector *)center radius:(float)radius {
+- (UIImage * _Nonnull)circleSplashDistortion:(CIVector * _Nonnull)center radius:(float)radius {
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *image = [CIImage imageWithCGImage:[self CGImage]];
     CIFilter *filter = [CIFilter filterWithName:@"CICircleSplashDistortion"];
@@ -534,7 +538,7 @@
     return returnImage;
 }
 
-- (UIImage *)circularWrap:(CIVector *)center radius:(float)radius angle:(float)angle {
+- (UIImage * _Nonnull)circularWrap:(CIVector * _Nonnull)center radius:(float)radius angle:(float)angle {
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *image = [CIImage imageWithCGImage:[self CGImage]];
     CIFilter *filter = [CIFilter filterWithName:@"CICircularWrap"];
@@ -551,7 +555,7 @@
     return returnImage;
 }
 
-- (UIImage *)cmykHalftone:(CIVector *)center width:(float)width angle:(float)angle sharpness:(float)sharpness gcr:(float)gcr ucr:(float)ucr {
+- (UIImage * _Nonnull)cmykHalftone:(CIVector * _Nonnull)center width:(float)width angle:(float)angle sharpness:(float)sharpness gcr:(float)gcr ucr:(float)ucr {
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *image = [CIImage imageWithCGImage:[self CGImage]];
     CIFilter *filter = [CIFilter filterWithName:@"CICMYKHalftone"];
@@ -571,7 +575,7 @@
     return returnImage;
 }
 
-- (UIImage *)sepiaToneWithIntensity:(float)intensity {
+- (UIImage * _Nonnull)sepiaToneWithIntensity:(float)intensity {
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *image = [CIImage imageWithCGImage:[self CGImage]];
     CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"];
@@ -586,7 +590,7 @@
     return returnImage;
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
++ (UIImage * _Nonnull)imageWithColor:(UIColor * _Nonnull)color {
     CGRect rect = CGRectMake(0, 0, 1, 1);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, [[UIScreen mainScreen] scale]);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -599,7 +603,11 @@
     return image;
 }
 
-- (UIImage *)boxBlurImageWithBlur:(CGFloat)blur {
+- (UIImage * _Nonnull)boxBlurImageWithBlur:(CGFloat)blur {
+    return [self blurImageWithBlur:blur];
+}
+
+- (UIImage * _Nonnull)blurImageWithBlur:(CGFloat)blur {
     if (blur < 0.f || blur > 1.f) {
         blur = 0.5f;
     }
@@ -625,8 +633,9 @@
     
     pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
     
-    if (pixelBuffer == NULL)
+    if (pixelBuffer == NULL) {
         BFLog(@"No pixelbuffer");
+    }
     
     outBuffer.data = pixelBuffer;
     outBuffer.width = CGImageGetWidth(img);
@@ -635,8 +644,9 @@
     
     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
     
-    if (error)
+    if (error) {
         BFLog(@"Error from convolution %ld", error);
+    }
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef ctx = CGBitmapContextCreate(outBuffer.data, outBuffer.width, outBuffer.height, 8, outBuffer.rowBytes, colorSpace, (CGBitmapInfo)kCGImageAlphaNoneSkipLast);
@@ -654,7 +664,7 @@
     return returnImage;
 }
 
-+ (UIImage *)imageFromText:(NSString *)text font:(FontName)fontName fontSize:(CGFloat)fontSize imageSize:(CGSize)imageSize {
++ (UIImage * _Nonnull)imageFromText:(NSString * _Nonnull)text font:(FontName)fontName fontSize:(CGFloat)fontSize imageSize:(CGSize)imageSize {
     UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
     
     [text drawAtPoint:CGPointMake(0.0, 0.0) withAttributes:@{NSFontAttributeName:[UIFont fontForFontName:fontName size:fontSize]}];
@@ -664,7 +674,7 @@
     return image;
 }
 
-+ (UIImage *)imageWithSize:(CGSize)imageSize backgroundColor:(UIColor *)backgroundColor maskedText:(NSString *)string font:(FontName)fontName fontSize:(CGFloat)fontSize {
++ (UIImage * _Nonnull)imageWithSize:(CGSize)imageSize backgroundColor:(UIColor * _Nonnull)backgroundColor maskedText:(NSString *)string font:(FontName)fontName fontSize:(CGFloat)fontSize {
     UIFont *font = [UIFont fontForFontName:fontName size:fontSize];
     NSDictionary *textAttributes = @{NSFontAttributeName:font};
     

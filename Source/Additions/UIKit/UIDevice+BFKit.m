@@ -36,7 +36,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
 
 @implementation UIDevice (BFKit)
 
-+ (NSString *)devicePlatform {
++ (NSString * _Nonnull)devicePlatform {
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -46,7 +46,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     return platform;
 }
 
-+ (NSString *)devicePlatformString {
++ (NSString * _Nonnull)devicePlatformString {
     NSString *platform = [self devicePlatform];
     // iPhone
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 2G";
@@ -212,17 +212,17 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     return [self getSysInfo:HW_USERMEM];
 }
 
-+ (NSNumber *)totalDiskSpace {
++ (NSNumber * _Nonnull)totalDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemSize];
 }
 
-+ (NSNumber *)freeDiskSpace {
++ (NSNumber * _Nonnull)freeDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemFreeSize];
 }
 
-+ (NSString *)macAddress {
++ (NSString * _Nonnull)macAddress {
     // In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00
     /*int                 mib[6];
     size_t              len;
@@ -268,7 +268,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     return @"02:00:00:00:00:00";
 }
 
-+ (NSString *)uniqueIdentifier {
++ (NSString * _Nonnull)uniqueIdentifier {
     NSString *uuid;
     if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)]) {
         uuid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];

@@ -44,12 +44,12 @@
  *
  *  @return Returns the created UITableView
  */
-+ (UITableView *)initWithFrame:(CGRect)frame
-                         style:(UITableViewStyle)style
-            cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle
-                separatorInset:(UIEdgeInsets)separatorInset
-                    dataSource:(id <UITableViewDataSource>)dataSource
-                      delegate:(id <UITableViewDelegate>)delegate;
++ (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                                  style:(UITableViewStyle)style
+                     cellSeparatorStyle:(UITableViewCellSeparatorStyle)cellSeparatorStyle
+                         separatorInset:(UIEdgeInsets)separatorInset
+                             dataSource:(id <UITableViewDataSource> _Nullable)dataSource
+                               delegate:(id <UITableViewDelegate> _Nullable)delegate;
 
 /**
  *  Retrive all the IndexPaths for the section
@@ -58,7 +58,7 @@
  *
  *  @return Return an array with all the IndexPaths
  */
-- (NSArray *)getIndexPathsForSection:(NSUInteger)section;
+- (NSArray * _Nonnull)getIndexPathsForSection:(NSUInteger)section;
 
 /**
  *  Retrive the next index path for the given row at section
@@ -68,8 +68,8 @@
  *
  *  @return Returns the next index path
  */
-- (NSIndexPath *)getNextIndexPath:(NSUInteger)row
-                       forSection:(NSUInteger)section;
+- (NSIndexPath * _Nonnull)getNextIndexPath:(NSUInteger)row
+                                forSection:(NSUInteger)section;
 
 /**
  *  Retrive the previous index path for the given row at section
@@ -79,7 +79,7 @@
  *
  *  @return Returns the previous index path
  */
-- (NSIndexPath *)getPreviousIndexPath:(NSUInteger)row
-                           forSection:(NSUInteger)section;
+- (NSIndexPath * _Nonnull)getPreviousIndexPath:(NSUInteger)row
+                                    forSection:(NSUInteger)section;
 
 @end

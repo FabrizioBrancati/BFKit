@@ -28,13 +28,13 @@
 
 @implementation BFTouchID
 
-+ (void)showTouchIDAuthenticationWithReason:(NSString *)reason completion:(void (^)(TouchIDResult result))completion {
++ (void)showTouchIDAuthenticationWithReason:(NSString * _Nonnull)reason completion:(void (^ _Nullable)(TouchIDResult result))completion {
     [self showTouchIDAuthenticationWithReason:reason fallbackTitle:nil completion:^(TouchIDResult result) {
         completion(result);
     }];
 }
 
-+ (void)showTouchIDAuthenticationWithReason:(NSString *)reason fallbackTitle:(NSString *)fallbackTitle completion:(void (^)(TouchIDResult))completion {
++ (void)showTouchIDAuthenticationWithReason:(NSString * _Nonnull)reason fallbackTitle:(NSString * _Nullable)fallbackTitle completion:(void (^ _Nullable)(TouchIDResult))completion {
     LAContext *context = [[LAContext alloc] init];
     
     [context setLocalizedFallbackTitle:fallbackTitle];

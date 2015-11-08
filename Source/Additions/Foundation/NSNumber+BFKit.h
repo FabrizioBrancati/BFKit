@@ -51,7 +51,7 @@ CGFloat DegreesToRadians(CGFloat degrees);
  *  @return Returns the convertion result
  */
 CGFloat RadiansToDegrees(CGFloat radians);
-#if _cplusplus
+#if __cplusplus
 }
 #endif
 

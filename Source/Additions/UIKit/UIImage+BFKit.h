@@ -43,7 +43,7 @@
  *
  *  @return Returns the created dummy image
  */
-+ (UIImage *)dummyImageNamed:(NSString *)name;
++ (UIImage * _Nullable)dummyImageNamed:(NSString * _Nonnull)name;
 
 /**
  *  Apply the given Blend Mode
@@ -52,14 +52,14 @@
  *
  *  @return Returns the image
  */
-- (UIImage *)blendMode:(CGBlendMode)blendMode;
+- (UIImage * _Nonnull)blendMode:(CGBlendMode)blendMode;
 
 /**
  *  Apply the Blend Mode Overlay
  *
  *  @return Returns the image
  */
-- (UIImage *)blendOverlay;
+- (UIImage * _Nonnull)blendOverlay;
 
 /**
  *  Mask self with another image and size
@@ -69,8 +69,8 @@
  *
  *  @return Returns the masked image
  */
-- (UIImage *)maskWithImage:(UIImage *)image
-                   andSize:(CGSize)size DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage from UIImageView instance method");
+- (UIImage * _Nullable)maskWithImage:(UIImage * _Nonnull)image
+                             andSize:(CGSize)size DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage from UIImageView instance method");
 
 /**
  *  Mask self with another image
@@ -79,7 +79,7 @@
  *
  *  @return Returns the masked image
  */
-- (UIImage *)maskWithImage:(UIImage *)image DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage from UIImageView instance method");
+- (UIImage * _Nullable)maskWithImage:(UIImage * _Nonnull)image DEPRECATED_MSG_ATTRIBUTE("Use -setMaskImage from UIImageView instance method");
 
 /**
  *  Create an image from a given rect of self
@@ -88,7 +88,7 @@
  *
  *  @return Returns the image from a given rect
  */
-- (UIImage *)imageAtRect:(CGRect)rect;
+- (UIImage * _Nonnull)imageAtRect:(CGRect)rect;
 
 /**
  *  Scale the image proportionally to the given size
@@ -97,7 +97,7 @@
  *
  *  @return Returns the scaled image
  */
-- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
+- (UIImage * _Nonnull)imageByScalingProportionallyToSize:(CGSize)targetSize;
 
 /**
  *  Scale the image to the minimum given size
@@ -106,7 +106,7 @@
  *
  *  @return Returns the scaled image
  */
-- (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
+- (UIImage * _Nonnull)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
 
 /**
  *  Scale the image to the maxinum given size
@@ -115,7 +115,7 @@
  *
  *  @return Returns the scaled image
  */
-- (UIImage *)imageByScalingProportionallyToMaximumSize:(CGSize)targetSize;
+- (UIImage * _Nonnull)imageByScalingProportionallyToMaximumSize:(CGSize)targetSize;
 
 /**
  *  Scele the iamge to the given size
@@ -124,7 +124,7 @@
  *
  *  @return Returns the scaled image
  */
-- (UIImage *)imageByScalingToSize:(CGSize)targetSize;
+- (UIImage * _Nonnull)imageByScalingToSize:(CGSize)targetSize;
 
 /**
  *  Rotate the image to the given radians
@@ -133,7 +133,7 @@
  *
  *  @return Returns the rotated image
  */
-- (UIImage *)imageRotatedByRadians:(CGFloat)radians;
+- (UIImage * _Nonnull)imageRotatedByRadians:(CGFloat)radians;
 
 /**
  *  Rotate the image to the given degrees
@@ -142,21 +142,21 @@
  *
  *  @return Returns the rotated image
  */
-- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
+- (UIImage * _Nonnull)imageRotatedByDegrees:(CGFloat)degrees;
 
 /**
  *  Flip the image horizontally
  *
  *  @return Returns the flipped image
  */
-- (UIImage *)flipImageHorizontally;
+- (UIImage * _Nonnull)flipImageHorizontally;
 
 /**
  *  Flip the image vertically
  *
  *  @return Returns the flipped image
  */
-- (UIImage *)flipImageVertically;
+- (UIImage * _Nonnull)flipImageVertically;
 
 /**
  *  Check if the image has alpha
@@ -170,14 +170,14 @@
  *
  *  @return Returns the image without alpha
  */
-- (UIImage *)removeAlpha;
+- (UIImage * _Nonnull)removeAlpha;
 
 /**
  *  Fill the alpha with the white color
  *
  *  @return Returns the filled image
  */
-- (UIImage *)fillAlpha;
+- (UIImage * _Nonnull)fillAlpha;
 
 /**
  *  Fill the alpha with the given color
@@ -186,7 +186,7 @@
  *
  *  @return Returns the filled image
  */
-- (UIImage *)fillAlphaWithColor:(UIColor *)color;
+- (UIImage * _Nonnull)fillAlphaWithColor:(UIColor * _Nonnull)color;
 
 /**
  *  Check if the image is in grayscale
@@ -200,21 +200,21 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)imageToGrayscale;
+- (UIImage * _Nonnull)imageToGrayscale;
 
 /**
  *  Transform the image to black and white
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)imageToBlackAndWhite;
+- (UIImage * _Nonnull)imageToBlackAndWhite;
 
 /**
  *  Invert the color of the image
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)invertColors;
+- (UIImage * _Nonnull)invertColors;
 
 
 /**
@@ -225,8 +225,8 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)bloom:(float)radius
-         intensity:(float)intensity;
+- (UIImage * _Nonnull)bloom:(float)radius
+                  intensity:(float)intensity;
 
 /**
  *  Apply the blur effect to the image
@@ -235,7 +235,16 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)boxBlurImageWithBlur:(CGFloat)blur;
+- (UIImage * _Nonnull)boxBlurImageWithBlur:(CGFloat)blur DEPRECATED_MSG_ATTRIBUTE("Use -blurImageWithBlur");
+
+/**
+ *  Apply the blur effect to the image
+ *
+ *  @param blur Radius of the blur
+ *
+ *  @return Returns the transformed image
+ */
+- (UIImage * _Nonnull)blurImageWithBlur:(CGFloat)blur;
 
 /**
  *  Apply the bump distortion effect to the image
@@ -246,9 +255,9 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)bumpDistortion:(CIVector *)center
-                     radius:(float)radius
-                      scale:(float)scale;
+- (UIImage * _Nonnull)bumpDistortion:(CIVector * _Nonnull)center
+                              radius:(float)radius
+                               scale:(float)scale;
 
 /**
  *  Apply the bump distortion linear effect to the image
@@ -260,10 +269,10 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)bumpDistortionLinear:(CIVector *)center
-                           radius:(float)radius
-                            angle:(float)angle
-                            scale:(float)scale;
+- (UIImage * _Nonnull)bumpDistortionLinear:(CIVector * _Nonnull)center
+                                    radius:(float)radius
+                                     angle:(float)angle
+                                     scale:(float)scale;
 
 /**
  *  Apply the circular splash distortion effect to the image
@@ -273,8 +282,8 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)circleSplashDistortion:(CIVector *)center
-                             radius:(float)radius;
+- (UIImage * _Nonnull)circleSplashDistortion:(CIVector * _Nonnull)center
+                                      radius:(float)radius;
 
 /**
  *  Apply the circular wrap effect to the image
@@ -285,9 +294,9 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)circularWrap:(CIVector *)center
-                   radius:(float)radius
-                    angle:(float)angle;
+- (UIImage * _Nonnull)circularWrap:(CIVector * _Nonnull)center
+                            radius:(float)radius
+                             angle:(float)angle;
 
 /**
  *  Apply the CMY halftone effect to the image
@@ -301,12 +310,12 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)cmykHalftone:(CIVector *)center
-                    width:(float)width
-                    angle:(float)angle
-                sharpness:(float)sharpness
-                      gcr:(float)gcr
-                      ucr:(float)ucr;
+- (UIImage * _Nonnull)cmykHalftone:(CIVector * _Nonnull)center
+                             width:(float)width
+                             angle:(float)angle
+                         sharpness:(float)sharpness
+                               gcr:(float)gcr
+                               ucr:(float)ucr;
 
 /**
  *  Apply the sepia filter to the image
@@ -315,7 +324,7 @@
  *
  *  @return Returns the transformed image
  */
-- (UIImage *)sepiaToneWithIntensity:(float)intensity;
+- (UIImage * _Nonnull)sepiaToneWithIntensity:(float)intensity;
 
 /**
  *  Create an image from a given color
@@ -324,7 +333,7 @@
  *
  *  @return Returns the created UIImage
  */
-+ (UIImage *)imageWithColor:(UIColor *)color;
++ (UIImage * _Nonnull)imageWithColor:(UIColor * _Nonnull)color;
 
 /**
  *  Create an image from a given text
@@ -336,10 +345,10 @@
  *
  *  @return Returns the created UIImage
  */
-+ (UIImage *)imageFromText:(NSString *)text
-                      font:(FontName)fontName
-                  fontSize:(CGFloat)fontSize
-                 imageSize:(CGSize)imageSize;
++ (UIImage * _Nonnull)imageFromText:(NSString * _Nonnull)text
+                               font:(FontName)fontName
+                           fontSize:(CGFloat)fontSize
+                          imageSize:(CGSize)imageSize;
 
 /**
  *  Create an image with a background color and with a text with a mask
@@ -352,10 +361,10 @@
  *
  *  @return Returns the created UIImage
  */
-+ (UIImage *)imageWithSize:(CGSize)imageSize
-           backgroundColor:(UIColor *)backgroundColor
-                maskedText:(NSString *)string
-                      font:(FontName)fontName
-                  fontSize:(CGFloat)fontSize;
++ (UIImage * _Nonnull)imageWithSize:(CGSize)imageSize
+                    backgroundColor:(UIColor * _Nonnull)backgroundColor
+                         maskedText:(NSString * _Nonnull)string
+                               font:(FontName)fontName
+                           fontSize:(CGFloat)fontSize;
 
 @end

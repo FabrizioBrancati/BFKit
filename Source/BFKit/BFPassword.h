@@ -72,6 +72,6 @@ typedef NS_ENUM(NSInteger, PasswordStrengthLevel) {
  *
  *  @return Returns the password strength level with value from enum PasswordStrengthLevel
  */
-+ (PasswordStrengthLevel)checkPasswordStrength:(NSString *)password;
++ (PasswordStrengthLevel)checkPasswordStrength:(NSString * _Nonnull)password;
 
 @end

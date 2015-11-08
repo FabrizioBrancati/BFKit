@@ -42,11 +42,11 @@
     }
 }
 
-- (NSMutableArray *)reversedArray {
+- (NSMutableArray * _Nonnull)reversedArray {
     return (NSMutableArray *)[NSArray reversedArray:self];
 }
 
-+ (NSMutableArray *)sortArrayByKey:(NSString *)key array:(NSMutableArray *)array ascending:(BOOL)ascending {
++ (NSMutableArray * _Nonnull)sortArrayByKey:(NSString * _Nonnull)key array:(NSMutableArray * _Nonnull)array ascending:(BOOL)ascending {
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     [tempArray removeAllObjects];
     [tempArray addObjectsFromArray:array];
