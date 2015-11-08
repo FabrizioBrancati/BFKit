@@ -141,9 +141,8 @@ Installing and Usage :computer:
 - Create a **Podfile** in your **project directory**
 - Write:
 ```ruby
-    platform :ios, '8.0'
+    platform :ios, '7.0'
     xcodeproj 'Project.xcodeproj'
-    use_frameworks!
 
     pod 'BFKit'
 ```
