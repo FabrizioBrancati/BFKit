@@ -148,7 +148,7 @@ Installing and Usage :computer:
 ```
 - Change **"Project"**  with your **real project name**
 - Open **Terminal**, go to **project directory** and type: ```pod install```
-- Import the Framework with ```import BFKit```
+- Import the Framework with ```#import <BFKit/BFKit.h>```
 - Enjoy!
 
 ### iOS 8 or later compatible
