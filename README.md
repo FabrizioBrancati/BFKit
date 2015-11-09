@@ -9,7 +9,7 @@
 ---
 
 <p align="center">
-    <a href="#objective-c-">BFKit (Swift)</a> &bull;
+    <a href="#swift-">BFKit (Swift)</a> &bull;
     <a href="#what-does-it-do-question">What does it do</a> &bull;
     <a href="#language-support-it">Language support</a> &bull;
     <a href="#requirements-iphone">Requirements</a> &bull;
