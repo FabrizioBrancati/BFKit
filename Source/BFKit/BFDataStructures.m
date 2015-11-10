@@ -91,11 +91,7 @@
 }
 
 - (id _Nullable)searchObjectAtIndex:(NSInteger)index {
-    if (index > 0 && index <= list.count) {
-        return [list objectAtIndex:index];
-    } else {
-        return nil;
-    }
+    return [list safeObjectAtIndex:index];
 }
 
 - (void)insert:(id _Nonnull)object {
