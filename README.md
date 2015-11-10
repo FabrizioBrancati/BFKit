@@ -10,7 +10,7 @@
 ---
 
 <p align="center">
-    <a href="#swift-">BFKit (Swift)</a> &bull;
+    <a href="#swift-">Swift Version</a> &bull;
     <a href="#what-does-it-do-question">What does it do</a> &bull;
     <a href="#language-support-it">Language support</a> &bull;
     <a href="#requirements-iphone">Requirements</a> &bull;
@@ -27,7 +27,7 @@
 
 ---
 
-Swift <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="25" width="25">
+Swift Version <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="25" width="25">
 =====
 If you are looking for Swift version check it out here: **[BFKit Swift](https://github.com/FabrizioBrancati/BFKit-Swift)**
 
