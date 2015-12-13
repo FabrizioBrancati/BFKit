@@ -462,6 +462,8 @@
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
             UITextField *textField = [UITextField initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 25) placeholder:@"Text field placeholder" color:[UIColor colorWithRed:0.166 green:0.528 blue:0.700 alpha:1.000] font:FontNameVerdana size:18 returnType:UIReturnKeyDone keyboardType:UIKeyboardTypeEmailAddress secure:NO borderStyle:UITextBorderStyleBezel autoCapitalization:UITextAutocapitalizationTypeWords keyboardAppearance:UIKeyboardAppearanceLight enablesReturnKeyAutomatically:YES clearButtonMode:UITextFieldViewModeWhileEditing autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [textField setMaxNumberOfCharacters:5];
+            
             [_scrollView addSubview:textField];
             
             break;
@@ -730,16 +732,6 @@
             BFLogClear;
             
             [self performSelectorInBackground:@selector(threadMethod) withObject:nil];
-            
-            break;
-        }
-        case DetailTypeBFTextField:
-        {
-            self.title = @"BFTextField";
-            BFTextField *textField = [[BFTextField alloc]initWithMaxCharacters:5];
-            [textField setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-            [textField setMaxNumberofCharacters:5];
-            [self.view addSubview:textField];
             
             break;
         }

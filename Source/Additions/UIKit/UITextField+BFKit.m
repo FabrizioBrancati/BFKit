@@ -24,7 +24,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+#import <objc/runtime.h>
 #import "UITextField+BFKit.h"
+
+static const void *ImageTagKey = &ImageTagKey;
 
 @implementation UITextField (BFKit)
 
@@ -45,6 +48,23 @@
     [textField setDelegate:delegate];
     
     return textField;
+}
+
+-(void)setMaxNumberOfCharacters:(int)maxNumberOfCharacters
+{
+    self.limitedDelegate = [[LimitedTextFieldDelegate alloc] init];
+    self.limitedDelegate.maxCharacters = [NSNumber numberWithInt:maxNumberOfCharacters];
+    self.delegate = self.limitedDelegate;
+}
+
+- (void)setLimitedDelegate:(LimitedTextFieldDelegate *)limited
+{
+    objc_setAssociatedObject(self, ImageTagKey, limited, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (LimitedTextFieldDelegate *)limitedDelegate
+{
+    return objc_getAssociatedObject(self, ImageTagKey);
 }
 
 @end

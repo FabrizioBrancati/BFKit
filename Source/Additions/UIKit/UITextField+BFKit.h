@@ -28,11 +28,15 @@
 @import UIKit;
 
 #import "UIFont+BFKit.h"
+#import "LimitedTextFieldDelegate.h"
 
 /**
  *  This category adds some useful methods to UITextField
  */
 @interface UITextField (BFKit)
+
+@property (nonatomic) int maxNumberOfCharacters;
+@property (nonatomic, copy, nullable) LimitedTextFieldDelegate * limitedDelegate;
 
 /**
  *  Create an UITextField and set some parameters

@@ -64,7 +64,6 @@
 		49932B011A17AB890093B13C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49932AFF1A17AB890093B13C /* InfoViewController.m */; };
 		49932B021A17AB890093B13C /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49932B001A17AB890093B13C /* InfoViewController.xib */; };
 		49B2719819BFC9EC0079FA5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2719719BFC9EC0079FA5A /* Images.xcassets */; };
-		F4E663981C1DA30900F58602 /* BFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E663971C1DA30800F58602 /* BFTextField.m */; };
 		F4E6639B1C1DA3B100F58602 /* LimitedTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6639A1C1DA3B100F58602 /* LimitedTextFieldDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -179,8 +178,6 @@
 		49932AFF1A17AB890093B13C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		49932B001A17AB890093B13C /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		49B2719719BFC9EC0079FA5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F4E663961C1DA30800F58602 /* BFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTextField.h; sourceTree = "<group>"; };
-		F4E663971C1DA30800F58602 /* BFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTextField.m; sourceTree = "<group>"; };
 		F4E663991C1DA3B100F58602 /* LimitedTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitedTextFieldDelegate.h; sourceTree = "<group>"; };
 		F4E6639A1C1DA3B100F58602 /* LimitedTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitedTextFieldDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -400,8 +397,6 @@
 		F4E6639C1C1DA3B900F58602 /* BFTextField */ = {
 			isa = PBXGroup;
 			children = (
-				F4E663961C1DA30800F58602 /* BFTextField.h */,
-				F4E663971C1DA30800F58602 /* BFTextField.m */,
 				F4E663991C1DA3B100F58602 /* LimitedTextFieldDelegate.h */,
 				F4E6639A1C1DA3B100F58602 /* LimitedTextFieldDelegate.m */,
 			);
@@ -501,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				492C97C01BEE5F6E00CDC75F /* UIWindow+BFKit.m in Sources */,
-				F4E663981C1DA30900F58602 /* BFTextField.m in Sources */,
 				4902770919BDF3F8009B8BC1 /* FoundationViewController.m in Sources */,
 				492C97C51BEE5F6E00CDC75F /* BFPassword.m in Sources */,
 				492C97BF1BEE5F6E00CDC75F /* UIWebView+BFKit.m in Sources */,

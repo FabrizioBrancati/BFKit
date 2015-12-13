@@ -43,7 +43,6 @@
 #import "BFPassword.h"
 #import "BFSystemSound.h"
 #import "BFTouchID.h"
-#import "BFTextField.h"
 
 /**
  *  Foundation Additions

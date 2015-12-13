@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface LimitedTextFieldDelegate : NSObject<UITextFieldDelegate>
-@property int maxCharacters;
+@property NSNumber * maxCharacters;
 
 @end
