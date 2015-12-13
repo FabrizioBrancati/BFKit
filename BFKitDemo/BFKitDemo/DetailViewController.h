@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, DetailType) {
     DetailTypeBFPassword,
     DetailTypeBFSystemSound,
     DetailTypeBFTouchID,
+    DetailTypeBFTextField,
     DetailTypeUIButton,
     DetailTypeUIColor,
     DetailTypeUIDevice,

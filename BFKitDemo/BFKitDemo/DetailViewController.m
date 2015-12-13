@@ -733,6 +733,16 @@
             
             break;
         }
+        case DetailTypeBFTextField:
+        {
+            self.title = @"BFTextField";
+            BFTextField *textField = [[BFTextField alloc]initWithMaxCharacters:5];
+            [textField setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            [textField setMaxNumberofCharacters:5];
+            [self.view addSubview:textField];
+            
+            break;
+        }
     }
 }
 
