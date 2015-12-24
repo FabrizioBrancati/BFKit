@@ -38,24 +38,24 @@ static UIFont * _Nullable boldFont;
     return UIFont.lightFont;
 }
 
-+ (void)setLightFont:(UIFont *)newLightFont {
-    UIFont.lightFont = newLightFont;
++ (void)setLightFont:(UIFont *)lightFont {
+    UIFont.lightFont = lightFont;
 }
 
 + (UIFont *)regularFont {
     return UIFont.regularFont;
 }
 
-+ (void)setRegularFont:(UIFont *)newRegularFont {
-    UIFont.regularFont = newRegularFont;
++ (void)setRegularFont:(UIFont *)regularFont {
+    UIFont.regularFont = regularFont;
 }
 
 + (UIFont *)boldFont {
     return UIFont.boldFont;
 }
 
-+ (void)setBoldFont:(UIFont *)newBoldFont {
-    UIFont.boldFont = newBoldFont;
++ (void)setBoldFont:(UIFont *)boldFont {
+    UIFont.boldFont = boldFont;
 }
 
 + (NSDictionary * _Nonnull)allFamilyAndFonts {

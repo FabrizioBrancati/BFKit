@@ -28,8 +28,6 @@
 
 @implementation UIScreen (BFKit)
 
-static CGFloat brightness;
-
 + (BOOL)isRetina {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0 || [UIScreen mainScreen].scale == 3.0)) {
         return YES;
@@ -60,9 +58,8 @@ static CGFloat brightness;
     return [UIScreen mainScreen].brightness;
 }
 
-+ (void)setBrightness:(CGFloat)newBrightness {
-    [[UIScreen mainScreen] setBrightness:newBrightness];
-    UIScreen.brightness = newBrightness;
++ (void)setBrightness:(CGFloat)brightness {
+    [[UIScreen mainScreen] setBrightness:brightness];
 }
 
 @end

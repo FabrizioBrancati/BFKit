@@ -75,6 +75,6 @@
  *
  *  @param newLightFont The new brightness
  */
-+ (void)setBrightness:(CGFloat)newBrightness;
++ (void)setBrightness:(CGFloat)brightness;
 
 @end
