@@ -417,7 +417,7 @@
 		490276E419BDF3F8009B8BC1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Fabrizio Brancati";
 			};
 			buildConfigurationList = 490276E719BDF3F8009B8BC1 /* Build configuration list for PBXProject "BFKitDemo" */;
@@ -568,7 +568,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Fabrizio Brancati (63PBW86687)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fabrizio Brancati (63PBW86687)";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
