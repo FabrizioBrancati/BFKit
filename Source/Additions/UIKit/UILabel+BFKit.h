@@ -28,6 +28,7 @@
 @import UIKit;
 
 #import "UIFont+BFKit.h"
+#import "NSString+BFKit.h"
 
 /**
  *  This category adds some useful methods to UILabel
@@ -77,5 +78,13 @@
                           alignment:(NSTextAlignment)alignment
                               lines:(NSInteger)lines
                         shadowColor:(UIColor * _Nonnull)colorShadow;
+
+
+/**
+ *  Calculates height based on text, width and font.
+ *
+ *  @return Returns calculated height.
+ */
+-(CGFloat)calculatedHeight;
 
 @end

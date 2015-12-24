@@ -45,4 +45,9 @@
     return label;
 }
 
+-(CGFloat)calculatedHeight
+{
+    return [self.text heightForWidth:self.frame.size.width andFont:self.font];
+}
+
 @end
