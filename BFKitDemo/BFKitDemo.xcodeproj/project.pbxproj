@@ -58,6 +58,8 @@
 		492C97C71BEE5F6E00CDC75F /* BFTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C97981BEE5F6E00CDC75F /* BFTouchID.m */; };
 		492C97C81BEE5F6E00CDC75F /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492C979B1BEE5F6E00CDC75F /* BFKit.strings */; };
 		493482311A5DBE3F006D5380 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493482301A5DBE3F006D5380 /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		494AA62D1C2EFFE700D4D766 /* NSData+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 494AA62C1C2EFFE700D4D766 /* NSData+BFKit.m */; };
+		494AA6301C2F035800D4D766 /* BFCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 494AA62F1C2F035800D4D766 /* BFCryptor.m */; };
 		494AAF991A9A21C3001E58F5 /* UserInterfaceKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494AAF981A9A21C3001E58F5 /* UserInterfaceKitViewController.xib */; };
 		494AAF9B1A9C92A0001E58F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */; };
 		494AAF9D1A9C92AD001E58F5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */; };
@@ -170,6 +172,10 @@
 		492C97A21BEE5F6E00CDC75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		492C97A31BEE5F6E00CDC75F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		493482301A5DBE3F006D5380 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		494AA62B1C2EFFE700D4D766 /* NSData+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BFKit.h"; sourceTree = "<group>"; };
+		494AA62C1C2EFFE700D4D766 /* NSData+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BFKit.m"; sourceTree = "<group>"; };
+		494AA62E1C2F035800D4D766 /* BFCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFCryptor.h; sourceTree = "<group>"; };
+		494AA62F1C2F035800D4D766 /* BFCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFCryptor.m; sourceTree = "<group>"; };
 		494AAF981A9A21C3001E58F5 /* UserInterfaceKitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInterfaceKitViewController.xib; sourceTree = "<group>"; };
 		494AAF9A1A9C92A0001E58F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		494AAF9C1A9C92AD001E58F5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -292,6 +298,8 @@
 			children = (
 				492C974F1BEE5F6E00CDC75F /* NSArray+BFKit.h */,
 				492C97501BEE5F6E00CDC75F /* NSArray+BFKit.m */,
+				494AA62B1C2EFFE700D4D766 /* NSData+BFKit.h */,
+				494AA62C1C2EFFE700D4D766 /* NSData+BFKit.m */,
 				492C97511BEE5F6E00CDC75F /* NSDate+BFKit.h */,
 				492C97521BEE5F6E00CDC75F /* NSDate+BFKit.m */,
 				492C97531BEE5F6E00CDC75F /* NSDictionary+BFKit.h */,
@@ -366,6 +374,8 @@
 				492C978C1BEE5F6E00CDC75F /* BFApp.m */,
 				492C978D1BEE5F6E00CDC75F /* BFButton.h */,
 				492C978E1BEE5F6E00CDC75F /* BFButton.m */,
+				494AA62E1C2F035800D4D766 /* BFCryptor.h */,
+				494AA62F1C2F035800D4D766 /* BFCryptor.m */,
 				492C978F1BEE5F6E00CDC75F /* BFDataStructures.h */,
 				492C97901BEE5F6E00CDC75F /* BFDataStructures.m */,
 				492C97911BEE5F6E00CDC75F /* BFLog.h */,
@@ -497,6 +507,8 @@
 				492C97C11BEE5F6E00CDC75F /* BFApp.m in Sources */,
 				492C97A51BEE5F6E00CDC75F /* NSDate+BFKit.m in Sources */,
 				4902779619BE049B009B8BC1 /* DetailViewController.m in Sources */,
+				494AA62D1C2EFFE700D4D766 /* NSData+BFKit.m in Sources */,
+				494AA6301C2F035800D4D766 /* BFCryptor.m in Sources */,
 				4902778219BE0064009B8BC1 /* BFKitViewController.m in Sources */,
 				492C97AE1BEE5F6E00CDC75F /* NSThread+BFKit.m in Sources */,
 				492C97B21BEE5F6E00CDC75F /* UIDevice+BFKit.m in Sources */,
