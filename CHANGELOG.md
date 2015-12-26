@@ -27,7 +27,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/CONTRIBUTING.md) file
 - Added `brightness` directly to UIScreen category
 - Added BFCryptor class to encrypt/decrypt NSString and NSData
-- Added NSData category with `convertToNSString` method to convert NSData to NSString
+- Added NSData category with `convertToUTF8String` & `convertToASCIIString` method to convert NSData to NSString
 - Added `convertToNSData` in NSString category to convert NSData to NSString
 
 #### Improved
