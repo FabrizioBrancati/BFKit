@@ -28,12 +28,20 @@
 
 @implementation NSData (BFKit)
 
-+ (NSString * _Nonnull)convertToNSString:(NSData * _Nonnull)data {
++ (NSString * _Nonnull)convertToUTF8String:(NSData * _Nonnull)data {
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
-- (NSString * _Nonnull)convertToNSString {
-    return [NSData convertToNSString:self];
+- (NSString * _Nonnull)convertToUTF8String {
+    return [NSData convertToUTF8String:self];
+}
+
++ (NSString * _Nonnull)convertToASCIIString:(NSData * _Nonnull)data {
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSString * _Nonnull)convertToASCIIString {
+    return [NSData convertToASCIIString:self];
 }
 
 @end

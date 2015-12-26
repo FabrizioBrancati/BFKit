@@ -32,19 +32,35 @@
 @interface NSData (BFKit)
 
 /**
- *  Convert the given NSData to NSString
+ *  Convert the given NSData to UTF8 NSString
  *
  *  @param data The NSData to be converted
  *
- *  @return Returns the converted NSData as NSString
+ *  @return Returns the converted NSData as UTF8 NSString
  */
-+ (NSString * _Nonnull)convertToNSString:(NSData * _Nonnull)data;
++ (NSString * _Nonnull)convertToUTF8String:(NSData * _Nonnull)data;
 
 /**
- *  Convert self to a NSString
+ *  Convert self to a UTF8 NSString
  *
- *  @return Returns self as NSString
+ *  @return Returns self as UTF8 NSString
  */
-- (NSString * _Nonnull)convertToNSString;
+- (NSString * _Nonnull)convertToUTF8String;
+
+/**
+ *  Convert the given NSData to ASCII NSString
+ *
+ *  @param data The NSData to be converted
+ *
+ *  @return Returns the converted NSData as ASCII NSString
+ */
++ (NSString * _Nonnull)convertToASCIIString:(NSData * _Nonnull)data;
+
+/**
+ *  Convert self to a ASCII NSString
+ *
+ *  @return Returns self as ASCII NSString
+ */
+- (NSString * _Nonnull)convertToASCIIString;
 
 @end
