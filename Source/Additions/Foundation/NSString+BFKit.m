@@ -174,7 +174,7 @@
 
 + (NSString * _Nonnull)decodeBase64:(NSString * _Nonnull)string {
     NSData *data = [[NSData alloc] initWithBase64EncodedString:string options:0];
-    return [data convertToNSString];
+    return [data convertToUTF8String];
 }
 
 - (NSString * _Nonnull)decodeBase64 {
