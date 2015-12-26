@@ -84,6 +84,8 @@
 		492C974A1BEE59C200CDC75F /* BFTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96F71BEE59C200CDC75F /* BFTouchID.m */; };
 		492C974B1BEE59C200CDC75F /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F81BEE59C200CDC75F /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C974C1BEE59C200CDC75F /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492C96FA1BEE59C200CDC75F /* BFKit.strings */; };
+		F401C5401C2CAE060098AC17 /* LimitedTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F401C53E1C2CAE060098AC17 /* LimitedTextFieldDelegate.h */; };
+		F401C5411C2CAE060098AC17 /* LimitedTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F401C53F1C2CAE060098AC17 /* LimitedTextFieldDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +186,8 @@
 		492C97001BEE59C200CDC75F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
 		492C97011BEE59C200CDC75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		492C97021BEE59C200CDC75F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
+		F401C53E1C2CAE060098AC17 /* LimitedTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitedTextFieldDelegate.h; sourceTree = "<group>"; };
+		F401C53F1C2CAE060098AC17 /* LimitedTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitedTextFieldDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +348,8 @@
 				492C96F51BEE59C200CDC75F /* BFSystemSound.m */,
 				492C96F61BEE59C200CDC75F /* BFTouchID.h */,
 				492C96F71BEE59C200CDC75F /* BFTouchID.m */,
+				F401C53E1C2CAE060098AC17 /* LimitedTextFieldDelegate.h */,
+				F401C53F1C2CAE060098AC17 /* LimitedTextFieldDelegate.m */,
 			);
 			name = BFKit;
 			path = ../../Source/BFKit;
@@ -382,6 +388,7 @@
 				492C97431BEE59C200CDC75F /* BFLog.h in Headers */,
 				492C97171BEE59C200CDC75F /* NSThread+BFKit.h in Headers */,
 				492C97371BEE59C200CDC75F /* UIView+BFKit.h in Headers */,
+				F401C5401C2CAE060098AC17 /* LimitedTextFieldDelegate.h in Headers */,
 				492C97391BEE59C200CDC75F /* UIWebView+BFKit.h in Headers */,
 				492C97211BEE59C200CDC75F /* UIFont+BFKit.h in Headers */,
 				492C971B1BEE59C200CDC75F /* UIButton+BFKit.h in Headers */,
@@ -546,6 +553,7 @@
 				492C971A1BEE59C200CDC75F /* UIBarButtonItem+BFKit.m in Sources */,
 				492C974A1BEE59C200CDC75F /* BFTouchID.m in Sources */,
 				492C972C1BEE59C200CDC75F /* UIScreen+BFKit.m in Sources */,
+				F401C5411C2CAE060098AC17 /* LimitedTextFieldDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +755,7 @@
 				492C96A81BEE593800CDC75F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		492C96A91BEE593800CDC75F /* Build configuration list for PBXNativeTarget "BFKitTests" */ = {
 			isa = XCConfigurationList;
@@ -755,6 +764,7 @@
 				492C96AB1BEE593800CDC75F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

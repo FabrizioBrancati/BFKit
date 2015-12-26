@@ -87,4 +87,14 @@
  */
 -(CGFloat)calculatedHeight;
 
+
+/**
+ *  Sets a custom font from a character at fromIndex to character at toIndex.
+ *
+ *  @param font      newFont
+ *  @param fromIndex fromIndex
+ *  @param toIndex   toIndex
+ */
+-(void)setFont:(UIFont *)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+
 @end

@@ -27,7 +27,7 @@
 #import <objc/runtime.h>
 #import "UITextField+BFKit.h"
 
-static const void *ImageTagKey = &ImageTagKey;
+static const void *delegateKey = &delegateKey;
 
 @implementation UITextField (BFKit)
 
@@ -59,12 +59,12 @@ static const void *ImageTagKey = &ImageTagKey;
 
 - (void)setLimitedDelegate:(LimitedTextFieldDelegate *)limited
 {
-    objc_setAssociatedObject(self, ImageTagKey, limited, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, delegateKey, limited, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (LimitedTextFieldDelegate *)limitedDelegate
 {
-    return objc_getAssociatedObject(self, ImageTagKey);
+    return objc_getAssociatedObject(self, delegateKey);
 }
 
 @end

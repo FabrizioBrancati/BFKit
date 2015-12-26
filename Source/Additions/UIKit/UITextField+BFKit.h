@@ -35,7 +35,7 @@
  */
 @interface UITextField (BFKit)
 
-@property (nonatomic) int maxNumberOfCharacters;
+@property (nonatomic) IBInspectable int maxNumberOfCharacters;
 @property (nonatomic, copy, nullable) LimitedTextFieldDelegate * limitedDelegate;
 
 /**

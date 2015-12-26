@@ -50,4 +50,12 @@
     return [self.text heightForWidth:self.frame.size.width andFont:self.font];
 }
 
+-(void)setFont:(UIFont *)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
+{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.text];
+    [attributedString addAttribute:NSFontAttributeName value:font range:NSMakeRange(fromIndex, toIndex-fromIndex)];
+    
+    [self setAttributedText:attributedString];
+}
+
 @end
