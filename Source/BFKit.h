@@ -38,6 +38,7 @@
  */
 #import "BFApp.h"
 #import "BFButton.h"
+#import "BFCryptor.h"
 #import "BFDataStructures.h"
 #import "BFLog.h"
 #import "BFPassword.h"

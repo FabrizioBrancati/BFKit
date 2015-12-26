@@ -702,10 +702,6 @@
             NSString *search = @"Search in this string!";
             BFLog(@"Search: %@", [search searchCharStart:'a' charEnd:'s']);
             BFLog(@"Search: %@", [search searchCharStart:'a' charEnd:'a']);
-            BFLog(@"MD5: %@", [search MD5]);
-            BFLog(@"SHA1: %@", [search SHA1]);
-            BFLog(@"SHA256: %@", [search SHA256]);
-            BFLog(@"SHA512: %@", [search SHA512]);
             BFLog([search isEmail] ? @"Is email: Yes" : @"Is email: No");
             
 			NSString *testHEX = @"68 65 6c 6c 6f";

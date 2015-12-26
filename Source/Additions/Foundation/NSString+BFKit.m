@@ -25,7 +25,8 @@
 //  SOFTWARE.
 
 #import "NSString+BFKit.h"
-#import <CommonCrypto/CommonDigest.h>
+#import "NSData+BFKit.h"
+#import "BFCryptor.h"
 
 @implementation NSString (BFKit)
 
@@ -86,60 +87,19 @@
 }
 
 - (NSString * _Nullable)MD5 {
-    if (self == nil || [self length] == 0) {
-        return nil;
-    }
-    
-    unsigned char digest[CC_MD5_DIGEST_LENGTH], i;
-	CC_MD5([self UTF8String], (int)[self lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
-	NSMutableString *ms = [NSMutableString string];
-	for (i=0;i<CC_MD5_DIGEST_LENGTH;i++) {
-		[ms appendFormat: @"%02x", (int)(digest[i])];
-	}
-	return [ms copy];
+	return [BFCryptor MD5:self];
 }
 
 - (NSString * _Nullable)SHA1 {
-    if (self == nil || [self length] == 0) {
-        return nil;
-    }
-    
-    unsigned char digest[CC_SHA1_DIGEST_LENGTH], i;
-	CC_SHA1([self UTF8String], (int)[self lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
-	NSMutableString *ms = [NSMutableString string];
-	for (i=0;i<CC_SHA1_DIGEST_LENGTH;i++) {
-		[ms appendFormat: @"%02x", (int)(digest[i])];
-	}
-	return [ms copy];
+    return [BFCryptor SHA1:self];
 }
 
 - (NSString * _Nullable)SHA256 {
-    if (self == nil || [self length] == 0) {
-        return nil;
-    }
-    
-    unsigned char digest[CC_SHA256_DIGEST_LENGTH], i;
-	CC_SHA256([self UTF8String], (int)[self lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
-	NSMutableString *ms = [NSMutableString string];
-	for (i=0;i<CC_SHA256_DIGEST_LENGTH;i++) {
-		[ms appendFormat: @"%02x", (int)(digest[i])];
-	}
-	return [ms copy];
+    return [BFCryptor SHA256:self];
 }
 
 - (NSString * _Nullable)SHA512 {
-    if (self == nil || [self length] == 0) {
-        return nil;
-    }
-    
-    unsigned char digest[CC_SHA512_DIGEST_LENGTH], i;
-	CC_SHA512([self UTF8String], (int)[self lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
-	NSMutableString *ms = [NSMutableString string];
-	for (i=0;i<CC_SHA512_DIGEST_LENGTH;i++)
-    {
-		[ms appendFormat: @"%02x", (int)(digest[i])];
-	}
-	return [ms copy];
+    return [BFCryptor SHA512:self];
 }
 
 - (BOOL)hasString:(NSString * _Nonnull)substring {
@@ -204,7 +164,7 @@
 }
 
 + (NSString * _Nonnull)encodeToBase64:(NSString * _Nonnull)string {
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [string convertToNSData];
     return [data base64EncodedStringWithOptions:0];
 }
 
@@ -214,11 +174,19 @@
 
 + (NSString * _Nonnull)decodeBase64:(NSString * _Nonnull)string {
     NSData *data = [[NSData alloc] initWithBase64EncodedString:string options:0];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    return [data convertToNSString];
 }
 
 - (NSString * _Nonnull)decodeBase64 {
     return [NSString decodeBase64:self];
+}
+
++ (NSData * _Nonnull)convertToNSData:(NSString * _Nonnull)string {
+    return [string dataUsingEncoding:NSUTF8StringEncoding];
+}
+
+- (NSData * _Nonnull)convertToNSData {
+    return [NSString convertToNSData:self];
 }
 
 - (NSString * _Nonnull)sentenceCapitalizedString {

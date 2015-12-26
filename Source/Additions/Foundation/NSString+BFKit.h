@@ -89,28 +89,28 @@
  *
  *  @return Returns the MD5 NSString from self
  */
-- (NSString * _Nullable)MD5;
+- (NSString * _Nullable)MD5 DEPRECATED_MSG_ATTRIBUTE("Use BFCryptor MD5");
 
 /**
  *  Create a SHA1 string from self
  *
  *  @return Returns the SHA1 NSString from self
  */
-- (NSString * _Nullable)SHA1;
+- (NSString * _Nullable)SHA1 DEPRECATED_MSG_ATTRIBUTE("Use BFCryptor SHA1");
 
 /**
  *  Create a SHA256 string from self
  *
  *  @return Returns the SHA256 NSString from self
  */
-- (NSString * _Nullable)SHA256;
+- (NSString * _Nullable)SHA256 DEPRECATED_MSG_ATTRIBUTE("Use BFCryptor SHA256");
 
 /**
  *  Create a SHA512 string from self
  *
  *  @return Returns the SHA512 NSString from self
  */
-- (NSString * _Nullable)SHA512;
+- (NSString * _Nullable)SHA512 DEPRECATED_MSG_ATTRIBUTE("Use BFCryptor SHA512");
 
 /**
  *  Check if self has the given substring in case-sensitive
@@ -190,6 +190,22 @@
 - (NSString * _Nonnull)decodeBase64;
 
 /**
+ *  Convert the given NSString to NSData
+ *
+ *  @param string The NSString to be converted
+ *
+ *  @return Returns the converted NSString as NSData
+ */
++ (NSData * _Nonnull)convertToNSData:(NSString * _Nonnull)string;
+
+/**
+ *  Convert self to a NSData
+ *
+ *  @return Returns self as NSData
+ */
+- (NSData * _Nonnull)convertToNSData;
+
+/**
  *  Conver self to a capitalized string.
  *  Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test"
  *
@@ -233,7 +249,8 @@
  *
  *  @return Returns a new string containing matching regular expressions replaced with the template string
  */
-- (NSString * _Nonnull)stringByReplacingWithRegex:(NSString * _Nonnull)regexString withString:(NSString * _Nonnull)replacement;
+- (NSString * _Nonnull)stringByReplacingWithRegex:(NSString * _Nonnull)regexString
+                                       withString:(NSString * _Nonnull)replacement;
 
 /**
  *  Convert HEX string (separated by space) to "usual" characters string.
