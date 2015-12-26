@@ -32,7 +32,7 @@ All notable changes to this project will be documented in this file.<br>
 
 #### Improved
 - Changed how to access `lightFont`, `regularFont` and `boldFont` in UIFont category
-- All the encrypt/decrypt has been moved to the new BFCryptor class. The old ones will call the new ones from that class
+- All the encrypt/decrypt methods has been moved to the new BFCryptor class. The old ones will call the new ones from that class
 - Minor enhancements
 
 

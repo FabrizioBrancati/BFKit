@@ -174,20 +174,20 @@
     return nil;
 }
 
-+ (NSString * _Nullable)AES128EncryptString:(NSString *)string withKey:(NSString *)key {
-    return [[BFCryptor AES128EncryptData:[string convertToNSData] withKey:key] convertToNSString];
++ (NSData * _Nullable)AES128EncryptString:(NSString * _Nonnull)string withKey:(NSString * _Nonnull)key {
+    return [BFCryptor AES128EncryptData:[string convertToNSData] withKey:key];
 }
 
-+ (NSString * _Nullable)AES128DecryptString:(NSString *)string withKey:(NSString *)key {
-    return [[BFCryptor AES128DecryptData:[string convertToNSData] withKey:key] convertToNSString];
++ (NSData * _Nullable)AES128DecryptString:(NSString * _Nonnull)string withKey:(NSString * _Nonnull)key {
+    return [BFCryptor AES128DecryptData:[string convertToNSData] withKey:key];
 }
 
-+ (NSString * _Nullable)AES256EncryptString:(NSString *)string withKey:(NSString *)key {
-    return [[BFCryptor AES256EncryptData:[string convertToNSData] withKey:key] convertToNSString];
++ (NSData * _Nullable)AES256EncryptString:(NSString * _Nonnull)string withKey:(NSString * _Nonnull)key {
+    return [BFCryptor AES256EncryptData:[string convertToNSData] withKey:key];
 }
 
-+ (NSString * _Nullable)AES256DecryptString:(NSString *)string withKey:(NSString *)key {
-    return [[BFCryptor AES256DecryptData:[string convertToNSData] withKey:key] convertToNSString];
++ (NSData * _Nullable)AES256DecryptString:(NSString * _Nonnull)string withKey:(NSString * _Nonnull)key {
+    return [BFCryptor AES256DecryptData:[string convertToNSData] withKey:key];
 }
 
 @end

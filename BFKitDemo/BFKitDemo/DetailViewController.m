@@ -95,6 +95,35 @@
             
             break;
         }
+        case DetailTypeBFCryptor: {
+            self.title = @"BFCryptor";
+            [_scrollView removeFromSuperview];
+            
+            BFLogClear;
+            
+            NSString *string = @"Fabrizio Brancati";
+            NSString *key = @"p4Ssw0rd";
+            
+            BFLog(@"The main string to be converted is: %@", string);
+            BFLog(@"The key string (when required) is: %@\n\n", key);
+            BFLog(@"MD5: %@", [BFCryptor MD5:string]);
+            BFLog(@"SHA1: %@", [BFCryptor SHA1:string]);
+            BFLog(@"SHA256: %@", [BFCryptor SHA256:string]);
+            BFLog(@"SHA512: %@\n\n", [BFCryptor SHA512:string]);
+            
+            NSData *AES128 = [BFCryptor AES128EncryptString:string withKey:key];
+            BFLog(@"AES128 Encrypt: %@", AES128);
+            BFLog(@"AES128 Decrypt: %@\n\n", [BFCryptor AES128DecryptData:AES128 withKey:key]);
+            
+            NSData *AES256 = [BFCryptor AES256EncryptString:string withKey:key];
+            BFLog(@"AES256 Encrypt: %@", AES256);
+            BFLog(@"AES256 Decrypt: %@", [BFCryptor AES256DecryptData:AES256 withKey:key]);
+            
+            UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
+            [self.view addSubview:textView];
+            
+            break;
+        }
         case DetailTypeBFDataStructures: {
             self.title = @"BFDataStructures";
             [_scrollView removeFromSuperview];

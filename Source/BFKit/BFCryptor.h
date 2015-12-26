@@ -118,10 +118,10 @@
  *  @param data NSString to be encrypted
  *  @param key  Key to encrypt data
  *
- *  @return Returns the encrypted NSString
+ *  @return Returns the encrypted NSData
  */
-+ (NSString * _Nullable)AES128EncryptString:(NSString * _Nonnull)string
-                                withKey:(NSString * _Nonnull)key;
++ (NSData * _Nullable)AES128EncryptString:(NSString * _Nonnull)string
+                                  withKey:(NSString * _Nonnull)key;
 
 /**
  *  Decrypt NSString in AES128
@@ -129,10 +129,10 @@
  *  @param data NSString to be decrypted
  *  @param key  Key to decrypt data
  *
- *  @return Returns the decrypted NSString
+ *  @return Returns the decrypted NSData
  */
-+ (NSString * _Nullable)AES128DecryptString:(NSString * _Nonnull)string
-                                withKey:(NSString * _Nonnull)key;
++ (NSData * _Nullable)AES128DecryptString:(NSString * _Nonnull)string
+                                  withKey:(NSString * _Nonnull)key;
 
 /**
  *  Encrypt NSString in AES256
@@ -140,10 +140,10 @@
  *  @param data NSString to be encrypted
  *  @param key  Key to encrypt data
  *
- *  @return Returns the encrypted NSString
+ *  @return Returns the encrypted NSData
  */
-+ (NSString * _Nullable)AES256EncryptString:(NSString * _Nonnull)string
-                                withKey:(NSString * _Nonnull)key;
++ (NSData * _Nullable)AES256EncryptString:(NSString * _Nonnull)string
+                                  withKey:(NSString * _Nonnull)key;
 
 /**
  *  Decrypt NSString in AES256
@@ -151,9 +151,9 @@
  *  @param data NSString to be decrypted
  *  @param key  Key to decrypt data
  *
- *  @return Returns the decrypted NSString
+ *  @return Returns the decrypted NSData
  */
-+ (NSString * _Nullable)AES256DecryptString:(NSString * _Nonnull)string
-                                withKey:(NSString * _Nonnull)key;
++ (NSData * _Nullable)AES256DecryptString:(NSString * _Nonnull)string
+                                  withKey:(NSString * _Nonnull)key;
 
 @end
