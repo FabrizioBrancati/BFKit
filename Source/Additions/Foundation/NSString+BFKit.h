@@ -275,4 +275,25 @@
  */
 + (NSString * _Nonnull)generateUUID;
 
+/**
+ *  Returns if self is a valid UUID or not
+ *
+ *  @return Returns if self is a valid UUID or not
+ */
+- (BOOL)isUUID;
+
+/**
+ *  Returns if self is a valid UUID for APNS (Apple Push Notification System) or not
+ *
+ *  @return Returns if self is a valid UUID for APNS (Apple Push Notification System) or not
+ */
+- (BOOL)isUUIDForAPNS;
+
+/**
+ *  Converts self to an UUID APNS valid (No "<>" or "-" or spaces)
+ *
+ *  @return Converts self to an UUID APNS valid (No "<>" or "-" or spaces)
+ */
+- (NSString * _Nonnull)convertToAPNSUUID;
+
 @end

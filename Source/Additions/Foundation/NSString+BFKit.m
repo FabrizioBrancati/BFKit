@@ -260,4 +260,22 @@
     return (__bridge_transfer NSString *)string;
 }
 
+- (BOOL)isUUID {
+    NSRegularExpression *regex;
+    regex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSUInteger matches = [regex numberOfMatchesInString:self options:0 range:NSMakeRange(0, [self length])];
+    return (matches == 1);
+}
+
+- (BOOL)isUUIDForAPNS {
+    NSRegularExpression *regex;
+    regex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9a-f]{32}$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSUInteger matches = [regex numberOfMatchesInString:self options:0 range:NSMakeRange(0, [self length])];
+    return (matches == 1);
+}
+
+- (NSString * _Nonnull)convertToAPNSUUID {
+    return [[[self stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"-" withString:@""];
+}
+
 @end
