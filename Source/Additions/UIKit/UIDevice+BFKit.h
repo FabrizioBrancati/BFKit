@@ -220,4 +220,13 @@
  */
 + (NSString * _Nonnull)uniqueIdentifier;
 
+/**
+ *  Save the unique identifier or update it if there is and it is changed.
+ *  Is useful for push notification to know if the unique identifier has changed and needs to be send to server
+ *
+ *  @param uniqueIdentifier The unique identifier to save or update if needed. (Must be NSData or NSString)
+ *  @param block            The execution block that know if the unique identifier is valid and has to be updated. You have to handle the case if it is valid and the update is needed or not
+ */
++ (void)updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier, NSString * _Nullable oldUUID))block;
+
 @end

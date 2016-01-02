@@ -34,6 +34,7 @@
 #include <net/if_dl.h>
 
 static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
+static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdentifier";
 
 @implementation UIDevice (BFKit)
 
@@ -249,7 +250,7 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
     }
     
     if ((buf = malloc(len)) == NULL) {
-        printf("Could not allocate memory. Rrror!\n");
+        printf("Could not allocate memory. Error!\n");
         return NULL;
     }
     
@@ -270,19 +271,45 @@ static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
 }
 
 + (NSString * _Nonnull)uniqueIdentifier {
-    NSString *uuid;
+    NSString *UUID;
     if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)]) {
-        uuid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        UUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     } else {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        uuid = [defaults objectForKey:BFUniqueIdentifierDefaultsKey];
-        if (!uuid) {
-            uuid = [NSString generateUUID];
-            [defaults setObject:uuid forKey:BFUniqueIdentifierDefaultsKey];
+        UUID = [defaults stringForKey:BFUniqueIdentifierDefaultsKey];
+        if (!UUID) {
+            UUID = [NSString generateUUID];
+            [defaults setObject:UUID forKey:BFUniqueIdentifierDefaultsKey];
             [defaults synchronize];
         }
     }
-    return uuid;
+    return UUID;
+}
+
++ (void)updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier,  NSString * _Nullable oldUUID))block {
+    NSString *userUUID, *savedUUID = nil;
+    BOOL isValid = false, hasToUpdate = false;
+    
+    if ([uniqueIdentifier isKindOfClass:[NSData class]]) {
+        userUUID = [(NSData *)uniqueIdentifier convertUUIDToString];
+    } else if ([uniqueIdentifier isKindOfClass:[NSString class]]) {
+        userUUID = [(NSString *)uniqueIdentifier convertToAPNSUUID];
+    }
+    
+    isValid = [userUUID isUUIDForAPNS];
+    
+    if (isValid) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        savedUUID = [defaults stringForKey:BFUserUniqueIdentifierDefaultsKey];
+        if (!savedUUID || ![savedUUID isEqualToString:userUUID]) {
+            [defaults setObject:userUUID forKey:BFUserUniqueIdentifierDefaultsKey];
+            [defaults synchronize];
+            
+            hasToUpdate = true;
+        }
+    }
+    
+    block(isValid, hasToUpdate, savedUUID);
 }
 
 @end
