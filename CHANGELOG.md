@@ -22,13 +22,15 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## [1.9.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.9.0) - XX Dec 2015
+## 1.9.0 - XX Jan 2016
 #### Added
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/CONTRIBUTING.md) file
-- Added `brightness` directly to UIScreen category
 - Added BFCryptor class to encrypt/decrypt NSString and NSData
-- Added NSData category with `convertToUTF8String` & `convertToASCIIString` method to convert NSData to NSString
-- Added `convertToNSData` in NSString category to convert NSData to NSString
+- Added NSData category with `convertToUTF8String` & `convertToASCIIString` methods to convert NSData to NSString and `convertUUIDToString` method to convert an NSData UUID to an APNS valid UUID
+- Added `convertToNSData` method in NSString category to convert NSData to NSString
+- Added `isUUID` & `isUUIDForAPNS` methods in NSString category to check if it is a valid UUID
+- Added `updateUniqueIdentifier:block:` to UIDevice category to check if the UUID has to be updated (Useful for APNS)
+- Added `brightness` methods directly to UIScreen category
 
 #### Improved
 - Changed how to access `lightFont`, `regularFont` and `boldFont` in UIFont category
