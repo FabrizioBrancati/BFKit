@@ -47,6 +47,7 @@
                                                           @"UIWindow"]];
     
     _foundationArray = [[NSMutableArray alloc] initWithArray:@[@"NSArray",
+                                                               @"NSData",
                                                                @"NSDate",
                                                                @"NSDictionary",
                                                                @"NSFileManager",
