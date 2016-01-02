@@ -44,4 +44,8 @@
     return [NSData convertToASCIIString:self];
 }
 
+- (NSString * _Nullable)convertUUIDToString {
+    return [[[self description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
 @end

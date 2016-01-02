@@ -63,4 +63,12 @@
  */
 - (NSString * _Nonnull)convertToASCIIString;
 
+/**
+ *  Convert self UUID to NSString.
+ *  Useful for push notifications
+ *
+ *  @return Returns self as NSString from UUID
+ */
+- (NSString * _Nullable)convertUUIDToString;
+
 @end
