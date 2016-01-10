@@ -1,5 +1,5 @@
 //
-//  UIBarButtonItem+BFKit.h
+//  NSData+BFKit.m
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,29 +24,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "NSData+BFKit.h"
 
-/**
- *  This category adds some useful methods to UIBarButtonItem
- */
-@interface UIBarButtonItem (BFKit)
+@implementation NSData (BFKit)
 
-/**
- *  Create an UIBarButtonItem with type setted to FlexibleSpace
- *
- *  @return Returns the created UIBarButtonItem
- */
-- (instancetype _Nonnull)initWithBarButtonFlexibleSpace;
++ (NSString * _Nonnull)convertToUTF8String:(NSData * _Nonnull)data {
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
 
-/**
- *  Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
- *
- *  @param spaceType Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created
- *  @param width     To use only if space is setted to FixedSpace, and it will be the width of it
- *
- *  @return Returns the created UIBarButtonItem
- */
-- (instancetype _Nonnull)initWithBarButtonSpaceType:(UIBarButtonSystemItem)spaceType
-                                              width:(CGFloat)width;
+- (NSString * _Nonnull)convertToUTF8String {
+    return [NSData convertToUTF8String:self];
+}
+
++ (NSString * _Nonnull)convertToASCIIString:(NSData * _Nonnull)data {
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSString * _Nonnull)convertToASCIIString {
+    return [NSData convertToASCIIString:self];
+}
+
+- (NSString * _Nullable)convertUUIDToString {
+    return [[[self description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
 
 @end

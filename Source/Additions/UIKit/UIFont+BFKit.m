@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -29,6 +29,34 @@
 #import "BFLog.h"
 
 @implementation UIFont (BFKit)
+
+static UIFont * _Nullable lightFont;
+static UIFont * _Nullable regularFont;
+static UIFont * _Nullable boldFont;
+
++ (UIFont *)lightFont {
+    return UIFont.lightFont;
+}
+
++ (void)setLightFont:(UIFont *)lightFont {
+    UIFont.lightFont = lightFont;
+}
+
++ (UIFont *)regularFont {
+    return UIFont.regularFont;
+}
+
++ (void)setRegularFont:(UIFont *)regularFont {
+    UIFont.regularFont = regularFont;
+}
+
++ (UIFont *)boldFont {
+    return UIFont.boldFont;
+}
+
++ (void)setBoldFont:(UIFont *)boldFont {
+    UIFont.boldFont = boldFont;
+}
 
 + (NSDictionary * _Nonnull)allFamilyAndFonts {
     NSMutableArray *fontFamilies = (NSMutableArray *)[UIFont familyNames];

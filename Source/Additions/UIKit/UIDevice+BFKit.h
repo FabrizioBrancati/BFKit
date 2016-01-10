@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -219,5 +219,14 @@
  *  @return Returns a unique identifier as a NSString
  */
 + (NSString * _Nonnull)uniqueIdentifier;
+
+/**
+ *  Save the unique identifier or update it if there is and it is changed.
+ *  Is useful for push notification to know if the unique identifier has changed and needs to be send to server
+ *
+ *  @param uniqueIdentifier The unique identifier to save or update if needed. (Must be NSData or NSString)
+ *  @param block            The execution block that know if the unique identifier is valid and has to be updated. You have to handle the case if it is valid and the update is needed or not
+ */
++ (void)updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier, NSString * _Nullable oldUUID))block;
 
 @end

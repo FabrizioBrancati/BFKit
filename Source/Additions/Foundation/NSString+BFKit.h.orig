@@ -276,6 +276,18 @@
  */
 + (NSString * _Nonnull)generateUUID;
 
+<<<<<<< HEAD
+
+/**
+ *  Used to calculate text height for max width and font iOS 7+.
+ *
+ *  @param width Max width to fit text.
+ *  @param font  Font used in text.
+ *
+ *  @return Returns the calculated height of string within width using given font.
+ */
+-(CGFloat)heightForWidth:(float)width andFont:(UIFont *)font;
+=======
 /**
  *  Returns if self is a valid UUID or not
  *
@@ -296,16 +308,6 @@
  *  @return Converts self to an UUID APNS valid (No "<>" or "-" or spaces)
  */
 - (NSString * _Nonnull)convertToAPNSUUID;
-
-
-/**
- *  Used to calculate text height for max width and font iOS 7+.
- *
- *  @param width Max width to fit text.
- *  @param font  Font used in text.
- *
- *  @return Returns the calculated height of string within width using given font.
- */
--(CGFloat)heightForWidth:(float)width andFont:(UIFont *)font;
+>>>>>>> b71de0df34102ff6e7a7e2628ac276e85ed9becf
 
 @end

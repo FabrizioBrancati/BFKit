@@ -1,5 +1,5 @@
 //
-//  UIBarButtonItem+BFKit.h
+//  BFKit.strings
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,29 +24,51 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
+// Generals
+"OK" = "Ok";
+"CONTINUE" = "Continuar";
+"CANCEL" = "Cancelar";
+"DONE" = "Concluído";
+"ERROR" = "Erro";
+"WARNING" = "Aviso";
+"CLOSE" = "Fechar;
+"OPEN" = "Abrir";
+"YES" = "Sim";
+"NO" = "Não";
 
-/**
- *  This category adds some useful methods to UIBarButtonItem
- */
-@interface UIBarButtonItem (BFKit)
+// Days
+"TODAY" = "Hoje";
+"TOMORROW" = "Amanhã";
+"SUNDAY" = "Domingo";
+"MONDAY"= "Segunda";
+"TUESDAY" = "Terça";
+"WEDNESDAY" = "Quarta";
+"THURSDAY" = "Quinta";
+"FRIDAY" = "Sexta";
+"SATURDAY" = "Sábado";
 
-/**
- *  Create an UIBarButtonItem with type setted to FlexibleSpace
- *
- *  @return Returns the created UIBarButtonItem
- */
-- (instancetype _Nonnull)initWithBarButtonFlexibleSpace;
+// Months
+"JANUARY" = "Janeiro";
+"FEBRUARY" = "Fevereiro";
+"MARCH" = "Março";
+"APRIL" = "Abril";
+"MAY" = "Maio";
+"JUNE" = "Junho";
+"JULY" = "Julho";
+"AUGUST" = "Agosto";
+"SEPTEMBER" = "Setembro";
+"OCTOBER" = "Outubro";
+"NOVEMBER" = "Novembro";
+"DECEMBER" = "Dezembro";
 
-/**
- *  Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
- *
- *  @param spaceType Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created
- *  @param width     To use only if space is setted to FixedSpace, and it will be the width of it
- *
- *  @return Returns the created UIBarButtonItem
- */
-- (instancetype _Nonnull)initWithBarButtonSpaceType:(UIBarButtonSystemItem)spaceType
-                                              width:(CGFloat)width;
+// Time zones
+"NIGHT" = "Noite";
+"MORNING" = "Manha";
+"AFTERNOON" = "Tarde";
+"EVENING" = "Noite";
 
-@end
+// Authorization
+"AUTHENTICATION" = "Autenticação";
+"AUTHORIZATION" = "Autorização";
+"AUTHORIZED" = "Autorizado";
+"NOT_OWNER" = "Não proprietário";

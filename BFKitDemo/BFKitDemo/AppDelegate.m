@@ -21,6 +21,7 @@
     
     _bfkitArray = [[NSMutableArray alloc] initWithArray:@[@"BFApp",
                                                           @"BFButton",
+                                                          @"BFCryptor",
                                                           @"BFDataStructures",
                                                           @"BFLog",
                                                           @"BFPassword",
@@ -47,6 +48,7 @@
                                                           @"UIWindow"]];
     
     _foundationArray = [[NSMutableArray alloc] initWithArray:@[@"NSArray",
+                                                               @"NSData",
                                                                @"NSDate",
                                                                @"NSDictionary",
                                                                @"NSFileManager",

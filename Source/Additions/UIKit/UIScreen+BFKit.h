@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -62,5 +62,19 @@
  *  @return Returns a GCSize with the fixed screen size
  */
 - (CGSize)fixedScreenSize;
+
+/**
+ *  Get the device's brightness
+ *
+ *  @return Returns the device's brightness
+ */
++ (CGFloat)brightness;
+
+/**
+ *  Set the new device's brightness
+ *
+ *  @param newLightFont The new brightness
+ */
++ (void)setBrightness:(CGFloat)brightness;
 
 @end

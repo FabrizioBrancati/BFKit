@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -38,6 +38,7 @@
  */
 #import "BFApp.h"
 #import "BFButton.h"
+#import "BFCryptor.h"
 #import "BFDataStructures.h"
 #import "BFLog.h"
 #import "BFPassword.h"
@@ -48,6 +49,7 @@
  *  Foundation Additions
  */
 #import "NSArray+BFKit.h"
+#import "NSData+BFKit.h"
 #import "NSDate+BFKit.h"
 #import "NSDictionary+BFKit.h"
 #import "NSFileManager+BFKit.h"

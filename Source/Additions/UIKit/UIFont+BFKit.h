@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,19 +26,6 @@
 
 @import Foundation;
 @import UIKit;
-
-/**
- *  Static light font to use in App
- */
-static UIFont * _Nullable lightFont;
-/**
- *  Static regular font to use in App
- */
-static UIFont * _Nullable regularFont;
-/**
- *  Static bold font to use in App
- */
-static UIFont * _Nullable boldFont;
 
 /**
  *  All font family names available from iOS 7.0 to iOS 9.0
@@ -1364,5 +1351,47 @@ typedef NS_ENUM(NSInteger, FontName) {
  */
 + (UIFont * _Nonnull)fontForFontName:(FontName)fontName
                                 size:(CGFloat)fontSize;
+
+/**
+ *  Static light font to use in App
+ *
+ *  @return Returns light font to use in App
+ */
++ (UIFont * _Nullable)lightFont;
+
+/**
+ *  Set the new light font for the App
+ *
+ *  @param newLightFont The new font
+ */
++ (void)setLightFont:(UIFont * _Nullable)lightFont;
+
+/**
+ *  Static regular font to use in App
+ *
+ *  @return Returns regular font to use in App
+ */
++ (UIFont * _Nullable)regularFont;
+
+/**
+ *  Set the new regular font for the App
+ *
+ *  @param newRegularFont The new font
+ */
++ (void)setRegularFont:(UIFont * _Nullable)regularFont;
+
+/**
+ *  Static bold font to use in App
+ *
+ *  @return Returns bold font to use in App
+ */
++ (UIFont * _Nullable)boldFont;
+
+/**
+ *  Set the new bold font for the App
+ *
+ *  @param newBoldFont The new font
+ */
++ (void)setBoldFont:(UIFont * _Nullable)boldFont;
 
 @end

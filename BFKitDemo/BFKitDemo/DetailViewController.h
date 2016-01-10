@@ -11,6 +11,7 @@
 typedef NS_ENUM(NSInteger, DetailType) {
     DetailTypeBFApp = 0,
     DetailTypeBFButton,
+    DetailTypeBFCryptor,
     DetailTypeBFDataStructures,
     DetailTypeBFLog,
     DetailTypeBFPassword,
@@ -35,6 +36,7 @@ typedef NS_ENUM(NSInteger, DetailType) {
     DetailTypeUIWebView,
     DetailTypeUIWindow,
     DetailTypeNSArray,
+    DetailTypeNSData,
     DetailTypeNSDate,
     DetailTypeNSDictionary,
     DetailTypeNSFileManager,

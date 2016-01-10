@@ -1,5 +1,5 @@
 //
-//  UIBarButtonItem+BFKit.h
+//  NSData+BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,29 +24,51 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 /**
- *  This category adds some useful methods to UIBarButtonItem
+ *  This category adds some useful methods to NSData
  */
-@interface UIBarButtonItem (BFKit)
+@interface NSData (BFKit)
 
 /**
- *  Create an UIBarButtonItem with type setted to FlexibleSpace
+ *  Convert the given NSData to UTF8 NSString
  *
- *  @return Returns the created UIBarButtonItem
+ *  @param data The NSData to be converted
+ *
+ *  @return Returns the converted NSData as UTF8 NSString
  */
-- (instancetype _Nonnull)initWithBarButtonFlexibleSpace;
++ (NSString * _Nonnull)convertToUTF8String:(NSData * _Nonnull)data;
 
 /**
- *  Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
+ *  Convert self to a UTF8 NSString
  *
- *  @param spaceType Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created
- *  @param width     To use only if space is setted to FixedSpace, and it will be the width of it
- *
- *  @return Returns the created UIBarButtonItem
+ *  @return Returns self as UTF8 NSString
  */
-- (instancetype _Nonnull)initWithBarButtonSpaceType:(UIBarButtonSystemItem)spaceType
-                                              width:(CGFloat)width;
+- (NSString * _Nonnull)convertToUTF8String;
+
+/**
+ *  Convert the given NSData to ASCII NSString
+ *
+ *  @param data The NSData to be converted
+ *
+ *  @return Returns the converted NSData as ASCII NSString
+ */
++ (NSString * _Nonnull)convertToASCIIString:(NSData * _Nonnull)data;
+
+/**
+ *  Convert self to a ASCII NSString
+ *
+ *  @return Returns self as ASCII NSString
+ */
+- (NSString * _Nonnull)convertToASCIIString;
+
+/**
+ *  Convert self UUID to NSString.
+ *  Useful for push notifications
+ *
+ *  @return Returns self as NSString from UUID
+ */
+- (NSString * _Nullable)convertUUIDToString;
 
 @end
