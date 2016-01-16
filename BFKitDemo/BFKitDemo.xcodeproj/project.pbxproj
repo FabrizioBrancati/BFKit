@@ -172,6 +172,7 @@
 		492C97A21BEE5F6E00CDC75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		492C97A31BEE5F6E00CDC75F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		493482301A5DBE3F006D5380 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		493CFF031C4AACED00272396 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		494AA62B1C2EFFE700D4D766 /* NSData+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BFKit.h"; sourceTree = "<group>"; };
 		494AA62C1C2EFFE700D4D766 /* NSData+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BFKit.m"; sourceTree = "<group>"; };
 		494AA62E1C2F035800D4D766 /* BFCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFCryptor.h; sourceTree = "<group>"; };
@@ -443,6 +444,7 @@
 				"zh-Hans",
 				vi,
 				"zh-Hant",
+				"pt-BR",
 			);
 			mainGroup = 490276E319BDF3F8009B8BC1;
 			productRefGroup = 490276ED19BDF3F8009B8BC1 /* Products */;
@@ -554,6 +556,7 @@
 				492C97A11BEE5F6E00CDC75F /* vi */,
 				492C97A21BEE5F6E00CDC75F /* zh-Hans */,
 				492C97A31BEE5F6E00CDC75F /* zh-Hant */,
+				493CFF031C4AACED00272396 /* pt-BR */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";
