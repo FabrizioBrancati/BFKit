@@ -31,14 +31,14 @@ All notable changes to this project will be documented in this file.<br>
 - Added `isUUID` & `isUUIDForAPNS` methods in NSString category to check if it is a valid UUID
 - Added `updateUniqueIdentifier:block:` to UIDevice category to check if the UUID has to be updated (Useful for APNS)
 - Added `brightness` methods directly to UIScreen category
-- Added Brazilian Portuguese [#20](https://github.com/FabrizioBrancati/BFKit-Swift/pull/20)
+- Added Brazilian Portuguese [#20](https://github.com/FabrizioBrancati/BFKit/pull/20) & [#22](https://github.com/FabrizioBrancati/BFKit/pull/22)
 
 #### Improved
 - Changed how to access `lightFont`, `regularFont` and `boldFont` in UIFont category
 - All the encrypt/decrypt methods has been moved to the new BFCryptor class. The old ones will call the new ones from that class
 - Minor enhancements
 
-Thanks to [@emersonbroga](https://github.com/emersonbroga) for this release
+Thanks to [@emersonbroga](https://github.com/emersonbroga) & [@liushixiang](https://github.com/liushixiang) for this release
 
 
 ## [1.8.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.8.0) - 9 Nov 2015
