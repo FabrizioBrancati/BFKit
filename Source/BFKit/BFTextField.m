@@ -25,6 +25,7 @@
 
 -(void)setDelegate:(id<UITextFieldDelegate>)delegate
 {
+    [super setDelegate:delegate];
     if ([delegate isKindOfClass:[BFTextFieldDelegate class]])
     {
         BFTextFieldDelegate *limitDelegate = (BFTextFieldDelegate *)delegate;
