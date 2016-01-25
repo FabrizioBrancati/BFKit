@@ -13,32 +13,23 @@
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    if (self)
-    {
-        BFTextFieldDelegate *limitDelegate = [[BFTextFieldDelegate alloc]init];
-        limitDelegate.maxCharacters = self.maxNumberOfCharacters;
-        self.delegate = limitDelegate;
-    }
     return self;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self)
-    {
-        BFTextFieldDelegate *limitDelegate = [[BFTextFieldDelegate alloc]init];
-        limitDelegate.maxCharacters = self.maxNumberOfCharacters;
-        self.delegate = limitDelegate;
-    }
     return self;
 }
 
--(void)awakeFromNib
+
+-(void)setDelegate:(id<UITextFieldDelegate>)delegate
 {
-    BFTextFieldDelegate *limitDelegate = [[BFTextFieldDelegate alloc]init];
-    limitDelegate.maxCharacters = self.maxNumberOfCharacters;
-    self.delegate = limitDelegate;
+    if ([delegate isKindOfClass:[BFTextFieldDelegate class]])
+    {
+        BFTextFieldDelegate *limitDelegate = (BFTextFieldDelegate *)delegate;
+        limitDelegate.maxCharacters = self.maxNumberOfCharacters;
+    }
 }
 
 @end
