@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 #import "BFDataStructures.h"
+#import "NSArray+BFKit.h"
 
 #pragma mark - Stack
 

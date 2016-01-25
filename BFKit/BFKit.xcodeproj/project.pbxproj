@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		492C96961BEE593800CDC75F /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96951BEE593800CDC75F /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		492C96961BEE593800CDC75F /* BFKit_Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96951BEE593800CDC75F /* BFKit_Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C969D1BEE593800CDC75F /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492C96921BEE593800CDC75F /* BFKit.framework */; };
 		492C96A21BEE593800CDC75F /* BFKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96A11BEE593800CDC75F /* BFKitTests.m */; };
 		492C97031BEE59C200CDC75F /* NSArray+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96AE1BEE59C200CDC75F /* NSArray+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,10 +84,10 @@
 		492C974A1BEE59C200CDC75F /* BFTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96F71BEE59C200CDC75F /* BFTouchID.m */; };
 		492C974B1BEE59C200CDC75F /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F81BEE59C200CDC75F /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C974C1BEE59C200CDC75F /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492C96FA1BEE59C200CDC75F /* BFKit.strings */; };
-		F401C5401C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F401C53E1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h */; };
-		F401C5411C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F401C53F1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m */; };
-		F4CC9CBC1C4D998F0019D1B0 /* BFTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = F4CC9CBA1C4D998F0019D1B0 /* BFTextField.h */; };
-		F4CC9CBD1C4D998F0019D1B0 /* BFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CC9CBB1C4D998F0019D1B0 /* BFTextField.m */; };
+		493CFF0A1C53DC6600272396 /* NSData+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 493CFF081C53DC6600272396 /* NSData+BFKit.h */; };
+		493CFF0B1C53DC6600272396 /* NSData+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 493CFF091C53DC6600272396 /* NSData+BFKit.m */; };
+		493CFF0E1C53DC7900272396 /* BFCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 493CFF0C1C53DC7900272396 /* BFCryptor.h */; };
+		493CFF0F1C53DC7900272396 /* BFCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 493CFF0D1C53DC7900272396 /* BFCryptor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,7 @@
 
 /* Begin PBXFileReference section */
 		492C96921BEE593800CDC75F /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		492C96951BEE593800CDC75F /* BFKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFKit.h; sourceTree = "<group>"; };
+		492C96951BEE593800CDC75F /* BFKit_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFKit_Header.h; sourceTree = "<group>"; };
 		492C96971BEE593800CDC75F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492C969C1BEE593800CDC75F /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		492C96A11BEE593800CDC75F /* BFKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFKitTests.m; sourceTree = "<group>"; };
@@ -188,10 +188,11 @@
 		492C97001BEE59C200CDC75F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
 		492C97011BEE59C200CDC75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		492C97021BEE59C200CDC75F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
-		F401C53E1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLimitedTextFieldDelegate.h; sourceTree = "<group>"; };
-		F401C53F1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFLimitedTextFieldDelegate.m; sourceTree = "<group>"; };
-		F4CC9CBA1C4D998F0019D1B0 /* BFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTextField.h; sourceTree = "<group>"; };
-		F4CC9CBB1C4D998F0019D1B0 /* BFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTextField.m; sourceTree = "<group>"; };
+		493CFF071C53DC1300272396 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BFKit.strings"; sourceTree = "<group>"; };
+		493CFF081C53DC6600272396 /* NSData+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BFKit.h"; sourceTree = "<group>"; };
+		493CFF091C53DC6600272396 /* NSData+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BFKit.m"; sourceTree = "<group>"; };
+		493CFF0C1C53DC7900272396 /* BFCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFCryptor.h; sourceTree = "<group>"; };
+		493CFF0D1C53DC7900272396 /* BFCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFCryptor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,7 +235,7 @@
 		492C96941BEE593800CDC75F /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
-				492C96951BEE593800CDC75F /* BFKit.h */,
+				492C96951BEE593800CDC75F /* BFKit_Header.h */,
 				492C96F81BEE59C200CDC75F /* BFKit.h */,
 				492C96AC1BEE59C200CDC75F /* Additions */,
 				492C96E91BEE59C200CDC75F /* BFKit */,
@@ -268,6 +269,8 @@
 			children = (
 				492C96AE1BEE59C200CDC75F /* NSArray+BFKit.h */,
 				492C96AF1BEE59C200CDC75F /* NSArray+BFKit.m */,
+				493CFF081C53DC6600272396 /* NSData+BFKit.h */,
+				493CFF091C53DC6600272396 /* NSData+BFKit.m */,
 				492C96B01BEE59C200CDC75F /* NSDate+BFKit.h */,
 				492C96B11BEE59C200CDC75F /* NSDate+BFKit.m */,
 				492C96B21BEE59C200CDC75F /* NSDictionary+BFKit.h */,
@@ -342,6 +345,8 @@
 				492C96EB1BEE59C200CDC75F /* BFApp.m */,
 				492C96EC1BEE59C200CDC75F /* BFButton.h */,
 				492C96ED1BEE59C200CDC75F /* BFButton.m */,
+				493CFF0C1C53DC7900272396 /* BFCryptor.h */,
+				493CFF0D1C53DC7900272396 /* BFCryptor.m */,
 				492C96EE1BEE59C200CDC75F /* BFDataStructures.h */,
 				492C96EF1BEE59C200CDC75F /* BFDataStructures.m */,
 				492C96F01BEE59C200CDC75F /* BFLog.h */,
@@ -352,10 +357,6 @@
 				492C96F51BEE59C200CDC75F /* BFSystemSound.m */,
 				492C96F61BEE59C200CDC75F /* BFTouchID.h */,
 				492C96F71BEE59C200CDC75F /* BFTouchID.m */,
-				F401C53E1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h */,
-				F401C53F1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m */,
-				F4CC9CBA1C4D998F0019D1B0 /* BFTextField.h */,
-				F4CC9CBB1C4D998F0019D1B0 /* BFTextField.m */,
 			);
 			name = BFKit;
 			path = ../../Source/BFKit;
@@ -394,8 +395,8 @@
 				492C97431BEE59C200CDC75F /* BFLog.h in Headers */,
 				492C97171BEE59C200CDC75F /* NSThread+BFKit.h in Headers */,
 				492C97371BEE59C200CDC75F /* UIView+BFKit.h in Headers */,
-				F401C5401C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h in Headers */,
 				492C97391BEE59C200CDC75F /* UIWebView+BFKit.h in Headers */,
+				493CFF0A1C53DC6600272396 /* NSData+BFKit.h in Headers */,
 				492C97211BEE59C200CDC75F /* UIFont+BFKit.h in Headers */,
 				492C971B1BEE59C200CDC75F /* UIButton+BFKit.h in Headers */,
 				492C97271BEE59C200CDC75F /* UILabel+BFKit.h in Headers */,
@@ -413,10 +414,10 @@
 				492C973D1BEE59C200CDC75F /* BFApp.h in Headers */,
 				492C97491BEE59C200CDC75F /* BFTouchID.h in Headers */,
 				492C97411BEE59C200CDC75F /* BFDataStructures.h in Headers */,
-				F4CC9CBC1C4D998F0019D1B0 /* BFTextField.h in Headers */,
+				493CFF0E1C53DC7900272396 /* BFCryptor.h in Headers */,
 				492C97331BEE59C200CDC75F /* UITextView+BFKit.h in Headers */,
 				492C974B1BEE59C200CDC75F /* BFKit.h in Headers */,
-				492C96961BEE593800CDC75F /* BFKit.h in Headers */,
+				492C96961BEE593800CDC75F /* BFKit_Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +490,7 @@
 				vi,
 				"zh-Hans",
 				"zh-Hant",
+				"pt-BR",
 			);
 			mainGroup = 492C96881BEE593800CDC75F;
 			productRefGroup = 492C96931BEE593800CDC75F /* Products */;
@@ -536,6 +538,7 @@
 				492C973C1BEE59C200CDC75F /* UIWindow+BFKit.m in Sources */,
 				492C97061BEE59C200CDC75F /* NSDate+BFKit.m in Sources */,
 				492C971E1BEE59C200CDC75F /* UIColor+BFKit.m in Sources */,
+				493CFF0B1C53DC6600272396 /* NSData+BFKit.m in Sources */,
 				492C97481BEE59C200CDC75F /* BFSystemSound.m in Sources */,
 				492C97441BEE59C200CDC75F /* BFLog.m in Sources */,
 				492C97301BEE59C200CDC75F /* UITableView+BFKit.m in Sources */,
@@ -546,10 +549,10 @@
 				492C97341BEE59C200CDC75F /* UITextView+BFKit.m in Sources */,
 				492C97241BEE59C200CDC75F /* UIImage+BFKit.m in Sources */,
 				492C97421BEE59C200CDC75F /* BFDataStructures.m in Sources */,
+				493CFF0F1C53DC7900272396 /* BFCryptor.m in Sources */,
 				492C97321BEE59C200CDC75F /* UITextField+BFKit.m in Sources */,
 				492C97381BEE59C200CDC75F /* UIView+BFKit.m in Sources */,
 				492C973E1BEE59C200CDC75F /* BFApp.m in Sources */,
-				F4CC9CBD1C4D998F0019D1B0 /* BFTextField.m in Sources */,
 				492C97261BEE59C200CDC75F /* UIImageView+BFKit.m in Sources */,
 				492C972E1BEE59C200CDC75F /* UIScrollView+BFKit.m in Sources */,
 				492C97401BEE59C200CDC75F /* BFButton.m in Sources */,
@@ -561,7 +564,6 @@
 				492C971A1BEE59C200CDC75F /* UIBarButtonItem+BFKit.m in Sources */,
 				492C974A1BEE59C200CDC75F /* BFTouchID.m in Sources */,
 				492C972C1BEE59C200CDC75F /* UIScreen+BFKit.m in Sources */,
-				F401C5411C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +597,7 @@
 				492C97001BEE59C200CDC75F /* vi */,
 				492C97011BEE59C200CDC75F /* zh-Hans */,
 				492C97021BEE59C200CDC75F /* zh-Hant */,
+				493CFF071C53DC1300272396 /* pt-BR */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";

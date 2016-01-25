@@ -123,7 +123,7 @@
 		492C976C1BEE5F6E00CDC75F /* UIDevice+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BFKit.h"; sourceTree = "<group>"; };
 		492C976D1BEE5F6E00CDC75F /* UIDevice+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BFKit.m"; sourceTree = "<group>"; };
 		492C976E1BEE5F6E00CDC75F /* UIFont+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+BFKit.h"; sourceTree = "<group>"; };
-		492C976F1BEE5F6E00CDC75F /* UIFont+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIFont+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		492C976F1BEE5F6E00CDC75F /* UIFont+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIFont+BFKit.m"; sourceTree = "<group>"; };
 		492C97701BEE5F6E00CDC75F /* UIImage+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BFKit.h"; sourceTree = "<group>"; };
 		492C97711BEE5F6E00CDC75F /* UIImage+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIImage+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97721BEE5F6E00CDC75F /* UIImageView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+BFKit.h"; sourceTree = "<group>"; };
@@ -153,9 +153,9 @@
 		492C978B1BEE5F6E00CDC75F /* BFApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFApp.h; sourceTree = "<group>"; };
 		492C978C1BEE5F6E00CDC75F /* BFApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFApp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C978D1BEE5F6E00CDC75F /* BFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFButton.h; sourceTree = "<group>"; };
-		492C978E1BEE5F6E00CDC75F /* BFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFButton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		492C978E1BEE5F6E00CDC75F /* BFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFButton.m; sourceTree = "<group>"; };
 		492C978F1BEE5F6E00CDC75F /* BFDataStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFDataStructures.h; sourceTree = "<group>"; };
-		492C97901BEE5F6E00CDC75F /* BFDataStructures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFDataStructures.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		492C97901BEE5F6E00CDC75F /* BFDataStructures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFDataStructures.m; sourceTree = "<group>"; };
 		492C97911BEE5F6E00CDC75F /* BFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLog.h; sourceTree = "<group>"; };
 		492C97921BEE5F6E00CDC75F /* BFLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFLog.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97931BEE5F6E00CDC75F /* BFPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPassword.h; sourceTree = "<group>"; };
@@ -174,6 +174,7 @@
 		492C97A21BEE5F6E00CDC75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		492C97A31BEE5F6E00CDC75F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		493482301A5DBE3F006D5380 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		493CFF031C4AACED00272396 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		494AA62B1C2EFFE700D4D766 /* NSData+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BFKit.h"; sourceTree = "<group>"; };
 		494AA62C1C2EFFE700D4D766 /* NSData+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BFKit.m"; sourceTree = "<group>"; };
 		494AA62E1C2F035800D4D766 /* BFCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFCryptor.h; sourceTree = "<group>"; };
@@ -453,6 +454,7 @@
 				"zh-Hans",
 				vi,
 				"zh-Hant",
+				"pt-BR",
 			);
 			mainGroup = 490276E319BDF3F8009B8BC1;
 			productRefGroup = 490276ED19BDF3F8009B8BC1 /* Products */;
@@ -566,6 +568,7 @@
 				492C97A11BEE5F6E00CDC75F /* vi */,
 				492C97A21BEE5F6E00CDC75F /* zh-Hans */,
 				492C97A31BEE5F6E00CDC75F /* zh-Hant */,
+				493CFF031C4AACED00272396 /* pt-BR */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";
