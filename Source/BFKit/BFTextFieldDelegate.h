@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface LimitedTextFieldDelegate : NSObject<UITextFieldDelegate>
-@property NSNumber * maxCharacters;
+@interface BFTextFieldDelegate : NSObject<UITextFieldDelegate>
+@property NSInteger maxCharacters;
 
 @end

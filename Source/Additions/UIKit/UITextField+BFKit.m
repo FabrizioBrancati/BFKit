@@ -50,21 +50,4 @@ static const void *delegateKey = &delegateKey;
     return textField;
 }
 
--(void)setMaxNumberOfCharacters:(int)maxNumberOfCharacters
-{
-    self.limitedDelegate = [[LimitedTextFieldDelegate alloc] init];
-    self.limitedDelegate.maxCharacters = [NSNumber numberWithInt:maxNumberOfCharacters];
-    self.delegate = self.limitedDelegate;
-}
-
-- (void)setLimitedDelegate:(LimitedTextFieldDelegate *)limited
-{
-    objc_setAssociatedObject(self, delegateKey, limited, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (LimitedTextFieldDelegate *)limitedDelegate
-{
-    return objc_getAssociatedObject(self, delegateKey);
-}
-
 @end

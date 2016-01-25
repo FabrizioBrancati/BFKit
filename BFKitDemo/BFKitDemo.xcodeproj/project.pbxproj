@@ -66,7 +66,8 @@
 		49932B011A17AB890093B13C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49932AFF1A17AB890093B13C /* InfoViewController.m */; };
 		49932B021A17AB890093B13C /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49932B001A17AB890093B13C /* InfoViewController.xib */; };
 		49B2719819BFC9EC0079FA5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2719719BFC9EC0079FA5A /* Images.xcassets */; };
-		F4E6639B1C1DA3B100F58602 /* LimitedTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6639A1C1DA3B100F58602 /* LimitedTextFieldDelegate.m */; };
+		F4CC9CC01C4D9D6E0019D1B0 /* BFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CC9CBF1C4D9D6E0019D1B0 /* BFTextField.m */; };
+		F4CC9CC31C4D9D780019D1B0 /* BFTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CC9CC21C4D9D780019D1B0 /* BFTextFieldDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,8 +185,10 @@
 		49932AFF1A17AB890093B13C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		49932B001A17AB890093B13C /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		49B2719719BFC9EC0079FA5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F4E663991C1DA3B100F58602 /* LimitedTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitedTextFieldDelegate.h; sourceTree = "<group>"; };
-		F4E6639A1C1DA3B100F58602 /* LimitedTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitedTextFieldDelegate.m; sourceTree = "<group>"; };
+		F4CC9CBE1C4D9D6E0019D1B0 /* BFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTextField.h; sourceTree = "<group>"; };
+		F4CC9CBF1C4D9D6E0019D1B0 /* BFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTextField.m; sourceTree = "<group>"; };
+		F4CC9CC11C4D9D780019D1B0 /* BFTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTextFieldDelegate.h; sourceTree = "<group>"; };
+		F4CC9CC21C4D9D780019D1B0 /* BFTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTextFieldDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,7 +392,10 @@
 				492C97961BEE5F6E00CDC75F /* BFSystemSound.m */,
 				492C97971BEE5F6E00CDC75F /* BFTouchID.h */,
 				492C97981BEE5F6E00CDC75F /* BFTouchID.m */,
-				F4E6639C1C1DA3B900F58602 /* BFTextField */,
+				F4CC9CBE1C4D9D6E0019D1B0 /* BFTextField.h */,
+				F4CC9CBF1C4D9D6E0019D1B0 /* BFTextField.m */,
+				F4CC9CC11C4D9D780019D1B0 /* BFTextFieldDelegate.h */,
+				F4CC9CC21C4D9D780019D1B0 /* BFTextFieldDelegate.m */,
 			);
 			name = BFKit;
 			path = ../Source/BFKit;
@@ -402,15 +408,6 @@
 			);
 			name = Languages;
 			path = ../Source/Languages;
-			sourceTree = "<group>";
-		};
-		F4E6639C1C1DA3B900F58602 /* BFTextField */ = {
-			isa = PBXGroup;
-			children = (
-				F4E663991C1DA3B100F58602 /* LimitedTextFieldDelegate.h */,
-				F4E6639A1C1DA3B100F58602 /* LimitedTextFieldDelegate.m */,
-			);
-			name = BFTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +515,7 @@
 				492C97A81BEE5F6E00CDC75F /* NSMutableArray+BFKit.m in Sources */,
 				492C97BC1BEE5F6E00CDC75F /* UITextView+BFKit.m in Sources */,
 				492C97C11BEE5F6E00CDC75F /* BFApp.m in Sources */,
+				F4CC9CC01C4D9D6E0019D1B0 /* BFTextField.m in Sources */,
 				492C97A51BEE5F6E00CDC75F /* NSDate+BFKit.m in Sources */,
 				4902779619BE049B009B8BC1 /* DetailViewController.m in Sources */,
 				494AA62D1C2EFFE700D4D766 /* NSData+BFKit.m in Sources */,
@@ -530,10 +528,10 @@
 				492C97B91BEE5F6E00CDC75F /* UIScrollView+BFKit.m in Sources */,
 				492C97A61BEE5F6E00CDC75F /* NSDictionary+BFKit.m in Sources */,
 				492C97C31BEE5F6E00CDC75F /* BFDataStructures.m in Sources */,
+				F4CC9CC31C4D9D780019D1B0 /* BFTextFieldDelegate.m in Sources */,
 				4902779119BE0265009B8BC1 /* UserInterfaceKitViewController.m in Sources */,
 				492C97B61BEE5F6E00CDC75F /* UILabel+BFKit.m in Sources */,
 				492C97B51BEE5F6E00CDC75F /* UIImageView+BFKit.m in Sources */,
-				F4E6639B1C1DA3B100F58602 /* LimitedTextFieldDelegate.m in Sources */,
 				492C97C61BEE5F6E00CDC75F /* BFSystemSound.m in Sources */,
 				492C97A41BEE5F6E00CDC75F /* NSArray+BFKit.m in Sources */,
 				492C97BB1BEE5F6E00CDC75F /* UITextField+BFKit.m in Sources */,

@@ -84,8 +84,10 @@
 		492C974A1BEE59C200CDC75F /* BFTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96F71BEE59C200CDC75F /* BFTouchID.m */; };
 		492C974B1BEE59C200CDC75F /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96F81BEE59C200CDC75F /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C974C1BEE59C200CDC75F /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492C96FA1BEE59C200CDC75F /* BFKit.strings */; };
-		F401C5401C2CAE060098AC17 /* LimitedTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F401C53E1C2CAE060098AC17 /* LimitedTextFieldDelegate.h */; };
-		F401C5411C2CAE060098AC17 /* LimitedTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F401C53F1C2CAE060098AC17 /* LimitedTextFieldDelegate.m */; };
+		F401C5401C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F401C53E1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h */; };
+		F401C5411C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F401C53F1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m */; };
+		F4CC9CBC1C4D998F0019D1B0 /* BFTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = F4CC9CBA1C4D998F0019D1B0 /* BFTextField.h */; };
+		F4CC9CBD1C4D998F0019D1B0 /* BFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CC9CBB1C4D998F0019D1B0 /* BFTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,8 +188,10 @@
 		492C97001BEE59C200CDC75F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
 		492C97011BEE59C200CDC75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		492C97021BEE59C200CDC75F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
-		F401C53E1C2CAE060098AC17 /* LimitedTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitedTextFieldDelegate.h; sourceTree = "<group>"; };
-		F401C53F1C2CAE060098AC17 /* LimitedTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitedTextFieldDelegate.m; sourceTree = "<group>"; };
+		F401C53E1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLimitedTextFieldDelegate.h; sourceTree = "<group>"; };
+		F401C53F1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFLimitedTextFieldDelegate.m; sourceTree = "<group>"; };
+		F4CC9CBA1C4D998F0019D1B0 /* BFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTextField.h; sourceTree = "<group>"; };
+		F4CC9CBB1C4D998F0019D1B0 /* BFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,8 +352,10 @@
 				492C96F51BEE59C200CDC75F /* BFSystemSound.m */,
 				492C96F61BEE59C200CDC75F /* BFTouchID.h */,
 				492C96F71BEE59C200CDC75F /* BFTouchID.m */,
-				F401C53E1C2CAE060098AC17 /* LimitedTextFieldDelegate.h */,
-				F401C53F1C2CAE060098AC17 /* LimitedTextFieldDelegate.m */,
+				F401C53E1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h */,
+				F401C53F1C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m */,
+				F4CC9CBA1C4D998F0019D1B0 /* BFTextField.h */,
+				F4CC9CBB1C4D998F0019D1B0 /* BFTextField.m */,
 			);
 			name = BFKit;
 			path = ../../Source/BFKit;
@@ -388,7 +394,7 @@
 				492C97431BEE59C200CDC75F /* BFLog.h in Headers */,
 				492C97171BEE59C200CDC75F /* NSThread+BFKit.h in Headers */,
 				492C97371BEE59C200CDC75F /* UIView+BFKit.h in Headers */,
-				F401C5401C2CAE060098AC17 /* LimitedTextFieldDelegate.h in Headers */,
+				F401C5401C2CAE060098AC17 /* BFLimitedTextFieldDelegate.h in Headers */,
 				492C97391BEE59C200CDC75F /* UIWebView+BFKit.h in Headers */,
 				492C97211BEE59C200CDC75F /* UIFont+BFKit.h in Headers */,
 				492C971B1BEE59C200CDC75F /* UIButton+BFKit.h in Headers */,
@@ -407,6 +413,7 @@
 				492C973D1BEE59C200CDC75F /* BFApp.h in Headers */,
 				492C97491BEE59C200CDC75F /* BFTouchID.h in Headers */,
 				492C97411BEE59C200CDC75F /* BFDataStructures.h in Headers */,
+				F4CC9CBC1C4D998F0019D1B0 /* BFTextField.h in Headers */,
 				492C97331BEE59C200CDC75F /* UITextView+BFKit.h in Headers */,
 				492C974B1BEE59C200CDC75F /* BFKit.h in Headers */,
 				492C96961BEE593800CDC75F /* BFKit.h in Headers */,
@@ -542,6 +549,7 @@
 				492C97321BEE59C200CDC75F /* UITextField+BFKit.m in Sources */,
 				492C97381BEE59C200CDC75F /* UIView+BFKit.m in Sources */,
 				492C973E1BEE59C200CDC75F /* BFApp.m in Sources */,
+				F4CC9CBD1C4D998F0019D1B0 /* BFTextField.m in Sources */,
 				492C97261BEE59C200CDC75F /* UIImageView+BFKit.m in Sources */,
 				492C972E1BEE59C200CDC75F /* UIScrollView+BFKit.m in Sources */,
 				492C97401BEE59C200CDC75F /* BFButton.m in Sources */,
@@ -553,7 +561,7 @@
 				492C971A1BEE59C200CDC75F /* UIBarButtonItem+BFKit.m in Sources */,
 				492C974A1BEE59C200CDC75F /* BFTouchID.m in Sources */,
 				492C972C1BEE59C200CDC75F /* UIScreen+BFKit.m in Sources */,
-				F401C5411C2CAE060098AC17 /* LimitedTextFieldDelegate.m in Sources */,
+				F401C5411C2CAE060098AC17 /* BFLimitedTextFieldDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
