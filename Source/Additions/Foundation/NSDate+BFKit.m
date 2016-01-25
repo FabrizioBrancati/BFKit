@@ -264,4 +264,16 @@
     return description;
 }
 
+-(NSDate *)shortDate
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *dateComponents = [calendar components:NSCalendarUnitDay |
+                                    NSCalendarUnitMonth |
+                                    NSCalendarUnitYear
+                                          fromDate:self];
+    
+    return [calendar dateFromComponents:dateComponents];
+}
+
 @end

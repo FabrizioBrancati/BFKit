@@ -279,4 +279,11 @@ typedef struct BFDateInformation BFDateInformation;
                                                         usFormat:(BOOL)usFormat
                                                       nanosecond:(BOOL)nanosecond;
 
+/**
+ *  Returns date with the year, month and day only.
+ *
+ *  @return date after removing all components but year, month and day.
+ */
+-(NSDate *)shortDate;
+
 @end
