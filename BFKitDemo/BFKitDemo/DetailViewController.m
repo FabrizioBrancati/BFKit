@@ -343,7 +343,7 @@
             UILabel *fontLabel = [UILabel initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 25) text:@"Use a font with just an ENUM ^_^" font:FontNameNoteworthyLight size:16 color:[UIColor blackColor] alignment:NSTextAlignmentLeft lines:1];
             [_scrollView addSubview:fontLabel];
             
-            UILabel *otherFontLabel = [UILabel initWithFrame:CGRectMake(20, 60, SCREEN_WIDTH - 40, 25) text:@"It's awesome!" font:FontNameSuperclarendonBold size:16 color:[UIColor randomColor] alignment:NSTextAlignmentLeft lines:1];
+            UILabel *otherFontLabel = [UILabel initWithFrame:CGRectMake(20, 60, SCREEN_WIDTH - 40, 25) text:@"It's awesome!" font:FontNamePapyrus size:16 color:[UIColor randomColor] alignment:NSTextAlignmentLeft lines:1];
             [_scrollView addSubview:otherFontLabel];
             
             break;
