@@ -79,6 +79,27 @@ static UIFont * _Nullable boldFont;
     NSArray *fontNames;
     
     switch (familyFontName) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        case FamilyFontNameBanglaSangamMN:
+            fontNames = [UIFont fontNamesForFamilyName:@"Bangla Sangam MN"];
+            break;
+        case FamilyFontNameDINAlternate:
+            fontNames = [UIFont fontNamesForFamilyName:@"DIN Alternate"];
+            break;
+        case FamilyFontNameDINCondensed:
+            fontNames = [UIFont fontNamesForFamilyName:@"DIN Condensed"];
+            break;
+        case FamilyFontNameIowanOldStyle:
+            fontNames = [UIFont fontNamesForFamilyName:@"Iowan Old Style"];
+            break;
+        case FamilyFontNameMarion:
+            fontNames = [UIFont fontNamesForFamilyName:@"Marion"];
+            break;
+        case FamilyFontNameSuperclarendon:
+            fontNames = [UIFont fontNamesForFamilyName:@"Superclarendon"];
+            break;
+#pragma clang diagnostic pop
         case FamilyFontNameAcademyEngravedLET:
             fontNames = [UIFont fontNamesForFamilyName:@"Academy Engraved LET"];
             break;
@@ -111,9 +132,6 @@ static UIFont * _Nullable boldFont;
             break;
         case FamilyFontNameAvenirNextCondensed:
             fontNames = [UIFont fontNamesForFamilyName:@"Avenir Next Condensed"];
-            break;
-        case FamilyFontNameBanglaSangamMN:
-            fontNames = [UIFont fontNamesForFamilyName:@"Bangla Sangam MN"];
             break;
         case FamilyFontNameBaskerville:
             fontNames = [UIFont fontNamesForFamilyName:@"Baskerville"];
@@ -160,12 +178,6 @@ static UIFont * _Nullable boldFont;
         case FamilyFontNameDidot:
             fontNames = [UIFont fontNamesForFamilyName:@"Didot"];
             break;
-        case FamilyFontNameDINAlternate:
-            fontNames = [UIFont fontNamesForFamilyName:@"DIN Alternate"];
-            break;
-        case FamilyFontNameDINCondensed:
-            fontNames = [UIFont fontNamesForFamilyName:@"DIN Condensed"];
-            break;
         case FamilyFontNameEuphemiaUCAS:
             fontNames = [UIFont fontNamesForFamilyName:@"Euphemia UCAS"];
             break;
@@ -211,9 +223,6 @@ static UIFont * _Nullable boldFont;
         case FamilyFontNameHoeflerText:
             fontNames = [UIFont fontNamesForFamilyName:@"Hoefler Text"];
             break;
-        case FamilyFontNameIowanOldStyle:
-            fontNames = [UIFont fontNamesForFamilyName:@"Iowan Old Style"];
-            break;
         case FamilyFontNameKailasa:
             fontNames = [UIFont fontNamesForFamilyName:@"Kailasa"];
             break;
@@ -234,9 +243,6 @@ static UIFont * _Nullable boldFont;
             break;
         case FamilyFontNameMalayamSangamMN:
             fontNames = [UIFont fontNamesForFamilyName:@"Malayalam Sangam MN"];
-            break;
-        case FamilyFontNameMarion:
-            fontNames = [UIFont fontNamesForFamilyName:@"Marion"];
             break;
         case FamilyFontNameMarkerFelt:
             fontNames = [UIFont fontNamesForFamilyName:@"Marker Felt"];
@@ -274,9 +280,6 @@ static UIFont * _Nullable boldFont;
         case FamilyFontNameSnellRoundhand:
             fontNames = [UIFont fontNamesForFamilyName:@"Snell Roundhand"];
             break;
-        case FamilyFontNameSuperclarendon:
-            fontNames = [UIFont fontNamesForFamilyName:@"Superclarendon"];
-            break;
         case FamilyFontNameSymbol:
             fontNames = [UIFont fontNamesForFamilyName:@"Symbol"];
             break;
@@ -313,6 +316,47 @@ static UIFont * _Nullable boldFont;
 
 + (UIFont * _Nonnull)fontForFontName:(FontName)fontName size:(CGFloat)fontSize {
     switch (fontName) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        case FontNameBanglaSangamMN:
+            return [UIFont fontWithName:@"BanglaSangamMN" size:fontSize];
+        case FontNameBanglaSangamMNBold:
+            return [UIFont fontWithName:@"BanglaSangamMN-Bold" size:fontSize];
+        case FontNameDINAlternateBold:
+            return [UIFont fontWithName:@"DINAlternate-Bold" size:fontSize];
+        case FontNameDINCondensedBold:
+            return [UIFont fontWithName:@"DINCondensed-Bold" size:fontSize];
+        case FontNameIowanOldStyleBold:
+            return [UIFont fontWithName:@"IowanOldStyle-Bold" size:fontSize];
+        case FontNameIowanOldStyleBoldItalic:
+            return [UIFont fontWithName:@"IowanOldStyle-BoldItalic" size:fontSize];
+        case FontNameIowanOldStyleItalic:
+            return [UIFont fontWithName:@"IowanOldStyle-Italic" size:fontSize];
+        case FontNameIowanOldStyleRoman:
+            return [UIFont fontWithName:@"IowanOldStyle-Roman" size:fontSize];
+        case FontNameMarionBold:
+            return [UIFont fontWithName:@"Marion-Bold" size:fontSize];
+        case FontNameMarionItalic:
+            return [UIFont fontWithName:@"Marion-Italic" size:fontSize];
+        case FontNameMarionRegular:
+            return [UIFont fontWithName:@"Marion-Regular" size:fontSize];
+        case FontNameSuperclarendonBlack:
+            return [UIFont fontWithName:@"Superclarendon-Black" size:fontSize];
+        case FontNameSuperclarendonBlackItalic:
+            return [UIFont fontWithName:@"Superclarendon-BalckItalic" size:fontSize];
+        case FontNameSuperclarendonBold:
+            return [UIFont fontWithName:@"Superclarendon-Bold" size:fontSize];
+        case FontNameSuperclarendonBoldItalic:
+            return [UIFont fontWithName:@"Superclarendon-BoldItalic" size:fontSize];
+        case FontNameSuperclarendonItalic:
+            return [UIFont fontWithName:@"Superclarendon-Italic" size:fontSize];
+        case FontNameSuperclarendonLight:
+            return [UIFont fontWithName:@"Superclarendon-Light" size:fontSize];
+        case FontNameSuperclarendonLightItalic:
+            return [UIFont fontWithName:@"Superclarendon-LightItalic" size:fontSize];
+        case FontNameSuperclarendonRegular:
+            return [UIFont fontWithName:@"Superclarendon-Regular" size:fontSize];
+#pragma clang diagnostic pop
         case FontNameAcademyEngravedLetPlain:
             return [UIFont fontWithName:@"AcademyEngravedLetPlain" size:fontSize];
         case FontNameAlNile:
@@ -437,10 +481,6 @@ static UIFont * _Nullable boldFont;
             return [UIFont fontWithName:@"Avenir-Oblique" size:fontSize];
         case FontNameAvenirRoman:
             return [UIFont fontWithName:@"Avenir-Roman" size:fontSize];
-        case FontNameBanglaSangamMN:
-            return [UIFont fontWithName:@"BanglaSangamMN" size:fontSize];
-        case FontNameBanglaSangamMNBold:
-            return [UIFont fontWithName:@"BanglaSangamMN-Bold" size:fontSize];
         case FontNameBaskerville:
             return [UIFont fontWithName:@"Baskerville" size:fontSize];
         case FontNameBaskervilleBold:
@@ -527,10 +567,6 @@ static UIFont * _Nullable boldFont;
             return [UIFont fontWithName:@"Didot-Bold" size:fontSize];
         case FontNameDidotItalic:
             return [UIFont fontWithName:@"Didot-Italic" size:fontSize];
-        case FontNameDINAlternateBold:
-            return [UIFont fontWithName:@"DINAlternate-Bold" size:fontSize];
-        case FontNameDINCondensedBold:
-            return [UIFont fontWithName:@"DINCondensed-Bold" size:fontSize];
         case FontNameDiwanMishafi:
             return [UIFont fontWithName:@"DiwanMishafi" size:fontSize];
         case FontNameEuphemiaUCAS:
@@ -637,14 +673,6 @@ static UIFont * _Nullable boldFont;
             return [UIFont fontWithName:@"HoeflerText-Italic" size:fontSize];
         case FontNameHoeflerTextRegular:
             return [UIFont fontWithName:@"HoeflerText-Regular" size:fontSize];
-        case FontNameIowanOldStyleBold:
-            return [UIFont fontWithName:@"IowanOldStyle-Bold" size:fontSize];
-        case FontNameIowanOldStyleBoldItalic:
-            return [UIFont fontWithName:@"IowanOldStyle-BoldItalic" size:fontSize];
-        case FontNameIowanOldStyleItalic:
-            return [UIFont fontWithName:@"IowanOldStyle-Italic" size:fontSize];
-        case FontNameIowanOldStyleRoman:
-            return [UIFont fontWithName:@"IowanOldStyle-Roman" size:fontSize];
         case FontNameKailasa:
             return [UIFont fontWithName:@"Kailasa" size:fontSize];
         case FontNameKailasaBold:
@@ -673,12 +701,6 @@ static UIFont * _Nullable boldFont;
             return [UIFont fontWithName:@"MalayalamSangamMN" size:fontSize];
         case FontNameMalayalamSangamMNBold:
             return [UIFont fontWithName:@"MalayalamSangamMN-Bold" size:fontSize];
-        case FontNameMarionBold:
-            return [UIFont fontWithName:@"Marion-Bold" size:fontSize];
-        case FontNameMarionItalic:
-            return [UIFont fontWithName:@"Marion-Italic" size:fontSize];
-        case FontNameMarionRegular:
-            return [UIFont fontWithName:@"Marion-Regular" size:fontSize];
         case FontNameMarkerFeltThin:
             return [UIFont fontWithName:@"MarkerFelt-Thin" size:fontSize];
         case FontNameMarkerFeltWide:
@@ -743,22 +765,6 @@ static UIFont * _Nullable boldFont;
             return [UIFont fontWithName:@"STHeitiTC-Light" size:fontSize];
         case FontNameSTHeitiTCMedium:
             return [UIFont fontWithName:@"STHeitiTC-Medium" size:fontSize];
-        case FontNameSuperclarendonBlack:
-            return [UIFont fontWithName:@"Superclarendon-Black" size:fontSize];
-        case FontNameSuperclarendonBlackItalic:
-            return [UIFont fontWithName:@"Superclarendon-BalckItalic" size:fontSize];
-        case FontNameSuperclarendonBold:
-            return [UIFont fontWithName:@"Superclarendon-Bold" size:fontSize];
-        case FontNameSuperclarendonBoldItalic:
-            return [UIFont fontWithName:@"Superclarendon-BoldItalic" size:fontSize];
-        case FontNameSuperclarendonItalic:
-            return [UIFont fontWithName:@"Superclarendon-Italic" size:fontSize];
-        case FontNameSuperclarendonLight:
-            return [UIFont fontWithName:@"Superclarendon-Light" size:fontSize];
-        case FontNameSuperclarendonLightItalic:
-            return [UIFont fontWithName:@"Superclarendon-LightItalic" size:fontSize];
-        case FontNameSuperclarendonRegular:
-            return [UIFont fontWithName:@"Superclarendon-Regular" size:fontSize];
         case FontNameSymbol:
             return [UIFont fontWithName:@"Symbol" size:fontSize];
         case FontNameTamilSangamMN:
