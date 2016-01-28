@@ -26,7 +26,8 @@
                                                           @"BFLog",
                                                           @"BFPassword",
                                                           @"BFSystemSound",
-                                                          @"BFTouchID"]];
+                                                          @"BFTouchID",
+                                                          @"BFTextField"]];
     
     _uikitArray = [[NSMutableArray alloc] initWithArray:@[@"UIButton",
                                                           @"UIColor",

@@ -34,6 +34,8 @@
  */
 @interface UITextField (BFKit)
 
+@property (nonatomic) IBInspectable int maxNumberOfCharacters;
+
 /**
  *  Create an UITextField and set some parameters
  *

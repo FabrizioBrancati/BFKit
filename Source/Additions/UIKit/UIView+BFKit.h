@@ -238,4 +238,9 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection) {
  */
 - (UIImage * _Nonnull)saveScreenshot;
 
+/**
+ *  Removes All subviews from current view.
+ */
+-(void)removeAllSubviews;
+
 @end

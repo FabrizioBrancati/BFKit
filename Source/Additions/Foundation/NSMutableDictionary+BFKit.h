@@ -42,4 +42,14 @@
 - (BOOL)safeSetObject:(id _Nonnull)anObject
                forKey:(id<NSCopying> _Nonnull)aKey;
 
+
+/**
+ *  Returns an object if key exists or nil if not.
+ *
+ *  @param key Key to get value of.
+ *
+ *  @return Value for the key Or nil.
+ */
+-(_Nullable id)objectOrNilForKey:(NSString * _Nonnull )key;
+
 @end
