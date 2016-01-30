@@ -33,7 +33,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added `updateUniqueIdentifier:block:` to UIDevice category to check if the UUID has to be updated (Useful for APNS)
 - Added `brightness` methods directly to UIScreen category
 - Added Brazilian Portuguese [#20](https://github.com/FabrizioBrancati/BFKit/pull/20) & [#22](https://github.com/FabrizioBrancati/BFKit/pull/22)
-- Added BFTextField subclass of UIButton to limit the max characters [#21](https://github.com/FabrizioBrancati/BFKit/pull/21)
+- Added BFTextField subclass of UIButton to limit the max characters
 - Added automatic height for width for an UILabel [#21](https://github.com/FabrizioBrancati/BFKit/pull/21)
 - Added `setFont:fromIndex:toIndex:` to sets a custom font from a range of characters [#21](https://github.com/FabrizioBrancati/BFKit/pull/21)
 - Added `removeAllSubviews` from UIView category to remove all the subviews [#21](https://github.com/FabrizioBrancati/BFKit/pull/21)
