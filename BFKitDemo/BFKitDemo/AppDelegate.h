@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 #import "UserInterfaceKitViewController.h"
 #import "FoundationViewController.h"

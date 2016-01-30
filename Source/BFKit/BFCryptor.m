@@ -24,10 +24,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+#import <CommonCrypto/CommonCrypto.h>
+
 #import "BFCryptor.h"
 #import "NSString+BFKit.h"
 #import "NSData+BFKit.h"
-#import <CommonCrypto/CommonCrypto.h>
 
 @implementation BFCryptor
 

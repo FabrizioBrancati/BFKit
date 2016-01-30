@@ -11,7 +11,7 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
+    @import UIKit;
     #import <Foundation/Foundation.h>
 #endif
 

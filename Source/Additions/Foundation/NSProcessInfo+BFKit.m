@@ -24,8 +24,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "NSProcessInfo+BFKit.h"
 #import <mach/mach.h>
+
+#import "NSProcessInfo+BFKit.h"
 
 @implementation NSProcessInfo (BFKit)
 
