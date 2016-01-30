@@ -32,13 +32,18 @@ All notable changes to this project will be documented in this file.<br>
 - Added `updateUniqueIdentifier:block:` to UIDevice category to check if the UUID has to be updated (Useful for APNS)
 - Added `brightness` methods directly to UIScreen category
 - Added Brazilian Portuguese [#20](https://github.com/FabrizioBrancati/BFKit/pull/20) & [#22](https://github.com/FabrizioBrancati/BFKit/pull/22)
+- Added BFTextField subclass of UIButton to limit the max characters [#21](https://github.com/FabrizioBrancati/BFKit/pull/21)
+- Added automatic height for width for an UILabel [#21](https://github.com/FabrizioBrancati/BFKit/pull/21)
+- Added `setFont:fromIndex:toIndex:` to sets a custom font from a range of characters [#21](https://github.com/FabrizioBrancati/BFKit/pull/21)
+- Added `removeAllSubviews` from UIView category to remove all the subviews [#21](https://github.com/FabrizioBrancati/BFKit/pull/21)
 
 #### Improved
 - Changed how to access `lightFont`, `regularFont` and `boldFont` in UIFont category
 - All the encrypt/decrypt methods has been moved to the new BFCryptor class. The old ones will call the new ones from that class
+- Fixed warnings for deprecated fonts [#23](https://github.com/FabrizioBrancati/BFKit/pull/23)
 - Minor enhancements
 
-Thanks to [@emersonbroga](https://github.com/emersonbroga) & [@liushixiang](https://github.com/liushixiang) for this release
+Thanks to [@AshrafAbuBakr](https://github.com/AshrafAbuBakr), [@davidjelliott](https://github.com/davidjelliott), [@emersonbroga](https://github.com/emersonbroga) & [@liushixiang](https://github.com/liushixiang) for this release
 
 
 ## [1.8.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.8.0) - 9 Nov 2015
