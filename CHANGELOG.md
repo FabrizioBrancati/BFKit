@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.<br>
 - `1.9.x` Releases - [1.9.0](#190)
 - `1.8.x` Releases - [1.8.0](#180)
 - `1.7.x` Releases - [1.7.0](#170) | [1.7.1](#171)
-- `1.6.x` Releases - [1.6.0](#169) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163) | [1.6.4](#164) | [1.6.5](#165) | [1.6.6](#166) | [1.6.7](#167) | [1.6.8](#168)
+- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163) | [1.6.4](#164) | [1.6.5](#165) | [1.6.6](#166) | [1.6.7](#167) | [1.6.8](#168)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151) | [1.5.2](#152) | [1.5.3](#153)
 - `1.4.x` Releases - [1.4.0](#140)
 - `1.3.x` Releases - [1.3.0](#130) | [1.3.1](#131) | [1.3.2](#132)
@@ -22,7 +22,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## 1.9.0 - XX Jan 2016
+## 1.9.0
+### XX Jan 2016
 #### Added
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/CONTRIBUTING.md) file
 - Added BFCryptor class to encrypt/decrypt NSString and NSData
@@ -46,7 +47,8 @@ All notable changes to this project will be documented in this file.<br>
 Thanks to [@AshrafAbuBakr](https://github.com/AshrafAbuBakr), [@davidjelliott](https://github.com/davidjelliott), [@emersonbroga](https://github.com/emersonbroga) & [@liushixiang](https://github.com/liushixiang) for this release
 
 
-## [1.8.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.8.0) - 9 Nov 2015
+## [1.8.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.8.0)
+### 9 Nov 2015
 #### Added
 - Added support to [Nullability](https://developer.apple.com/swift/blog/?id=25)
 - Added support to Carthage
@@ -61,7 +63,8 @@ Thanks to [@AshrafAbuBakr](https://github.com/AshrafAbuBakr), [@davidjelliott](h
 
 
 
-## [1.7.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.7.1) - 27 Sep 2015
+## [1.7.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.7.1)
+### 27 Sep 2015
 #### Added
 - Added new devices (iPhone, iPad and AppleTV)
 - Added new methods for HEX representation
@@ -73,7 +76,8 @@ Thanks to [@jiongge](https://github.com/jiongge) and [@fabiosoft](https://github
 
 
 
-## [1.7.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.7.0) - 21 Jul 2015
+## [1.7.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.7.0)
+### 21 Jul 2015
 #### Added
 - Added UINavigationBar category
 - Added UIToolbar & UIBarButtonItem categories
@@ -95,7 +99,8 @@ Thanks to [@jiongge](https://github.com/jiongge) for this release
 
 
 
-## [1.6.8](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.8) - 9 Jul 2015
+## [1.6.8](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.8)
+### 9 Jul 2015
 #### Added
 - Added ```onFirstStart``` and ```onFirstStartForCurrentVersion``` in BFApp class
 - Added ```stringByReplacingWithRegex:withString:``` in NSString category
@@ -109,7 +114,8 @@ Thanks to [@jiongge](https://github.com/jiongge) for this release
 
 
 
-## [1.6.7](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.7) - 7 Jul 2015
+## [1.6.7](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.7)
+### 7 Jul 2015
 #### Added
 - Added ```initWithImageAsTemplate:tintColor:``` in UIImageView category
 
@@ -118,7 +124,8 @@ Thanks to [@jiongge](https://github.com/jiongge) for this release
 
 
 
-## [1.6.6](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.6) - 5 Jul 2015
+## [1.6.6](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.6)
+### 5 Jul 2015
 #### Added
 - Added ```colorForColorString``` in UIColor category
 - Added ```getIndexPathsForSection``` in UITableView category
@@ -132,7 +139,8 @@ Thanks to [@jiongge](https://github.com/jiongge) for this release
 
 
 
-## [1.6.5](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.5) - 2 Jul 2015
+## [1.6.5](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.5)
+### 2 Jul 2015
 #### Added
 - Added ```currentAppCPUUsage``` in NSProcessInfo category
 
@@ -141,7 +149,8 @@ Thanks to [@jiongge](https://github.com/jiongge) for this release
 
 
 
-## [1.6.4](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.4) - 26 Jun 2015
+## [1.6.4](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.4)
+### 26 Jun 2015
 #### Added
 - Added ```hex``` and ```hexString``` in UIColor category to easily create HEX colors from strings
 - Added dummy images and any blend mode in UIImage category
@@ -156,25 +165,29 @@ Thanks to [@jiongge](https://github.com/jiongge) for this release
 
 
 
-## [1.6.3](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.3) - 23 Jun 2015
+## [1.6.3](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.3)
+### 23 Jun 2015
 #### Fixed
 - Fixed a problem with CocoaPods & CocoaDocs (again)
 
 
 
-## [1.6.2](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.2) - 23 Jun 2015
+## [1.6.2](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.2)
+### 23 Jun 2015
 #### Fixed
 - Fixed a problem with CocoaPods & CocoaDocs
 
 
 
-## [1.6.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.1) - 23 Jun 2015
+## [1.6.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.1)
+### 23 Jun 2015
 #### Improved
 - In NSString category the method ```allFamilyAndFonts``` now return an NSDictionary with all the family font names
 
 
 
-## [1.6.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.0) - 23 Jun 2015
+## [1.6.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.6.0)
+### 23 Jun 2015
 #### Added
 - Added in NSString category the method ```hasString:caseSensitive:```
 - Added system macros in UIDevice category
@@ -185,7 +198,8 @@ Thanks to [@jiongge](https://github.com/jiongge) for this release
 
 
 
-## [1.5.3](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.5.3) - 18 May 2015
+## [1.5.3](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.5.3)
+### 18 May 2015
 #### Added
 - Added Traditional Chinese (zh-Hant)
 
@@ -193,7 +207,8 @@ Thanks to [@simonlinj](https://github.com/simonlinj) for this release
 
 
 
-## [1.5.2](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.5.2) - 16 May 2015
+## [1.5.2](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.5.2)
+### 16 May 2015
 #### Added
 - Added in UIView category the method ```createGradientWithColors:direction:```
 - Added a comment on every enum, method or variable
@@ -203,13 +218,15 @@ Thanks to [@simonlinj](https://github.com/simonlinj) for this release
 
 
 
-## [1.5.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.5.1) - 15 May 2015
+## [1.5.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.5.1)
+### 15 May 2015
 #### Fixed
 - Fixed a problem with CocoaPod
 
 
 
-## [1.5.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.5.0) - 15 May 2015
+## [1.5.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.5.0)
+### 15 May 2015
 #### Added
 - Added BFButton class
 - Added in UIImageView category the method ```initWithImage:center:```
@@ -228,7 +245,8 @@ Thanks to [@simonlinj](https://github.com/simonlinj) & [@masd-duc](https://githu
 
 
 
-## [1.4.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.4.0) - 25 Feb 2015
+## [1.4.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.4.0)
+### 25 Feb 2015
 #### Added
 - Added UITextView category
 - Added NSObject category
@@ -245,13 +263,15 @@ Thanks to [@simonlinj](https://github.com/simonlinj) & [@masd-duc](https://githu
 
 
 
-## [1.3.2](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.3.2) - 21 Feb 2015
+## [1.3.2](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.3.2)
+### 21 Feb 2015
 #### Added
 - Added in every class or category ```@import``` to import the needed frameworks
 
 
 
-## [1.3.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.3.1) - 13 Jan 2015
+## [1.3.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.3.1)
+### 13 Jan 2015
 #### Added
 - Added NSDictionary category with ```dictionaryToJson:``` methods
 
@@ -262,7 +282,8 @@ Thanks to [@simonlinj](https://github.com/simonlinj) for this release
 
 
 
-## [1.3.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.3.0) - 10 Jan 2015
+## [1.3.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.3.0)
+### 10 Jan 2015
 #### Added
 - Added ```APP_DELEGATE``` macro to retrive AppDelegate
 - Added Base64 encode/decode
@@ -277,7 +298,8 @@ Thanks to [@simonlinj](https://github.com/simonlinj) for this release
 
 
 
-## [1.2.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.2.0) - 2 Jan 2015
+## [1.2.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.2.0)
+### 2 Jan 2015
 #### Added
 - Added NSMutableDictionary category
 - Added in NSArray the method ```objectAtCircleIndex:```
@@ -292,7 +314,8 @@ Thanks to [@antwork](https://github.com/antwork) for this release
 
 
 
-## [1.1.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.1.0) - 29 Dec 2014
+## [1.1.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.1.0)
+### 29 Dec 2014
 #### Added
 - Added UIWindow category
 - Added system macros
@@ -310,5 +333,6 @@ Thanks to [@hiralin](https://github.com/hiralin) & [@bontangster](https://github
 
 
 
-## [1.0.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.0.0) - 16 Nov 2014
+## [1.0.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.0.0)
+### 16 Nov 2014
 - Initial release
