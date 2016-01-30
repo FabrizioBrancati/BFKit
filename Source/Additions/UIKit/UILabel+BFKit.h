@@ -91,10 +91,10 @@
 /**
  *  Sets a custom font from a character at fromIndex to character at toIndex.
  *
- *  @param font      newFont
- *  @param fromIndex fromIndex
- *  @param toIndex   toIndex
+ *  @param font      newFont   New font to be setted
+ *  @param fromIndex fromIndex The start index
+ *  @param toIndex   toIndex   The end index
  */
--(void)setFont:(UIFont *)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)setFont:(UIFont * _Nonnull)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
 @end

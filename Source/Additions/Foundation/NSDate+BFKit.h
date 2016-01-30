@@ -282,8 +282,8 @@ typedef struct BFDateInformation BFDateInformation;
 /**
  *  Returns date with the year, month and day only.
  *
- *  @return date after removing all components but year, month and day.
+ *  @return Date after removing all components but not year, month and day.
  */
--(NSDate *)shortDate;
+- (NSDate * _Nonnull)shortDate;
 
 @end

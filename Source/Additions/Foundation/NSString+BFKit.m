@@ -278,19 +278,13 @@
     return [[[self stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"-" withString:@""];
 }
 
--(CGFloat)heightForWidth:(float)width andFont:(UIFont *)font
-{
+- (CGFloat)heightForWidth:(float)width andFont:(UIFont * _Nonnull)font {
     CGFloat result = font.pointSize + 4;
-    if (self)
-    {
+    if (self) {
         CGSize textSize = { width, CGFLOAT_MAX };
         CGSize size;
-        //iOS 7+
-        CGRect frame = [self boundingRectWithSize:textSize
-                                          options:NSStringDrawingUsesLineFragmentOrigin
-                                       attributes:@{ NSFontAttributeName:font }
-                                          context:nil];
-        size = CGSizeMake(frame.size.width, frame.size.height+1);
+        CGRect frame = [self boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:font } context:nil];
+        size = CGSizeMake(frame.size.width, frame.size.height + 1);
         result = MAX(size.height, result);
     }
     return result;

@@ -45,15 +45,13 @@
     return label;
 }
 
--(CGFloat)calculatedHeight
-{
+- (CGFloat)calculatedHeight {
     return [self.text heightForWidth:self.frame.size.width andFont:self.font];
 }
 
--(void)setFont:(UIFont *)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
-{
+- (void)setFont:(UIFont * _Nonnull)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.text];
-    [attributedString addAttribute:NSFontAttributeName value:font range:NSMakeRange(fromIndex, toIndex-fromIndex)];
+    [attributedString addAttribute:NSFontAttributeName value:font range:NSMakeRange(fromIndex, toIndex - fromIndex)];
     
     [self setAttributedText:attributedString];
 }
