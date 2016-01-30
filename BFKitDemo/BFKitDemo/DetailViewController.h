@@ -16,8 +16,8 @@ typedef NS_ENUM(NSInteger, DetailType) {
     DetailTypeBFLog,
     DetailTypeBFPassword,
     DetailTypeBFSystemSound,
-    DetailTypeBFTouchID,
     DetailTypeBFTextField,
+    DetailTypeBFTouchID,
     DetailTypeUIButton,
     DetailTypeUIColor,
     DetailTypeUIDevice,
@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, DetailType) {
     DetailTypeNSThread
 };
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITextFieldDelegate>
 
 - (void)prepareForDetail:(DetailType)detailType;
 

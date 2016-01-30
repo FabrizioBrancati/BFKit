@@ -24,10 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <objc/runtime.h>
 #import "UITextField+BFKit.h"
-
-static const void *delegateKey = &delegateKey;
 
 @implementation UITextField (BFKit)
 

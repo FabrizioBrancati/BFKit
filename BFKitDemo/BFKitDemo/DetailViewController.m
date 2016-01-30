@@ -218,6 +218,17 @@
             
             break;
         }
+        case DetailTypeBFTextField: {
+            self.title = @"BFTextField";
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
+            
+            BFTextField *textField = [[BFTextField alloc] initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 25)];
+            [textField setMaxNumberOfCharacters:5];
+            
+            [_scrollView addSubview:textField];
+            
+            break;
+        }
         case DetailTypeBFTouchID: {
             self.title = @"BFTouchID";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
@@ -490,10 +501,7 @@
             self.title = @"UITextField";
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
-//            UITextField *textField = [UITextField initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 25) placeholder:@"Text field placeholder" color:[UIColor colorWithRed:0.166 green:0.528 blue:0.700 alpha:1.000] font:FontNameVerdana size:18 returnType:UIReturnKeyDone keyboardType:UIKeyboardTypeEmailAddress secure:NO borderStyle:UITextBorderStyleBezel autoCapitalization:UITextAutocapitalizationTypeWords keyboardAppearance:UIKeyboardAppearanceLight enablesReturnKeyAutomatically:YES clearButtonMode:UITextFieldViewModeWhileEditing autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
-            
-            BFTextField *textField = [[BFTextField alloc]initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 25)];
-            [textField setMaxNumberOfCharacters:5];
+            UITextField *textField = [UITextField initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 25) placeholder:@"Text field placeholder" color:[UIColor colorWithRed:0.166 green:0.528 blue:0.700 alpha:1.000] font:FontNameVerdana size:18 returnType:UIReturnKeyDone keyboardType:UIKeyboardTypeEmailAddress secure:NO borderStyle:UITextBorderStyleBezel autoCapitalization:UITextAutocapitalizationTypeWords keyboardAppearance:UIKeyboardAppearanceLight enablesReturnKeyAutomatically:YES clearButtonMode:UITextFieldViewModeWhileEditing autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             
             [_scrollView addSubview:textField];
             
