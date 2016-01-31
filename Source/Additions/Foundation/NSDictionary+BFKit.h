@@ -64,13 +64,13 @@
 + (NSString * _Nonnull)dictionaryToJSON:(NSDictionary * _Nonnull)dictionary;
 
 /**
- *  Returns an object if key exists or nil if not.
+ *  Returns an object if key exists or nil if not
  *
- *  @param key Key to get value of.
+ *  @param key Key to get value of
  *
- *  @return Value for the key Or nil.
+ *  @return Value for the key Or nil
  */
--(_Nullable id)objectOrNilForKey:(NSString * _Nonnull )key;
+- (id _Nullable)safeObjectForKey:(NSString * _Nonnull)key;
 
 
 @end

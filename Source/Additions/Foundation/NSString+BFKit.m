@@ -261,17 +261,15 @@
 }
 
 - (BOOL)isUUID {
-    NSRegularExpression *regex;
-    regex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger matches = [regex numberOfMatchesInString:self options:0 range:NSMakeRange(0, [self length])];
-    return (matches == 1);
+    return matches == 1;
 }
 
 - (BOOL)isUUIDForAPNS {
-    NSRegularExpression *regex;
-    regex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9a-f]{32}$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[0-9a-f]{32}$" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger matches = [regex numberOfMatchesInString:self options:0 range:NSMakeRange(0, [self length])];
-    return (matches == 1);
+    return matches == 1;
 }
 
 - (NSString * _Nonnull)convertToAPNSUUID {
@@ -279,15 +277,12 @@
 }
 
 - (CGFloat)heightForWidth:(float)width andFont:(UIFont * _Nonnull)font {
-    CGFloat result = font.pointSize + 4;
-    if (self) {
-        CGSize textSize = { width, CGFLOAT_MAX };
-        CGSize size;
-        CGRect frame = [self boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:font } context:nil];
+    CGSize size = CGSizeZero;
+    if (self.length > 0) {
+        CGRect frame = [self boundingRectWithSize:CGSizeMake(width, 999999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: font } context:nil];
         size = CGSizeMake(frame.size.width, frame.size.height + 1);
-        result = MAX(size.height, result);
     }
-    return result;
+    return size.height;
 }
 
 @end

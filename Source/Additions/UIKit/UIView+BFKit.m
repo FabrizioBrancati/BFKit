@@ -309,8 +309,7 @@
     return image;
 }
 
--(void)removeAllSubviews
-{
+- (void)removeAllSubviews {
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 

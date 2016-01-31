@@ -287,7 +287,7 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     return UUID;
 }
 
-+ (void)updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier,  NSString * _Nullable oldUUID))block {
++ (void)updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier, NSString * _Nullable oldUUID))block {
     NSString *userUUID, *savedUUID = nil;
     BOOL isValid = false, hasToUpdate = false;
     

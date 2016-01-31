@@ -81,20 +81,22 @@
 
 
 /**
- *  Calculates height based on text, width and font.
+ *  Calculates height based on text, width and font
  *
- *  @return Returns calculated height.
+ *  @return Returns calculated height
  */
--(CGFloat)calculatedHeight;
+- (CGFloat)calculatedHeight;
 
 
 /**
- *  Sets a custom font from a character at fromIndex to character at toIndex.
+ *  Sets a custom font from a character at an index to character at another index
  *
- *  @param font      newFont   New font to be setted
- *  @param fromIndex fromIndex The start index
- *  @param toIndex   toIndex   The end index
+ *  @param font      New font to be setted
+ *  @param fromIndex The start index
+ *  @param toIndex   The end index
  */
-- (void)setFont:(UIFont * _Nonnull)font fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)setFont:(UIFont * _Nonnull)font
+      fromIndex:(NSInteger)fromIndex
+        toIndex:(NSInteger)toIndex;
 
 @end

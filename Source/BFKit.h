@@ -43,11 +43,11 @@
 #import "BFLog.h"
 #import "BFPassword.h"
 #import "BFSystemSound.h"
-#import "BFTouchID.h"
 #import "BFTextField.h"
+#import "BFTouchID.h"
 
 /**
- *  Foundation Additions
+ *  Foundation Categories
  */
 #import "NSArray+BFKit.h"
 #import "NSData+BFKit.h"
@@ -63,7 +63,7 @@
 #import "NSThread+BFKit.h"
 
 /**
- *  UIKit Additions
+ *  UIKit Categories
  */
 #import "UIBarButtonItem+BFKit.h"
 #import "UIButton+BFKit.h"

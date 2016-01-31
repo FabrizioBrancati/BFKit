@@ -223,6 +223,7 @@
             [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)];
             
             BFTextField *textField = [[BFTextField alloc] initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 25)];
+            [textField setBorderStyle:UITextBorderStyleBezel];
             [textField setMaxNumberOfCharacters:5];
             
             [_scrollView addSubview:textField];
@@ -614,7 +615,7 @@
             BFLog(@"Converted to NSData: %@", data);
             
             string = [data convertToUTF8String];
-            BFLog(@"NSData converted to NSString: %@\n\n", string);
+            BFLog(@"NSData converted to NSString: %@", string);
             
             UITextView *textView = [UITextView initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) text:BFLogString color:[UIColor blackColor] font:FontNameHelveticaNeue size:16 alignment:NSTextAlignmentLeft dataDetectorTypes:UIDataDetectorTypeAll editable:NO selectable:NO returnType:UIReturnKeyDefault keyboardType:UIKeyboardTypeDefault secure:NO autoCapitalization:UITextAutocapitalizationTypeNone keyboardAppearance:UIKeyboardAppearanceDefault enablesReturnKeyAutomatically:YES autoCorrectionType:UITextAutocorrectionTypeDefault delegate:nil];
             [self.view addSubview:textView];

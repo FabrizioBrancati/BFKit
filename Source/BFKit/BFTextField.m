@@ -40,11 +40,17 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.maxNumberOfCharacters = [aDecoder decodeIntForKey:@"MaxNumberOfCharacters"];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:self];
+    }
+    
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [super encodeWithCoder:aCoder];
+    
     [aCoder encodeInt64:(long)self.maxNumberOfCharacters forKey:@"MaxNumberOfCharacters"];
 }
 

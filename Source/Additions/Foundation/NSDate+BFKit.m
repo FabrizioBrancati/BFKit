@@ -265,7 +265,7 @@
 }
 
 - (NSDate * _Nonnull)shortDate {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     
     NSDateComponents *dateComponents = [calendar components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self];
     

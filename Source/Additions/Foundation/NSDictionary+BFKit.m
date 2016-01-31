@@ -55,15 +55,11 @@
     }
 }
 
--(_Nullable id)objectOrNilForKey:(NSString * _Nonnull )key;
-{
-    NSArray * keysArray = [self allKeys];
-    if ([keysArray containsObject:key])
-    {
+- (id _Nullable)safeObjectForKey:(NSString * _Nonnull )key {
+    NSArray *keysArray = [self allKeys];
+    if ([keysArray containsObject:key]) {
         return [self objectForKey:key];
-    }
-    else
-    {
+    } else {
         return nil;
     }
 }
