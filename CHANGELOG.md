@@ -22,7 +22,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## 1.9.0
+## [1.9.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.9.0)
 ### 01 Feb 2016
 #### Added
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/CONTRIBUTING.md) file
