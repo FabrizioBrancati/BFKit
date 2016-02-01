@@ -88,6 +88,8 @@
 		493CFF0B1C53DC6600272396 /* NSData+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 493CFF091C53DC6600272396 /* NSData+BFKit.m */; };
 		493CFF0E1C53DC7900272396 /* BFCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 493CFF0C1C53DC7900272396 /* BFCryptor.h */; };
 		493CFF0F1C53DC7900272396 /* BFCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 493CFF0D1C53DC7900272396 /* BFCryptor.m */; };
+		49C5FF381C5ED7C90066115A /* BFTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C5FF361C5ED7C90066115A /* BFTextField.h */; };
+		49C5FF391C5ED7C90066115A /* BFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C5FF371C5ED7C90066115A /* BFTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +195,8 @@
 		493CFF091C53DC6600272396 /* NSData+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BFKit.m"; sourceTree = "<group>"; };
 		493CFF0C1C53DC7900272396 /* BFCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFCryptor.h; sourceTree = "<group>"; };
 		493CFF0D1C53DC7900272396 /* BFCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFCryptor.m; sourceTree = "<group>"; };
+		49C5FF361C5ED7C90066115A /* BFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTextField.h; sourceTree = "<group>"; };
+		49C5FF371C5ED7C90066115A /* BFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,8 +241,8 @@
 			children = (
 				492C96951BEE593800CDC75F /* BFKit_Header.h */,
 				492C96F81BEE59C200CDC75F /* BFKit.h */,
-				492C96AC1BEE59C200CDC75F /* Additions */,
 				492C96E91BEE59C200CDC75F /* BFKit */,
+				492C96AC1BEE59C200CDC75F /* Additions */,
 				492C96F91BEE59C200CDC75F /* Languages */,
 				492C96971BEE593800CDC75F /* Info.plist */,
 			);
@@ -355,6 +359,8 @@
 				492C96F31BEE59C200CDC75F /* BFPassword.m */,
 				492C96F41BEE59C200CDC75F /* BFSystemSound.h */,
 				492C96F51BEE59C200CDC75F /* BFSystemSound.m */,
+				49C5FF361C5ED7C90066115A /* BFTextField.h */,
+				49C5FF371C5ED7C90066115A /* BFTextField.m */,
 				492C96F61BEE59C200CDC75F /* BFTouchID.h */,
 				492C96F71BEE59C200CDC75F /* BFTouchID.m */,
 			);
@@ -381,6 +387,7 @@
 				492C972D1BEE59C200CDC75F /* UIScrollView+BFKit.h in Headers */,
 				492C97291BEE59C200CDC75F /* UINavigationBar+BFKit.h in Headers */,
 				492C972B1BEE59C200CDC75F /* UIScreen+BFKit.h in Headers */,
+				49C5FF381C5ED7C90066115A /* BFTextField.h in Headers */,
 				492C97131BEE59C200CDC75F /* NSProcessInfo+BFKit.h in Headers */,
 				492C973F1BEE59C200CDC75F /* BFButton.h in Headers */,
 				492C970D1BEE59C200CDC75F /* NSMutableDictionary+BFKit.h in Headers */,
@@ -550,6 +557,7 @@
 				492C97241BEE59C200CDC75F /* UIImage+BFKit.m in Sources */,
 				492C97421BEE59C200CDC75F /* BFDataStructures.m in Sources */,
 				493CFF0F1C53DC7900272396 /* BFCryptor.m in Sources */,
+				49C5FF391C5ED7C90066115A /* BFTextField.m in Sources */,
 				492C97321BEE59C200CDC75F /* UITextField+BFKit.m in Sources */,
 				492C97381BEE59C200CDC75F /* UIView+BFKit.m in Sources */,
 				492C973E1BEE59C200CDC75F /* BFApp.m in Sources */,

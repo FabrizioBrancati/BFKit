@@ -160,7 +160,7 @@
 		492C97931BEE5F6E00CDC75F /* BFPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPassword.h; sourceTree = "<group>"; };
 		492C97941BEE5F6E00CDC75F /* BFPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFPassword.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		492C97951BEE5F6E00CDC75F /* BFSystemSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFSystemSound.h; sourceTree = "<group>"; };
-		492C97961BEE5F6E00CDC75F /* BFSystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFSystemSound.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		492C97961BEE5F6E00CDC75F /* BFSystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFSystemSound.m; sourceTree = "<group>"; };
 		492C97971BEE5F6E00CDC75F /* BFTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTouchID.h; sourceTree = "<group>"; };
 		492C97981BEE5F6E00CDC75F /* BFTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTouchID.m; sourceTree = "<group>"; };
 		492C97991BEE5F6E00CDC75F /* BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFKit.h; path = ../Source/BFKit.h; sourceTree = "<group>"; };
