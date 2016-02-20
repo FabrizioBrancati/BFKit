@@ -111,7 +111,7 @@ Communication :speaker:
 
 Contributing :octocat:
 ======================
-See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/CONTRIBUTING.md) file.
+See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/.github/CONTRIBUTING.md) file.
 
 Installing and Usage :computer:
 ===============================
