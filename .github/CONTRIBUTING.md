@@ -17,8 +17,4 @@ Every method or variable (outside of a method) has to be commented.<br>
 I recommend you to use [VVDocumenter](https://github.com/onevcat/VVDocumenter-Xcode) Xcode plugin.
 
 #### Writing code
-Please follow my coding style:
-- Open the bracket on the same line of the method
-- Open bracket on same line of the `if`, `else`, `for`, `while` and the others keyword that requires a bracket
-- Separates every parameter from the others in operation (`+`,`-`,`/` & `*`) with a space (` `)
-- Don't end comments with a dot
+Please follow my coding style.
