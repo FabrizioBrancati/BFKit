@@ -103,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		162938481CC0BCF100B8F140 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/BFKit.strings; sourceTree = "<group>"; };
 		492C96921BEE593800CDC75F /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492C96951BEE593800CDC75F /* BFKit_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFKit_Header.h; sourceTree = "<group>"; };
 		492C96971BEE593800CDC75F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -498,6 +499,7 @@
 				"zh-Hans",
 				"zh-Hant",
 				"pt-BR",
+				sv,
 			);
 			mainGroup = 492C96881BEE593800CDC75F;
 			productRefGroup = 492C96931BEE593800CDC75F /* Products */;
@@ -606,6 +608,7 @@
 				492C97011BEE59C200CDC75F /* zh-Hans */,
 				492C97021BEE59C200CDC75F /* zh-Hant */,
 				493CFF071C53DC1300272396 /* pt-BR */,
+				162938481CC0BCF100B8F140 /* sv */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";
