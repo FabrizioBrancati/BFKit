@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
-- `1.9.x` Releases - [1.9.0](#190)
+- `1.9.x` Releases - [1.9.0](#190) | [1.9.1](#191)
 - `1.8.x` Releases - [1.8.0](#180)
 - `1.7.x` Releases - [1.7.0](#170) | [1.7.1](#171)
 - `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163) | [1.6.4](#164) | [1.6.5](#165) | [1.6.6](#166) | [1.6.7](#167) | [1.6.8](#168)
@@ -21,6 +21,18 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [1.9.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.9.1)
+### 08 May 2016
+#### Added
+- Added missing devices
+- Added Swedish translation [#24](https://github.com/FabrizioBrancati/BFKit/pull/24)
+
+#### Improved
+- Minor enhancements & bug fix
+
+Thanks to [@pontus-andersson](https://github.com/pontus-andersson) for this release
+
 
 ## [1.9.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.9.0)
 ### 01 Feb 2016
