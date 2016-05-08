@@ -394,17 +394,17 @@
 }
 
 - (UIImage * _Nonnull)fillAlphaWithColor:(UIColor * _Nonnull)color {
-    CGRect im_r;
-	im_r.origin = CGPointZero;
-	im_r.size = self.size;
+    CGRect imageRect;
+	imageRect.origin = CGPointZero;
+	imageRect.size = self.size;
     
     CGColorRef cgColor = [color CGColor];
     
     UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextSetFillColorWithColor(context, cgColor);
-    CGContextFillRect(context,im_r);
-    [self drawInRect:im_r];
+    CGContextFillRect(context, imageRect);
+    [self drawInRect:imageRect];
     
 	UIImage *returnImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();

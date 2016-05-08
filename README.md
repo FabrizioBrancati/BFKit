@@ -28,7 +28,7 @@
 ---
 
 Swift Version <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="25" width="25">
-=====
+=============
 If you are looking for Swift version check it out here: **[BFKit Swift](https://github.com/FabrizioBrancati/BFKit-Swift)**
 
 What does it do :question:
