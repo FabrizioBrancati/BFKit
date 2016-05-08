@@ -69,6 +69,7 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
     if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6s";
     if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
+    if ([platform isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
     // iPod
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
@@ -105,9 +106,12 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     if ([platform isEqualToString:@"iPad4,9"])      return @"iPad mini 3 (China)";
     if ([platform isEqualToString:@"iPad5,1"])      return @"iPad mini 4 (WiFi)";
     if ([platform isEqualToString:@"iPad5,2"])      return @"iPad mini 4 (Cellular)";
-    // iPad Pro
-    if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro (WiFi)";
-    if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro (Cellular)";
+    // iPad Pro 9.7
+    if ([platform isEqualToString:@"iPad6,3"])      return @"iPad Pro 9.7 (WiFi)";
+    if ([platform isEqualToString:@"iPad6,4"])      return @"iPad Pro 9.7 (Cellular)";
+    // iPad Pro 12.9
+    if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro 12.9 (WiFi)";
+    if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro 12.9 (Cellular)";
     // Apple TV
     if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
     if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3G";
