@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BFKit"
-  s.version          = "1.9.2"
+  s.version          = "1.9.3"
   s.summary          = "BFKit is a collection of useful classes to develop Apps faster"
   s.homepage         = "https://github.com/FabrizioBrancati/BFKit"
   s.screenshots      = "http://github.fabriziobrancati.com/bfkit/resources/screenshot-objc.png"
@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
                           :file => "LICENSE"
                        }
   s.author           = { "Fabrizio Brancati" => "fabrizio.brancati@gmail.com" }
-  s.social_media_url = "https://linkedin.com/in/fabriziobrancati"
+  s.social_media_url = "https://twitter.com/infinity4all"
   s.platform         = :ios, "7.0"
   s.source           = {
                           :git => "https://github.com/FabrizioBrancati/BFKit.git",
-                          :tag => "v1.9.2"
+                          :tag => "v1.9.3"
                        }
   s.source_files     = "Source/**/*.{h,m}"
   s.resources        = "Source/Languages/**"
