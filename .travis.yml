@@ -2,5 +2,5 @@ language: objective-c
 osx_image: xcode8.1
 
 script:
-  - xcodebuild -project BFKitDemo/BFKitDemo.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 7 Plus" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty
-  - xcodebuild -project BFKit/BFKit.xcodeproj -scheme BFKitDemo -sdk iphonesimulator10.1 ONLY_ACTIVE_ARCH=NO build | xcpretty
+  - xcodebuild -project BFKitDemo/BFKitDemo.xcodeproj -scheme BFKitDemo -destination "platform=iOS Simulator,name=iPhone 7 Plus" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty
+  - xcodebuild -project BFKit/BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator10.1 ONLY_ACTIVE_ARCH=NO build | xcpretty
