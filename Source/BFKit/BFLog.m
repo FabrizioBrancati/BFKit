@@ -56,9 +56,9 @@ void ExtendNSLog(const char * _Nonnull file, int lineNumber, const char * _Nonnu
     NSString *log = [NSString stringWithFormat:@"%s:%d %s: %s", [fileName UTF8String], lineNumber, [functionName UTF8String], [body UTF8String]];
     fprintf(stderr, "%s %s:%d %s: %s", [[NSDate dateInformationDescriptionWithInformation:[[NSDate date] dateInformation] dateSeparator:@"-" usFormat:YES nanosecond:YES] UTF8String], [fileName UTF8String], lineNumber, [functionName UTF8String], [body UTF8String]);
     
-    logString = [NSString stringWithFormat:@"%@,%@",logString,body];
+    logString = [NSString stringWithFormat:@"%@%@",logString,body];
     
-    logDetailedString = [NSString stringWithFormat:@"%@,%@",logDetailedString,log];
+    logDetailedString = [NSString stringWithFormat:@"%@%@",logDetailedString,log];
 }
 
 + (NSString * _Nonnull)logString {
