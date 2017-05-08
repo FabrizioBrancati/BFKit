@@ -450,6 +450,7 @@
 				vi,
 				"zh-Hant",
 				"pt-BR",
+				tr,
 			);
 			mainGroup = 490276E319BDF3F8009B8BC1;
 			productRefGroup = 490276ED19BDF3F8009B8BC1 /* Products */;
