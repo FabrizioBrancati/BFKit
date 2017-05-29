@@ -41,7 +41,7 @@ NSMutableDictionary *touchImages;
 
 	UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
 	if(class_respondsToSelector([UIApplication class], @selector(sharedApplication))){
-		orientation = [UIApplication sharedApplication].statusBarOrientation;
+		orientation = [[[UIApplication class] performSelector:@selector(sharedApplication)] statusBarOrientation];
 	}
     CGSize imageSize = CGSizeZero;
     if (UIInterfaceOrientationIsPortrait(orientation) || ignoreOrientation) {

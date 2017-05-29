@@ -49,7 +49,7 @@
 
 	UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
 	if([UIApplication instancesRespondToSelector:@selector(sharedApplication)]){
-		orientation = [UIApplication sharedApplication].statusBarOrientation;
+		orientation = [[[UIApplication class] performSelector:@selector(sharedApplication)] statusBarOrientation];
 	}
 
     if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape(orientation)) {
