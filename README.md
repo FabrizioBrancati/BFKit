@@ -141,12 +141,12 @@ Installing and Usage :computer:
 - Create a **Podfile** in your **project directory**
 - Write:
 
-```ruby
+    ```ruby
     platform :ios, '7.0'
     xcodeproj 'Project.xcodeproj'
 
     pod 'BFKit'
-```
+    ```
 - Change **"Project"**  with your **real project name**
 - Open **Terminal**, go to **project directory** and type: ```pod install```
 - Import the Framework with ```#import <BFKit/BFKit.h>```
@@ -178,21 +178,21 @@ Installing and Usage :computer:
 - Create a **Cartfile** in your **project directory**
 - Write:
 
-```ruby
+    ```ruby
     github "FabrizioBrancati/BFKit"
-```
+    ```
 - Open **Terminal**, go to **project directory** and type: ```carthage update```
 - **Include the created Framework** in your project
 - **Add Build Phase** with the following contents:
 
     ```sh
-        /usr/local/bin/carthage copy-frameworks
+    /usr/local/bin/carthage copy-frameworks
     ```
 
     and add the paths to the BFKit framework under **Input Files**
 
     ```sh
-        $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
+    $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
     ```
     This script works around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) triggered by universal binaries and ensures that necessary bitcode-related files are copied when archiving
 - Import the Framework with ```import BFKit```
