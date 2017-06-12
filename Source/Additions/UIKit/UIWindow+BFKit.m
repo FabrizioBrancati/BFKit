@@ -38,9 +38,12 @@ NSMutableDictionary *touchImages;
 
 - (UIImage * _Nonnull)takeScreenshotAndSave:(BOOL)save {
     BOOL ignoreOrientation = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0");
-    
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    
+
+  UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
+  Class UIApplicationClass = NSClassFromString(@"UIApplication");
+  if(UIApplicationClass && [UIApplicationClass respondsToSelector:@selector(sharedApplication)]) {
+    orientation = [[[UIApplication class] performSelector:@selector(sharedApplication)] statusBarOrientation];
+  }
     CGSize imageSize = CGSizeZero;
     if (UIInterfaceOrientationIsPortrait(orientation) || ignoreOrientation) {
         imageSize = [UIScreen mainScreen].bounds.size;
