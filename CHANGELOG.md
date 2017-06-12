@@ -29,7 +29,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added Traditional Turkish (tr-TR) Localization [#28](https://github.com/FabrizioBrancati/BFKit/pull/28)
 - Added support to Application Extensions [#29](https://github.com/FabrizioBrancati/BFKit/pull/29)
 
-Thanks to [@zxm9988](https://github.com/zxm9988) and [@insanoid](https://github.com/insanoid) for this release
+Thanks to [@durul](https://github.com/durul) and [@insanoid](https://github.com/insanoid) for this release
 
 
 ## [1.9.3](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.9.3)
