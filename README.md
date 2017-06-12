@@ -10,7 +10,7 @@
 ---
 
 <p align="center">
-    <a href="#swift-">Swift Version</a> &bull;
+    <a href="#swift-version-">Swift Version</a> &bull;
     <a href="#what-does-it-do-question">What does it do</a> &bull;
     <a href="#language-support-it">Language support</a> &bull;
     <a href="#requirements-iphone">Requirements</a> &bull;
@@ -31,8 +31,8 @@ Swift Version <img src="http://github.fabriziobrancati.com/bfkit/resources/swift
 =============
 If you are looking for Swift version check it out here: **[BFKit Swift](https://github.com/FabrizioBrancati/BFKit-Swift)**
 
-What does it do :question:
-==========================
+What does it do
+===============
 BFKit is a collection of useful classes to **develop Apps faster**.
 
 For example you can use every iOS font with just an enum!
@@ -83,8 +83,8 @@ It also adds some useful method to some classes like:
 - [UIWebView](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIWebView+BFKit.html)
 - [UIWindow](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIWindow+BFKit.html)
 
-Language support :it:
-=====================
+Language support
+================
 - Brazilian Portuguese (pt-Br)
 - English (en)
 - Indonesian (id)
@@ -93,18 +93,19 @@ Language support :it:
 - Simplified Chinese (zh-Hans)
 - Swedish (sv)
 - Traditional Chinese (zh-Hant)
+- Traditional Turkish (tr-TR)
 - Ukrainian (uk)
 - Vietnamese (vi)
 
-Requirements :iphone:
-=====================
+Requirements
+============
 - iOS SDK **7.0** if you copy the Framework files (Source folder)
 - iOS SDK **8.0** if you use it as a Framework
 - **Xcode 7.0** or later
 - **ARC**
 
-Communication :speaker:
-=======================
+Communication
+=============
 - If you need help, use Stack Overflow.
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
@@ -114,8 +115,8 @@ Contributing :octocat:
 ======================
 See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/.github/CONTRIBUTING.md) file.
 
-Installing and Usage :computer:
-===============================
+Installing and Usage
+====================
 ### iOS 7 or later compatible
 #### Manual
 - Copy the **Source** folder to the project
@@ -198,20 +199,20 @@ Installing and Usage :computer:
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
-Documentation :100:
-===================
+Documentation
+=============
 ### [CocoaDocs] - 100% Documented
 
-Changelog :bookmark_tabs:
-=========================
+Changelog
+=========
 To see what has changed in recent version of BFKit, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit/blob/master/CHANGELOG.md)**
 
-Demo :wrench:
-=============
+Demo
+====
 Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
-Todo :ballot_box_with_check:
-============================
+Todo
+====
 - :heavy_minus_sign: Create great tests and add Coveralls badge
 - :heavy_minus_sign: Add support to macOS, watchOS and tvOS
 - :heavy_minus_sign: Create a new Example App that shows all the functionalities of BFKit
@@ -219,16 +220,16 @@ Todo :ballot_box_with_check:
 - :heavy_check_mark: Add to CocoaPods
 - :heavy_check_mark: Create a great documentation
 
-Author :neckbeard:
-==================
+Author
+======
 **Fabrizio Brancati**
 
 [![Website](https://img.shields.io/badge/website-fabriziobrancati.com-4fb0c8.svg)](http://www.fabriziobrancati.com)
 <br>
 [![Email](https://img.shields.io/badge/email-fabrizio.brancati%40gmail.com-green.svg)](mailto:fabrizio.brancati@gmail.com)
 
-License :scroll:
-================
+License
+=======
 BFKit is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)** file for more info.
 
 [CocoaDocs]: http://cocoadocs.org/docsets/BFKit/1.9.3/
