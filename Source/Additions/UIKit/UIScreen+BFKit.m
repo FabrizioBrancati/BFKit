@@ -47,15 +47,16 @@
 - (CGSize)fixedScreenSize {
     CGSize screenSize = self.bounds.size;
 
-	UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
-	if([UIApplication instancesRespondToSelector:@selector(sharedApplication)]){
-		orientation = [[[UIApplication class] performSelector:@selector(sharedApplication)] statusBarOrientation];
-	}
+    UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
+    Class UIApplicationClass = NSClassFromString(@"UIApplication");
+    if(UIApplicationClass && [UIApplicationClass respondsToSelector:@selector(sharedApplication)]) {
+        orientation = [[[UIApplication class] performSelector:@selector(sharedApplication)] statusBarOrientation];
+    }
 
     if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape(orientation)) {
         return CGSizeMake(screenSize.height, screenSize.width);
     }
-    
+
     return screenSize;
 }
 
