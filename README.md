@@ -29,10 +29,12 @@
 
 Swift Version <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="25" width="25">
 =============
+
 If you are looking for Swift version check it out here: **[BFKit Swift](https://github.com/FabrizioBrancati/BFKit-Swift)**
 
 What does it do
 ===============
+
 BFKit is a collection of useful classes to **develop Apps faster**.
 
 For example you can use every iOS font with just an enum!
@@ -85,6 +87,7 @@ It also adds some useful method to some classes like:
 
 Language support
 ================
+
 - Brazilian Portuguese (pt-Br)
 - English (en)
 - Indonesian (id)
@@ -99,6 +102,7 @@ Language support
 
 Requirements
 ============
+
 - iOS SDK **7.0** if you copy the Framework files (Source folder)
 - iOS SDK **8.0** if you use it as a Framework
 - **Xcode 7.0** or later
@@ -106,6 +110,7 @@ Requirements
 
 Communication
 =============
+
 - If you need help, use Stack Overflow.
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
@@ -113,10 +118,12 @@ Communication
 
 Contributing :octocat:
 ======================
+
 See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/.github/CONTRIBUTING.md) file.
 
 Installing and Usage
 ====================
+
 ### iOS 7 or later compatible
 #### Manual
 - Copy the **Source** folder to the project
@@ -201,18 +208,22 @@ Installing and Usage
 
 Documentation
 =============
+
 ### [CocoaDocs] - 100% Documented
 
 Changelog
 =========
+
 To see what has changed in recent version of BFKit, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit/blob/master/CHANGELOG.md)**
 
 Demo
 ====
+
 Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
 Todo
 ====
+
 - :heavy_minus_sign: Create great tests and add Coveralls badge
 - :heavy_minus_sign: Add support to macOS, watchOS and tvOS
 - :heavy_minus_sign: Create a new Example App that shows all the functionalities of BFKit
@@ -222,6 +233,7 @@ Todo
 
 Author
 ======
+
 **Fabrizio Brancati**
 
 [![Website](https://img.shields.io/badge/website-fabriziobrancati.com-4fb0c8.svg)](http://www.fabriziobrancati.com)
@@ -230,6 +242,7 @@ Author
 
 License
 =======
+
 BFKit is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)** file for more info.
 
 [CocoaDocs]: http://cocoadocs.org/docsets/BFKit/1.9.3/
