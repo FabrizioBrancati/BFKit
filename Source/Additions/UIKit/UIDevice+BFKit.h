@@ -129,6 +129,13 @@
 + (BOOL)isSimulator;
 
 /**
+ *  Check if the current device is jailbroken
+ *
+ *  @return Returns YES if it's jailbroken, NO if not
+ */
++ (BOOL)isJailbroken;
+
+/**
  *  Check if the current device has a Retina display
  *
  *  @return Returns YES if it has a Retina display, NO if not
