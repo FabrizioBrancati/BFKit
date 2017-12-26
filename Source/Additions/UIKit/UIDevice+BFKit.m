@@ -70,6 +70,16 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6s";
     if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
     if ([platform isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
+    if ([platform isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
+    if ([platform isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
+    if ([platform isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
+    if ([platform isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
+    if ([platform isEqualToString:@"iPhone10,1"])    return @"iPhone 8";
+    if ([platform isEqualToString:@"iPhone10,4"])    return @"iPhone 8";
+    if ([platform isEqualToString:@"iPhone10,2"])    return @"iPhone 8 Plus";
+    if ([platform isEqualToString:@"iPhone10,5"])    return @"iPhone 8 Plus";
+    if ([platform isEqualToString:@"iPhone10,3"])    return @"iPhone X";
+    if ([platform isEqualToString:@"iPhone10,6"])    return @"iPhone X";
     // iPod
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
@@ -112,14 +122,41 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     // iPad Pro 12.9
     if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro 12.9 (WiFi)";
     if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro 12.9 (Cellular)";
+
+    //iPad (5th generation)
+    if ([platform isEqualToString:@"iPad6,11"])      return @"iPad (5th generation)";
+    if ([platform isEqualToString:@"iPad6,12"])      return @"iPad (5th generation)";
+    
+    // iPad Pro (12.9-inch, 2nd generation)
+    if ([platform isEqualToString:@"iPad7,1"])      return @"iPad Pro (12.9-inch, 2nd generation)";
+    if ([platform isEqualToString:@"iPad7,2"])      return @"iPad Pro (12.9-inch, 2nd generation)";
+
+    // iPad Pro (10.5-inch)
+    if ([platform isEqualToString:@"iPad7,3"])      return @"iPad Pro (10.5-inch)";
+    if ([platform isEqualToString:@"iPad7,4"])      return @"iPad Pro (10.5-inch)";
+    
     // Apple TV
-    if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
-    if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3G";
-    if ([platform isEqualToString:@"AppleTV3,2"])   return @"Apple TV 3G";
-    if ([platform isEqualToString:@"AppleTV5,3"])   return @"Apple TV 4G";
+    if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV (2nd generation";
+    if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV (3rd generation)";
+    if ([platform isEqualToString:@"AppleTV3,2"])   return @"Apple TV (3rd generation)";
+    if ([platform isEqualToString:@"AppleTV5,3"])   return @"Apple TV (4th generation)";
+    if ([platform isEqualToString:@"AppleTV6,2"])   return @"Apple TV 4K";
+    
     // Apple Watch
-    if ([platform isEqualToString:@"Watch1,1"])     return @"Apple Watch 38mm";
-    if ([platform isEqualToString:@"Watch1,2"])     return @"Apple Watch 42mm";
+    if ([platform isEqualToString:@"Watch1,1"])     return @"Apple Watch (1st generation) 38mm";
+    if ([platform isEqualToString:@"Watch1,2"])     return @"Apple Watch (1st generation) 42mm";
+    
+    if ([platform isEqualToString:@"Watch2,6"])     return @"Apple Watch Series 1 38mm";
+    if ([platform isEqualToString:@"Watch2,7"])     return @"Apple Watch Series 1 42mm";
+
+    if ([platform isEqualToString:@"Watch2,3"])     return @"Apple Watch Series 2 38mm";
+    if ([platform isEqualToString:@"Watch2,4"])     return @"Apple Watch Series 2 42mm";
+
+    if ([platform isEqualToString:@"Watch3,1"])     return @"Apple Watch Series 3 38mm";
+    if ([platform isEqualToString:@"Watch3,2"])     return @"Apple Watch Series 3 42mm";
+    if ([platform isEqualToString:@"Watch3,3"])     return @"Apple Watch Series 3 38mm";
+    if ([platform isEqualToString:@"Watch3,4"])     return @"Apple Watch Series 3 42mm";
+    
     // Simulator
     if ([platform isEqualToString:@"i386"])         return @"Simulator";
     if ([platform isEqualToString:@"x86_64"])       return @"Simulator";
@@ -173,6 +210,43 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     } else {
         return NO;
     }
+}
+
++ (BOOL)isJailbroken {
+#if !(TARGET_IPHONE_SIMULATOR)
+    // Check 1 : existence of files that are common for jailbroken devices
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Applications/Cydia.app"] ||
+        [[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/MobileSubstrate.dylib"] ||
+        [[NSFileManager defaultManager] fileExistsAtPath:@"/bin/bash"] ||
+        [[NSFileManager defaultManager] fileExistsAtPath:@"/usr/sbin/sshd"] ||
+        [[NSFileManager defaultManager] fileExistsAtPath:@"/private/var/lib/apt/"] ||
+        [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/com.example.package"]]) {
+           return YES;
+       }
+
+       FILE *f = NULL ;
+       if ((f = fopen("/bin/bash", "r")) ||
+           (f = fopen("/Applications/Cydia.app", "r")) ||
+           (f = fopen("/Library/MobileSubstrate/MobileSubstrate.dylib", "r")) ||
+           (f = fopen("/usr/sbin/sshd", "r")) ||
+           (f = fopen("/etc/apt", "r"))) {
+           fclose(f);
+           return YES;
+       }
+       fclose(f);
+       // Check 2 : Reading and writing in system directories (sandbox violation)
+       NSError *error;
+       NSString *stringToBeWritten = @"Jailbreak Test.";
+       [stringToBeWritten writeToFile:@"/private/jailbreak.txt" atomically:YES
+                             encoding:NSUTF8StringEncoding error:&error];
+       if(error==nil){
+           //Device is jailbroken
+           return YES;
+       } else {
+           [[NSFileManager defaultManager] removeItemAtPath:@"/private/jailbreak.txt" error:nil];
+       }
+#endif
+       return NO;
 }
 
 + (BOOL)isRetina {
