@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
+- `1.11.x` Releases - [1.11.0](#1110)
 - `1.10.x` Releases - [1.10.0](#1100)
 - `1.9.x` Releases - [1.9.0](#190) | [1.9.1](#191) | [1.9.2](#192) | [1.9.3](#193)
 - `1.8.x` Releases - [1.8.0](#180)
@@ -22,6 +23,15 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [1.11.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.11.0)
+### 26 Dec 2017
+#### Added
+- Added `isJailbroken` to UIDevice category to check if the device is Jailbroken [#33](https://github.com/FabrizioBrancati/BFKit/pull/33)
+- Added missing devices [#33](https://github.com/FabrizioBrancati/BFKit/pull/29)
+
+Thanks to [@Vanson](https://github.com/Vanson) for this release
+
 
 ## [1.10.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.10.0)
 ### 12 Jun 2017
