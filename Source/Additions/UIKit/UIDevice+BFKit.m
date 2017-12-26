@@ -219,17 +219,22 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
         [[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/MobileSubstrate.dylib"] ||
         [[NSFileManager defaultManager] fileExistsAtPath:@"/bin/bash"] ||
         [[NSFileManager defaultManager] fileExistsAtPath:@"/usr/sbin/sshd"] ||
-        [[NSFileManager defaultManager] fileExistsAtPath:@"/usr/sbin/sshd"] ||
         [[NSFileManager defaultManager] fileExistsAtPath:@"/private/var/lib/apt/"] ||
         [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/com.example.package"]]) {
            return YES;
        }
-    if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/sbin/sshd"] ||
-        [[NSFileManager defaultManager] fileExistsAtPath:@"/private/var/lib/apt/"] ||
-        [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/com.example.package"]]) {
-            return YES;
-        }
-   // Check 2 : Reading and writing in system directories (sandbox violation)
+
+       FILE *f = NULL ;
+       if ((f = fopen("/bin/bash", "r")) ||
+           (f = fopen("/Applications/Cydia.app", "r")) ||
+           (f = fopen("/Library/MobileSubstrate/MobileSubstrate.dylib", "r")) ||
+           (f = fopen("/usr/sbin/sshd", "r")) ||
+           (f = fopen("/etc/apt", "r"))) {
+           fclose(f);
+           return YES;
+       }
+       fclose(f);
+       // Check 2 : Reading and writing in system directories (sandbox violation)
        NSError *error;
        NSString *stringToBeWritten = @"Jailbreak Test.";
        [stringToBeWritten writeToFile:@"/private/jailbreak.txt" atomically:YES
