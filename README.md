@@ -36,11 +36,7 @@ What does it do
 ===============
 
 BFKit is a collection of useful classes to **develop Apps faster**.
-
 For example you can use every iOS font with just an enum!
-
-To better use of the framework I recommend you to use [FuzzyAutocomplete](https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin) Xcode plugin to better find functions while coding.
-
 It also adds some useful method to some classes like:
 
 ### BFKit:
