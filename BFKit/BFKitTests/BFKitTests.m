@@ -3,7 +3,7 @@
 //  BFKitTests
 //
 //  Created by Fabrizio on 07/11/15.
-//  Copyright © 2015 Fabrizio Brancati. All rights reserved.
+//  Copyright © 2015 Fabrizio Brancati.
 //
 
 #import <XCTest/XCTest.h>
