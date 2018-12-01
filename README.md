@@ -1,6 +1,6 @@
 <p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-objc.png" alt="BFKit Banner"></p>
 
-[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
+[![Build Status](https://travis-ci.com/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Objective--C-blue.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
