@@ -9,7 +9,9 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
-- `1.9.x` Releases - [1.9.0](#190) | [1.9.1](#191) | [1.9.2](#192)
+- `1.11.x` Releases - [1.11.0](#1110)
+- `1.10.x` Releases - [1.10.0](#1100)
+- `1.9.x` Releases - [1.9.0](#190) | [1.9.1](#191) | [1.9.2](#192) | [1.9.3](#193)
 - `1.8.x` Releases - [1.8.0](#180)
 - `1.7.x` Releases - [1.7.0](#170) | [1.7.1](#171)
 - `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163) | [1.6.4](#164) | [1.6.5](#165) | [1.6.6](#166) | [1.6.7](#167) | [1.6.8](#168)
@@ -22,10 +24,37 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## [1.11.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.11.0)
+### 26 Dec 2017
+#### Added
+- Added `isJailbroken` to UIDevice category to check if the device is Jailbroken [#33](https://github.com/FabrizioBrancati/BFKit/pull/33)
+- Added missing devices [#33](https://github.com/FabrizioBrancati/BFKit/pull/29)
+
+Thanks to [@Vanson](https://github.com/Vanson) for this release
+
+
+## [1.10.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.10.0)
+### 12 Jun 2017
+#### Added
+- Added Traditional Turkish (tr-TR) Localization [#28](https://github.com/FabrizioBrancati/BFKit/pull/28)
+- Added support to Application Extensions [#29](https://github.com/FabrizioBrancati/BFKit/pull/29)
+
+Thanks to [@durul](https://github.com/durul) and [@insanoid](https://github.com/insanoid) for this release
+
+
+## [1.9.3](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.9.3)
+### 11 Dec 2016
+#### Fixed
+- Fixed a crash in UIDevice category [#27](https://github.com/FabrizioBrancati/BFKit/pull/27)
+- Fixed a bug on `imageAtRect` in UIImage category [#26](https://github.com/FabrizioBrancati/BFKit/pull/26)
+
+Thanks to [@durul](https://github.com/durul) and for this release
+
+
 ## [1.9.2](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.9.2)
 ### 14 Jul 2016
 #### Improved
-- Adjusting pt-BR typo [#13](https://github.com/FabrizioBrancati/BFKit/pull/13)
+- Adjusting pt-BR typo [#25](https://github.com/FabrizioBrancati/BFKit/pull/25)
 
 #### Fixed
 - Fixed a bug with Carthage

@@ -3,7 +3,7 @@
 //  BFKitDemo
 //
 //  Created by Fabrizio on 15/11/14.
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 Fabrizio Brancati.
 //
 
 #import <UIKit/UIKit.h>

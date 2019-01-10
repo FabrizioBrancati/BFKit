@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2018 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -38,9 +38,12 @@ NSMutableDictionary *touchImages;
 
 - (UIImage * _Nonnull)takeScreenshotAndSave:(BOOL)save {
     BOOL ignoreOrientation = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0");
-    
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    
+
+  UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
+  Class UIApplicationClass = NSClassFromString(@"UIApplication");
+  if(UIApplicationClass && [UIApplicationClass respondsToSelector:@selector(sharedApplication)]) {
+    orientation = [[[UIApplication class] performSelector:@selector(sharedApplication)] statusBarOrientation];
+  }
     CGSize imageSize = CGSizeZero;
     if (UIInterfaceOrientationIsPortrait(orientation) || ignoreOrientation) {
         imageSize = [UIScreen mainScreen].bounds.size;

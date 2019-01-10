@@ -1,5 +1,5 @@
 //
-//  NSProcessInfo+BFKit.h
+//  BFKit.strings
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,26 +24,51 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <Foundation/Foundation.h>
+// Generals
+"OK" = "Tamam";
+"CONTINUE" = "Devam et";
+"CANCEL" = "İptal";
+"DONE" = "Tamam";
+"ERROR" = "Hata";
+"WARNING" = "Uyarı";
+"CLOSE" = "Kapat";
+"OPEN" = "Aç";
+"YES" = "Evet";
+"NO" = "Hayır";
 
+// Days
+"TODAY" = "Bugün";
+"TOMORROW" = "Yarın";
+"SUNDAY" = "Pazar";
+"MONDAY"= "Pazartesi";
+"TUESDAY" = "Salı";
+"WEDNESDAY" = "Çarşamba";
+"THURSDAY" = "Perşembe";
+"FRIDAY" = "Cuma";
+"SATURDAY" = "Cumartesi";
 
-/**
- *  This category adds some useful methods to NSProcessInfo
- */
-@interface NSProcessInfo (BFKit)
+// Months
+"JANUARY" = "Ocak";
+"FEBRUARY" = "Şubat";
+"MARCH" = "Mart";
+"APRIL" = "Nisan";
+"MAY" = "Mayıs";
+"JUNE" = "Haziran";
+"JULY" = "Temmuz";
+"AUGUST" = "Ağustos";
+"SEPTEMBER" = "Eylül";
+"OCTOBER" = "Ekim";
+"NOVEMBER" = "Kasım";
+"DECEMBER" = "Aralık";
 
-/**
- *  Returns the CPU usage
- *
- *  @return Returns the CPU usage
- */
-+ (float)cpuUsage DEPRECATED_MSG_ATTRIBUTE("Use +currentAppCPUUsage");
+// Time zones
+"NIGHT" = "Gece";
+"MORNING" = "Sabah";
+"AFTERNOON" = "Öğlen";
+"EVENING" = "Akşam";
 
-/**
- *  Returns the CPU usage by the current App
- *
- *  @return Returns the CPU usage by the current App
- */
-+ (float)currentAppCPUUsage;
-
-@end
+// Authorization
+"AUTHENTICATION" = "Doğrulama";
+"AUTHORIZATION" = "Yetki";
+"AUTHORIZED" = "Yetkili";
+"NOT_OWNER" = "Yetkili değil";

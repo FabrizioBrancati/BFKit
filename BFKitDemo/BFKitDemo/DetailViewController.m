@@ -3,7 +3,7 @@
 //  BFKitDemo
 //
 //  Created by Fabrizio on 08/09/14.
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 Fabrizio Brancati.
 //
 
 #import "DetailViewController.h"
@@ -370,7 +370,7 @@
             [blendOverlayImageView addSubview:blendOverlayLabel];
             [_scrollView addSubview:blendOverlayImageView];
             
-            UIImage *imageAtRectImage = [[UIImage imageNamed:@"Logo"] imageAtRect:CGRectMake(0, 0, 250, 250)];
+            UIImage *imageAtRectImage = [[UIImage imageNamed:@"Logo"] imageAtRect:CGRectMake(0, 0, 200, 200)];
             UIImageView *imageAtRectImageView = [UIImageView initWithImage:imageAtRectImage frame:CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40)];
             UILabel *imageAtRectLabel = [UILabel initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH - 40, 25) text:@"Image At Rect" font:FontNameHelveticaNeue size:16 color:[UIColor whiteColor] alignment:NSTextAlignmentCenter lines:1 shadowColor:[UIColor blackColor]];
             [imageAtRectImageView addSubview:imageAtRectLabel];

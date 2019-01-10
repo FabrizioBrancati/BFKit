@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2018 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -128,6 +128,13 @@
  *  @return Returns YES if it's the simulator, NO if not
  */
 + (BOOL)isSimulator;
+
+/**
+ *  Check if the current device is jailbroken
+ *
+ *  @return Returns YES if it's jailbroken, NO if not
+ */
++ (BOOL)isJailbroken;
 
 /**
  *  Check if the current device has a Retina display
