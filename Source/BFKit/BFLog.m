@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2018 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -56,9 +56,9 @@ void ExtendNSLog(const char * _Nonnull file, int lineNumber, const char * _Nonnu
     NSString *log = [NSString stringWithFormat:@"%s:%d %s: %s", [fileName UTF8String], lineNumber, [functionName UTF8String], [body UTF8String]];
     fprintf(stderr, "%s %s:%d %s: %s", [[NSDate dateInformationDescriptionWithInformation:[[NSDate date] dateInformation] dateSeparator:@"-" usFormat:YES nanosecond:YES] UTF8String], [fileName UTF8String], lineNumber, [functionName UTF8String], [body UTF8String]);
     
-    logString = [NSString stringWithFormat:@"%@,%@",logString,body];
+    logString = [NSString stringWithFormat:@"%@%@",logString,body];
     
-    logDetailedString = [NSString stringWithFormat:@"%@,%@",logDetailedString,log];
+    logDetailedString = [NSString stringWithFormat:@"%@%@",logDetailedString,log];
 }
 
 + (NSString * _Nonnull)logString {

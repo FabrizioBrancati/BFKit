@@ -1,6 +1,6 @@
 <p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-objc.png" alt="BFKit Banner"></p>
 
-[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
+[![Build Status](https://travis-ci.com/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Objective--C-blue.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
@@ -10,7 +10,7 @@
 ---
 
 <p align="center">
-    <a href="#swift-">Swift Version</a> &bull;
+    <a href="#swift-version-">Swift Version</a> &bull;
     <a href="#what-does-it-do-question">What does it do</a> &bull;
     <a href="#language-support-it">Language support</a> &bull;
     <a href="#requirements-iphone">Requirements</a> &bull;
@@ -29,62 +29,61 @@
 
 Swift Version <img src="http://github.fabriziobrancati.com/bfkit/resources/swift-icon.png" height="25" width="25">
 =============
+
 If you are looking for Swift version check it out here: **[BFKit Swift](https://github.com/FabrizioBrancati/BFKit-Swift)**
 
-What does it do :question:
-==========================
+What does it do
+===============
+
 BFKit is a collection of useful classes to **develop Apps faster**.
-
 For example you can use every iOS font with just an enum!
-
-To better use of the framework I recommend you to use [FuzzyAutocomplete](https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin) Xcode plugin to better find functions while coding.
-
 It also adds some useful method to some classes like:
 
 ### BFKit:
-- [BFApp](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/BFApp.html)
-- [BFButton](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/BFButton.html)
-- BFDataStructures ([List](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/Stack.html))
-- [BFLog](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/BFLog.html)
-- [BFPassword](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/BFPassword.html)
-- [BFSystemSound](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/BFSystemSound.html)
-- [BFTouchID](http://cocoadocs.org/docsets/BFKit/1.9.2/Classes/BFTouchID.html) (iOS 8 or later)
+- [BFApp](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/BFApp.html)
+- [BFButton](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/BFButton.html)
+- BFDataStructures ([List](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/Stack.html))
+- [BFLog](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/BFLog.html)
+- [BFPassword](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/BFPassword.html)
+- [BFSystemSound](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/BFSystemSound.html)
+- [BFTouchID](http://cocoadocs.org/docsets/BFKit/1.9.3/Classes/BFTouchID.html) (iOS 8 or later)
 
 ### Foundation:
-- [NSArray](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSArray+BFKit.html)
-- [NSDate](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSDate+BFKit.html)
-- [NSDictionary](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSDictionary+BFKit.html)
-- [NSFileManager](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSFileManager+BFKit.html)
-- [NSMutableArray](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSMutableArray+BFKit.html)
-- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSMutableDictionary+BFKit.html)
-- [NSNumber](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSNumber+BFKit.html)
-- [NSObject](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSObject+BFKit.html)
-- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSProcessInfo+BFKit.html)
-- [NSString](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSString+BFKit.html)
-- [NSThread](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSThread+BFKit.html)
+- [NSArray](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSArray+BFKit.html)
+- [NSDate](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSDate+BFKit.html)
+- [NSDictionary](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSDictionary+BFKit.html)
+- [NSFileManager](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSFileManager+BFKit.html)
+- [NSMutableArray](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSMutableArray+BFKit.html)
+- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSMutableDictionary+BFKit.html)
+- [NSNumber](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSNumber+BFKit.html)
+- [NSObject](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSObject+BFKit.html)
+- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSProcessInfo+BFKit.html)
+- [NSString](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSString+BFKit.html)
+- [NSThread](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSThread+BFKit.html)
 
 ### UIKit:
-- [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIBarButtonItem+BFKit.html)
-- [UIButton](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/NSArray+BFKit.html)
-- [UIColor](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIColor+BFKit.html)
-- [UIDevice](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIDevice+BFKit.html)
-- [UIFont](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIFont+BFKit.html)
-- [UIImage](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIImage+BFKit.html)
-- [UIImageView](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIImageView+BFKit.html)
-- [UILabel](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UILabel+BFKit.html)
-- [UINavigationBar](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UINavigationBar+BFKit.html)
-- [UIScreen](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIScreen+BFKit.html)
-- [UIScrollView](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIScrollView+BFKit.html)
-- [UITableView](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UITableView+BFKit.html)
-- [UITextField](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UITextField+BFKit.html)
-- [UITextView](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UITextView+BFKit.html)
-- [UIToolbar](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIToolbar+BFKit.html)
-- [UIView](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIView+BFKit.html)
-- [UIWebView](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIWebView+BFKit.html)
-- [UIWindow](http://cocoadocs.org/docsets/BFKit/1.9.2/Categories/UIWindow+BFKit.html)
+- [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIBarButtonItem+BFKit.html)
+- [UIButton](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/NSArray+BFKit.html)
+- [UIColor](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIColor+BFKit.html)
+- [UIDevice](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIDevice+BFKit.html)
+- [UIFont](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIFont+BFKit.html)
+- [UIImage](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIImage+BFKit.html)
+- [UIImageView](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIImageView+BFKit.html)
+- [UILabel](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UILabel+BFKit.html)
+- [UINavigationBar](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UINavigationBar+BFKit.html)
+- [UIScreen](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIScreen+BFKit.html)
+- [UIScrollView](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIScrollView+BFKit.html)
+- [UITableView](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UITableView+BFKit.html)
+- [UITextField](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UITextField+BFKit.html)
+- [UITextView](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UITextView+BFKit.html)
+- [UIToolbar](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIToolbar+BFKit.html)
+- [UIView](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIView+BFKit.html)
+- [UIWebView](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIWebView+BFKit.html)
+- [UIWindow](http://cocoadocs.org/docsets/BFKit/1.9.3/Categories/UIWindow+BFKit.html)
 
-Language support :it:
-=====================
+Language support
+================
+
 - Brazilian Portuguese (pt-Br)
 - English (en)
 - Indonesian (id)
@@ -93,18 +92,21 @@ Language support :it:
 - Simplified Chinese (zh-Hans)
 - Swedish (sv)
 - Traditional Chinese (zh-Hant)
+- Traditional Turkish (tr-TR)
 - Ukrainian (uk)
 - Vietnamese (vi)
 
-Requirements :iphone:
-=====================
+Requirements
+============
+
 - iOS SDK **7.0** if you copy the Framework files (Source folder)
 - iOS SDK **8.0** if you use it as a Framework
 - **Xcode 7.0** or later
 - **ARC**
 
-Communication :speaker:
-=======================
+Communication
+=============
+
 - If you need help, use Stack Overflow.
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
@@ -112,10 +114,12 @@ Communication :speaker:
 
 Contributing :octocat:
 ======================
+
 See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit/blob/master/.github/CONTRIBUTING.md) file.
 
-Installing and Usage :computer:
-===============================
+Installing and Usage
+====================
+
 ### iOS 7 or later compatible
 #### Manual
 - Copy the **Source** folder to the project
@@ -140,12 +144,13 @@ Installing and Usage :computer:
 ##### Newbie version
 - Create a **Podfile** in your **project directory**
 - Write:
-```ruby
+
+    ```ruby
     platform :ios, '7.0'
     xcodeproj 'Project.xcodeproj'
 
     pod 'BFKit'
-```
+    ```
 - Change **"Project"**  with your **real project name**
 - Open **Terminal**, go to **project directory** and type: ```pod install```
 - Import the Framework with ```#import <BFKit/BFKit.h>```
@@ -176,56 +181,78 @@ Installing and Usage :computer:
 ##### Newbie version
 - Create a **Cartfile** in your **project directory**
 - Write:
-```ruby
+
+    ```ruby
     github "FabrizioBrancati/BFKit"
-```
+    ```
 - Open **Terminal**, go to **project directory** and type: ```carthage update```
 - **Include the created Framework** in your project
 - **Add Build Phase** with the following contents:
-    ```sh
-        /usr/local/bin/carthage copy-frameworks
-    ```
-
-    and add the paths to the BFKit framework under **Input Files**
 
     ```sh
-        $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
+    /usr/local/bin/carthage copy-frameworks
     ```
+
+    Add the paths to the Queuer framework under **Input Files**
+
+    ```sh
+    $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
+    ```
+
+    Add the paths to the copied frameworks to the **Output Files**
+
+    ```sh
+    $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BFKit.framework
+    ```
+
     This script works around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) triggered by universal binaries and ensures that necessary bitcode-related files are copied when archiving
+- **(Optional)** Add Build Phase with the following contents
+
+    ```sh
+    /usr/local/bin/carthage outdated --xcode-warnings
+    ```
+
+    To automatically warn you when one of your dependencies is out of date
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
-Documentation :100:
-===================
+Documentation
+=============
+
 ### [CocoaDocs] - 100% Documented
 
-Changelog :bookmark_tabs:
-=========================
+Changelog
+=========
+
 To see what has changed in recent version of BFKit, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit/blob/master/CHANGELOG.md)**
 
-Demo :wrench:
-=============
+Demo
+====
+
 Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
-Todo :ballot_box_with_check:
-============================
+Todo
+====
+
 - :heavy_minus_sign: Create great tests and add Coveralls badge
-- :heavy_minus_sign: Add support to watchOS, tvOS and MacOS
-- :heavy_minus_sign: Create a new DEMO App that shows all the functionalities of BFKit
+- :heavy_minus_sign: Add support to macOS, watchOS and tvOS
+- :heavy_minus_sign: Create a new Example App that shows all the functionalities of BFKit
 - :heavy_check_mark: Add Carthage support
 - :heavy_check_mark: Add to CocoaPods
 - :heavy_check_mark: Create a great documentation
 
-Author :neckbeard:
-==================
+Author
+======
+
 **Fabrizio Brancati**
 
 [![Website](https://img.shields.io/badge/website-fabriziobrancati.com-4fb0c8.svg)](http://www.fabriziobrancati.com)
 <br>
 [![Email](https://img.shields.io/badge/email-fabrizio.brancati%40gmail.com-green.svg)](mailto:fabrizio.brancati@gmail.com)
 
-License :scroll:
-================
+License
+=======
+
 BFKit is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)** file for more info.
 
-[CocoaDocs]: http://cocoadocs.org/docsets/BFKit/1.9.2/
+[CocoaDocs]: http://cocoadocs.org/docsets/BFKit/1.9.3/

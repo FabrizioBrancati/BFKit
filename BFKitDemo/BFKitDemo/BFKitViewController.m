@@ -3,7 +3,7 @@
 //  BFKitDemo
 //
 //  Created by Fabrizio on 08/09/14.
-//  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 Fabrizio Brancati.
 //
 
 #import "BFKitViewController.h"
