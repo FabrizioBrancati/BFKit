@@ -31,10 +31,10 @@
 #if __cplusplus
 extern "C" {
 #endif
-CGFloat DegreesToRadians(CGFloat degrees) {
+CGFloat BFDegreesToRadians(CGFloat degrees) {
     return degrees * M_PI / 180;
 };
-CGFloat RadiansToDegrees(CGFloat radians) {
+CGFloat BFRadiansToDegrees(CGFloat radians) {
     return radians * 180 / M_PI;
 };
 #if _cplusplus
