@@ -24,9 +24,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@import Foundation;
-@import UIKit;
-@import QuartzCore;
+#import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 /**
  *  This category adds some useful methods to UIImageView

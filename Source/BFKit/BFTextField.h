@@ -24,8 +24,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@import UIKit;
-@import Foundation;
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 
 /**
  *  This class adds some useful methods to UITextField that cannot be in a category

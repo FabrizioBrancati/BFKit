@@ -24,7 +24,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@import Foundation;
+#import <Foundation/Foundation.h>
+
 
 /**
  *  Password strength level enum, from 0 (min) to 6 (max)

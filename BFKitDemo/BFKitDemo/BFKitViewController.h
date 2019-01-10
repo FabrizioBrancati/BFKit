@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @interface BFKitViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fabrizio Brancati. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, DetailType) {
     DetailTypeBFApp = 0,

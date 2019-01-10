@@ -24,7 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 /**
  *  This category adds some useful methods to UINavigationBar
