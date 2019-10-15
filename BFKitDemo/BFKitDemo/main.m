@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fabrizio Brancati.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"
 

@@ -339,12 +339,12 @@
 
 
 - (UIImage * _Nonnull)imageRotatedByRadians:(CGFloat)radians {
-    return [self imageRotatedByDegrees:RadiansToDegrees(radians)];
+    return [self imageRotatedByDegrees:BFRadiansToDegrees(radians)];
 }
 
 - (UIImage * _Nonnull)imageRotatedByDegrees:(CGFloat)degrees {
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.size.width, self.size.height)];
-    CGAffineTransform t = CGAffineTransformMakeRotation(DegreesToRadians(degrees));
+    CGAffineTransform t = CGAffineTransformMakeRotation(BFDegreesToRadians(degrees));
     rotatedViewBox.transform = t;
     CGSize rotatedSize = rotatedViewBox.frame.size;
     
@@ -353,7 +353,7 @@
     
     CGContextTranslateCTM(bitmap, rotatedSize.width / 2, rotatedSize.height / 2);
     
-    CGContextRotateCTM(bitmap, DegreesToRadians(degrees));
+    CGContextRotateCTM(bitmap, BFDegreesToRadians(degrees));
     
     CGContextScaleCTM(bitmap, 1.0, -1.0);
     CGContextDrawImage(bitmap, CGRectMake(-self.size.width / 2, -self.size.height / 2, self.size.width, self.size.height), [self CGImage]);

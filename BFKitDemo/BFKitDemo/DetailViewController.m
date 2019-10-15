@@ -714,7 +714,7 @@
             
             BFLogClear;
             
-            BFLog(@"Radians to degrees: %f", RadiansToDegrees(M_PI));
+            BFLog(@"Radians to degrees: %f", BFRadiansToDegrees(M_PI));
             BFLog(@"Random int: %li", (long)[NSNumber randomIntBetweenMin:10 andMax:50]);
             BFLog(@"Random float: %f", [NSNumber randomFloatBetweenMin:0.1 andMax:0.9]);
             

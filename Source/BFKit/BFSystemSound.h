@@ -24,8 +24,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@import AudioToolbox;
-@import Foundation;
+#import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 /**
  *  Audio IDs enum - http://iphonedevwiki.net/index.php/AudioServices

@@ -24,8 +24,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@import Foundation;
-@import CoreGraphics;
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 /**
  *  This category adds some useful methods to NSNumber
@@ -42,7 +42,7 @@ extern "C" {
  *
  *  @return Returns the convertion result
  */
-CGFloat DegreesToRadians(CGFloat degrees);
+CGFloat BFDegreesToRadians(CGFloat degrees);
 /**
  *  Radians to degrees conversion
  *
@@ -50,7 +50,7 @@ CGFloat DegreesToRadians(CGFloat degrees);
  *
  *  @return Returns the convertion result
  */
-CGFloat RadiansToDegrees(CGFloat radians);
+CGFloat BFRadiansToDegrees(CGFloat radians);
 #if __cplusplus
 }
 #endif
