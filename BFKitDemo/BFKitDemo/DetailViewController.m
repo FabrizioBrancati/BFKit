@@ -732,8 +732,8 @@
             NSObject *nilObject = nil;
             NSObject *object = @"Object";
             
-            BFLog([nilObject isValid] ? @"Object is valid" : @"Object is not valid");
-            BFLog([object isValid] ? @"Object is valid" : @"Object is not valid");
+            BFLog([nilObject isObjectValid] ? @"Object is valid" : @"Object is not valid");
+            BFLog([object isObjectValid] ? @"Object is valid" : @"Object is not valid");
             
             [self performSelector:@selector(multiArgumentsSelectorWithString:string:string:string:) withObjects:@"String 1", @"String 2", @"String 3", @"String 4", nil];
             

@@ -28,7 +28,7 @@
 
 @implementation NSObject (BFKit)
 
-- (BOOL)isValid {
+- (BOOL)isObjectValid {
     return !(self == nil || [self isKindOfClass:[NSNull class]]);
 }
 

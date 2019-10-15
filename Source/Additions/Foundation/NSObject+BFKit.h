@@ -37,7 +37,7 @@
  *
  *  @return Returns if the object is valid
  */
-- (BOOL)isValid;
+- (BOOL)isObjectValid;
 
 /**
  *  Perform selector with unlimited objects
