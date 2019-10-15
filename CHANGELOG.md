@@ -30,7 +30,9 @@ All notable changes to this project will be documented in this file.<br>
 ## [2.0.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v2.0.0)
 ### 16 Oct 2019
 #### Changed
-- Renaming `isValid` to `isObjectValid` to avoid conflicts with other libraries [#39](https://github.com/FabrizioBrancati/BFKit/issues/39)
+- Renamed `isValid` to `isObjectValid` to avoid conflicts with other libraries [#39](https://github.com/FabrizioBrancati/BFKit/issues/39)
+- Renamed `DegreesToRadians` to `BFDegreesToRadians` to avoid conflicts with other libraries [#37](https://github.com/FabrizioBrancati/BFKit/pull/37)
+- Renamed `RadiansToDegrees` to `BFRadiansToDegrees` to avoid conflicts with other libraries [#37](https://github.com/FabrizioBrancati/BFKit/pull/37)
 
 #### Added
 - Added support to Objective-C++ projects [#37](https://github.com/FabrizioBrancati/BFKit/pull/37)
