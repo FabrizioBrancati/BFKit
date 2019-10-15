@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### 2.x Releases
+- `2.0.x` Releases - [2.0.0](#200)
+
 ### 1.x Releases
 - `1.11.x` Releases - [1.11.0](#1110) | [1.11.1](#1111)
 - `1.10.x` Releases - [1.10.0](#1100)
@@ -23,6 +26,17 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [2.0.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v2.0.0)
+### 16 Oct 2019
+#### Changed
+- Renaming `isValid` to `isObjectValid` to avoid conflicts with other libraries [#39](https://github.com/FabrizioBrancati/BFKit/issues/39)
+
+#### Added
+- Added support to Objective-C++ projects [#37](https://github.com/FabrizioBrancati/BFKit/pull/37)
+
+Thanks to [@ramonvic](https://github.com/ramonvic) and [tony-hoang999](https://github.com/tony-hoang999) for this release
+
 
 ## [1.11.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.11.1)
 ### 16 Oct 2019
