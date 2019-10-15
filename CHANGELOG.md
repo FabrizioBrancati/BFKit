@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
-- `1.11.x` Releases - [1.11.0](#1110)
+- `1.11.x` Releases - [1.11.0](#1110) | [1.11.1](#1111)
 - `1.10.x` Releases - [1.10.0](#1100)
 - `1.9.x` Releases - [1.9.0](#190) | [1.9.1](#191) | [1.9.2](#192) | [1.9.3](#193)
 - `1.8.x` Releases - [1.8.0](#180)
@@ -23,6 +23,17 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [1.11.1](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.11.1)
+### 16 Oct 2019
+#### Added
+- Added support to Xcode 11.1
+
+#### Fixed
+- Fixed a typo in `onFirstStartForVersion:block:` that prevented the method to correctly work
+
+Thanks to [@ramonvic](https://github.com/ramonvic) for this release
+
 
 ## [1.11.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v1.11.0)
 ### 26 Dec 2017

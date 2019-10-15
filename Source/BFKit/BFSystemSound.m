@@ -30,7 +30,7 @@
 @implementation BFSystemSound
 
 + (void)playSystemSound:(AudioID)audioID {
-    AudioServicesPlaySystemSound(audioID);
+    AudioServicesPlaySystemSound((unsigned int)audioID);
 }
 
 + (void)playSystemSoundVibrate {

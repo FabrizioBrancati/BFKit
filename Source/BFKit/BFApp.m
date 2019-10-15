@@ -57,7 +57,7 @@ static NSString *BFHasBeenOpenedForCurrentVersion = @"";
 + (void)onFirstStartForVersion:(NSString * _Nonnull)version block:(void (^ _Nullable)(BOOL isFirstStartForCurrentVersion))block {
     NSString *BFHasBeenOpenedForVersion = [NSString stringWithFormat:@"%@%@", BFHasBeenOpened, version];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL hasBeenOpenedForVersion = [defaults boolForKey:BFHasBeenOpenedForCurrentVersion];
+    BOOL hasBeenOpenedForVersion = [defaults boolForKey:BFHasBeenOpenedForVersion];
     if (hasBeenOpenedForVersion != true) {
         [defaults setBool:YES forKey:BFHasBeenOpenedForVersion];
         [defaults synchronize];
