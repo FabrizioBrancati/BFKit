@@ -33,7 +33,6 @@ typedef NS_ENUM(NSInteger, DetailType) {
     DetailTypeUITextView,
     DetailTypeUIToolbar,
     DetailTypeUIView,
-    DetailTypeUIWebView,
     DetailTypeUIWindow,
     DetailTypeNSArray,
     DetailTypeNSData,

@@ -81,5 +81,4 @@
 #import "UITextView+BFKit.h"
 #import "UIToolbar+BFKit.h"
 #import "UIView+BFKit.h"
-#import "UIWebView+BFKit.h"
 #import "UIWindow+BFKit.h"

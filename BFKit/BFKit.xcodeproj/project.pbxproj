@@ -64,8 +64,6 @@
 		492C97361BEE59C200CDC75F /* UIToolbar+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E21BEE59C200CDC75F /* UIToolbar+BFKit.m */; };
 		492C97371BEE59C200CDC75F /* UIView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E31BEE59C200CDC75F /* UIView+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C97381BEE59C200CDC75F /* UIView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E41BEE59C200CDC75F /* UIView+BFKit.m */; };
-		492C97391BEE59C200CDC75F /* UIWebView+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E51BEE59C200CDC75F /* UIWebView+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		492C973A1BEE59C200CDC75F /* UIWebView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E61BEE59C200CDC75F /* UIWebView+BFKit.m */; };
 		492C973B1BEE59C200CDC75F /* UIWindow+BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96E71BEE59C200CDC75F /* UIWindow+BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492C973C1BEE59C200CDC75F /* UIWindow+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C96E81BEE59C200CDC75F /* UIWindow+BFKit.m */; };
 		492C973D1BEE59C200CDC75F /* BFApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 492C96EA1BEE59C200CDC75F /* BFApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -165,8 +163,6 @@
 		492C96E21BEE59C200CDC75F /* UIToolbar+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+BFKit.m"; sourceTree = "<group>"; };
 		492C96E31BEE59C200CDC75F /* UIView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BFKit.h"; sourceTree = "<group>"; };
 		492C96E41BEE59C200CDC75F /* UIView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BFKit.m"; sourceTree = "<group>"; };
-		492C96E51BEE59C200CDC75F /* UIWebView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+BFKit.h"; sourceTree = "<group>"; };
-		492C96E61BEE59C200CDC75F /* UIWebView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+BFKit.m"; sourceTree = "<group>"; };
 		492C96E71BEE59C200CDC75F /* UIWindow+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+BFKit.h"; sourceTree = "<group>"; };
 		492C96E81BEE59C200CDC75F /* UIWindow+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+BFKit.m"; sourceTree = "<group>"; };
 		492C96EA1BEE59C200CDC75F /* BFApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFApp.h; sourceTree = "<group>"; };
@@ -336,8 +332,6 @@
 				492C96E21BEE59C200CDC75F /* UIToolbar+BFKit.m */,
 				492C96E31BEE59C200CDC75F /* UIView+BFKit.h */,
 				492C96E41BEE59C200CDC75F /* UIView+BFKit.m */,
-				492C96E51BEE59C200CDC75F /* UIWebView+BFKit.h */,
-				492C96E61BEE59C200CDC75F /* UIWebView+BFKit.m */,
 				492C96E71BEE59C200CDC75F /* UIWindow+BFKit.h */,
 				492C96E81BEE59C200CDC75F /* UIWindow+BFKit.m */,
 			);
@@ -404,7 +398,6 @@
 				492C97431BEE59C200CDC75F /* BFLog.h in Headers */,
 				492C97171BEE59C200CDC75F /* NSThread+BFKit.h in Headers */,
 				492C97371BEE59C200CDC75F /* UIView+BFKit.h in Headers */,
-				492C97391BEE59C200CDC75F /* UIWebView+BFKit.h in Headers */,
 				493CFF0A1C53DC6600272396 /* NSData+BFKit.h in Headers */,
 				492C97211BEE59C200CDC75F /* UIFont+BFKit.h in Headers */,
 				492C971B1BEE59C200CDC75F /* UIButton+BFKit.h in Headers */,
@@ -569,7 +562,6 @@
 				492C97261BEE59C200CDC75F /* UIImageView+BFKit.m in Sources */,
 				492C972E1BEE59C200CDC75F /* UIScrollView+BFKit.m in Sources */,
 				492C97401BEE59C200CDC75F /* BFButton.m in Sources */,
-				492C973A1BEE59C200CDC75F /* UIWebView+BFKit.m in Sources */,
 				492C97101BEE59C200CDC75F /* NSNumber+BFKit.m in Sources */,
 				492C97121BEE59C200CDC75F /* NSObject+BFKit.m in Sources */,
 				492C97461BEE59C200CDC75F /* BFPassword.m in Sources */,
