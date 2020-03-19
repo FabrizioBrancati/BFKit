@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### 3.x Releases
+- `3.0.x` Releases - [3.0.0](#300)
+
 ### 2.x Releases
 - `2.0.x` Releases - [2.0.0](#200)
 
@@ -26,6 +29,12 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [3.0.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v3.0.0)
+### 19 Mar 2020
+#### Removed
+- Renamed UIWebView additions due to Apple deprecation [#41](https://github.com/FabrizioBrancati/BFKit/issues/41)
+
 
 ## [2.0.0](https://github.com/FabrizioBrancati/BFKit/releases/tag/v2.0.0)
 ### 16 Oct 2019

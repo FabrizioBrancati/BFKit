@@ -47,7 +47,6 @@
 		492C97BC1BEE5F6E00CDC75F /* UITextView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C97811BEE5F6E00CDC75F /* UITextView+BFKit.m */; };
 		492C97BD1BEE5F6E00CDC75F /* UIToolbar+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C97831BEE5F6E00CDC75F /* UIToolbar+BFKit.m */; };
 		492C97BE1BEE5F6E00CDC75F /* UIView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C97851BEE5F6E00CDC75F /* UIView+BFKit.m */; };
-		492C97BF1BEE5F6E00CDC75F /* UIWebView+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C97871BEE5F6E00CDC75F /* UIWebView+BFKit.m */; };
 		492C97C01BEE5F6E00CDC75F /* UIWindow+BFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C97891BEE5F6E00CDC75F /* UIWindow+BFKit.m */; };
 		492C97C11BEE5F6E00CDC75F /* BFApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C978C1BEE5F6E00CDC75F /* BFApp.m */; };
 		492C97C21BEE5F6E00CDC75F /* BFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C978E1BEE5F6E00CDC75F /* BFButton.m */; };
@@ -145,8 +144,6 @@
 		492C97831BEE5F6E00CDC75F /* UIToolbar+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+BFKit.m"; sourceTree = "<group>"; };
 		492C97841BEE5F6E00CDC75F /* UIView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BFKit.h"; sourceTree = "<group>"; };
 		492C97851BEE5F6E00CDC75F /* UIView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIView+BFKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		492C97861BEE5F6E00CDC75F /* UIWebView+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+BFKit.h"; sourceTree = "<group>"; };
-		492C97871BEE5F6E00CDC75F /* UIWebView+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+BFKit.m"; sourceTree = "<group>"; };
 		492C97881BEE5F6E00CDC75F /* UIWindow+BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+BFKit.h"; sourceTree = "<group>"; };
 		492C97891BEE5F6E00CDC75F /* UIWindow+BFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+BFKit.m"; sourceTree = "<group>"; };
 		492C978B1BEE5F6E00CDC75F /* BFApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFApp.h; sourceTree = "<group>"; };
@@ -363,8 +360,6 @@
 				492C97831BEE5F6E00CDC75F /* UIToolbar+BFKit.m */,
 				492C97841BEE5F6E00CDC75F /* UIView+BFKit.h */,
 				492C97851BEE5F6E00CDC75F /* UIView+BFKit.m */,
-				492C97861BEE5F6E00CDC75F /* UIWebView+BFKit.h */,
-				492C97871BEE5F6E00CDC75F /* UIWebView+BFKit.m */,
 				492C97881BEE5F6E00CDC75F /* UIWindow+BFKit.h */,
 				492C97891BEE5F6E00CDC75F /* UIWindow+BFKit.m */,
 			);
@@ -504,7 +499,6 @@
 				492C97C01BEE5F6E00CDC75F /* UIWindow+BFKit.m in Sources */,
 				4902770919BDF3F8009B8BC1 /* FoundationViewController.m in Sources */,
 				492C97C51BEE5F6E00CDC75F /* BFPassword.m in Sources */,
-				492C97BF1BEE5F6E00CDC75F /* UIWebView+BFKit.m in Sources */,
 				4902770019BDF3F8009B8BC1 /* AppDelegate.m in Sources */,
 				492C97C41BEE5F6E00CDC75F /* BFLog.m in Sources */,
 				492C97AF1BEE5F6E00CDC75F /* UIBarButtonItem+BFKit.m in Sources */,

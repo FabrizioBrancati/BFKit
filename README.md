@@ -78,7 +78,6 @@ It also adds some useful method to some classes like:
 - [UITextView](http://cocoadocs.org/docsets/BFKit/1.10./Categories/UITextView+BFKit.html)
 - [UIToolbar](http://cocoadocs.org/docsets/BFKit/1.10./Categories/UIToolbar+BFKit.html)
 - [UIView](http://cocoadocs.org/docsets/BFKit/1.10./Categories/UIView+BFKit.html)
-- [UIWebView](http://cocoadocs.org/docsets/BFKit/1.10./Categories/UIWebView+BFKit.html)
 - [UIWindow](http://cocoadocs.org/docsets/BFKit/1.10./Categories/UIWindow+BFKit.html)
 
 Language support
