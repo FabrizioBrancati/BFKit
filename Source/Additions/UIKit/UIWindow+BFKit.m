@@ -173,6 +173,12 @@ NSMutableDictionary *touchImages;
                 }];
                 break;
             }
+            case UITouchPhaseRegionEntered:
+                break;
+            case UITouchPhaseRegionMoved:
+                break;
+            case UITouchPhaseRegionExited:
+                break;
         }
     }
 }
